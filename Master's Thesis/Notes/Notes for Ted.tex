@@ -1,0 +1,276 @@
+\documentclass{scrartcl}
+\input{Preamble}
+\title{Notes for Ted}
+\author{}
+\date{}
+\begin{document}
+
+\section{Salamon's Notes on Harmonic and Holomorphic Maps}
+
+\subsection{Almost Hermitian Manifolds}
+
+An \emph{almost complex structure} (ACS) on a manifold $M^{2n}$ is a section $J\in \Gamma(\End M)$ such that $J^2=-\id$. This allows us to define the notion of a \emph{holomorphic} map: $\varphi:M\to N$ is said to be holomorphic if $\dif\varphi\circ J^M=J^N\circ \dif \varphi$. The ACS $J$ is said to be \emph{integrable} if there are local coordinates $z_j=x_j+iy_j$, $1\leq j\leq n$, such that $J(\p_{x_j})=\p_{y_j}$. Equivalently, every point has a neighborhood which is biholomorphic to an open subset of $\C^n$. Note that the usage of the word holomorphic in this paper does \emph{not} imply that we are talking about an integrable ACS (i.e. an actual complex manifold). 
+
+\medskip
+
+The set of orthonormal frames of the form $\{X_1,JX_1,\dots,X_n,JX_n\}$ yields a $GL(n,\C)$-structure on $M$, i.e. a principal $GL(n,\C)$-subbundle of the frame bundle. We can always pick a metric such that $g(JX,JY)=g(X,Y)$, reducing the structure group to $U(n)$. The resulting Riemannian, almost complex manifold is called \emph{almost Hermitian}. From now on, we mostly consider such manifolds and we will denote the principal $U(n)$-bundle by $P$.
+
+\medskip
+
+The ACS yields a decomposition $TM\otimes_\R \C=T^{1,0}\oplus T^{0,1}$ corresponding to the $\pm i$-eigenspaces of $J$. Similarly, we obtain a decomposition 
+\begin{equation*}
+\bigwedge\nolimits^k TM\otimes_\R \C=\bigoplus_{p+q=k}T^{p,q}
+\end{equation*}
+Note that these are multi-vectors, not differential forms. Indeed, we can essentially forget about forms once we have the metric since it induces an isomorphism $(T^{p,q})^*\cong T^{q,p}=\overline{T^{p,q}}$. If we let $(X_j)$ be an ONB of $T_xM$ then the extension of $g$ to $\bigwedge^kTM$ makes $\{X_I,\ I=\{i_1<i_2<\dots,i_k\}$ into an orthonormal basis, hence the decomposition into $T^{p,q}$'s is orthogonal.
+
+\medskip
+
+The bundles $T^{p,q}$ are associated to $P$ via a $U(n)$-representation. We investigate it a little bit, introducing the \emph{fundamental bivector} $F$, which is dual to the usual fundamental 2-form $\omega$, defined by $\omega(X,Y)=g(JX,Y)$. Hence, $F$ is defined by
+\begin{equation*}
+g(F,X\wedge Y)=g(JX,Y)
+\end{equation*}
+where $X\wedge Y$ is any bivector. Just like $\omega$, $F$ is of type $(1,1)$ (e.g. top of page 12 of my Huybrechts notes). Since $F$ is a section of $T^{1,1}$, we get a decomposition $T^{1,1}=\R\oplus T^{1,1}_0$.
+%WORK NEEDED Understand this!
+Similarly, if $\sigma\in T^{p-1,q-1}$ then $F\wedge\sigma$ is a section of $T^{p,q}$ and, denoting its complement by $T^{p,q}_0$ we find a decomposition 
+\begin{equation*}
+T^{p,q}_0=\bigoplus_{r=0}^{\min\{p,q\}}T^{p-r,q-r}_0 
+\end{equation*}
+with $T^{p,q}_0=0$ if $p+q>n$. The representation of $U(n)$ corresponding to $T^{p,q}_0$ is known to be irreducible, but we see that the $T^{p,q}$'s are not irreducible.
+
+\medskip
+
+We will be using the Levi-Civita connection on $TM$. Recall that this is the unique torsion-free metric connection. Note that since any two of $(g,J,F)$ determine the third, $\nabla J$ and $\nabla F$ carry the same information content. 
+
+\begin{lem}
+	Let $\alpha,\beta\in T^{1,0}$ and $X\in TM_\C$. Then 
+	\begin{equation*}
+	g(\nabla_X F,\alpha\wedge\beta)=2ig(\nabla_X\alpha,\beta) \qquad \qquad 
+	g(\nabla_X F,\alpha\wedge\bar\beta)=0
+	\end{equation*}
+\end{lem}
+\begin{myproof}
+	This is a computation, using the metric property:
+	\begin{align*}
+	g(\nabla_X F,\alpha\wedge\beta)
+	&=X(g(J\alpha,\beta))-g(J\nabla_X \alpha,\beta)-g(J\alpha,\nabla_X\beta)\\
+	&=iXg(\alpha,\beta)+ig(\nabla_X \alpha,\beta)-ig(\alpha,\nabla_X\beta)
+	=2ig(\nabla_X\alpha,\beta)
+	\end{align*}
+	where in the last step we noted that the first and last term together equal the second. For the second computation, we do the same things but obtain
+	\begin{equation*}
+	g(\nabla_X F,\alpha\wedge\beta)
+	=iXg(\alpha,\bar\beta)-ig(\nabla_X \alpha,\bar\beta)
+	-ig(\alpha,\nabla_X\bar\beta)=0
+	\end{equation*}
+	as required.
+\end{myproof}
+
+Recall the \emph{second fundamental form} $\eta_X:T^{1,0}\to T^{0,1}$ given by $\pr_{0,1}\nabla_X$. It measures to which extent $\nabla_X$ fails to preserve $T^{1,0}$ and is an element of $\Hom(T^{1,0},T^{0,1})\cong T^{0,1}\otimes T^{0,1}$. Then, the lemma shows that $\eta_X\in T^{0,2}\subset T^{0,1}\otimes T^{0,1}$ and $\nabla_XF=2\Re(i\eta_X)$.
+%WORK NEEDED: Why?!
+\medskip
+
+
+Using the isomorphism $(T^{p,q})^*\cong T^{q,p}$, we have
+\begin{equation*}
+T^{0,2}\otimes (T^*M_\C)=T^{0,2}\otimes (T^{0,1}\oplus T^{1,0})
+=(T^{0,1}\otimes T^{0,2})\oplus T^{1,2}
+\end{equation*}
+The last equality just uses the definition of $T^{p,q}$. Therefore, we decompose
+\begin{equation*}
+\nabla F=D_1 F+D_2 F \qquad \qquad D_1F\in (T^{0,1}\otimes T^{0,2})\oplus(T^{1,0}\otimes T^{2,0});\quad 
+D_2F\in T^{2,1}\oplus T^{1,2}
+\end{equation*}
+The following important fact is known:
+
+\begin{lem}
+	\begin{align*}
+	D_1F&=0\Longleftrightarrow \nabla_X(T^{1,0})\subset T^{1,0} \qquad \forall X\in\Gamma(T^{1,0}) \\
+	D_2F&=0\Longleftrightarrow \nabla_X(T^{1,0})\subset T^{1,0} \qquad \forall X\in\Gamma(T^{0,1})
+	\end{align*}
+\end{lem}
+
+This lemma has the following consequences:
+
+\begin{prop}
+	\begin{align*}
+	D_1F&=0\Longleftrightarrow J\text{ is integrable}\\
+	D_2F&=0\Longleftrightarrow (\d\omega)^{1,2}=0
+	\end{align*}
+\end{prop}
+
+\begin{rem}
+	We call manifolds with the latter property ``$(1,2)$-symplectic''.
+\end{rem}
+
+\begin{mydef}
+	If $\nabla F=0$ we say that $M$ is \emph{K\"{a}hler}.
+\end{mydef}
+
+On a K\"{a}hler manifold, the Levi-Civita connection preserves $T^{1,0}$ completely. Therefore $\nabla$ descends to $P$ and therefore the holonomy group is contained in $U(n)$. Note that, once we are given a complex manifold, it suffices to find a $(1,2)$-closed 2-form $\omega$ such that $\omega(-,J-)$ is positive-definite to conclude that the manifold is K\"{a}hler.
+
+\subsection{Bundles of Complex Structures}
+
+Even if we do not assume that an oriented Riemannian manifold $M$ of even dimension (with metric $h$) has an almost Hermitian structure, almost complex structures still exist locally. We study them by means of a bundle which we call $S$. The fiber over $x\in M$ is given by the set of complex structures on $T_xM$ that are compatible with the metric and orientation:
+\begin{equation*}
+S_x=\{J\in \End T_xM\mid J^2=-\id_{T_xM},\ h(Jx,Jy)=h(x,y),\ J\text{ ``positive''}\}
+\end{equation*} 
+where we call $J$ ``positive'' if for any $\{x_1,\dots,x_n\}$, $x_1\wedge Jx_1\wedge\dots\wedge x_n\wedge J x_n$ is a non-negative multiple of the volume element induced by the orientation, i.e. if $J$ is compatible with the orientation.
+
+\medskip
+
+An oriented orthonormal basis gives an isomorphism $T_xM\cong \R^{2n}$ and the standard action $SO(2n)\action \R^{2n}$ induces an action on $\End T_xM$, namely by conjugation. This action is natural because it turns the contraction $\End T_xM\otimes T_xM\to T_xM$ into an equivariant map. A choice of $J$ is precisely an identification $T_xM\cong \C^n$, i.e. it picks out $n$ orthogonal (complex) planes on which $J$ is multiplication by $i$. 
+
+\medskip
+
+Given two such identifications there is always an isometry that sends an orthonormal, complex basis of $(\R^{2n},J)\cong \C^n$ to that of $(\R^{2n},J')\cong \C^n$. It preserves orientation (and hence is an element of $SO(2n)$) since both copies of $\C^n$ are oriented in the same way by construction. The induced conjugation maps $J$ to $J'$, hence $SO(2n)\action S_x$ transitively. The stabilizer is $U(n)$, since $U(n)$ is by definition the group that preserves the standard complex structure on $\R^{2n}$. Thus, $S_x\cong SO(2n)/U(n)$ and $S$ is the bundle with fiber $SO(2n)/U(n)$ associated to the principal $SO(2n)$-bundle of oriented, orthonormal frames on $M$.
+
+\medskip
+
+We consider some low-dimensional cases: $n=1$ yields $SO(2)/U(1)=\pt$, hence studying $S$ just amounts to studying $M$, endowed with a complex structure, i.e. viewed as a Riemann surface. For $n=2,3$ we have
+\begin{equation*}
+\frac{SO(4)}{U(2)}\cong \frac{SU(2)}{U(1)}=\CP^1 \qquad \qquad 
+\frac{SO(6)}{U(3)}\cong \frac{SU(4)}{S(U(1)\times U(3)}=\CP^3
+\end{equation*}
+The Levi-Civita connection on $M$ yields a splitting of the tangent bundle into horizontal and vertical components. Because $S$ is associated to the (oriented, orthonormal) frame bundle of $M$, $\nabla$ induces a splitting $TS=V\oplus H$. Here, $V$ consists of the vertical tangent vectors while $H\cong \pi^*TM$ ($\pi:S\to M$ the projection) can be described as follows: $J\in S_x$ corresponds uniquely to a fundamental bivector $F_J$---this defines an embedding $\iota:S\to \bigwedge^2 TM$. Given $J\in S_x$, extend $F_J$ to a parallel section, i.e. to a section $F$ such that $\nabla F|_x=0$. The tangent space to this section is then independent of the extension and equals the fiber of $H$ in $J$.
+%WORK NEEDED: Why?
+
+\medskip
+
+Since $J\in S_J$ is a complex structure on $T_x M$, we get an induced decomposition into eigenspaces of $J$: $(\pi^*TM_\C)_J=T^{1,0}_J\oplus T^{0,1}_J$. Doing this over every point $J\in S$, we obtain a canonical (up to our choice of connection)---indeed, one may even say tautological---complex structure on $\pi^*TM_\C$. The isomorphism $H\cong \pi^* TM$ (with inverse $\sigma\mapsto \sigma^h$) then induces a complex structure on $H_\C=(T^{1,0})^h\oplus (T^{0,1})^h$.
+
+\medskip
+
+Similarly, fixing $J\in S_x$, $\bigwedge^2 T_xM$ has a decomposition into $T_J^{1,1}\oplus T_J^{2,0}\oplus T_J^{0,2}$ and similarly 
+\begin{equation*}
+\Big(\pi^*\bigwedge\nolimits^2 TM\Big)_\C=T^{1,1}\oplus (T^{2,0}\oplus T^{0,2})
+\end{equation*}
+The embedding $\iota: S\hookrightarrow \bigwedge^2 TM$ induces  $\iota_*:V\to \pi^*\bigwedge^2 TM$. Recall that we defined the horizontal fiber in $J\in S_x$ to be the tangent space to a path in $S$ that corresponds to $F:I\to \bigwedge^2 TM$ such that $\nabla F|_x=0$. From the first lemma, we know that $(\nabla_X F)^{1,1}=0$ for every $X\in TM_\C$ and since vertical tangent vectors correspond to nonzero components of $\nabla F$, we conclude $(\iota_*V)_\C\cong T^{2,0}\oplus T^{0,2}$.
+%WORK NEEDED Clarify
+
+\medskip
+
+This yields a decomposition $V_\C=(T^{2,0})^V\oplus (T^{0,2})^V$ and we get an almost complex structure by declaring $J^V$ to act as multiplication by $i$ on the first and by $-i$ on the second summand. Alternatively, one can simply induce a complex structure on $V$ from a natural complex structure on $SO(2n)/U(n)$, which is a so-called Hermitian symmetric space. Now we have almost complex structure on both $H$ and $V$, so we conclude:
+
+\begin{prop}
+	$S$ has two distinct almost complex structures, given by $J_1=J^h\oplus J^V$ and $J_2=J^h\oplus (-J^V)$.
+\end{prop}
+
+Correspondingly, we have bundles of $(1,0)$-vectors given by
+\begin{equation*}
+T^{1,0}(S,J_1)=(T^{1,0})^h\oplus (T^{2,0})^V\qquad 
+T^{1,0}(S,J_2)=(T^{1,0})^h\oplus (T^{0,2})^V
+\end{equation*}
+A switch between $J_1$ and $J_2$ is accomplished simply by flipping the sign of the points (i.e. the $J$'s) in each fiber, i.e. conjugation of the fibers, viewed as complex manifolds.
+
+\medskip
+
+We discuss holomorphic submanifolds, i.e. submanifolds whose tangent spaces are stable under the action of $J_\alpha$. The fibers are always holomorphic submanifolds for both $J_1,J_2$. Now let $f:U\to S$ be a local section on $U\subset M$ and consider the associated sections $J\in \Gamma(U,\End TM)$ as well as $F=\iota (J)\in \Gamma\big(U,\bigwedge^2 TM\big)$. We say that $f:(U,J)\to (S,J_\alpha)$ is $J_\alpha$-holomorphic if the following square commutes:
+\begin{equation*}
+\begin{tikzcd}
+TU \ar[r,"\dif f"] \ar[d,"J"'] & TS \ar[d,"J_\alpha"] \\
+TU \ar[r,"\dif f"'] & TS
+\end{tikzcd}
+\end{equation*} 
+Then the tangent space of $f(U)$ is stable under $J_\alpha$. Conversely, if $Tf(U)$ is stable under $J_\alpha$, $f$ is $J_\alpha$-holomorphic.
+%WORK NEEDED Why?!?!
+
+\begin{prop}
+	$f$ is $J_\alpha$-holomorphic if and only if $D_\alpha F=0$.
+\end{prop}
+\begin{myproof}
+	Set $f(x)=y\in S$. For $v\in \Gamma(TU)$, $\nabla_v F\in T^{2,0}U\oplus T^{0,2}U$, where the decomposition in $p$ is defined by $f(p)$. Let $(e_j)$ be a local frame of $TM$, parallel in $x$. Then the vertical component of $\dif_x f(v)$ is represented by $\nabla_v F=v(F^{ij}) e_i\wedge e_j$:
+	\begin{equation*}
+	\dif_x f(v)=v^h+(\nabla_v F)^V
+	\end{equation*}
+	The superscripts are just there to remind us that we used the identifications $\pi_*$ and $\iota_*$. $f$ is $J_\alpha$-holomorphic precisely if for every $v\in T^{1,0}U$, $\dif f (v)\in T^{1,0}(S,J_\alpha)$. However, 
+	\begin{equation*}
+	\nabla_v F=(D_1)_v F+(D_2)_v F
+	\end{equation*}
+	and since $v\in T^{1,0}U$ we have $(D_1)_vF\in T^{0,2}U\subset T^{1,0}(S,J_2)$ while $(D_2)_vF\in T^{2,0}\subset T^{1,0}(S,J_1)$. This makes it clear that if $D_1 F$ vanishes, $f$ is $J_1$-holomorphic and similarly for $D_2 F$ and $J_2$-holomorphicity.
+\end{myproof}
+
+The first section shows that the condition $D_1 F=0$ has something to do with integrability, so one may suppose that $J_1$ should be integrable, at least in some cases. The following is shown on pages 183-184:
+
+\begin{prop}
+	$(S,J_1)$ is a complex manifold if and only if $M^{2n}$ is conformally flat for $n\geq 3$ or anti-self dual for $n=2$.
+\end{prop}
+
+On the other hand:
+
+\begin{prop}
+	$(S,J_2)$ is never integrable.
+\end{prop}
+\begin{myproof}
+	Let $f(U)$ be the image of a section which is a $J_2$-holomorphic submanifold for which the induced almost complex structure $J$ on $U$ is integrable. Then by our discussion from the first section, $D_1 F=0$ but at the same time $f$ is $J_2$-holomorphic hence $\nabla F=0$, i.e. $f(U)$ is horizontal. But if $(S,J_2)$ were complex there would be many more such $f$.
+	%WORK NEEDED Why?
+\end{myproof}
+
+\subsection{Symmetric Spaces}
+
+The condition we established for integrability of $(S,J_1)$ is quite strong: $S$ is typically too ``large''. However, under certain conditions, there are naturally arising holomorphic submanifolds of $S$ that can be considered instead. This happens if the base space is a \emph{symmetric space}. Consider an even-dimensional symmetric space $M=G/H$ where $G$ acts almost effectively (i.e. the kernel of $G\to \Diff M$ is discrete). Choosing an orthonormal frame at the coset of $e\in G$ determines an orientation on $M$ as well as a representation $\rho:H\to SO(2n)$ called the \emph{isotropy} representation (since $H$ is the isotropy subgroup stabilizing the coset of $e$).
+
+Consider the subgroup $U(n)\subset SO(2n)$ and let $Z$ denote the center of $U(n)$. Finally, set $K=\{h\in H\mid \rho(h)\in U(n)\}$. We obtain an inclusion
+\begin{equation*}
+H/K \hookrightarrow SO(2n)/U(n)
+\end{equation*} 
+and the bundle $\mc T=G/K$ is bundle isomorphic to the bundle, associated to $G\to M$, with fiber $H/K$. The above inclusion induces a natural $T\hookrightarrow S$. The following result allows us to carry over the almost complex structures on $S$ to $\mc T$:
+
+\begin{thm}\label{thm:symmetric}
+	If $Z\subset \rho(H)$, then $\mc T$ is a $J_\alpha$-holomorphic submanifold of $S$ for both $J_1$ and $J_2$ with $(T,J_1)$ being Hermitian and $(T,J_2)$ being $(1,2)$-symplectic for some $G$-invariant metric.
+\end{thm}
+The proof uses Lie theory and is given on pages 193-195. All possible such $\mc T$ are listed in a table on page 196.
+
+\subsection{K\"{a}hler Geometry}
+
+In this section, we work out a few examples in a little bit more detail. One series that occurs in the table is given by
+\begin{equation*}
+\!G=U(m+n)\qquad\! H=U(m)\times U(n)\qquad\! K=U(m)\times U(k)\times U(n-k) 
+\qquad\! H/K=\Gr_k(\C^n)
+\end{equation*}
+Thus, we have a twistor bundle
+\begin{equation*}
+\mc T_k=\frac{U(m+n)}{U(m)\times U(k)\times U(n-k)}\longrightarrow \Gr_m(\C^{m+n})
+=\frac{U(m+n)}{U(m)\times U(n)}
+\end{equation*}
+The case $n=2,k=1$ corresponds to the series considered by Kotschick \& Terzi\'{c}, as does $m=k=1$ (reflecting the duality $\Gr_k(\C^l)=\Gr_{l-k}(\C^l)$). Using Lie-theoretic techniques developed by Borel and Hirzebruch, it can be shown that up to conjugation, $J_2$ is the non-integrable invariant almost complex structure on $\mc T_k$, and that there are (again, up to conjugation) three independent invariant almost complex structures. 
+
+\medskip
+
+The case $m=1$ makes the base into $\CP^{n+1}$ and the flag manifold
+\begin{equation*}
+\mc T_k=\frac{U(n+1)}{U(n-k)\times U(k)\times U(1)}
+\end{equation*}
+of flags $(1)\subset (k+1)\subset (n)$ can be identified with $\Gr_k(T^{1,0}\CP^n)$ ($T^{1,0}\CP^n$ is just $T\CP^n$ as a real vector bundle) in the same way as explained in the Hirzebruch paper---this time, we pick linearly independent $v_1,\dots,v_k\in \ell^\perp$ and consider $\dif_\ell \pi^{-1}(\Span\{v_1,\dots, v_k\})$. This is a $k+1$-plane in $\C^{n+1}$.
+
+\medskip
+
+Let $J$ denote the standard complex structure on $\CP^n$. An element $W\in (\mc T_k)_x$ represents a $\dim_\R=2k$, $J$-invariant subspace of the real tangent space. However, since $W$ is an element in a bundle of complex structures, it also defines an almost complex structure on $T_x \CP^n$ which is
+\begin{equation*}
+J_W=
+\begin{cases}
+J\qquad \text{on}\ W\\
+-J\qquad \text{on}\ W^\perp
+\end{cases}
+\end{equation*}
+%WORK NEEDED How can I deduce this from the definitions of J_1, J_2?
+This prescription can be generalized to arbitrary K\"{a}hler manifolds to realize $\Gr_k(T^{1,0}M)$ as a subbundle of $S$---the K\"{a}hler assumption is used to ensure that the Levi-Civit\`{a} connection and the $J_\alpha$'s reduce from $S$ to $\Gr_k(T^{1,0}M)$. 
+
+\medskip
+
+Finally, let us mention that $\mc T_1$, the flag manifold considered by Kotschick and Terzi\'{c}, is the total space of a triple fibration
+\begin{equation*}
+\begin{tikzcd}
+& \mc T_1 \ar[dl,"\pi"'] \ar[d,"\pi'"] \ar[dr,"\pi''"] \\
+\CP^n & \CP^n & \Gr_2(\C^{n+1})
+\end{tikzcd}
+\end{equation*}
+where the first fibration is the one discussed above, the second is the map that sends the flag $(0)\subset(1)\subset (2)\subset (n)$ to $(1)$ and the last sends the flag to $(2)$. Applying \cref{thm:symmetric} to all three fibrations gives non-integrable almost complex structures $J_2,J_2',J_2''$. However, they must all agree up to conjugation (does this follow from Lie theory?). This situation is analogous to the situation we have with the space $Q$, which fibers over both $S^6$ and $G_2/SO(4)$. Perhaps we get the same result there: That the almost complex structures obtained by flipping the fibers are the same.
+%WORK NEEDED Why?
+
+Finally, we consider the case where the fiber is given by $H/K=\CP^1$. In that case, we call the base manifold \emph{quaternionic K\"{a}hler}, though it does not have to be K\"{a}hler in the ordinary sense. In fact, it may fail to be almost complex. However, around each point there is a neighborhood $U$ on which there exist almost complex structures $I,Jk<\in \Gamma(U,\mc T)$ such that $IJ=K=-JI$. Then $\mc T_x$ parametrizes the 2-sphere:
+\begin{equation*}
+\mc T_x=\{aI+bJ+cK\mid a^2+b^2+c^2=1\}
+\end{equation*}
+Examples include $\Gr_2(\C^{n+1})$: In fact, the third fibration from the diagram above exhibits $\mc T_1$ as the twistor space.
+
+\end{document}

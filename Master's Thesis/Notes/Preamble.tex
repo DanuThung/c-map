@@ -1,0 +1,252 @@
+% % % % % PACKAGES
+
+%General Packages
+
+\usepackage[automark]{scrlayer-scrpage}																	
+\usepackage{amsfonts}												%Mathematics fonts
+\usepackage{mathtools}												%General mathematics symbols
+\usepackage{amsmath}
+\usepackage{stmaryrd}												%Extra math symbols
+\usepackage{amssymb}												%More symbols
+\usepackage{extarrows}												%Extendible arrows
+\usepackage{dsfont} 												%Identity matrix symbol
+\usepackage{mathrsfs}												%To get mathscr
+\usepackage{relsize}												%Scaling symbols with reference to pre-existing symbols
+\usepackage{accents}												%Accents on math symbols
+\usepackage[T1]{fontenc}											%Accents output improvement
+\usepackage[latin1]{inputenc}										%Accents input improvement
+\usepackage[english]{babel}
+\usepackage{subcaption} 											%Subfigures etc
+\usepackage{cancel} 												%Striking through things
+\usepackage{setspace}												%line spacing
+\usepackage[top=1in,bottom=1in,left=1.25in,right=1.25in]{geometry}	%margins
+\usepackage[symbol]{footmisc}										%Some footnote margin thing
+\usepackage{enumerate} 												%Numbered lists
+\usepackage{booktabs}
+
+%Pictures & TikZ Packages
+
+\usepackage{graphicx}												%Pictures	
+\usepackage{epstopdf}												%Converts .eps to .pdf files
+\usepackage{tikz}													%TikZ Drawings
+\usetikzlibrary{3d,patterns,arrows,bending,arrows.meta,				%TikZ Libraries
+	shapes.geometric,knots,intersections,
+	decorations.markings,decorations.pathmorphing,
+	decorations.pathreplacing}										
+\usepackage{tikz-cd}												%Commutative Diagrams
+
+
+%Mathematics Packages
+
+\usepackage{amsthm}													%Theorems etc
+
+%Referencing
+
+\usepackage[colorlinks=true]{hyperref}								%hyperlinks
+\usepackage[noabbrev]{cleveref}										%better croff-refs
+\crefname{prop}{proposition}{propositions}
+\crefname{lem}{lemma}{lemmata}						
+
+
+% % % % % CUSTOM COMMANDS
+
+%Derivatives/Differentials
+
+\let\underdot=\d
+\newcommand{\od}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
+\newcommand{\odd}[2]{\frac{\mathrm{d}^2 #1}{\mathrm{d} #2^2}}
+\newcommand{\p}{\partial}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pdd}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\fd}[2]{\frac{\delta #1}{\delta #2}}
+\renewcommand{\d}{\mathrm{d}}
+\newcommand{\dif}{D}
+
+
+%Common Sets/Spaces
+
+\newcommand{\RP}{\mathbb{R}\mathrm{P}}
+\newcommand{\CP}{\mathbb{C}\mathrm{P}}
+\newcommand{\HP}{\mathbb{H}\mathrm{P}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\renewcommand{\H}{\mathbb{H}}
+\renewcommand{\O}{\mathbb{O}}
+
+%Math-operators
+
+
+
+\renewcommand{\Im}{\operatorname{Im}}
+\renewcommand{\Re}{\operatorname{Re}}
+
+\DeclareMathOperator{\Graph}{graph}
+\DeclareMathOperator{\Gr}{Gr}
+
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\incl}{incl}
+\DeclareMathOperator{\pr}{proj}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\codim}{codim}
+
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\Bs}{Bs}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Mat}{Mat}
+\newcommand{\Unit}{\mathds{1}}
+
+\DeclareMathOperator{\td}{td}
+\DeclareMathOperator{\ch}{ch}
+\DeclareMathOperator{\Spin}{Spin}
+\newcommand{\Spinc}{\Spin^c}
+
+\DeclareMathOperator{\Ad}{Ad}
+\DeclareMathOperator{\ad}{ad}
+
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\interior}{int}
+\DeclareMathOperator{\vol}{vol}
+
+\DeclareMathOperator{\sgn}{sgn}
+
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator*{\free}{\scalerel*{\ast}{\scaleobj{1}{\sum}}}
+
+\newcommand{\trans}{\mathrel{\text{\tpitchfork}}}
+\makeatletter
+\newcommand{\tpitchfork}{%
+	\vbox{
+		\baselineskip\z@skip
+		\lineskip-.52ex
+		\lineskiplimit\maxdimen
+		\m@th
+		\ialign{##\crcr\hidewidth\smash{$-$}\hidewidth\crcr$\pitchfork$\crcr}
+	}%
+}
+\makeatother
+
+%Other
+
+\newcommand{\action}{\curvearrowright}
+\newcommand{\rightaction}{\curvearrowleft}
+
+\newcommand{\ubar}[1]{\underaccent{\bar}{#1}}
+\def\mathunderline#1#2{\color{#1}\underline{{\color{black}#2}}\color{black}}
+
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\expvalue}[1]{\left\langle #1 \right\rangle}
+
+\setlength{\parindent}{0pt}
+
+\newcommand{\mf}[1]{\mathfrak{#1}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\ms}[1]{\mathscr{#1}}
+
+\newcommand{\bdy}{\partial}
+\newcommand{\pt}{\mathrm{pt}}
+\DeclareMathOperator{\Bl}{Bl}
+
+
+%Theorem Styles
+
+\newtheoremstyle{mythm}% name of the style to be used
+{}% measure of space to leave above the theorem. E.g.: 3pt
+{}% measure of space to leave below the theorem. E.g.: 3pt
+{\slshape}% name of font to use in the body of the theorem
+{}% measure of space to indent
+{\bfseries\sffamily}% name of head font
+{.}% punctuation between head and body
+{ }% space after theorem head; " " = normal interword space
+{}% Manually specify head
+\newtheoremstyle{mydef}% name of the style to be used
+{}% measure of space to leave above the theorem. E.g.: 3pt
+{}% measure of space to leave below the theorem. E.g.: 3pt
+{}% name of font to use in the body of the theorem
+{}% measure of space to indent
+{\bfseries\sffamily}% name of head font
+{.}% punctuation between head and body
+{ }% space after theorem head; " " = normal interword space
+{}% Manually specify head
+
+\theoremstyle{mythm}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\theoremstyle{mydef}
+\newtheorem{mydef}[thm]{Definition}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{exer}{Exercise}[subsection]
+\newenvironment{myproof}[1][\proofname]{
+	\proof[\sffamily\upshape#1]
+}{\endproof}
+
+\newcommand{\proofclear}{\hfill \qedsymbol}
+
+% % % % % MISCELLANEOUS STUFF
+
+\clearscrheadfoot
+\ihead[]{}
+\ohead[]{}
+\cfoot[]{\pagemark}
+\pagestyle{scrheadings}
+
+\deffootnote[1em]{0em}{1em}{%
+	\textsuperscript{\thefootnotemark}%
+}
+\setfootnoterule{3em}
+
+
+\newcommand\numberthis{\stepcounter{equation}\tag{\theequation}}
+
+
+\newenvironment{numberedlist}{\begin{enumerate}[\upshape(i)]}{\end{enumerate}}
+\newenvironment{letteredlist}{\begin{enumerate}[\upshape a)]}{\end{enumerate}}
+
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{(\alph{subsection})}
+\renewcommand{\thesubsubsection}{(\roman{subsubsection})}
+\renewcommand{\autodot}{}
+
+%Inverse diagonal dots:
+
+\makeatletter
+\def\Ddots{\mathinner{\mkern1mu\raise\p@
+		\vbox{\kern7\p@\hbox{.}}\mkern2mu
+		\raise4\p@\hbox{.}\mkern2mu\raise7\p@\hbox{.}\mkern1mu}}
+\makeatother
+
+
+%TikZ
+
+\tikzset{% 
+	arrowat/.style={%
+		postaction={decorate,decoration={
+				markings,
+				mark=at position #1 with {\arrow[xshift=2pt]{>}}}}
+	}
+}
+
+\tikzset{% 
+	backarrowat/.style={%
+		postaction={decorate,decoration={
+				markings,
+				mark=at position #1 with {\arrow[xshift=2pt]{<}}}}
+	}
+}

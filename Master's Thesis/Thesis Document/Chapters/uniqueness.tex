@@ -1,0 +1,524 @@
+\chapter{Rigidity theorems for K\"ahlerian manifolds}
+\label{chap:uniqueness}
+
+In this chapter, we review a few classical rigidity results of complex geometry. The smooth manifold underlying a complex manifold generically admits not just one, but a large set of complex structures. Indeed, there is a vast literature on these so-called moduli spaces of complex structures. Analogously, given a complex manifold that admits a K\"ahler metric---we will call such complex manifolds \emph{K\"ahlerian}---one may study the space of complex structures which admit a compatible K\"ahler metric. In some very special cases, it is possible to prove a uniqueness theorem for K\"ahlerian complex manifolds, which are thereby shown to exhibit a certain rigidity. The material presented in this chapter is intended to provide context for a similar result which we will prove in \cref{chap:invarstructures}.
+
+\section{Background information}
+
+In the following, we assume that the reader is comfortable with characteristic classes at the level of Milnor \& Stasheff's classic book~\cite{MS1974}. Furthermore, we will freely make use of some fundamental results of complex geometry, assuming roughly the material that appears in Huybrechts' introductory text \cite{Huy2005}. We will now recall the statements of the main results that we will use, starting with two theorems due to Lefschetz:
+
+\begin{thm}[Lefschetz Theorem on $(1,1)$-Classes]
+	On a compact K\"ahler manifold $X$, define
+	\begin{equation*}
+		H^{1,1}(X;\Z)\coloneqq \im(H^2(X;\Z)\to H^2(X;\C))\cap H^{1,1}(X)
+	\end{equation*} 
+	Then the map $\Pic(X)\to H^{1,1}(X;\Z)$, given by the first Chern class, is surjective.
+\end{thm}
+
+\begin{thm}[Lefschetz Hyperplane Theorem]
+	Let $X$ be a compact K\"ahler manifold of dimension $n$ and $Y\subset X$ is a smooth hypersurface such that the corresponding line bundle $\mc O(Y)$ is a positive line bundle. Then the canonical restriction maps $H^k(X;\Z)\to H^k(Y;\Z)$ are isomorphisms for $k<n-1$ and injective for $k=n-1$. Similarly, the natural maps $H_k(Y;\Z)\to H_k(X;\Z)$ are isomorphisms for $k<n-1$ and surjective for $k=n-1$.
+\end{thm}
+
+A central role in the following will be reserved for a celebrated theorem of Hirzebruch:
+
+\begin{thm}[Hirzebruch-Riemann-Roch Theorem; Hirzebruch~\cite{Hir1966}]
+	Let $X$ be a compact, complex manifold and $\pi:E\to X$ a holomorphic vector bundle over $X$. Then the Poincar\'e-Euler characteristic
+	\begin{equation*}
+		\chi(X,E)=\sum_{k=0}^{\rank E}(-1)^k \dim H^k(X,E)
+	\end{equation*}
+	can be expressed as follows:
+	\begin{equation*}
+		\chi(X,E)=\int_X \ch(E)\td(X)
+	\end{equation*}
+	Here, $\ch(E)$ denotes the Chern character of $E$ and $\td(X)$ the Todd class of $X$. The integral is (implicitly) over the degree-$2n$ part of $\ch(E)\td (X)$.
+\end{thm}
+
+\begin{rem}
+	Hirzebruch proved this theorem under the assumption that $X$ is projective. Its validity for arbitrary compact, complex manifolds follows from the Atiyah-Singer index theorem.
+\end{rem}
+
+The Todd class can be defined by a multiplicative sequence of polynomials in the Chern classes (see e.g.~\cite{MS1974} or the original reference \cite{Hir1966}) and in this formulation it is not hard to show that it satisfies the identity
+\begin{equation}\label{eq:todd}
+	\td(c(E))=e^{\frac{1}{2}c_1(E)}\hat A(p(E))
+\end{equation}
+Here, $\hat A$ is the multiplicative sequence of polynomials (in the Pontryagin classes $p_j(E)$ of $E$) determined by the power series $f(t)=\frac{\sqrt{t/2}}{\sinh{\sqrt{t/2}}}$. This shows that the Todd class only depends on the Pontryagin classes and the first Chern class, a fact that will be soon be of use.
+
+Besides the Hirzebruch-Riemann-Roch theorem, we will make use of a famous theorem due to Kodaira:
+
+\begin{thm}[Kodaira Vanishing Theorem; Kodaira~\cite{Kod1953}]
+	Let $X$ be a compact K\"ahler manifold of dimension $n$ and $L$ a positive line bundle over $X$, i.e.~a line bundle with positive first Chern class. Then, if $p+q>n$, $H^{p,q}(X,L)=H^q(X,\Omega^p_X\otimes L)=0$. By Serre duality, this is equivalent to $H^{n-q}(X,\Omega^{n-p}_X\otimes L^{-1})=0$.
+\end{thm}
+
+We will usually employ the special case $p=n$:
+
+\begin{cor}
+	If $X$ is a compact K\"ahler manifold of dimension $n$ and $L$ a positive line bundle over $X$, then $H^k(X,K_X\otimes L)=0$ or equivalently $H^{n-k}(X,L^{-1})=0$ for every $k>0$.
+\end{cor}
+
+\section{Rigidity of complex projective spaces}
+
+The most famous---and oldest---rigidity result for complex manifolds of arbitrary dimension concerns the complex projective spaces. In proving it, we do not take the historical route. Instead, we rely on a characterization of $\CP^n$ due to Kobayashi and Ochiai. This method of proof was also used by Tosatti in a recent expository paper~\cite{Tos2017}.
+
+\begin{thm}[Kobayashi-Ochiai~\cite{KO1973}]\label{thm:KOCPn}
+	Let $X$ be a compact, connected, complex manifold of dimension $n$, equipped with a positive line bundle $L$ such that the following conditions hold:
+	\begin{numberedlist}
+		\item $\displaystyle\int_X c_1^n(L)=1$.
+		\item $\dim H^0(X,L)=n+1$.
+	\end{numberedlist}
+	Then $X$ is biholomorphic to $\CP^n$.
+\end{thm}
+\begin{myproof}
+	Let $\{s_1,\dots,s_{n+1}\}$ be a basis of $H^0(X,L)$, and denote the corresponding divisors by $D_j=\{s_j=0\}\subset X$. Note that $D_j\neq \varnothing$ because a non-vanishing section would trivialize $L$, and the trivial line bundle $\mc O$ satisfies $\dim H^0(X,\mc O)=1$. We may choose the $s_j$'s to be transverse to the zero section, so that the divisors $D_j$ are Poincar\'e dual to the Euler class $c_1(L)$ of $L$. We need the following lemma: 
+	
+	\begin{lem}\label{lem:KOCPn}
+		Set $X_n=X$ and $X_{n-j}=D_1\cap\dots \cap D_j$ for $1\leq j\leq n$. Then, for every $0\leq k\leq n$, the following hold:
+		\begin{numberedlist}
+			\item $X_{n-k}$ is irreducible, has dimension $n-k$ and is Poincar\'e dual to $c_1^k(L)$.
+			\item The sequence 
+			\begin{equation*}
+				\begin{tikzcd}
+					0 \ar[r] & \Span(s_1,\dots,s_k) \ar[r] 
+					& H^0(X,L) \ar[r] & H^0(X_{n-k},L) 
+				\end{tikzcd}
+			\end{equation*}
+			is exact.
+		\end{numberedlist}
+	\end{lem}
+	\begin{myproof}[Proof of Lemma]
+		We proceed inductively. The base case $k=0$ is trivial. Now, assume the assertions hold for $k-1$. The short exact sequence
+		\begin{equation*}
+			\begin{tikzcd}
+				0 \ar[r] & \Span(s_1,\dots,s_{k-1}) \ar[r] & H^0(X,L) \ar[r] & H^0(X_{n-k+1},L)
+			\end{tikzcd}
+		\end{equation*}
+		implies that $s_k$ does not vanish on all of $X_{n-k+1}$, i.e.~the subset $\{s_k=0\}\subset X_{n-k+1}$ defines an effective divisor, which we can write as a sum of irreducible analytic subvarieties of dimension $n-k$. 
+		
+		By induction assumption, $X_{n-k+1}$ is dual to $c_1^{k-1}(L)$. Since $D_k$ is dual to $c_1(L)$ and intersection is dual to the cup product in cohomology, $D_k\cap X_{n-k+1}=X_{n-k}$ is dual to $c_1^k(L)$. This duality also implies that
+		\begin{equation*}
+			\int_X c_1^n(L)=\int_X c_1^k(L)c_1^{n-k}(L)=\int_{X_{n-k}} c_1^{n-k}(L)
+		\end{equation*}
+		Now, assume that $X_{n-k}$ is reducible, i.e.~$X_{n-k}=V_1\cup V_2$, where $V_1$ and $V_2$ are non-empty analytic subvarieties. Then 
+		\begin{equation*}
+			1=\int_X c_1^n(L)=\int_{X_{n-k}}c_1^{n-k}(L)
+			=\int_{V_1}c_1^{n-k}(L)+\int_{V_2}c_1^{n-k}(L)
+		\end{equation*}
+		This is a contradiction, however, since both terms on the right hand side are positive integers.
+		%WORK NEEDED: Understand this!
+		Thus, the first claim is proven. For the second, we observe that the map $\mu:\mc O_{X_{n-k+1}}\to \mc O_{X_{n-k+1}}\otimes L$ given by multiplication by $s_k$ induces a short exact sequence
+		\begin{equation*}
+			\begin{tikzcd}
+				0 \ar[r] & \mc O_{X_{n-k+1}} \ar[r,"\mu"] & \mc O_{X_{n-k+1}}\otimes L \ar[r] 
+				& \mc O_{X_{n-k}}\otimes L \ar[r] & 0
+			\end{tikzcd}
+		\end{equation*}
+		where the sheaf $\mc O_{X_{n-k}}$ is the quotient of $\mc O_{X_{n-k+1}}$ by the holomorphic functions that vanish along $X_{n-k}\subset X_{n-k+1}$ (which we may think of as simply the restriction of $\mc O$ to $X_{n-k}$). The induced long exact sequence starts with:
+		\begin{equation*}
+			\begin{tikzcd}
+				0 \ar[r] & H^0(X_{n-k+1},\mc O) \ar[r,"\mu"] & H^0(X_{n-k+1},L)
+				\ar[r] & H^0(X_{n-k},L) \ar[r] & \dots
+			\end{tikzcd}
+		\end{equation*}
+		Since the first map is multiplication by $s_k$, we see that the kernel of the restriction map $H^0(X_{n-k+1},L)\to H^0(X_{n-k},L)$ is spanned by $s_k$. Combined with the exact sequence from the induction hypothesis
+		\begin{equation*}
+			\begin{tikzcd}
+				0 \ar[r] & \Span(s_1,\dots,s_{k-1}) \ar[r] & H^0(X,L) \ar[r] & H^0(X_{n-k+1},L)
+			\end{tikzcd}
+		\end{equation*}
+		it is clear that we have an exact sequence
+		\begin{equation*}
+			\begin{tikzcd}[column sep=small]
+				0\! \ar[r] & \Span(s_1,\dots,s_k) \ar[r] & H^0(X,L) \ar[r] 
+				& H^0(X_{n-k+1},L)/\Span(s_k)=H^0(X_{n-k},L)
+			\end{tikzcd}
+		\end{equation*}
+		This is what we wanted to show.
+	\end{myproof}
+	
+	Applying the lemma for $k=n$ shows that $X_0$ is a single point, and that $s_{n+1}$ is non-zero at this point. This shows that $L$ has no base points. Now, we define a holomorphic map $f:X\to \CP^n=\P(H^0(X,L)^*)$ by sending $x\in X$ to the hyperplane $\{s\in H^0(X,L)\mid s(x)=0\}\subset H^0(X,L)$. The fact that $L$ has no base points guarantees that the image of any point is indeed a hyperplane.
+	
+	To see that $f$ is a bijection, consider a hyperplane $H$ in $H^0(X,L)$, spanned by $\{s'_1,\dots,s'_n\}$. Then $f(x)=H$ precisely if $s'_1(x)=\dots =s'_n(x)=0$. By applying the lemma once more for $k=n$ and a basis of $H^0(X,L)$ obtained by adding a linearly independent section to the set $\{s'_j\}$ shows that there is exactly one such point. Thus, $f$ is a holomorphic bijection and therefore a biholomorphism. 
+\end{myproof}
+
+\begin{cor}
+	If $X$ is a compact, connected, complex manifold of dimension $n$ equipped with a positive line bundle $L$ such that $c_1(X)=(n+1)c_1(L)$, then $X$ is biholomorphic to $\CP^n$.
+\end{cor}
+\begin{myproof}
+	We will show that, under these assumptions, $\dim H^0(X,L)=n+1$ and $\int_X c_1^n(L)=1$. 
+	
+	Let $\mc O(1)$ be the hyperplane bundle over $\CP^n$, whose first Chern class is the positive generator $\alpha\in H^2(\CP^n;\Z)$. Its tensor products will, as is usual, be denoted by $\mc O(1)^k=\mc O(k)$ for $k\in\Z$. Set
+	\begin{equation*}
+		P(k)\coloneqq \chi(X,L^k) \qquad \qquad Q(k)\coloneqq \chi(\CP^n,\mc O(k))
+	\end{equation*}
+	The Hirzebruch-Riemann-Roch theorem implies that $P$ and $Q$ are polynomials in $k$: 
+	\begin{align*}
+		\chi(X,L^k)&=\int_X e^{kc_1(L)}\td(X)\\
+		&=\int_X \bigg([\td(X)]_{2k}+kc_1(L)[\td(X)]_{2k-2}+\dots 
+		+\frac{k^nc_1^n(L)}{n!}\bigg)
+	\end{align*}
+	where $[\cdots]_k$ denotes the degree-$k$ component of a mixed cohomology class. Thus
+	\begin{equation*}
+		P(k)=\td[X]+a_1k+\dots +a_n k^n \qquad \qquad 
+		n! a_n=\int_X c_1^n(L)
+	\end{equation*}
+	and analogously
+	\begin{equation*}
+		Q(k)=\td[\CP^n]+b_1 k+\dots b_n k^n \qquad \qquad 
+		n! b_n=\int_X c_1^n(\mc O(1))=1
+	\end{equation*}
+	We will show that these polynomials are identical by showing that they coincide at $n+1$ points, namely $k=0,-1,\dots,-n$. We will do so by repeated application of the Kodaira vanishing theorem. This is possible because the positivity of $L$ implies that $X$ admits a K\"ahler metric (the K\"ahler form being a representative of $c_1(L)$).
+	
+	For $k=0$, the fact that $c_1(X)$ is a positive class implies that $K_X^{-1}$ is a positive line bundle, hence the vanishing theorem asserts $H^k(X,\mc O)=0$ for every $k>0$. This means that $P(0)=\dim H^0(X,\mc O)=1$ and similarly $Q(0)=1$.
+	
+	For $k>0$, $L^k$ is positive, hence by the vanishing theorem
+	\begin{equation*}
+		H^j(X,L^{-k})=0 \qquad\qquad k>0,\ 0\leq j<n
+	\end{equation*}
+	To obtain the same conclusion for $j=n$, note that $c_1(X)-kc_1(L)$ is a positive class for every $k\leq n$. Therefore $K_X\otimes L^k$ is negative and
+	\begin{equation*}
+		H^n(X,L^{-k})\cong H^0(X,K_X\otimes L^k)^*=0 \qquad k\leq n
+	\end{equation*}
+	In conclusion, $H^j(X,L^{-k})=0$ for every $0< k\leq n$ and every $0\leq j\leq n$. The exact same reasoning applies to $H^j(\CP^n,\mc O(-k))$. We deduce that
+	\begin{equation*}
+		 P(-k)=\chi(X,L^{-k})=0=\chi(\CP^n,\mc O(-k))=Q(-k) \qquad \qquad 0<k\leq n
+	\end{equation*}
+	This establishes that $P(k)=Q(k)$ for every $k$. For $k\geq 0$, the vanishing theorem tells us that $H^j(X,L^k)=H^j(\CP^n,\mc O(k))=0$ for every $j>0$. This means that
+	\begin{equation*}
+		P(k)=\dim H^0(X,L^k)=\dim H^0(\CP^n,\mc O(k))=Q(k)
+		\qquad \qquad k\geq 0
+	\end{equation*}
+	It is well-known that $H^0(\CP^n,\mc O(k))$ is the space of homogeneous polynomials in $n+1$ variables. In particular, $\dim H^0(\CP^n,\mc O(1))=n+1=\dim H^0(X,L)$. Furthermore, since $P=Q$, we find in particular that
+	\begin{equation*}
+		n! b_n=\int_{\CP^n} c_1^n(\mc O(1))=1=n! a_n=\int_X c_1^n(L)
+	\end{equation*}
+	This shows that the assumptions of \cref{thm:KOCPn} are indeed satisfied.
+\end{myproof}
+
+By the Lefschetz theorem on $(1,1)$-classes, any class in $H^{1,1}(X;\Z)$ comes from the first Chern class of a line bundle. Moreover, positive classes in $H^{1,1}(X;\Z)$ come from positive line bundles. This allows us to rephrase the corollary without reference to line bundles:
+
+\begin{cor}\label{cor:KOCPn}
+	Any Fano manifold of dimension $n$ with Fano index $n+1$ is biholomorphic to $\CP^n$.
+\end{cor}
+
+\begin{rem}
+	It was proven by Michelsohn that, in fact, the highest possible value for the Fano index is $n+1$ (see~\cite[366]{LM1989} for a proof). Thus, \cref{cor:KOCPn} asserts that $\CP^n$ is the unique Fano manifold with maximal Fano index.
+\end{rem}
+
+Now we are in a position to prove Hirzebruch and Kodaira's rigidity theorem for the complex projective spaces:
+
+\begin{thm}[Hirzebruch-Kodaira~\cite{HK1957}]\label{thm:rigidCPn}
+	If $X$ is a K\"ahlerian complex manifold that is homeomorphic to $\CP^n$, then $X$ is in fact biholomorphic to $\CP^n$.
+\end{thm}
+
+\begin{myproof}
+	Since $X$ is homeomorphic to $\CP^n$, we know that the cohomology ring is $H^*(X;\Z)\cong \Z[g_2]/g_2^{n+1}$, where $g_2$ is a generator in degree two, which we may choose to be a positive multiple of the K\"ahler class associated to a K\"ahler metric on $X$. The assumption that $X$ is K\"ahler implies that $h^{p,p}=1$ and $h^{p,q}=0$ for every $p\neq q$ ($p,q\leq n$). The long exact sequence induced by the exponential exact sequence
+	\begin{equation*}
+		\begin{tikzcd}
+			0 \ar[r] & \Z \ar[r] & \mc O \ar[r] & \mc O^* \ar[r] & 0
+		\end{tikzcd}
+	\end{equation*}
+	then shows that the map $H^1(X;\mc O^*) \to H^2(X;\Z)$, given by the first Chern class, is an isomorphism between the group of isomorphism classes of holomorphic line bundles and $H^2(X;\Z)$. Furthermore, the Hirzebruch-Riemann-Roch theorem applied to the trivial line bundle $E=\mc O$ shows that 
+	\begin{equation*}
+		h^{0,0}-h^{1,0}+\dots \pm h^{n,0}=1=\chi(X,\mc O)=\int_X \td(X)\eqqcolon \td[X]
+	\end{equation*}
+	where we use square brackets to indicate evaluation on the fundamental class.
+	
+	On the other hand, \eqref{eq:todd} gives us an expression in terms of characteristic classes. To evaluate it, we first determine the Pontryagin classes. For this, we need the assumption that $X$ is homeomorphic (and not just homotopy equivalent) to $\CP^n$: The rational Pontryagin classes were proven to be homeomorphism invariants by Novikov~\cite{Nov1966}. Here, the absence of torsion in the cohomology implies that even the integral classes are homeomorphism invariants. The homeomorphism $f:X\to \CP^n$ induces a pullback on cohomology which sends the positive generator $\alpha\in H^2(\CP^n;\Z)$ to $\pm g_2$. Therefore, we have
+	\begin{equation*}
+		f^*p(\CP^n)=(1+f^*\alpha^2)^{n+1}=(1+g_2^2)^{n+1}=p(X)
+	\end{equation*}
+	Now, we study the first Chern class. Recall that $c_1(\CP^n)=(n+1)\alpha$. Since the first Chern class reduces to the second Stiefel-Whitney class modulo two, $\CP^n$ is spin if and only if $n$ is odd. This is a topological property and therefore $c_1(X)=d\cdot g_2$, where $d=2k+n+1$ for some $k\in \Z$. Given this expression for $c_1(X)$, the Todd class becomes
+	\begin{equation*}
+		\td(X)=e^{\frac{1}{2}(2k+n+1)g_2}\bigg(\frac{g_2/2}{\sinh (g_2/2)}\bigg)^{n+1}
+		=e^{kg_2}\bigg(\frac{g_2}{1-e^{-g_2}}\bigg)^{n+1}
+	\end{equation*}
+	and $\td[X]$ is given by the coefficient multiplying $g_2^n$ in this power series. This is easily computed by means of a residue integral:
+	\begin{equation*}
+		\td[X]=\frac{1}{2\pi i}\oint_\gamma e^{kz}\frac{\d z}{(1-e^{-z})^{n+1}}
+	\end{equation*}
+	where $\gamma$ is a (small) loop around $0\in\C$. Substituting $u=1-e^{-z}$, we find 
+	\begin{equation*}
+		\td[X]=\frac{1}{2\pi i}\oint_{\gamma'} \frac{\d u}{u^{n+1}(1-u)^{k+1}}
+	\end{equation*}
+	The answer is now obtained by solving a simple combinatorics problem. We find:
+	\begin{equation*}
+		\td[X]= \binom{n+k}{n}
+	\end{equation*}
+	where the generalized binomial coefficients allow for negative top entry. To reconcile this with the fact that $\td[X]=1$, the only possibilities are $k=0$ or, if $n$ is even, $k=-(n+1)$. This corresponds to $c_1(X)=\pm (n+1)g_2$, where the negative sign is only possible if $n$ is even. 
+	
+	The possibility $c_1(X)=-(n+1)g_2$ is ruled out as a consequence of Yau's resolution of the Calabi conjecture. Indeed, Yau remarked in~\cite{Yau1977} that if the canonical bundle $K_X$ is positive, i.e.~if $-c_1(X)$ is a positive class, then the following inequality holds:
+	\begin{equation*}
+		(-1)^n (2(n+1) c_1^{n-2}c_2[X]-n c_1^n[X])\geq 0
+	\end{equation*}
+	Furthermore, equality holds if and only if $X$ is holomorphically covered by the unit ball in $\C^n$. Because of Yau's resolution of the Calabi conjecture, we may assume that $X$ admits a K\"ahler-Einstein metric. The inequality is then derived through a long curvature computation; we refer to Tosatti~\cite{Tos2017} for the details. Now assume that $c_1(X)=-(n+1)g_2$ and $n$ is even. Since $p_1(X)=(n+1)g_2^2=c_1^2(X)-2c_2(X)$, we find that $2c_2(X)=n(n+1)g_2^2$. This implies:
+	\begin{equation*}
+		2(n+1)c_1^{n-2}c_2[X]-nc_1^n[X]=n(n+1)^n-n(n+1)^n=0
+	\end{equation*}
+	Since $X$ is simply connected, Yau's work implies that it must be biholomorphic to the unit ball, which is a contradiction. Thus, we have shown that $c_1(X)=(n+1)g_2$. Now, we may already invoke \cref{cor:KOCPn} to conclude that $X$ is biholomorphic to $\CP^n$. 
+	
+	However, in this case, it is also simple to directly show that the hypotheses of \cref{thm:KOCPn} are satisfied. The first Chern class induces an isomorphism $H^1(X,\mc O^*)\cong H^2(X;\Z)$, hence there exists a line bundle $L$ with $c_1(L)=g_2$. $g_2^n$ generates the top degree cohomology and therefore $\int_X c_1^n(L)=1$. As for the second assumption, note that $K_X\cong L^{-(n+1)}$ and therefore $F=(K_X\otimes L^{-1})^{-1}$ is a positive line bundle. The Kodaira vanishing theorem asserts:
+	\begin{equation*}
+		0=H^k(X,K_X\otimes F)\cong H^k(X,L) \qquad\qquad \forall k>0
+	\end{equation*} 
+	In particular, $\chi(X,L)=\dim H^0(X,L)$. We apply the Hirzebruch-Riemann-Roch theorem:
+	\begin{align*}
+		\dim H^0(X,L)&=\int_X \ch(L)\td(X)\\
+		&=\int_X e^{g_2}\bigg(\frac{g_2}{1-e^{-g_2}}\bigg)^{n+1}=n+1
+	\end{align*}
+	where the final step is a special case of the residue integral we already computed. This shows that the second assumption of \cref{thm:KOCPn} is also satisfied.
+\end{myproof}
+
+\begin{rem}\leavevmode
+	\begin{numberedlist}
+		\item The theorem can also be phrased as follows: There exists a unique K\"ahlerian complex structure in the homeomorphism class of $\CP^n$.
+		\item In their original proof, Hirzebruch and Kodaira assumed that $X$ is \emph{diffeomorphic} to $\CP^n$, since homeomorphism invariance of the Pontryagin classes had not been established at the time. Furthermore, they were unable to complete the proof in the case $n$ is even, because they could not rule out the case $c_1(X)=-(n+1)g_2$. As explained above, this was done by Yau, using his results on the Calabi conjecture~\cite{Yau1977}.
+	\end{numberedlist}
+\end{rem}
+
+\section{Rigidity of quadric hypersurfaces}
+
+In 1964 Brieskorn published (part of) his doctoral thesis, written under supervision of Hirzebruch. The main result is a precise analog of Hirzebruch and Kodaira's rigidity theorem, for the quadric hypersurfaces $Q_n\subset \CP^{n+1}$ ($n>2$). The idea and methods used in the proof are essentially identical to those used by Hirzebruch and Kodaira, but there are some additional technical complications. Therefore, we have omitted some of the details in certain parts of the proof, though we always indicate where they can be found.
+
+The first complication is that the cohomology of $Q_n$ is slightly more subtle than that of $\CP^n$. The Lefschetz hyperplane theorem applied to both the homology and cohomology shows, when combined with Poincar\'e duality, that $H^k(Q_n;\Z)\cong H^k(\CP^n;\Z)$ for every $k\neq n$. In degree $n$, the universal coefficients theorem implies that there is no torsion. Thus, the Euler characteristic $\chi(Q_n)=c_n[Q_n]$ can be used to determine the final cohomology group. It is computed from the normal bundle sequence:
+\begin{equation*}
+	\begin{tikzcd}
+		 0 \ar[r] & \mc TQ_n \ar[r] & \iota^*\mc T\CP^{n+1} \ar[r] & \iota^*\mc O(2) \ar[r] & 0
+	\end{tikzcd}
+\end{equation*}
+Here $\iota:Q_n\hookrightarrow \CP^{n+1}$ is the inclusion, $\mc TX$ denotes the holomorphic tangent bundle of the complex manifold $X$, and we used that the normal bundle of a quadric hypersurface is $\iota^*\mc O(2)$. This shows that
+\begin{equation*}
+	c(Q_n)=\frac{c(\CP^{n+1})}{c(\mc O(2))}=\frac{(1+h)^{n+2}}{1+2h}
+\end{equation*}
+where $h$ is the restriction of the hyperplane class. Since $Q_n$ is a quadric, $h^n[Q_n]=2$. Thus, the Euler characteristic is given by twice the $n$-th coefficient of
+\begin{equation*}
+	\frac{(1+h)^{n+2}}{1+2h}=(1+h)^{n+2}(1-2h+4h^2-\dots )
+\end{equation*}
+which is given by
+\begin{equation*}
+	\chi(Q_n)=2\sum_{j=0}^n (-2)^j \binom{n+2}{j+2}
+	=\frac{1}{2}\sum_{k=2}^{n+2} (-2)^k \binom{n+2}{k}
+\end{equation*}
+This is easily evaluated, using the binomial theorem:
+\begin{equation*}
+	\sum_{k=0}^{n+2} (-2)^k\binom{n+2}{k}=(1-2)^{n+2}\implies 
+	\chi(Q_n)=n+2+\frac{1}{2}((-1)^n-1)
+\end{equation*}
+We deduce that
+\begin{equation*}
+	H^n(Q_n;\Z)=
+	\begin{cases}
+		0 \qquad & n\text{ odd}\\
+		\Z^2 &n\text{ even}
+	\end{cases}
+\end{equation*}
+The ring structure of the cohomology of $Q_n$ was determined by Ehresmann~\cite{Ehr1934}. We state the result, which may be found in Brieskorn's paper~\cite{Bri1964}, without proof:
+
+\begin{thm}\leavevmode
+	\begin{numberedlist}
+		\item If $n=2m+1>2$ is odd, the cohomology ring of $Q_n$ is generated by two elements, $\alpha$ in degree two and $\beta$ in degree $2m+2$, and is given by:
+		\begin{equation*}
+			H^*(Q_{2m+1};\Z)\cong \Z[\alpha,\beta]/\langle \alpha^{m+1}=2\beta,\ \beta^2=0\rangle
+		\end{equation*}
+		\item If $n=2m>2$ is even, the cohomology ring of $Q_n$ is generated by three elements, $\alpha$ in degree two and $\gamma,\tilde\gamma$ in degree $2m$. They are subject to the relations
+		\begin{equation*}
+			\alpha^m=\gamma+\tilde\gamma \qquad \qquad \alpha\gamma=\alpha\tilde\gamma \qquad \qquad
+			\gamma^2=\tilde\gamma^2
+		\end{equation*}
+		as well one relation which depends on the parity of $m$:
+		\begin{equation*}
+			\gamma^2=0\ \text{if $m$ is odd} \qquad \qquad 
+			\gamma\tilde\gamma=0 \ \text{if $m$ is even}
+		\end{equation*}
+		%These relations actually suffice to show that all terms in degree > n vanish!
+	\end{numberedlist}
+\end{thm}
+
+\begin{rem}
+	For $n=1$, the genus-degree formula shows that we have the two-sphere $\CP^1$ with its trivial cohomology ring. For $n=2$, recall that $Q_2$ is diffeomorphic to $\CP^1\times\CP^1$, which makes it easy to compute the cohomology ring.
+\end{rem}
+
+Much like the complex projective spaces, quadric hypersurfaces admits a characterization in terms of the existence of a special, positive line bundle:
+
+\begin{thm}[Kobayashi \& Ochiai~\cite{KO1973}]\label{thm:KOQn}
+	Let $X$ be a compact, connected, complex manifold of dimension $n$, equipped with a positive line bundle $L$ such that the following conditions hold:
+	\begin{numberedlist}
+		\item $\displaystyle\int_X c_1^n(L)=2$.
+		\item $\dim H^0(X,L)=n+2$.
+	\end{numberedlist}
+	Then $X$ is biholomorphic to $Q_n$.
+\end{thm}
+\begin{myproof}[Sketch of Proof]
+	We proceed as in \cref{lem:KOCPn}. Pick a basis $\{s_j\}$ of $H^0(X,L)$ and consider the corresponding divisors $D_j$, which are each Poincar\'e dual to $c_1(L)$. Set $X_n=X$ and $X_{n-j}=D_1\cap \cdots \cap D_j$ for $1\leq j \leq n$. There is some maximal integer $d$ such that for every $j\leq d$, $X_{n-j}$ is irreducible of dimension $n-j$, with dual $c_1^j(L)$, and we have an exact sequence
+	\begin{equation*}
+		\begin{tikzcd}
+			0 \ar[r] & \Span(s_1,\dots,s_j)\ar[r] & H^0(X,L) \ar[r] & H^0(X_{n-j},L)
+		\end{tikzcd}
+	\end{equation*}
+	However, $d<n$ because if $d=n$ then $X_0$ would be a single point, and dual to $c_1^n(L)$. But then $\int_X c_1^n(L)=1$, which is a contradiction.
+
+	Thus, one has to investigate $X_{n-(d+1)}$; this is first done under the assumption $d\leq n-2$. $X_{n-(d+1)}$ is still dual to $c_1^{d+1}(L)$, and therefore
+	\begin{equation*}
+		\int_X c_1^n(L)=\int_{X_{n-(d+1)}} c_1^{n-(d+1)}(L)=2
+	\end{equation*}
+	$X_{n-(d+1)}$ is reducible, but the above shows that it has just two irreducible components, $V$ and $V'$. $c_1^{n-(d+1)}(L)$ integrates to $1$ on both, and one proves that $V$ and $V'$ are distinct by showing that the line bundles they define on $X_{n-d}$, where they may be regarded as divisors, are different: Denoting the line bundles by $F$ and $F'$, we may write $L\cong F\otimes F'$ on $X_{n-d}$. Hence 
+	\begin{equation*}
+		2=\int_X c_1^n(L)=\int_{X_{n-d}}c_1^{n-d}(L)=\int_{X_{n-d}} (c_1(F)+c_1(F'))^{n-d}
+	\end{equation*}
+	Since $n-d\geq 2$, we find a contradiction if $c_1(F)=c_1(F')$. Furthermore, multiplication by $s_{d+1}$ induces an exact sequence 
+	\begin{equation*}
+		\begin{tikzcd}[column sep=small]
+			0 \ar[r] & H^0(X_{n-d},\mc O_{X_{n-d}}) \ar[r] & H^0(X_{n-d},\mc O_{X_{n-d}}\otimes L) \ar[r] 
+			& H^0(X_{n-d},\mc O_{X_{n-(d+1)}}\otimes L)
+		\end{tikzcd}
+	\end{equation*}
+	But that means that the kernel of the restriction $H^0(X_{n-d},L)\to H^0(X_{n-(d+1)},L)$ is spanned by $s_{d+1}$. Using the exact sequence relating $H^0(X,L)$ and $H^0(X_{n-d},L)$, we see that the kernel of $H^0(X,L)\to H^0(X_{n-(d+1)},L)$ is spanned by $\{s_1,\dots,s_{d+1}\}$. Now, one would like to refine this result to obtain information about $H^0(V,L)$ and $H^0(V',L)$. We will not describe this more technical discussion here and refer the interested reader to~\cite{KO1973} instead. The end result is that $\dim H^0(V,L)=\dim V+1=n-d$ and similarly $\dim H^0(V',L)=n-d$, and that $H^0(X,L)$ surjects onto each of these vector spaces. 
+	
+	Now one may apply the methods of the proof of \cref{thm:KOCPn}, which remain valid under the weaker assumptions that the spaces involved are irreducible complex spaces, which $V$ and $V'$ are. This allows us to conclude that, when restricted to $V$ or $V'$, $L$ has no base points. Since $H^0(X,L)$ surjects onto $H^0(V,L)$ and $H^0(V',L)$, this shows that $L$ is base point free on $X$ (assuming $d\leq n-2$). The absence of base points when $d=n-1$ can be proven independently. 
+	
+	Thus one obtains an embedding into a projective space. Since $\dim H^0(X,L)=n+2$, we embed into $\CP^{n+1}=\P(H^0(X,L)^*)$, using the map $f$ that sends $x\in X$ to $\{s\in H^0(X,L)\mid s(x)=0\}\subset H^0(X,L)$, which indeed defines a hyperplane or equivalently a ray in the dual space $H^0(X,L)^*$.
+	
+	This induces a natural bundle map $L\to \mc O(1)$: Given $(x,u)\in L$, there is a section $s\in H^0(X,L)$ such that $s(x)=u$. This section is only uniquely determined modulo sections that vanishes at $x$, i.e.~modulo the hyperplane $f(x)\subset H^0(X,L)$. On the other hand, given $(f(x),v)\in\mc O(1)$ we can think of $v$ precisely as an element of $H^0(X,L)/f(x)$. This identification yields a bundle map and shows that $f^*\mc O(1)\cong L$. We can use this to prove that the preimage of a point is finite: Restricted to a connected component of the preimage of a point, $f^*\mc O(1)\cong L$ must be trivial, but at the same time ample. Thus, the connected component must be a single point, and the full preimage must be a finite set.
+	
+	Therefore, the image $f(X)$ is a closed submanifold of codimension one in $\CP^{n+1}$, and $f$ is an open mapping onto its image (since it has maximal rank everywhere). The hypersurface $f(X)$ intersects a generic complex line $k$ times, where $k$ is the degree of the hypersurface; another way to say this is that $\int_{f(X)} c_1^n(\mc O(1))=k$. Now let $\sigma_y=\lvert f^{-1}(y)\rvert$. Then the preimage of the $k$ points consists of $\sigma_{y_1}+\dots +\sigma_{y_k}$ points in $X$. Correspondingly, we have:
+	\begin{equation*}
+		\int_X f^*c_1^n(\mc O(1))=\int_X c_1^n(L)=\sigma_{y_1}+\dots+\sigma_{y_k}=2
+	\end{equation*}
+	%WORK NEEDED: KO have an inequality: What's going on precisely?
+	where the last equality holds by assumption. This shows that $k\in \{1,2\}$. But the image of $f$ is not a hyperplane because otherwise basis $\{\sigma_j\}$ of $H^0(X,L)$ did not consist of linearly independent sections, which is impossible. Thus, $k=2$ and $\sigma_{y_1}=\sigma_{y_2}=1$. This means that $\sigma_y=1$ for arbitrary, generic $y\in f(X)$. Because $f$ is open, $\sigma_y$ depends lower semi-continuously on $y$ and therefore must equal $1$ everywhere, i.e.~$f$ is injective and holomorphic. This means that $f:X\to \CP^{n+1}$ is a biholomorphism onto a complex quadric hypersurface $Q_n\subset \CP^{n+1}$.	
+\end{myproof}
+
+\begin{cor}
+	If $X$ is a compact, connected, complex manifold of dimension $n$ equipped with a positive line bundle $L$ such that $c_1(X)=nc_1(L)$, then $X$ is biholomorphic to $Q_n$.
+\end{cor}
+\begin{myproof}
+	We will prove that $\dim H^0(X,L)=n+2$ and $\int_X c_1^n(L)=2$. We will denote the hyperplane bundle $\mc O(1)$ of $\CP^{n+1}$, restricted to $Q_n$, by $G$, and set 
+	\begin{equation*}
+		P(k)\coloneqq \chi(X,L^k) \qquad \qquad Q(k)\coloneqq \chi(Q_n,G^k)
+	\end{equation*}
+	By the Hirzebruch-Riemann-Roch theorem, they are polynomials of order (at most) $n$, whose highest order coefficients determines $\int_X c_1^n$. We will show they coincide by doing so at $n+1$ points, namely $k=0,-1,\dots,-n$. We will be brief, since the reasoning is the same as in the corresponding proof in the previous section. 
+	
+	Since $K^{-1}_X$ is positive, $P(0)=Q(0)=1$. For $0<k<n$, we use that $L^k$ and $G^k$ are positive, hence $H^j(X,L^{-k})=0$ for $0\leq j<n$. For $j=n$, the same conclusion holds because $c_1(X)-kc_1(L)$ is a positive class for $0<k<n$, hence $H^n(X,L^{-k})\cong H^0(X,K_X\otimes L^k)^*=0$. Thus, $P(-k)=0=Q(-k)$ for these values of $k$. 
+	
+	Finally, we treat the case $k=n$. Note that $c_1(K_X\otimes L^n)=0$. Since $H^1(X,\mc O_X)=0$ by our previous arguments, the Jacobian variety $\Pic^0(X)$ consists of a single point, hence $K_X\otimes L^n\cong \mc O_X$ and we see that $P(n)=P(0)=Q(0)=Q(n)$. This shows that $P$ and $Q$ are identical. Inspecting the highest order coefficients, we conclude that 
+	\begin{equation*}
+		\int_X c_1^n(L)=\int_{Q_n}c_1^n(G)=2
+	\end{equation*}
+	For $k\geq 0$, we have $H^j(X,L^k)=0$ for every $j>0$ and similarly for $G^k$ on $Q_n$, hence $\dim H^0(X,L^k)=\dim H^0(Q_n,G^k)$. In particular $\dim H^0(X,L)=\dim H^0(Q_n,G)$. 
+	
+	The global sections of $\mc O(1)$ over $\CP^{n+1}$ all restrict to non-zero global sections over $Q_n$, since $Q_n$ is no hyperplane. The fact that the restricted sections of $\mc O(1)$ constitute all global sections of $G$ is proven as follows. $Q_n\subset \CP^{n+1}$ defines a divisor, which corresponds to the line bundle $\mc O(2)$. Multiplication by a generic section defines a sheaf homomorphism $\mc O\to \mc O(2)$. Dualizing this map, we obtain an injective homomorphism $\mc O(-2)\to \mc O$ whose image is precisely the ideal sheaf of holomorphic functions that vanish along $Q_n$. We obtain the short exact sequence
+	\begin{equation*}
+		\begin{tikzcd}
+			0 \ar[r] & \mc O(-2) \ar[r] & \mc O_{\CP^{n+1}} \ar[r] & \mc O_{Q_n} \ar[r] & 0
+		\end{tikzcd}
+	\end{equation*}
+	Twisting this sequence by $\mc O(1)$, and using the Kodaira vanishing theorem to find $H^1(\CP^{n+1},\mc O(-1))=0$, we deduce that the restriction map $H^0(\CP^{n+1},\mc O(1))\to H^0(Q_n,G)$ is surjective. Therefore, $\dim H^0(X,L)=\dim H^0(\CP^{n+1},\mc O(1))=n+2$, and the assumptions of \cref{thm:KOQn} are satisfied.
+\end{myproof}
+
+Once again, the Lefschetz theorem on $(1,1)$-classes allows us to reformulate this:
+
+\begin{cor}\label{cor:KOQn}
+	Any Fano manifold of dimension $n$ with Fano index $n$ is biholomorphic to $Q_n$.\proofclear
+\end{cor}
+
+Thus, a Fano manifold $X$ with (nearly) maximal Fano index $I(X)$, or equivalently with \emph{Fano coindex} $\dim X+1-I(X)$ less or equal to $1$, is characterized by its dimension. This suggests that Fano manifolds with high coindex display a certain rigidity. Indeed, classifications are known for coindex two (by Fujita~\cite{Fuj1980}) and three (due to Mukai~\cite{Muk1989}), and we will make use of the latter in \cref{chap:invarstructures}. For an informal introduction to some of the concepts involved, see~\cite{Deb2013}.
+%WORK NEEDED: Formatting of the Debarre reference!
+
+\begin{thm}[Brieskorn~\cite{Bri1964}]
+	If $X$ is a K\"ahler manifold that is homeomorphic to $Q_n$ ($n>2$), then:
+	\begin{numberedlist}
+		\item If $n$ is odd, $X$ is biholomorphic to $Q_n$.
+		\item If $n$ is even and $g_2\in H^2(X;\Z)$ is the positive generator (i.e.~a positive multiple of the K\"ahler class), then $c_1(X)=\pm n g_2$. If the sign is positive, $X$ is biholomorphic to $Q_n$.
+	\end{numberedlist}
+\end{thm}
+\begin{myproof}
+	We proceed by reducing the claim to \cref{cor:KOQn}, i.e.~we will determine the first Chern class, and show that it is positive with divisibility $n$, unless $n$ is even, in which case we cannot rule out the possibility that $c_1(X)$ is negative. In doing so, we mimic the proof of \cref{thm:rigidCPn}. The cohomology ring of $X$ is known, by assumption. Denote the positive generator of $H^2(X;\Z)$---positivity being defined with respect to the K\"ahler metric---by $g_2$. 
+	
+	Since the odd Betti numbers vanish, while the even Betti numbers are less or equal to two, all the cohomology is of type $(p,p)$. This means that the first Chern class classifies holomorphic line bundles. Furthermore, the Hirzebruch-Riemann-Roch theorem tells us that $\td[X]=h^{0,0}=1$. Now, we use its expression in terms of Pontryagin classes and $c_1(X)$ to constrain $c_1(X)$. Because of the absence of torsion, the integral Pontryagin classes are homeomorphism invariants, i.e.~we have $p(X)=f^*p(Q_n)$, where $f:X\to Q_n$ is the given homeomorphism and $p(X)$ the total Pontryagin class of $X$. Recall that $T\CP^{n+1}\cong TQ_n\oplus \mc O(2)$ as complex vector bundles, hence
+	\begin{equation*}
+		p(Q_n)=\frac{(1+\alpha^2)^{n+2}}{1+4\alpha^2}
+	\end{equation*}
+	where $\alpha\in H^2(Q_n;\Z)$ is the positive generator. Since $f^*\alpha=\pm g_2$, we see that $p(X)$ is given by the same expression, with $\alpha$ replaced by $g_2$. We also have
+	\begin{equation*}
+		\hat A(p(X))=\bigg(\frac{g_2/2}{\sinh(g_2/2)}\bigg)^{n+2}\frac{\sinh g_2}{g_2}
+		=\frac{1}{2} g_2^{n+1} e^{-\frac{n}{2}g_2} \frac{1-e^{-2g_2}}{(1-e^{-g_2})^{n+2}}
+	\end{equation*} 
+	Regarding the first Chern class, the fact that $c_1(Q_n)=n\alpha$ means that $Q_n$---and therefore $X$---is spin if and only if $n$ is even, hence $c_1(X)=(2k+n)g_2$ for some $k\in\Z$. The Todd class is then
+	\begin{equation*}
+		\td(X)=e^{\frac{1}{2}(2k+n)g_2}\hat A(p(X))
+		=\frac{1}{2}g_2 ^{n+1} e^{kg_2} \frac{1-e^{-2g_2}}{(1-e^{-g_2})^{n+2}}
+	\end{equation*}
+	Since $g_2^n$ is \emph{twice} the positive generator in top degree, the Todd genus is given by
+	\begin{equation*}
+		\td[X]=\oint_\gamma e^{k z} \frac{1-e^{-2 z}}{(1-e^{-z})^{n+2}}\d z
+	\end{equation*}
+	The first term is exactly the integral we carried out in the proof of \cref{thm:rigidCPn}. The second term is also of this form, with $k$ replaced by $k-2$. Thus, the result is
+	\begin{equation*}
+		\td[X]=\binom{n+k+1}{n+1}-\binom{n+k-1}{n+1}
+	\end{equation*}
+	Equating this expression with $1$ leads to the conclusion that, if $n$ is odd, $c_1(X)=ng_2$ and, if $n$ is even, then $c_1(X)=\pm ng_2$. \Cref{cor:KOQn} then yields our claims.
+\end{myproof}
+
+\begin{rem}\leavevmode
+	\begin{numberedlist}
+		\item In this case, Yau's Chern number inequality does not rule out negative sign for $n$ even. However, to the best of our knowledge no examples that satisfy $c_1(X)=-ng_2$ are known, and it is generally believed that they do not exist.
+		\item For a proof that does not rely on the work of Kobayashi and Ochiai, we refer the reader to Brieskorn's paper~\cite{Bri1964} or Morrow's review~\cite{Mor1969}.
+		\item There is no analogous result for $n=2$. It is well-known that the quadric hypersurface $Q_2\subset \CP^3$ is diffeomorphic to $\CP^1\times \CP^1$, and Hirzebruch constructed an infinite family of distinct complex structures on this manifold which turn $\CP^1\times \CP^1$ into a projective (hence K\"ahler) manifold~\cite{Hir1951}. This phenomenon is related to the fact that $H^2(Q_2;\Z)\cong \Z\oplus\Z$, which actually renders the second claim of the theorem meaningless for $n=2$. 
+	\end{numberedlist}
+\end{rem}
+
+\section{Improvements on the classical results}
+
+In this section, we give an overview of some improvements on the original results of Hirzebruch, Kodaira and Brieskorn. These results typically take the form of the weakening of one or more of the assumptions.
+
+We start by discussing improvements on the rigidity theorem for the complex projective spaces. Perhaps the easiest thing to do is to closely examine the above proof and note exactly which assumptions are really necessary for it to go through. It is clear that the proof relies heavily on the fact that $X$ is compact K\"ahler, so this assumption cannot easily be removed. However, one does not quite need to assume that $X$ is homeomorphic to $\CP^n$. More precisely, the proof uses only the following pieces of information:
+\begin{numberedlist}
+	\item The integral cohomology ring of $X$ coincides with that of $\CP^n$.
+	\item The Pontryagin classes of $X$ coincide with those of $\CP^n$.
+	\item $X$ is spin if and only if $n$ is odd.
+	\item $X$ is simply connected; this is used to rule out the case $c_1(X)=-(n+1)g_2$, where $n$ is even.
+\end{numberedlist} 
+Li~\cite{Li2016} observed that the assumption is in fact superfluous: The residue calculation in the proof of \cref{thm:rigidCPn} works just as well if $k$ is only half-integer, and a short computation shows that the resulting condition $\binom{n+k}{n}=1$ can only be satisfied if $k\in \Z$. 
+
+Furthermore, the assumption that $X$ is simply connected is not needed in case $n$ is odd, and if $n$ is even it suffices to assume that $\pi_1(X)$ is finite. Assume $c_1(X)=-(n+1)g_2$, where $n$ is even. Then Yau's Chern number inequality shows that the universal covering of $X$ is the unit ball, but since $\pi_1(X)$ is finite, the universal covering of $X$ must be compact, unlike the unit ball. We conclude:
+
+\begin{prop}[Li~\cite{Li2016}]
+	If $X$ is a compact K\"ahler manifold of dimension $n$ with the same integral cohomology ring and Pontryagin classes as $\CP^n$, then $X$ is biholomorphic to $\CP^n$ if $n$ is odd, while if $n$ is even then the same conclusion holds under the assumption that $\pi_1(X)$ is finite.
+\end{prop}
+
+There have not been any breakthroughs that allow major improvements over the classical results and are valid for every dimension. However, several authors have found ways to make progress in low-dimensional cases. The first result of this type was proven by Yau, who used his resolution of Calabi's conjecture to prove that any complex surface homotopy equivalent to $\CP^2$ is biholomorphic to it~\cite{Yau1977}. Note that one does not have to assume that the surface is K\"ahler since complex surfaces with even first Betti number are known to be K\"ahler (the proof of this claim was completed in 1983 by Siu~\cite{Siu1983}, but the parts needed by Yau were already known at the time). In fact, Debarre~\cite{Deb2015} pointed out that it suffices to assume that the cohomology groups of the compact, complex surface coincide with those of $\CP^2$.
+
+Using similar techniques as Yau, and relying on the classification of Fano three-folds, Lanteri and Struppa~\cite{LS1986} proved a similar result in dimension three: This time, one needs to assume (as always, when $n>2$) that $X$ is K\"ahler, and that its cohomology ring is the same as that of $\CP^3$. Fujita~\cite{Fuj1980a} investigated the cases $n=4,5$ and showed that it suffices to assume that $X$ is \emph{Fano} and has the same cohomology ring as $\CP^n$ in these cases. 
+
+A new approach was pioneered by Libgober and Wood, who extracted previously unknown information from the Hirzebruch-Riemann-Roch theorem:
+
+\begin{thm}[Libgober-Wood~\cite{LW1990}]\label{thm:LibgoberWoodChern}
+	For a compact, complex manifold $X$, the Chern number $c_1c_{n-1}[X]$ is determined by the Hodge numbers.
+\end{thm}
+
+For a proof, we refer to their paper, cited above. This theorem was rediscovered by Salamon in~\cite{Sal1996}. Since the Betti numbers of $\CP^n$ and $Q_n$ are all lower or equal to two, they determine the Hodge numbers, so we deduce:
+
+\begin{cor}
+	A K\"ahler manifold with the same Betti numbers as $\CP^n$ ($Q_n$) has the same Chern number $c_1c_{n-1}[X]$ as $\CP^n$ ($Q_n$).
+\end{cor}
+
+Equipped with this information, as well as the Todd genus (which, of course, only depends on Hodge numbers as well), they proved:
+
+\begin{prop}
+	If $X$ is a compact K\"ahler manifold of dimension $n\leq 6$ and homotopy equivalent to $\CP^n$, then $X$ is biholomorphic to $\CP^n$.
+\end{prop}
+\begin{myproof}[Proof for $n=4$]
+	Let $g_2\in H^2(X;\Z)$ be the positive generator. The Hodge numbers fix $c_4(X)=5g_2^4$ and $c_1c_3(X)=50g_2^4$, as well as the Todd (or arithmetic) genus $\td[X]=1$ Since the Stiefel-Whitney classes are homotopy invariants, $c_1(X)$ is an odd multiple of $g_2$. Because this multiple must divide $50$, the only possibilities are $c_1(X)=\pm g_2, \pm 5g_2, \pm 25g_2$. Expressing the Todd class in terms of Chern classes, we have:
+	\begin{equation*}
+	3c_2^2(X)+4c_1^2c_2(X)-c_1^4(X)=675g_2^2
+	\end{equation*}
+	We can interpret this as a quadratic equation for $c_2(X)$. Since $c_2(X)$ is an integral multiple of $g_2^2$, the discriminant must in any case be a perfect square multiple of $g_2^4$. The discriminant equals $4(7c_1^4(X)+2025g_2^4)$ and a case-by-case check shows that this is only a perfect square multiple of $g_2^4$ if $c_1(X)=\pm 5 g_2$. The possibility $c_1(X)=-5g_2$ is ruled out by Yau's Chern number inequality, proving $c_1(X)=5g_2$. The uniqueness theorem of Kobayashi and Ochiai now completes the proof.
+\end{myproof}
+
+\begin{rem}
+	By close inspection of the proof, Debarre~\cite{Deb2015} found that it suffices to assume that the K\"ahler manifold $X$ has the same cohomology ring of $\CP^n$ in the cases $n=3,5$ while in dimensions $4$ and $6$ this leaves the possibility that $X$ is a ball quotient.
+\end{rem}
+
+The cases $n=5,6$ are analogous, though computationally more complicated. Thus, the strategy is to reduce the possible values of $c_1(X)$ to a short list by means of the known Chern numbers. These are then eliminated one by one, using further information such as the Todd genus and other equations derived from the Hirzebruch-Riemann-Roch theorem, whether $X$ is spin or not, and Yau's Chern number inequality. This method, however, is inherently low-dimensional because the constraints derived from the Hirzebruch-Riemann-Roch theorem become less powerful as the number of different Chern numbers goes up---which rapidly happens as the dimension increases.
+
+One advantage of the approach of Libgober and Wood is that it is not specific to $\CP^n$, and may be applied to any K\"ahler manifold with sufficiently simple cohomology. For instance, they showed in the same paper that a K\"ahler manifold homotopy equivalent to the quadric $Q_3$ is biholomorphic to it. However, as we already saw in the previous section, the methods based on the Hirzebruch-Riemann-Roch theorem do not quite suffice to prove the same statement for even-dimensional quadrics. Accordingly, Libgober and Wood were only able to show that a K\"ahler manifold homotopy equivalent to $Q_4$ is either biholomorphic to $Q_4$ or has $c_1(X)=-4g_2$, where $g_2\in H^2(X;\Z)$ is the positive generator. As mentioned before, the crucial point is that Yau's Chern number inequality does not rule out this possibility.
+
+Finally, we briefly comment on work in a quite different direction: Attempts to relax the K\"ahler assumption, which plays a crucial role in all the works we have discussed so far. The existing literature is focused on relaxing the K\"ahler assumption to the weaker assumption that $X^n$ is \emph{Moishezon}, which means that it admits $n$ algebraically independent meromorphic functions. Moishezon manifolds still admit a Hodge decomposition, and therefore one can mimic some parts of the proof in the K\"ahler case. Under this assumption, Peternell was able to prove that in the case $n=3$, $X$ being homeomorphic to $\CP^3$ ($Q_3$) suffices to prove it must be biholomorphic to $\CP^3$ ($Q_3$)~\cite{Pet1986}. His proof relies on breakthroughs in the structure theory of complex three-folds (the so-called minimal model program), due Mori. It appears that no analogous results have been achieved in higher dimensions, though some headway was made under additional technical assumptions (see e.g.~\cite{Nak1992,Pet1986a}).

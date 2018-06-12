@@ -1,0 +1,423 @@
+\chapter{Riemannian submersions}
+\label{app:submersions}
+
+Besides the variational approach discussed in \cref{chap:homogeneous}, an important approach to the study of invariant Einstein metrics is through the theory of Riemannian submersions. However, these techniques find application in other areas of geometry too, as exemplified by \cref{chap:twistor}. The first systematic exposition of the theory was given by O'Neill~\cite{ON1966}, and subsequently expanded by Besse~\cite[Ch.~9]{Bes2008}, whose notational conventions we will follow in this section.
+
+\section{O'Neill's \texorpdfstring{$A$}{A} and \texorpdfstring{$T$}{T} tensors}
+
+Let $(M,g)$ and $(B,\check g)$ be Riemannian manifolds and $\pi:M\to B$ a smooth submersion. For $x\in \pi^{-1}(b)\eqqcolon F_b$, we call the vectors in $T_xM$ that are tangent to the fiber $F_b$ \emph{vertical}, and doing this at each point we obtain the vertical subbundle $\mc V$. Note that, since the fibers are submanifolds, the vertical subbundle is always integrable. Tangent vectors that lie in the complementary (orthogonal with respect to $g$) distribution $\mc H$ are called \emph{horizontal}. It is clear that $\ker(\dif_x \pi)=\mc V_x$, hence there is a linear isomorphism $\mc H_x\cong T_bB$.
+
+\begin{mydef}
+	The triple $((M,g),(B,\check g),\pi)$ is called a \emph{Riemannian submersion} if, for every $b\in B$, $\dif_x\pi\big|_{H_x}:\big(\mc H_x,g_x|_{\mc H_x}\big)\to (T_b B,\check g_b)$ is an isometry for every $x\in F_b$. 
+\end{mydef}
+
+\begin{ex}
+	Start from a Riemannian manifold $(B,\check g)$ and another manifold $F$, with a smooth family of metrics parametrized by $B$: $\{\hat g^{(b)}\}_{b\in B}$. Consider the product manifold $B\times F$ with $\pi_i$ the canonical projection onto the $i$-th factor. Then define a metric by $g_{(b,v)}=\pi_1^*\check g_b+\pi_2^*\hat g^{(b)}_v$ to obtain the structure of a Riemannian submersion. This construction has some well-known special cases. If we set $\hat g^b=\hat g$ for some fixed metric $\hat g$ on $F$, we obtain a Riemannian product. If, instead, we consider a strictly positive, smooth function $f:B\to \R$ and set $\hat g^b=f(b)\hat g$, we obtain a so-called \emph{warped product}.
+\end{ex}
+
+The notion of Riemannian submersion is dual to that of a Riemannian (or isometric) immersion, which have been studied since the early days of differential geometry. It was already understood by Gauss that such immersions can be described by a tensor field, the second fundamental form, that describes to what extent the tangent bundle of the immersed manifold fails to be preserved by the Levi-Civit\`a connection of the ambient space.
+
+Taking inspiration from the theory of isometric immersions, one may hope to build up an analogous theory for Riemannian submersions $((M,g),(B,\check g),\pi)$, describing them in terms of certain tensor fields which connect the curvatures of $M$, $B$ and the fibers $F_b$ via analogs of the Gauss-Codazzi equations. Indeed, O'Neill defined two tensor fields to precisely this end.
+
+\begin{mydef}
+	Consider a Riemannian submersion $\pi:M\to B$. We collect the second fundamental forms of all fibers $F_b$, together with their adjoints, into a tensor field $T\in\Omega^1(\Hom(TM))$. Denoting the projections onto the vertical and horizontal subbundles by $\mc V$ and $\mc H$, we define $T$ by:
+	\begin{equation*}
+		T_E F=\mc H(\nabla_{\mc V E}\mc V F)+\mc V(\nabla_{\mc V E}\mc H F)\qquad \qquad E,F\in \Gamma(TM)
+	\end{equation*}
+	where $\nabla$ is the Levi-Civit\`a connection on $M$.
+\end{mydef}
+
+\begin{lem}
+	Let $E,F,K\in\Gamma(TM)$ be arbitrary vector fields. The tensor field $T$ has the following properties:
+	\begin{numberedlist}
+		\item When restricted to vertical vector fields $U,V$, the tensor $T$ is the second fundamental form of the corresponding fiber. In particular, $T_U V=T_V U$.
+		\item $T_E=T_{\mc V E}$.
+		\item $T_E$ is skew-symmetric, i.e.~$g(T_E F,K)+g(F,T_E K)=0$. Furthermore, $T_E$ interchanges $\mc V$ and $\mc H$.
+	\end{numberedlist}
+\end{lem}
+\begin{myproof}\leavevmode
+	\begin{numberedlist}
+		\item Since $\mc H U=\mc H V=0$ and $\mc V U=U$, $\mc V V=V$, we see $T_U V=\mc H(\nabla_U V)$, which is precisely the definition of the second fundamental form of the fiber. The symmetry property can be seen directly, using the fact that $\nabla$ is torsion-free and $\mc V$ is integrable:
+		\begin{equation*}
+			T_U V-T_V U=\mc H(\nabla_U V-\nabla_V U)=\mc H([U,V])=0
+		\end{equation*}
+		The last step uses the fact that integrability implies involutivity of $\mc V$.
+		\item This is obvious.
+		\item The fact that $T_E$ interchanges $\mc V$ and $\mc H$ is clear. Therefore we may assume either that $F$ is vertical and $K$ horizontal, or vice versa. We may also assume $E$ is vertical. Thus, in the first case we find:
+		\begin{align*}
+			g(T_EF, K)+g(F,T_EK)&=g(\mc H(\nabla_E F),K)+g(F,\mc V(\nabla_E K))\\
+			&=g(\nabla_E F,K)+g(F,\nabla_E K)=E(g(F,K))\\
+			&=0
+		\end{align*}
+		where we used metric-compatibility of $\nabla$. If $F$ is horizontal and $K$ vertical, analogous manipulations lead to the same result.
+	\end{numberedlist}
+\end{myproof}
+
+From the first property, it is clear that $T\equiv 0$ implies that every fiber has vanishing second fundamental form, i.e.~is totally geodesic. The third property implies the converse. Thus, $T$ vanishes if and only if all fibers are totally geodesic.
+
+\begin{mydef}
+	Interchanging $\mc V$ and $\mc H$, we define another $(1,2)$-tensor field $A$ by:
+	\begin{equation*}
+		A_E F=\mc V(\nabla_{\mc H E}\mc H F) + \mc H(\nabla_{\mc H E} \mc V F) \qquad \qquad E,F\in\Gamma(TM)
+	\end{equation*}
+\end{mydef}
+
+Some of its properties are similar to those of $T$ and the proofs are analogous:
+
+\begin{lem}
+	Let $E,F,K$ be vector fields. The tensor field $A\in\Omega^1(\Hom(TM))$ has the following properties:
+	\begin{numberedlist}
+		\item $A_E=A_{\mc H E}$.
+		\item $A_E$ is skew-symmetric, i.e.~$g(A_E F,K)+g(F,A_E K)=0$. Furthermore, $A_E$ interchanges $\mc V$ and $\mc H$.\proofclear
+	\end{numberedlist}
+\end{lem}
+
+The interpretation of $A$ is as the obstruction to integrability of the horizontal subbundle, as justified by the following result:
+
+\begin{prop}[O'Neill,~\cite{ON1966}]
+	Let $X,Y\in T_pM$ be horizontal. Then $A_X Y=\frac{1}{2}\mc V [X,Y]$, or equivalently $A_X Y=-A_Y X$.
+\end{prop}
+\begin{myproof}
+	Since $\nabla$ is torsion-free, we find: 
+	\begin{equation*}
+		\mc V[X,Y]=\mc V(\nabla_X Y-\nabla_Y X)=A_X Y-A_Y X
+	\end{equation*}
+	establishing our claim of equivalence. It suffices to show that $A_X X=0$. Since $A$ is a tensor, we may extend $X$ to a convenient vector field. We call a vector field $X$ \emph{basic} if it is horizontal and $\pi$-related to a vector field $\check X$ on $B$. Note that any vertical vector field is $\pi$-related to the zero section of $TB$, and that naturality of the Lie bracket implies that $\dif \pi([X,Y])=[\check X,\check Y]$. In particular, if $U$ is vertical then $[X,U]$ is vertical.
+	
+	Now take $X$ to be basic. Then its length is constant along fibers because its square equals $\check g(\check X,\check X)$ and therefore $U(g(X,X))=0=2g(\nabla_U X,X)$ when $U$ is vertical. On the other hand:
+	\begin{align*}
+		g(\nabla_U X,X)&=g(\nabla_X U,X)+g([U,X],X)=X(g(U,X))-g(U,\nabla_X X)\\
+		&=g(U,A_X X)
+	\end{align*}
+	Since $A_X X$ is vertical, we conclude that in fact $A_X X=0$.
+\end{myproof}
+
+Thus, $A\equiv 0$ if and only if $\mc H$ is integrable.
+
+The tensors $A$ and $T$ appear in the decomposition of covariant derivatives on $M$ in terms of horizontal and vertical components. Some straightforward but tedious computations (carried out in~\cite{ON1966,Gra1967}) then yield expressions for the curvature of $M$ in terms of the curvatures of the fibers and base, as well as the tensors $A$ and $T$. 
+
+Due to the symmetries of the curvature, all information is contained in five ``fundamental'' equations, which correspond to the number of horizontal vector fields present in the expression $g(R(E,F)K,L)$ (here, $R$ is the Riemannian curvature of $M$). Having no horizontal fields corresponds the analog of the Gauss equation, while taking one horizontal field yields the Codazzi equation. They relate the curvature of $M$ to that of the fibers through $T$. When three or four vector fields are horizontal, one obtains the ``dual'' equations, which Gray humorously calls the ``Cogauss and Dazzi equations''. They relate $R$ and the curvature of the base. The intermediate case yields the analog of the Ricci equation. These results are neatly repackaged in terms of the sectional curvature:
+
+\begin{thm}[O'Neill,~\cite{ON1966}]\label{thm:submersioncurvature}
+	Let $\pi:M\to B$ be a Riemannian submersion with fibers $F$, let $X,Y$ denote horizontal vectors (and $\check X\coloneqq \dif\pi(X),\check Y\coloneqq \dif\pi(Y)$ the corresponding vectors on $B$) and $U,V$ vertical vector fields, all of them mutually orthonormal. Then the sectional curvatures $\mc K,\hat{\mc K},\check{\mc K}$ of the total space, fibers and base satisfy the following relations:
+	\begin{align*}
+		\mc K(U,V)&=\hat{\mc K}(U,V)+|T_U V|^2-g(T_U U,T_V V) \\
+		\mc K(X,U)&=g((\nabla_X T)_U U,X)-|T_U X|^2+|A_X U|^2\\
+		\mc K(X,Y)&=\pi^*\check{\mc K}(X,Y)-3|A_X Y|^2
+	\end{align*}
+\end{thm}
+
+\begin{cor}
+	Sectional curvature is non-decreasing under Riemannian submersions. More precisely, for basic vector fields $X,Y$, $\mc K(X,Y)\leq \check K(\check X,\check Y)$.\proofclear
+\end{cor}
+
+To understand the Ricci curvature, it is most convenient to introduce some additional notation:
+
+\begin{mydef}
+	Let $\{X_i\}_{i\in I}$ be a local orthonormal basis for $\mc H$ (near $x\in M$) and $\{U_j\}_{j\in J}$ a local orthonormal basis for $\mc V$. Let $U,V$ denote vertical vectors and $X,Y$ horizontal vectors. Now we define the following shorthands:
+	\begin{align*}
+		(A_X,A_Y)&\coloneqq \sum_i g(A_X X_i, A_Y X_i)=\sum_j g(A_X U_j,A_Y U_j)\\
+		(A_X,T_U)&\coloneqq \sum_i g(A_X X_i, T_U X_i)=\sum_j g(A_X U_j,T_U U_j)\\
+		(AU,AV)&\coloneqq \sum_i g(A_{X_i}U,A_{X_i}V)\\
+		(TX,TY)&\coloneqq \sum_j g(T_{U_j}X,T_{U_j}Y)\\
+	\end{align*}
+	For any $(1,2)$-tensor field $E$ we furthermore define:
+	\begin{equation*}
+		\delta E\coloneqq \check\delta E+\hat\delta E \qquad \qquad 
+		\hat \delta E\coloneqq -\sum_j(\nabla_{U_j}E)_{U_j}\qquad \qquad 
+		\check \delta E\coloneqq -\sum_i (\nabla_{X_i} E)_{X_i}
+	\end{equation*}
+\end{mydef}
+
+\begin{rem}
+	The second equalities in the first two definitions follow directly from skew-symmetry of $A,T$.
+\end{rem}
+
+\begin{mydef}
+	Recall that, for an isometric immersion, the mean curvature vector is given by the trace of the second fundamental form. Collecting the mean curvature vectors of every fiber into a single object, we define the vector field $N\coloneqq \sum_j T_{U_j}U_j$. Observe that $N$ is horizontal.
+\end{mydef}
+
+\begin{lem}
+	Let $X,Y$ be horizontal vectors and $\{U_j\}_{j\in J}$ a local orthonormal basis of $\mc V$, as before. Then
+	\begin{numberedlist}
+		\item $\hat\delta A=A_N$.
+		\item $\check\delta T\equiv 0$.
+		\item $\sum_j g((\nabla_E T)_{U_j}U_j,X)=g(\nabla_E N,X)$ for any vector $E$.
+		\item $2\sum_j g((\nabla_{U_j}A)_X Y,U_j)=g(\nabla_Y N,X)-g(\nabla_X N,Y)$.
+	\end{numberedlist}
+\end{lem}
+\begin{myproof}\leavevmode
+	\begin{numberedlist}
+		\item Let $E,F$ be arbitrary vectors. Because $A_F=A_{\mc H F}$, we find 
+		\begin{equation*}
+			(\nabla_{U_j}A)_{U_j}E= \nabla_{U_j}(A_{U_j}E)-A_{\nabla_{U_j}U_j}E-A_{U_j}(\nabla_{U_j} E)
+			=-A_{T_{U_j}U_j}E
+		\end{equation*}
+		Therefore $\hat\delta A=\sum_j A_{T_{U_j}U_j}E=A_N$.
+		\item All terms of $\hat\delta T$ vanish individually: $(\nabla_{X_j}T)_{X_j}E=-T_{A_{X_j}X_j} E=0$.
+		\item As before, we use $(\nabla_E T)_{U_j}U_j=\nabla_E (T_{U_j}U_j)-T_{\nabla_E U_j}U_j -T_{U_j}(\nabla_E U_j)$. After summing over $j$, the first term yields the required result. It remains to show that 
+		\begin{equation*}
+			\sum_j g(T_{\nabla_E U_j}U_j+T_{U_j}(\nabla_E U_j),X)=0
+		\end{equation*}
+		Since we are taking the inner product with a horizontal vector, only the vertical parts of both vectors that $T$ acts on contribute. Since $T$ is symmetric when acting on vertical vectors, the two terms contribute equally and we should therefore show that $\sum_j g(T_{U_j}\mc V(\nabla_E U_j),X)=0$:
+		\begin{align*}
+			\sum_j g(T_{U_j}\mc V(\nabla_E U_j),X)&=-\sum_j g(\mc V\nabla_E U_j,T_{U_j}X)\\
+			&=-\sum_{j,m} g(\nabla_E U_j,U_m)g(T_{U_j}X,U_m)
+		\end{align*}
+		where we expanded $\mc V(\nabla_E U_j)$ and $T_{U_j}X$ in terms of the vertical basis vectors to obtain the last equality. The first factor is anti-symmetric under interchanging $j$ with $m$, since
+		\begin{equation*}
+			g(\nabla_E U_j,U_m)=E(g(U_j,U_m))-g(U_j,\nabla_E U_m)=-g(U_j,\nabla_E U_m)
+		\end{equation*}
+		But the second factor is symmetric under this switch:
+		\begin{equation*}
+			g(T_{U_j}X,U_m)=-g(X,T_{U_j}U_m)=-g(X,T_{U_m}U_j)=g(T_{U_m}X,U_j)
+		\end{equation*}
+		Relabeling the summation variables to interchange $j$ and $m$ then shows: 
+		\begin{align*}
+			-\sum_{j,m} g(\nabla_E U_j,U_m)g(T_{U_j}X,U_m)
+			&=-\sum_{j,m} g(\nabla_E U_m,U_j)g(T_{U_m}X,U_j)\\
+			&=\sum_{j,m} g(\nabla_E U_j,U_m)g(T_{U_j}X,U_m)
+		\end{align*}
+		This means that the expression vanishes.
+		\item After using the previous identity on the right hand side, this follows from the identity
+		\begin{equation*}
+			2g((\nabla_U A)_X Y,U)=
+			g((\nabla_Y T)_U U,X)-g((\nabla_X T)_U U,Y)
+		\end{equation*}
+		as can by seen by setting $U=U_j$ and summing over $j$. This result follows from a long computation. We start by rewriting both sides separately:
+		\begin{align*}
+			&2g((\nabla_U A)_X Y,U\rangle 
+			=2g(\nabla_U(A_X Y)-A_{\nabla_UX}Y-A_X(\nabla_UY),U)\\
+			&=2g(\nabla_U (A_X Y),U)-2g(\mc H(\nabla_YU),\mc H(\nabla_UX))
+			+2g(\mc H(\nabla_X U),\mc H(\nabla_U Y))\\
+		\end{align*}
+		and 
+		\begin{align*}
+			&g((\nabla_YT)_U U,X)-(X \leftrightarrow Y)\\
+			&=g(\nabla_Y(T_U U),X)-g(T_{\nabla_YU}U,X-g(T_U(\nabla_YU),X) -(X\leftrightarrow Y)\\
+			&=g(\nabla_Y(T_U U),X)+2 g(\nabla_Y U,\mc V(\nabla_U X))- (X\leftrightarrow Y)
+		\end{align*}
+		We used the Leibniz rule, skew-symmetry of $A$ and $T$ and their special properties when restricted to horizontal and vertical vectors, respectively. We subtract the second result from the first and now have to prove that the following expression vanishes:
+		\begin{align*}
+			&g(\nabla_U\mc V([X,Y]),U)-2g(\nabla_Y U,\nabla_U X)+2g(\nabla_X U,\nabla_U Y)\\
+			&-g(\nabla_Y \mc H(\nabla_U U),X)+g(\nabla_X \mc H(\nabla_U U),Y)
+		\end{align*}
+		Now we use metric compatibility of $\nabla$ in the first and last two terms to obtain
+		\begin{align*}
+			&U(g([X,Y],U)-g([X,Y],\mc V\nabla_U U)
+			-2g(\nabla_Y U,\nabla_UX)+2g(\nabla_XU,\nabla_UY)\\
+			&-Y(g(\nabla_U U,X))+g(\mc H\nabla_U U,\nabla_YX)
+			+X(g(\nabla_UU,Y))-g(\mc H\nabla_U U,\nabla_XY)
+		\end{align*}
+		The terms involving horizontal and vertical projections combine and we find
+		\begin{align*}
+			&U(g([X,Y],U))-g([X,Y],\nabla_U U)
+			-2g(\nabla_Y U,\nabla_UX)+2g(\nabla_XU,\nabla_UY)\\
+			&-Y(g(\nabla_U U,X))+X(g(\nabla_UU,Y))
+		\end{align*}
+		Now that we no longer have any projections in our expression, we use metric compatibility once again (going ``backwards''), which yields:
+		\begin{align*}
+			&g(\nabla_U[X,Y],U)-2g(\nabla_Y U,\nabla_UX)+2g(\nabla_XU,\nabla_UY)\\
+			&-g(\nabla_Y\nabla_U U,X)-g(\nabla_U U,\nabla_Y X)
+			+g(\nabla_X\nabla_UU,Y)+g(\nabla_UU,\nabla_XY)
+		\end{align*}
+		In the last and third-to-last terms we recognize $[X,Y]$, which we combine with the first term. We once more use metric compatibility, on the first term and on one-half of the second and third terms:
+		\begin{align*}
+			U(g([X,Y],U)) & -U(g(\nabla_YU,X))+g(\nabla_U\nabla_YU,X)
+			-g(\nabla_YU,\nabla_U X)\\
+			&+U(g(\nabla_XU,Y))-g(\nabla_U\nabla_XU,Y)
+			+g(\nabla_XU,\nabla_U Y)\\
+			&-g(\nabla_Y\nabla_U U,X) +g(\nabla_X\nabla_U U,Y)
+		\end{align*}
+		The terms that feature double derivatives of $U$ are almost curvature tensors acting on $U$, so we add a compensating term to make this true. Note that the first, second and fifth terms cancel out because we may move the covariant derivatives to the second entry of $g$ at the cost of a sign. We have found:
+		\begin{align*}
+			&g(R(U,Y)U,X)+g(\nabla_{[U,Y]}U,X)-g(\nabla_YU, \nabla_UX)\\
+			&-g(R(U,X)U,Y)-g(\nabla_{[U,X]}U,Y)+g(\nabla_XU,\nabla_UY)
+		\end{align*}
+		The symmetries of the curvature tensor $R$ imply that the first and fourth terms vanish so we are left with
+		\begin{align*}
+			&g(\nabla_U [U,Y],X)+g([[U,Y],U],X)-g(\nabla_Y U,\nabla_U X)\\
+			&-g(\nabla_U [U,X],Y)-g([[U,X],U],Y)+g(\nabla_X U,\nabla_U Y)
+		\end{align*}
+		after using the vanishing of torsion on the second and fifth terms. Since we may extend $X,Y$ to basic vector fields, $[U,X]$ and $[U,Y]$ are vertical. Integrability of $\mc V$ means that the second and fifth terms now vanish. Expanding the commutators in the first and fourth term gives
+		\begin{align*}
+			&g(\nabla_U\nabla_U Y,X)-g(\nabla_U\nabla_Y U,X)-g(\nabla_Y U,\nabla_U X)\\
+			&-g(\nabla_U \nabla_U X,Y)+g(\nabla_U\nabla_XU,Y)+g(\nabla_X U,\nabla_U Y)
+		\end{align*}
+		Metric compatibility, applied to the last term on each line, yields:
+		\begin{equation*}
+			g(\nabla_U\nabla_U Y,X)-U(g(\nabla_Y U,X))
+			-g(\nabla_U \nabla_U X,Y)+U(g(\nabla_X U,Y))
+		\end{equation*}
+		Since we may choose $X,Y$ basic, we have $g(\nabla_X U,Y)=g(\nabla_U X,Y)$; we apply this to the second and last terms, then use metric compatibility to find
+		\begin{align*}
+			&g(\nabla_U\nabla_U Y,X)-U(g(\nabla_U Y,X))
+			-g(\nabla_U \nabla_U X,Y)+U(g(\nabla_U X,Y))\\
+			=\ &g(\nabla_U Y,\nabla_UX)-g(\nabla_UX,\nabla_UY)=0
+		\end{align*}
+		which is what we needed to show. Note that, by polarization, the above actually shows that
+		\begin{equation*}
+			g((\nabla_U A)_X Y,V)+g((\nabla_V A)_X Y,U)=
+			g((\nabla_Y T)_U V,X)-g((\nabla_X T)_U V,Y)
+		\end{equation*}
+		This identity appears in~\cite{Gra1967}, with incorrect signs and without proof.
+		\qedhere
+	\end{numberedlist}
+\end{myproof}
+
+Using these identities, one straightforwardly computes the Ricci curvature from the fundamental equations for the Riemann curvature tensor (written out in~\cite[241]{Bes2008}):
+
+\begin{prop}\label{prop:submersionRicci}
+	In the notation of \cref{thm:submersioncurvature}, the Ricci curvatures $r$, $\hat r$ and $\check r$ of the total space, fibers and base space of a Riemannian submersion satisfy the following relations:
+	\begin{align*}
+		r(U,V)&=\hat r(U,V)-g(N,T_U V)+(AU,AV)+\sum_ig((\nabla_{X_i}T)_U V,X_i)\\
+		r(X,U)&=g((\hat \delta T)U,X)+g(\nabla_U N,X)-g((\check \delta A)X,U) -2 (A_X,T_U)\\
+		r(X,Y)&=\pi^*\check r(X,Y)-2(A_X,A_Y)-(TX,TY)+\frac{1}{2}(g(\nabla_X N,Y)+g(\nabla_Y N,X))
+	\end{align*}
+\end{prop}
+
+Taking the trace of these equations and introducing the new notations
+\begin{gather*}
+	\lvert A\rvert^2\coloneqq \sum_i (A_{X_i},A_{X_i})=\sum_j (A U_j,A U_j)\\
+	\lvert T\rvert^2\coloneqq \sum_i (T X_i, T X_i)\qquad \qquad
+	\lvert N\rvert^2\coloneqq g(N,N)\\
+	\check\delta N\coloneqq -\sum_i g(\nabla_{X_i}N,X_i)
+\end{gather*}
+one easily finds:
+
+\begin{cor}
+	The scalar curvatures $s$, $\hat s$ and $\check s$ of the total space, fibers and base of a Riemannian submersion satisfy
+	\begin{equation*}
+		s=\pi^*\check s+\hat s -\lvert A\rvert^2-\lvert T\rvert^2-\lvert N\rvert^2-2\check\delta N
+	\end{equation*}
+\end{cor}
+%WORK NEEDED: Is 9.79 relevant for Q? For Z we have a special treatment so we don't need this general discussion
+
+\section{Einstein metrics and the canonical variation}
+
+We will use the theory of Riemannian submersions in the context of twistor spaces of quaternionic K\"ahler manifolds (see \cref{chap:twistor}), which give rise to Riemannian submersions with totally geodesic fibers. When $T\equiv 0$, the simplification in the formulas for the Ricci curvature makes it easy to find the conditions under which the total space is an Einstein manifold:
+
+\begin{prop}\label{prop:totallygeodesicEinstein}
+	Let $\pi:M\to B$ be a Riemannian submersion with totally geodesic fibers $F_b$. The total space $(M,g)$ is Einstein if and only if there exists a constant $\lambda\in\R$ such that
+	\begin{numberedlist}
+		\item $\hat r(U,V)+(AU,AV)=\lambda g(U,V)$ for all vertical vectors $U,V$.
+		\item $\check\delta A=0$.
+		\item $\pi^*\check r(X,Y)-2(A_X,A_Y)=\lambda g(X,Y)$ for all horizontal vectors $X,Y$.
+	\end{numberedlist}
+\end{prop}
+\begin{myproof}
+	This is the special case $T\equiv 0$ of \cref{prop:submersionRicci}.
+\end{myproof}
+
+\begin{cor}
+	If the total space $(M,g)$ of a Riemannian submersion $\pi:M\to B$ is Einstein, then $\hat s$ and $\lvert A\rvert^2$ are constant on $M$, and $\check s$ is constant on $B$.
+\end{cor}
+\begin{myproof}
+	Tracing the first and last equations separately, we have 
+	\begin{equation*}
+		\hat s+\lvert A\rvert^2=\lambda \dim F\qquad\qquad 
+		\pi^*\check s-2\lvert A\rvert^2=\lambda\dim B
+	\end{equation*} 
+	In the second equation, $\pi^*\check s$ is constant on each fiber, hence $\lvert A\rvert^2$ is too, and finally $\hat s$ as well, by the first equation. Because all fibers are isometric, $\hat s$ does not depend on the fiber, and therefore both $\lvert A \rvert^2$ and $\pi^*\check s$ cannot, either. Thus, $\hat s$ is constant on $M$, as is $\lvert A\rvert^2$. $\check s$ is constant on $B$.
+\end{myproof}
+
+One of the main uses of the formalism of Riemannian submersions derives from the fact that it gives a simple way of constructing new distinguished metrics from old ones. This is done by means of the so-called canonical variation.
+
+\begin{mydef}
+	Let $\pi:M\to B$ be a Riemannian submersion with metric $g$. The \emph{canonical variation} of $g$ is the family $\{g_t\}_{t\in \R_+}$ of metrics obtained by ``scaling the fibers'', i.e.~defined by
+	\begin{equation*}
+		g_t(U,V)=tg(U,V)\qquad \qquad g_t(X,Y)=g(X,Y)\qquad \qquad g_t(X,U)=0
+	\end{equation*}
+	where $X,Y$ are horizontal tangent vectors and $U,V$ are vertical, as usual.
+\end{mydef}
+
+For every $t\in\R_+$, this defines a Riemannian submersion with the same horizontal distribution $\mc H$ and a scaled metric along the fibers $F_b$: $\hat g^t_b=t\hat g_b$. Note that, if $(M,g)$ has totally geodesic fibers, then $(M,g_t)$ does too ($\forall t\in \R_+$). 
+
+\begin{lem}
+	Under the canonical variation, the corresponding tensors $A^t$ and $T^t$ are related to $A$ and $T$ as follows:
+	\begin{equation*}
+		A^t_X Y=A_X Y\qquad A^t_X U=t A_X U\qquad \qquad T^t_U X=T_U X \qquad T^t_U V=tT_U V
+	\end{equation*}
+	where $X,Y$ are horizontal and $U,V$ are vertical.
+\end{lem}
+\begin{myproof}
+	We only prove the first two relations to demonstrate the general procedure. Everything is proven using the Koszul formula. Recall that $[X,U]$ is vertical since we may extend $X$ to a basic vector field, and similarly $U(g(X,Y))=0$, since we may take $X,Y$ basic, so that $g(X,Y)=\pi^*\check g(X,Y)$, which is constant along fibers. Keeping these things in mind, we find:
+	\begin{align*}
+		2g(A^t_X U,Y)&=2g_t(\nabla^t_X U,Y)=-g_t([X,Y],U)=-tg([X,Y],U)=2g(t\nabla_X U,Y)\\
+		&=2g(t A_X U,Y)
+	\end{align*}
+	Thus, we deduce that $A^t_XU=tA_XU$. Similarly
+	\begin{align*}
+		2tg(A^t_X Y,U)&=2g_t(\nabla^t_X Y,U)=g_t([X,Y],U)=2tg(A_X Y,U)
+	\end{align*}
+	shows that $A^t_X Y=A_X Y$.
+\end{myproof}
+
+In identical fashion, one can deduce more involved identities featuring $\nabla^t A^t$ and $\nabla^t T^t$, expressing them in terms of $A$, $T$, $\nabla A$, $\nabla T$ and powers of $t$. One should take particular care in distinguishing orthonormal bases with respect to $g_t$ from those orthonormal with respect to $g$ to obtain the correct powers of $t$. We will assume that $T\equiv 0$ from now on for simplicity, since this is the case of main interest to us. After some computations, \cref{prop:submersionRicci} yields:
+
+\begin{prop}\label{prop:variationcurvature}
+	Let $\pi:M\to B$ be a Riemannian submersion with totally geodesic fibers. Then the Ricci curvature $r_t$ and the scalar curvature $s_t$ of the canonical variation are given by:
+	\begin{align*}
+		r_t(U,V)&=\hat r(U,V)+t^2(AU,AV)\\
+		r_t(X,U)&=tg((\check\delta A)X, U)\\
+		r_t(X,Y)&=\pi^*\check r(X,Y)-2t(A_X,A_Y)\\
+		s_t&=\pi^*\check s+\frac{1}{t}\hat s-t\lvert A\rvert^2
+	\end{align*}
+	where $X,Y$ are horizontal and $U,V$ are vertical.\proofclear
+\end{prop}
+
+An Einstein metric is a critical point of the total scalar curvature functional (at least on a compact manifold), and therefore certainly a critical point of this functional restricted to the canonical variation. We already showed that any Einstein metric must have constant $\hat s$, $\check s$ and $\lvert A\rvert$. Thus, after a natural normalization, the total scalar curvature functional restricted to the canonical variation takes on the form of the following function, defined on $\R_+$:
+\begin{equation*}
+	\varphi(t)=\frac{\vol(M,g_t)^{2/\dim M}}{\vol(M,g)^{2/\dim M}}\cdot s_t
+	=t^{\frac{\dim F}{\dim M}}\bigg(\pi^*\check s+\frac{1}{t}\hat s-t\lvert A\rvert^2\bigg)
+\end{equation*}
+The critical points of this functional are found by solving a quadratic equation (assuming that none of $A,\hat  s,\check s$ vanishes identically):
+\begin{equation*}
+	-\lvert A\rvert^2(1+c) t^2+c\pi^*\check s t-\hat s(1-c) = 0\qquad \qquad c\coloneqq \frac{\dim F}{\dim M}
+\end{equation*}
+The solutions are given by
+\begin{equation*}
+	t=\frac{1}{2\lvert A\rvert^2(1+c)}\bigg(c\pi^*\check s \pm 
+	\sqrt{c^2\pi^*\check s^2-4\hat s\lvert A\rvert^2(1-c)(1+c)}\bigg)
+\end{equation*}
+
+We are primarily interested in the case where $\varphi(t)$ has \emph{two} critical points (with $t\in \R_+$!). For this, it is first of all necessary that $\check s>0$ and $\hat s\geq 0$. Moreover, $\hat s\neq 0$ since otherwise the quadratic equation degenerates to a linear equation. Thus, $\hat s>0$ and $\check s>0$, and finally the discriminant must be positive, which is equivalent to the condition
+\begin{equation}\label{eq:discriminant}
+	(\dim F\cdot \pi^*\check s)^2-4\hat s\lvert A\rvert^2 \cdot \dim B(\dim B+2\dim F)>0
+\end{equation}
+
+Plugging the expressions from \cref{prop:variationcurvature} into \cref{prop:totallygeodesicEinstein} yields, after some work (see~\cite[152]{FIP2004}), the following result:
+
+\begin{thm}[B\'erard-Bergery]\label{thm:twoEinsteins}
+	If $\pi:M\to B$ is a Riemannian submersion with metric $g$ with totally geodesic fibers, $A\not\equiv 0$, and assume \eqref{eq:discriminant} holds. Then there are two Einstein metrics in the canonical variation of $(M,g)$ if and only if:
+	\begin{numberedlist}
+		\item $\check\delta A=0$.
+		\item Both $\hat g$ and $\check g$ are Einstein metrics with positive Einstein constants $\hat \lambda$ and $\check\lambda$.
+		\item There are constants $\mu,\nu\in \R$ such that $(AU,AV)=\mu g(U,V)$ and $(A_X,A_Y)=\nu g(X,Y)$, where $U,V$ are vertical and $X,Y$ are horizontal (note that $\lvert A\rvert^2=\mu\dim F=\nu\dim B$, and therefore $\nu,\mu>0$).
+		\item The positive numbers $\mu$, $\nu$, $\hat\lambda$ and $\check\lambda$ satisfy $\check\lambda^2-3\hat\lambda(\mu+2\nu)>0$.\proofclear
+	\end{numberedlist}
+\end{thm}
+%WORK NEEDED: explain this?
+
+%
+%\begin{myproof}
+%	By the above discussion, we have $\hat s>0$, $\check s>0$ and the condition \eqref{eq:discriminant} holds. If $t_0$ is one of the two critical points of $\varphi(t)$, then
+%	\begin{equation*}
+%		-t_0\lvert A\rvert^2=\frac{\hat s}{t_0}\frac{1-c}{1+c}-\pi^*\check s\frac{c}{1+c}
+%	\end{equation*}
+%	and therefore
+%	\begin{equation*}
+%		s_{t_0}=\frac{\dim M}{\dim B+2\dim F}\bigg(\pi^* \check s+\frac{2}{t_0}\hat s\bigg)>0
+%	\end{equation*}
+%	Now we consider the equations for the Ricci curvature of the canonical variation (cf.~\cref{prop:variationcurvature}). Clearly, the condition $\check\delta A=0$ is necessary for any Einstein metric. Now, assume that we have two Einstein metrics, i.e.~there are two numbers $t_1,t_2\in\R_+$ such that for $i\in\{1,2\}$ the following holds:
+%	\begin{gather*}
+%		\hat r(U,V)+t_i^2(AU,AV)=\frac{s_{t_i}}{\dim M} t_i g(U,V)\\
+%		\pi^*\check r(X,Y)-2t_i(A_X,A_Y)=\frac{s_{t_i}}{\dim M} g(X,Y)
+%	\end{gather*}
+%	Taking traces of the equations separately (with respect to a $g$-orthonormal basis), we find:
+%	\begin{equation*}
+%		\hat s+t_i^2\lvert A\rvert^2=\frac{\dim F}{\dim M} t_i s_{t_i} \qquad \qquad 
+%		\pi^*\check s-2t_i \lvert A\rvert^2=\frac{\dim B}{\dim M}s_{t_i}
+%	\end{equation*}
+%%	%WORK NEEDED Two solutions -> the contribution of the Ricci curvature separate?!?! The book on Riemannian submersions
+%\end{myproof}

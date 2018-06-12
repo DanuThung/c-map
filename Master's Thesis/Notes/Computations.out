@@ -1,0 +1,30 @@
+\BOOKMARK [1][-]{section.1}{Computations: In Progress}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Cohomology Ring of Z}{section.1}% 2
+\BOOKMARK [3][-]{subsubsection.1.1.1}{Additive Structure of the Integral Cohomology of G2 over SO\(4\)}{subsection.1.1}% 3
+\BOOKMARK [3][-]{subsubsection.1.1.2}{Ring Structure of the Integral Cohomology of G2 over SO\(4\)}{subsection.1.1}% 4
+\BOOKMARK [3][-]{subsubsection.1.1.3}{Additive Structure of the Integral Cohomology of Z}{subsection.1.1}% 5
+\BOOKMARK [3][-]{subsubsection.1.1.4}{Ring Structure of the Integral Cohomology of Z}{subsection.1.1}% 6
+\BOOKMARK [2][-]{subsection.1.2}{Chern Classes of Z}{section.1}% 7
+\BOOKMARK [1][-]{section.2}{Side Questions}{}% 8
+\BOOKMARK [1][-]{section.3}{Finished Computations on Q}{}% 9
+\BOOKMARK [2][-]{subsection.3.1}{Is Q 3-Symmetric?}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.2}{Chern Classes and Numbers of Q with its Standard Complex Structure}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.3}{Chern Classes and Numbers of \266\(TS6\) and \266\(T*S6\)}{section.3}% 12
+\BOOKMARK [3][-]{subsubsection.3.3.1}{The Cohomology Ring of a Projectivized Bundle}{subsection.3.3}% 13
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Application to \266\(TS6\)}{subsection.3.3}% 14
+\BOOKMARK [3][-]{subsubsection.3.3.3}{Application to \266\(T*S6\)}{subsection.3.3}% 15
+\BOOKMARK [2][-]{subsection.3.4}{Flipping the Fibers}{section.3}% 16
+\BOOKMARK [3][-]{subsubsection.3.4.1}{The Fibrations over S6}{subsection.3.4}% 17
+\BOOKMARK [3][-]{subsubsection.3.4.2}{The Fibrations over G2/SO\(4\)}{subsection.3.4}% 18
+\BOOKMARK [2][-]{subsection.3.5}{Summary: The Homogeneous Almost Complex Structures on Q}{section.3}% 19
+\BOOKMARK [1][-]{section.4}{Finished Computations on Z}{}% 20
+\BOOKMARK [2][-]{subsection.4.1}{Some Chern Numbers of Z via the Hilbert Polynomial}{section.4}% 21
+\BOOKMARK [2][-]{subsection.4.2}{The Cohomology Ring of Z and Q is Different}{section.4}% 22
+\BOOKMARK [2][-]{subsection.4.3}{Does the S2-bundle Z come from a complex bundle?}{section.4}% 23
+\BOOKMARK [2][-]{subsection.4.4}{Chern Classes of Z}{section.4}% 24
+\BOOKMARK [3][-]{subsubsection.4.4.1}{Verified Chern Numbers}{subsection.4.4}% 25
+\BOOKMARK [3][-]{subsubsection.4.4.2}{Chern Numbers taken from Grama et al.}{subsection.4.4}% 26
+\BOOKMARK [2][-]{subsection.4.5}{Chern numbers on Z with Nearly K\344hler Structure}{section.4}% 27
+\BOOKMARK [2][-]{subsection.4.6}{Consistency Checks for the Chern Classes of Z, N'}{section.4}% 28
+\BOOKMARK [3][-]{subsubsection.4.6.1}{Pontryagin Classes}{subsection.4.6}% 29
+\BOOKMARK [3][-]{subsubsection.4.6.2}{Using the Hirzebruch-Riemann-Roch Theorem}{subsection.4.6}% 30

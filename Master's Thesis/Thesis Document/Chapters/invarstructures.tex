@@ -1,0 +1,597 @@
+\chapter{Invariant geometric structures of \texorpdfstring{$G_2$}{G2} flag manifolds}
+\label{chap:invarstructures}
+
+In the previous chapter, we sketched some general results regarding invariant geometric structures on arbitrary flag manifolds. One particularly important example is the unique invariant K\"ahler-Einstein structure which every generalized flag manifold carries. Furthermore, many examples are known of generalized flag manifolds which carry multiple invariant almost complex structures that can be distinguished using the associated Chern numbers. In this chapter, we discuss these geometric structures in the context of two specific examples: The $G_2$ flag manifolds $Q$ and $Z$.
+
+Our point of view is in some sense complementary to the Lie-theoretic approach to generalized flag manifolds, which has historically been most popular. Instead of relying on representation theory, we study the fibrations introduced in \cref{chap:flags} and use them to develop a \emph{geometric} picture. Though we do not rely on Lie-algebraic data, our geometric approach allows us to recover all the invariant geometric structures mentioned above. In particular, we give a concrete interpretation of the invariant almost complex structures, including the integrable structure and the associated invariant K\"ahler-Einstein metric. Our main applications are computations of the Chern numbers of the invariant almost complex structures, independent of the formalism introduced by Borel and Hirzebruch, as well as a rigidity result for the K\"ahlerian complex structure on the twistor space $Z$.
+
+\section{Invariant Einstein metrics}
+
+We will start by discussing $G_2$-invariant Einstein metrics on $Q$ and $Z$---the invariant almost complex structures will be the subject of the next section. Using the methods pioneered by Wang and Ziller (see \cref{chap:homogeneous}), the $G_2$-invariant Einstein metrics on $Q$ and $Z$ can be found algebraically.
+
+The invariant Einstein metrics on $Q$ were first determined by Kimura~\cite{Kim1990}, who found that there are three (up to homothety). The most interested one for our purposes is the invariant K\"ahler-Einstein metric. There is one natural candidate, namely the K\"ahler metric induced by restriction of the Fubini-Study metric on $\CP^6$. Indeed, this metric is even $SO(7)$-invariant~\cite{Smy1967}. This is not too surprising, in view of the fact that the defining equation of the quadric has an obvious $SO(7)$ symmetry. This metric exhibits $Q$ as $SO(7)/SO(2)\times SO(5)$, which is well known to be an irreducible (Hermitian) symmetric space. Therefore, this metric is automatically Einstein and thus we have found the unique $G_2$-invariant K\"ahler-Einstein metric.
+
+Regarding the other two invariant Einstein metrics, our realization of $Q$ as the five-dimensional quadric shows that they cannot be K\"ahler for any other complex structure, by uniqueness of the K\"ahlerian complex structure on the quadric (cf.~\cref{chap:uniqueness}). Kimura arrives at this conclusion by other means. Kerr~\cite[Rem.~5.4]{Ker1996} further remarks that they cannot arise from a Riemannian submersion with totally geodesic fibers over either $S^6$ or $G_2/SO(4)$, using \cref{prop:submersionRicci}.
+%WORK NEEDED: Explain it?
+
+On $G_2/U(2)_+=Z$, the unique invariant K\"ahler-Einstein metric is of course the canonical metric that exhibits it as the twistor space over the Wolf space $G_2/SO(4)$. Dickinson and Kerr~\cite{DK2008} found that there is one more invariant Einstein metric; it can also be understood using our geometric picture of $Z$ as the twistor space. Recall that $Z$, equipped with its standard metric, gives rise to a Riemannian submersions with totally geodesic fibers. It fulfills the hypotheses of \cref{thm:twoEinsteins} and therefore the canonical variation contains a second Einstein metric. This metric is again $G_2$-invariant and $Z$ remains a Riemannian submersion with totally geodesic fibers.
+%WORK NEEDED: Details?
+However, the second invariant Einstein metric is not K\"ahler for the standard complex structure; in fact, it will follow from our results that it is not K\"ahler for any complex structure. 
+
+\section{Invariant almost complex structures}
+\label{sec:ACSs}
+
+The number of irreducible summands of the isotropy representations of $G_2/U(2)_\pm$ was determined in several papers (e.g.~\cite{GNO2017,AC2011}). The isotropy representation of $G_2/U(2)_+$ splits into two irreducible submodules, one of dimension two and one of dimension eight. By the work of Borel and Hirzebruch, this means that there are just two invariant almost complex structures, up to conjugation. One of them is the integrable structure on the twistor space, which admits a compatible, $G_2$-invariant K\"ahler-Einstein metric.
+
+Remember (cf.~\cref{chap:twistor}) that this complex structure is of the form $J=J_h\oplus J_v$, where $J_h$ is the (tautological) almost complex structure on the `horizontal' subbundle, while $J_v$ restricts to the standard complex structure of $\CP^1$ on each fiber. Eells and Salamon~\cite{ES1985,Sal1985} studied the almost complex structure $J'$ obtained by ``flipping the fiber'', i.e.~replacing $J_v$ by $-J_v$ while keeping $J_h$ fixed.
+%integrability? Use  H to say it is not integrable?
+This almost complex structure is clearly $G_2$-invariant as well; we will soon prove that it is distinct from the standard structure by computing the corresponding Chern numbers. 
+
+Alexandrov, Grantcharov and Ivanov~\cite{AGI1998} showed that $J'$ is \emph{nearly K\"ahlerian}, by which we mean that it admits a compatible metric such that $(\nabla_X J')X=0$ for every $X\in TZ$ (where $\nabla$ is the Levi-Civit\`a connection). In fact, the nearly K\"ahler metric arises from the canonical variation of the standard metric (which is of course not K\"ahler with respect to $J'$).
+
+Thus, the invariant almost complex structures on $G_2/U(2)_+$ are precisely those canonically associated to a twistor space: A clear instance of the geometric picture clarifying known results that were obtained using Lie theory. From now on, we will exclusively use the letter $Z$ to denote the twistor space with its standard complex structure, while $N$ will denote the twistor space with its nearly K\"ahler structure.
+
+For $G_2/U(2)_-$, the situation is slightly more complicated. The isotropy representation splits into three irreducible summands and therefore there are four invariant almost complex structures. One of them is the (standard) complex structure of the quadric, compatible with the K\"ahler-Einstein structure induced by restriction of the Fubini-Study metric of $\CP^6$. From now on, we will use $Q$ exclusively to denote this projective manifold. 
+
+We have already encountered other invariant almost complex structures. Recall that we found diffeomorphisms $G_2/U(2)_-\cong \P(TS^6)\cong \P(T^*S^6)$. We will define almost complex structures of the form $J_h\oplus J_v$ on the latter two manifolds. The standard, $G_2$-invariant almost complex structure on $S^6$ pulls back to an almost complex structure on the horizontal tangent vectors of $\P(TS^6)$. As with the twistor space, we induce an almost complex structure on the vertical subbundle by requiring that it restricts to the standard complex structure on each fiber, which is just a copy of the complex projective plane. 
+
+The representation of $U(2)$ on the tangent spaces of $\P(TS^6)$ is the standard one, and therefore the Fubini-Study metric on $\CP^2$ is invariant under it. Since this metric uniquely determines the standard complex structure, the latter is preserved as well. Combining this with $G_2$-invariance of the almost complex structure of $S^6$, this shows that the resulting almost complex structure is $G_2$-invariant.
+
+The diffeomorphism $TS^6\cong T^*S^6$ is induced by complex conjugation on the fibers. Therefore, the almost complex structure of $\P(TS^6)$ naturally induces one on $\P(T^*S^6)$ by replacing the almost complex structure acting on the vertical subbundle by its complex conjugate. This yields another invariant almost complex structure on the manifold $G_2/U(2)_-$. A priori, it may not be clear that these almost complex structures are distinct, but we will soon prove this by computing their Chern numbers.
+
+Now we have found three invariant almost complex structures on $G_2/U(2)_-$. The tangent vectors along the fibers of the two fibrations $p:G_2/U(2)_-\to S^6$ and $\pi_Q:G_2/U(2)_-\to G_2/SO(4)$ (cf.~\cref{fig:tower}) give rise to complex subbundles with respect to all invariant almost complex structures. This follows from the fact that in each case, at the coset of the identity element, the tangent vectors along the fibers correspond to one of the irreducible summands under the isotropy representation (see~\cite[163]{Ker1996}). Our discussion of invariant almost complex structures in \cref{chap:homogeneous} shows that any invariant almost complex structure respects this decomposition, hence each summand gives rise to a complex subbundle.
+
+After picking a complementary complex subbundle, we may replace the subbundle of tangent vectors along the fibers with its complex conjugate to obtain a diffeomorphic manifold with a potentially different, but always invariant, almost complex structure. We will refer to this procedure as flipping the fiber, in analogy with the case of the twistor space. Note that this is precisely the prescription we gave to go from $\P(TS^6)$ to $\P(T^*S^6)$ and vice versa.
+
+Flipping the fibers of both projections, we find the fourth and final invariant almost complex structure: We will use Chern numbers to distinguish it from the other three. We will denote the corresponding almost complex manifold by $X$. Carrying out the various flips, one discovers that they relate all four invariant almost complex structures to each other. The relations are most easily summarized in a simple diagram:
+
+\begin{figure}[ht!]
+	\begin{equation*}
+		\begin{tikzcd}[column sep=3.5cm,row sep=1.5cm]
+			Q \ar[r,leftrightarrow,"\text{flip }S^6\text{-fibration}"] 
+			\ar[d,leftrightarrow,"\text{flip }G_2/SO(4)\text{-fibration}"']
+			& X \ar[d,leftrightarrow,"\text{flip }G_2/SO(4)\text{-fibration}"]\\
+			\P(T^*S^6) \ar[r,leftrightarrow,"\text{flip }S^6\text{-fibration}"']
+			& \P(TS^6)
+		\end{tikzcd}
+	\end{equation*}
+	\caption{}\label{fig:Qfliprelations}
+\end{figure}
+
+These relations are established as follows. If one knows the Chern classes of any of the invariant almost complex structures, the description of flipping a fiber in terms of complex subbundles makes it easy to compute the Chern classes and numbers obtained after flipping a fiber. As remarked above, the four invariant almost complex structures all have distinct associated Chern numbers. Thus, computing the Chern numbers after flipping each fiber is enough to determine which invariant almost complex structure one has obtained. These computations are the object of the next sections.
+
+%Finally, let us mention some results regarding the complete flag manifold $G_2/T^2$, though we will not use them in the rest of this work. The isotropy representation decomposes into six summands, hence there are 32 invariant almost complex structures. Its invariant Einstein metrics have been recently classified by numerical methods~\cite{ACS2013}. There are three of them, and once again only one is K\"ahler.
+
+%WORK NEEDED: Complete flag manifold?
+
+\section{Cohomology of \texorpdfstring{$G_2$}{G2} flag manifolds}
+
+\subsection{The cohomology ring of \texorpdfstring{$G_2/U(2)_-$}{the quadric}}
+
+Before we are able to understand the Chern classes of the flag manifolds $G_2/U(2)_\pm$, we must compute their cohomology rings. In fact, the Chern classes of $Q$ can be computed by the adjunction formula, without first determining the cohomology ring. However, the cohomology ring will prove useful in determining the Chern classes of $\P(TS^6)$ and $\P(T^*S^6)$. We do so via the Leray-Hirsch theorem, which gives an efficient method of computing the cohomology ring of projectivized complex vector bundles:
+
+\begin{thm}[Leray-Hirsch]
+	Let $\pi:E\to B$ be a fiber bundle with fiber $F$ over a compact manifold $B$. If there are globally defined cohomology classes $e_1,\dots,e_n$ on $E$ which, when restricted to each fiber, freely generate the cohomology of the fiber, then $H^*(E;\Z)$ is a free module over $H^*(B;\Z)$ with basis $\{e_1,\dots,e_n\}$, i.e.~there is an isomorphism $H^*(B;\Z)\otimes_\Z H^*(F;\Z)\cong H^*(E;\Z)$.
+\end{thm}
+
+This applies particularly neatly to projectivized (complex) vector bundles: Let $\pi:E\to B$ be a complex vector bundle of rank $r$ and consider its projectivization $\pi_{\P}:\P(E)\to B$. Then the pullback bundle $\pi_{\P}^*E$ over $\P(E)$ contains a universal, tautological subbundle of rank one: $L=\{(\ell,v)\in \P(E)\times E\mid v\in \ell\}$, where $\ell\in\P(E)_b$ is regarded as a line in $E_b$. Its dual is called the hyperplane bundle and is denoted by $H$.
+
+Denote the first Chern class of $H$ (also called the hyperplane class) by $y$, and let $\iota_b:\CP^{r-1}\hookrightarrow \P(E)$ denote the inclusion of the fiber over $b\in B$. Then clearly $\iota_b^*H$ is the hyperplane bundle $\mc O(1)$ over $\CP^{r-1}$ and therefore the cohomology ring of the fiber $\P(E)_b$ is freely generated by the restrictions of the globally defined classes $1,y,y^2,\dots,y^{r-1}$, so the Leray-Hirsch theorem applies.
+
+Moreover, the projectivized bundle $\P(E)$ yields an elegant way to define the Chern classes of $E$, due to Grothendieck~\cite{Gro1958} (who also establishes equivalence with other standard definitions). The Leray-Hirsch theorem tells us that $H^*(\P(E);\Z)$ is a free $H^*(B;\Z)$-module generated by the powers of the hyperplane class, up to the power $r-1$. In particular, $y^r$ can be expressed as a linear combination of the lower powers:
+
+\begin{mydef}
+	The \emph{Chern classes} of $E$ are the coefficients (elements of $H^*(M;\Z)$) $c_1(E),\dots,c_r(E)$ that satisfy
+	\begin{equation*}
+		y^r+c_1(E)y^{r-1}+\dots+c_{r-1}(E)y+c_r(E)=0
+	\end{equation*}
+	Here, we have slightly abused notation, writing $c_k(E)$ for $\pi_\P^*c_k(E)$.
+\end{mydef}
+
+In conclusion, the ring structure of the projectivized bundle $\P(E)$ is given by
+\begin{equation*}
+	H^*(\P(E);\Z)\cong H^*(M;\Z)[y]/\langle y^r+c_1(E)y^{r-1}+\dots+c_r(E)\rangle 
+\end{equation*}
+
+\begin{prop}\label{prop:cohomofPTS6}
+	The integral cohomology ring of $\P(TS^6)$ is generated by two elements, $x\in H^6(\P(TS^6))$ and $y\in H^2(\P(TS^6))$, which satisfy the relations
+	\begin{equation*}
+		x^2=0\qquad \qquad y^3=-2x
+	\end{equation*}
+\end{prop}
+\begin{myproof}
+	Let $\alpha\in H^6(S^6;\Z)$ be the orientation class. Then $c_3(S^6)=2\alpha$ since $c_3(S^6)=e(S^6)$ is the Euler class, and the Euler characteristic is $\chi(S^6)=2$. Since $S^6$ has no non-trivial cohomology in any other (positive) degree, it generates the entire cohomology ring. 
+	
+	Now set $x=p^*\alpha$, where $p:\P(TS^6)\to S^6$ is the base point projection. Then clearly $x^2=0$ for dimension reasons, while Grothendieck's definition of Chern classes shows that $y^3+2x=0$, where $y$ is the hyperplane class of $\P(TS^6)$. The Leray-Hirsch theorem now tells us us that these are the only relations. Finally, note that $xy^2$ is the positive generator of the cohomology of top degree, since $\alpha$ and $y$ are positive generators on the base and fiber.
+\end{myproof}
+
+We can proceed similarly to write down the cohomology in terms of generators adapted to $\P(T^*S^6)$:
+
+\begin{prop}\label{prop:cohomofPT*S6}
+	The integral cohomology ring of $\P(T^*S^6)$ is generated by two elements, $x\in H^6(\P(T^*S^6))$ and $z\in H^2(\P(T^*S^6))$, which satisfy the relations
+	\begin{equation*}
+		x^2=0 \qquad \qquad z^3=2x
+	\end{equation*}
+\end{prop}
+\begin{myproof}
+	The proof is nearly identical. $z$ is the hyperplane class of $\P(T^*S^6)$ and the different sign in the second relation arises because $c_k(E^*)=(-1)^kc_k(E)$ for any complex vector bundle $E$. The positive generator in top degree is $xz^2$, as before. 
+\end{myproof}
+
+\subsection{The cohomology ring of the twistor space}
+
+The cohomology of the twistor space $G_2/U(2)_+$ is more difficult to compute. We will view it as a sphere bundle over $M=G_2/SO(4)$ and employ the Gysin sequence. However, this means that we should first understand the cohomology of $M$. Borel and Hirzebruch determined the mod $2$ cohomology of $M$:
+
+\begin{prop}[{\cite[\S 17.3]{BH1958a}}]
+	The mod $2$ cohomology ring $H^*(M;\Z_2)$ is generated by two elements, $u$ in degree two and $v$ in degree three. They satisfy the relations 
+	\begin{equation*}
+		u^3=v^2 \qquad \qquad vu^2=0 \qquad \qquad (2u=2v=0)
+	\end{equation*}
+\end{prop}
+
+They furthermore use the so-called Hirsch formula\footnote{
+	As remarked by Borel, this formula was proven in full generality by Koszul and Leray; their proofs are given in the book ``Colloque de Topologie (Espaces fibr\'es)''. About the articles, Massey wrote the following in his review of the book in the bulletin of the AMS: ``[...] the exposition is so condensed as to make reading difficult or impossible for all but those who are particularly familiar with the recent work of the author in question. To make matters even more difficult, some of the authors make their exposition depend heavily on results which, if published at all, have appeared only in the form of brief announcements, with no proofs or elaboration.''
+}
+(cf.~\cite[192]{Bor1953}) for the Poincar\'{e} polynomial---that is, the polynomial whose $k$-th coefficient is the Betti number $b_k$---to determine that the Betti numbers of $M$ are $b_0(M)=b_4(M)=b_8(M)=1$ and zero otherwise. Regarding torsion of order higher than two, we invoke a theorem from the thesis of Borel, proven using spectral sequences:
+
+\begin{thm}[Borel, {\cite[\nopp 30.1]{Bor1953}}]
+	Consider the homogeneous space $G/H$, where $G$ is either a classical group, or $F_4$ or $G_2$, and $H$ a subgroup of equal rank, i.e.~contains a maximal torus of $G$. Let $T$ be this shared maximal torus. Then the cohomology of $G/H$ is free of ($p$-)torsion if the cohomology of $H,G/T$ and $H/T$ is free of ($p$-)torsion.
+\end{thm}
+
+In the very same paper, Borel showed that $H$ is actually the only source of torsion:
+
+\begin{thm}[Borel, {\cite[\nopp 29.1]{Bor1953}}]
+	Let $G$ be as above, and $T$ a maximal torus. Then $G/T$ is torsion-free.
+\end{thm}
+
+Applied to $M=G_2/SO(4)$, we use the well-known fact that the cohomology of $SO(4)$ has only $2$-torsion and see that the $p$-torsion in $H^*(M;\Z)$ vanishes for $p\neq 2$. We will now put these pieces together in determining the cohomology groups $H^*(M;\Z)$. Since $b_1(M)=0$, the universal coefficients theorem shows that $H^1(M;\Z)=0$.
+
+We have to work a bit harder to determine $H^2(M;\Z)$. Using $\pi_1(SO(3))=\pi_1(\RP^3)=\Z_2$ and the long exact sequence associated to the fibration $SO(3)\to SO(4)\to S^3$, we find $\pi_1(SO(4))=\Z_2$. Now, we use the long exact sequence of the fibration $SO(4)\to G_2\to M$. $\pi_2(G_2)=\pi_1(G_2)=1$, hence $\Z_2=\pi_1(SO(4))\cong \pi_2(M)$. Similarly, we deduce that $\pi_1(M)=0$, hence by the Hurewicz theorem $\pi_2(M)\cong H_2(M;\Z)$. Using the universal coefficients theorem once more, we conclude that $H^2(M;\Z)=0$.
+
+For the higher cohomology groups, we use the long exact cohomology sequence induced by the short exact sequence
+\begin{equation*}
+	\begin{tikzcd}
+		0\ar[r] & \Z \ar[r,"2\cdot"] & \Z \ar[r] & \Z_2 \ar[r] & 0
+	\end{tikzcd}
+\end{equation*}
+Here, we have to apply our knowledge of $H^*(M;\Z_2)$, the absence of any $(p\neq 2)$-torsion and the rational cohomology groups. As an illustration, we find the piece
+\begin{equation*}
+	\begin{tikzcd}
+		0 \ar[r] & \Z_2 \ar[r,"\beta"] & H^3(M;\Z) \ar[r,"2\cdot "] & H^3(M;\Z) \ar[r]
+		& \Z_2 \ar[r] & \dots 
+	\end{tikzcd}
+\end{equation*}
+which shows that the map $H^3(M;\Z) \xrightarrow{2\cdot} H^3(M;\Z)$ has kernel $\Z_2$. Since $b_3(M)=0$ and the only torsion is of order two, this implies that $H^3(M;\Z)\cong \Z_2$. This means that $H^3(M;\Z)\xrightarrow{2\cdot} H^3(M;\Z)$ is a trivial map, hence the next piece of the long exact sequence is constrained. In this fashion, we determine the cohomology groups step by step. Note that Poincar\'e duality already determines the cohomology in the highest two degrees, so one can stop after finding $H^6(M;\Z)$.
+
+\begin{prop}
+	The integral cohomology ring of $M=G_2/SO(4)$ is generated by two elements, $a$ in degree four and $b$ in degree three, subject to the relations
+	\begin{equation*}
+		2b=0 \qquad \qquad b^3=0 \qquad \qquad a^3=0 \qquad \qquad ab=0
+	\end{equation*}
+\end{prop}
+
+\begin{myproof}
+	We already showed how to determine the cohomology groups. Regarding the ring structure, Poincar\'e duality dictates that the generator in degree four squares to a generator in degree eight (we can take this to be the generator defining the orientation), and naturality of the cup product under reduction modulo two implies that the generator in degree $3$ squares to the generator in degree $6$. The relations follow from the vanishing of the respective cohomology groups.
+	%The details are: Take the non-zero class in degree 3 with Z coeff, then the cup product with itself must, when reduced mod 2, give the same as first reducing mod 2, then multiplying. This is because the map Z -> Z_2 is a ring homomorphism
+\end{myproof}
+
+
+As announced, we will now determine the cohomology of the twistor space $Z$ by means of the Gysin sequence. Recall from \cref{chap:twistor} that $Z=S(S^2H)$ is the sphere bundle of an oriented rank $3$ bundle over $M$. Since $S^2H$ has odd rank, the Euler class $e(S^2H)$ is $2$-torsion. It is a general fact that, for an oriented rank $3$ bundle $V$, $e(V)=\beta(w_2(V))$. Here, $\beta: H^2(M;\Z_2)\to H^3(M;\Z)$ is the Bockstein homomorphism and $w_2(V)$ is the second Stiefel-Whitney class of $V$ (see~\cite[79]{BCM2013}).
+%WORK NEEDED: Format this reference properly; it's an online unpublished document
+In our case, we find that $e(S^2H)=\beta(\varepsilon)\neq 0$, where $\varepsilon=w_2(S^2H)\neq 0$ measures the obstruction to lifting the $Sp(1)Sp(n)$-structure to an $Sp(1)\times Sp(n)$-structure (cf.~\cref{chap:twistor}), and generates $H^2(M;\Z_2)$.
+
+Recall that the Gysin sequence for an $S^2$-bundle $\pi_Z:Z\to M$ takes the form
+\begin{equation*}
+	\begin{tikzcd}[column sep=0.7cm]
+		\dots \ar[r] & H^{k-3}(M;\Z) \ar[r,"\smile e"] & H^k(M;\Z) \ar[r,"\pi^*_Z"]
+		& H^k(Z;\Z) \ar[r] & H^{k-2}(M;\Z) \ar[r] & \dots 
+	\end{tikzcd}
+\end{equation*}
+This sequence, combined with the consequences of $Z$ being the twistor space of $M$, suffice to determine the integral cohomology groups of $Z$. We illustrate this by computing a few of them explicitly. For instance, consider:
+\begin{equation*}
+	\begin{tikzcd}
+		0\ar[r] & H^2(Z;\Z) \ar[r] & H^0(M;\Z)=\Z \ar[r,"\smile e"] 
+		& H^3(M;\Z) \ar[r] & \dots
+	\end{tikzcd}
+\end{equation*}
+Since $Z$ is K\"ahler, we know that $H^2(Z;\Z)\neq 0$. The existence of an injective map into $\Z$ then forces $H^2(Z;\Z)\cong\Z$. The fact that the Euler class is non-vanishing is also of importance. Consider, for instance, the following piece of the long exact sequence:
+\begin{equation*}
+	\begin{tikzcd}
+		\dots \ar[r] & \Z_2 \ar[r,"\smile e"] & \Z_2 \ar[r] & H^6(Z;\Z)\ar[r] & \Z\ar[r] & 0
+	\end{tikzcd}
+\end{equation*}
+Because $e(S^2H)$ is the generator of $H^3(M;\Z)$, which squares to the generator in degree six, we find that $H^6(Z;\Z)\cong \Z$. Finally, there is a small subtlety in degree eight:
+\begin{equation*}
+	\begin{tikzcd}
+		0 \ar[r,"\smile e"] & \Z\ar[r] & H^8(Z;\Z) \ar[r] & \Z_2 \ar[r,"\smile e"] & 0
+	\end{tikzcd}
+\end{equation*}
+Here, we cannot immediately distinguish between the possibilities $H^8(Z;\Z)\cong\Z$ or $\Z\oplus \Z_2$. However, the universal coefficients theorem and Poincar\'e duality yield:
+\begin{equation*}
+	\begin{tikzcd}
+		0 \ar[r] & \Ext(H^3(Z;\Z),\Z) \ar[r] & H^8(Z;\Z) \ar[r] 
+		& \Hom(H_8(Z;\Z),\Z) \ar[r] & 0
+	\end{tikzcd}
+\end{equation*}
+and since $H^3(Z;\Z)=0$ if $e\neq 0$, we conclude that $H^8(Z;\Z)\cong \Z$. The other cohomology groups are straightforward to determine from the Gysin sequence. Finally, we obtain a simple result:
+
+\begin{prop}
+	The cohomology groups of the twistor space $Z$ are:
+	\begin{equation*}
+		H^k(Z;\Z)\cong
+		\begin{cases}
+			0 \qquad &k\ \text{odd}\\
+			\Z &k\ \text{even},\leq 10
+		\end{cases}
+	\end{equation*}
+\end{prop}
+
+\begin{rem}
+	If we had instead considered the sphere bundle $S$ of a rank three oriented vector bundle over $M$ whose Euler class vanishes, we would have obtained something significantly more messy:
+	\begin{equation*}
+		H^k(S;\Z)\cong
+		\begin{cases}
+			0\qquad & k=1,7,9\\
+			\Z_2 &k=3,5\\
+			\Z &k=0,2,4,10\\
+			\Z\oplus\Z_2 &k=6,8
+		\end{cases}
+	\end{equation*}
+\end{rem}
+
+\begin{prop}\label{prop:Zcohomology}
+	After appropriate identifications of $H^{2k}(Z;\Z)$ with $\Z$, denote the positive generators by $g_n$. Then the ring structure of $H^*(Z;\Z)$ is determined by the relations
+	\begin{equation*}
+		g_1^2=3 g_2 \qquad \qquad g_1g_2=2g_3 \qquad \qquad g_2^2=2g_4 \qquad \qquad g_1g_4=g_5 
+	\end{equation*}
+	or equivalently
+	\begin{equation*}
+		g_1^2=3g_2\qquad \qquad g_1^3=6g_3 \qquad \qquad g_1^4=18g_4 \qquad \qquad g_1^5=18g_5
+	\end{equation*}
+\end{prop}
+\begin{myproof}
+	A natural identification $H^{2k}(Z;\Z)=\Z$ is provided by proclaiming that the positive generators must be positive multiples of powers of the K\"ahler class (after the inclusion $H^{2k}(Z;\Z)\hookrightarrow H^{2k}(Z;\R)$). The Gysin sequence shows that $\pi_Z^*:H^4(M;\Z) \to H^4(Z;\Z)$ is an isomorphism, hence $\pi_Z^*(a)=\pm g_2$, where $a\in H^4(M;\Z)$ is the positive generator. In degree eight, $\pi_Z^*:H^8(M;\Z)\to H^8(Z;\Z)$ corresponds to multiplication by $\pm 2$, hence naturality of the cup product shows that $\pi_Z^*(a^2)=g_2^2=\pm 2 g_4$, but both are positive multiples of $g_1^4$ by assumption, hence $g_2^2=2g_4$. Poincar\'e duality tells us that $g_1g_4=\frac{1}{2}g_1g_2^2=g_5=g_2g_3$, hence $g_3=\frac{1}{2}g_1g_2$.
+	
+	Finally, we show that $g_1^2=3g_2$. To do this, we need to use the characteristic classes of $Z$. By \cref{cor:twistorfano}, $Z$ is Fano with Fano index a multiple of three. In fact, the Fano index is exactly three, since it cannot be (greater or equal to) six by \cref{thm:KOCPn}, since it is not even homotopy equivalent to $\CP^5$. Thus, $c_1(Z)=3g_1$. This may be used to study the ring structure of the cohomology through the Chern number $c_1^5[Z]$. This number is fixed by the leading order term of the so-called \emph{Hilbert polynomial} $P(r)=\chi(Z,(T\pi)^r)$: The Hirzebruch-Riemann-Roch theorem implies that it is a polynomial of order at most five whose coefficients are given by Chern numbers. In fact, we have:
+	\begin{equation*}
+		P(r)=\langle\ch((T\pi)^r)\td(Z),[Z]\rangle
+		=\frac{c_1^5[Z]}{29160}r^5+\text{lower order terms}
+	\end{equation*}
+	On the other hand, Semmelmann and Weingart~\cite{SW2004} give an independent computation of the Hilbert polynomial. They found
+	\begin{equation*}
+		P(r)=\frac{3}{20}r^5+\text{lower order terms}
+	\end{equation*}
+	and therefore $c_1^5[Z]=4374$. At the same time, $c_1^5[Z]=3^5g_1^5[Z]$, hence $g_1^5=18g_5$, since the orientation is induced by the K\"ahler class (hence $g_5[Z]=1$). If we set $g_1^2=kg_2$ for $k\in\N_+$ ($g_2$ is a positive multiple of $g_1^2$ by construction), then $g_1^5=k^2g_1g_2^2=2k^2g_5$; we deduce that $k=3$, completing our proof.
+\end{myproof}
+
+\begin{rem}\leavevmode
+	\begin{numberedlist}
+		\item Observe that the ring structure on cohomology differs from that of $G_2/U(2)_-$, which proves that these manifolds are not even homotopy equivalent.
+		\item It seems more than likely that it is in fact possible to determine $g_1^2=3g_2$ without resorting to the Hilbert polynomial or other ``heavy machinery''; in that case, our results on the Chern classes (\cref{sec:Zrigidity}) of $Z$ would constitute an alternative proof of Semmelmann and Weingart's result. However, we were unable to find a way to avoid relying on their work. 
+	\end{numberedlist}
+\end{rem}
+
+\section{Chern classes and numbers of \texorpdfstring{$G_2/U(2)_-$}{the quadric}}
+
+Determining the Chern classes of the quadric $Q$ is a routine exercise, using the normal bundle sequence (as explained in~\cref{chap:uniqueness})
+\begin{equation*}
+	\begin{tikzcd}
+		0 \ar[r] & \mc T Q \ar[r] & \iota^*\mc T\CP^6 \ar[r] & \iota^*\mc O(2) \ar[r] & 0
+	\end{tikzcd}
+\end{equation*}
+Here, $\iota:Q\hookrightarrow \CP^6$ is the inclusion and $\mc O(d)$ denotes the $d$-fold tensor product of the hyperplane bundle $\mc O(1)$ on $\CP^n$. It has first Chern class $c_1(\mc O(d))=d\cdot H$, where the hyperplane class $H$ generates $H^2(\CP^n;\Z)$. The total Chern class $c(\CP^n)$ is given by $(1+H)^{n+1}$, so that the Whitney product formula yields
+\begin{equation*}
+	(1+\iota^*H)^7=c(Q)(1+2\iota^*H)
+\end{equation*}
+Matching terms order by order yields:
+
+\begin{prop}
+	The total Chern class of the quadric $Q$ is given by
+	\begin{equation*}
+		c(Q)=1+5h+11h^2+13h^3+9h^4+3h^5\qquad \qquad h=\iota^*H
+	\end{equation*}\proofclear
+\end{prop}
+
+To obtain the Chern numbers, the only subtle point one has to keep in mind is that the fundamental class $[Q]\in H_{10}(Q;\Z)$ maps to \emph{twice} the generator of $H_{10}(\CP^6;\Z)$ under $\iota_*$, since $Q$ is a quadric. The resulting Chern numbers are listed in \cref{tab:Qnumbers}.
+
+\begin{prop}
+	In the notation of \cref{prop:cohomofPTS6}, the total Chern class of $\P(TS^6)$ is given by 
+	\begin{equation*}
+		c(\P(TS^6))=1+3y+3y^2+2x+6xy+6xy^2
+	\end{equation*}
+\end{prop}
+\begin{myproof}
+	We employ the fibration $p:\P(TS^6)\to S^6$ and decompose the tangent bundle as $T\P(TS^6)=Tp\oplus p^*TS^6$, where $Tp$ denotes the subbundle formed by tangent vectors along the fiber. Clearly $p^*c(S^6)=1+2x$, so all that is left is to determine $c(Tp)$. Over each fiber $F=\CP^2$, the pullback bundle $p^*TS^6$ restricts to the trivial rank three complex bundle on $\CP^2$. Let $\ms L$ denote the tautological line bundle over $\CP^2$. The fiberwise Euler sequences
+	\begin{equation*}
+		\begin{tikzcd}
+			0 \ar[r] & \ms L \ar[r] & \C^3 \ar[r] & \ms L\otimes T\CP^2 \ar[r] & 0	
+		\end{tikzcd}
+	\end{equation*}
+	then glue together to the \emph{relative Euler sequence}
+	\begin{equation*}
+		\begin{tikzcd}
+			0 \ar[r] & L \ar[r] & p^*TS^6 \ar[r] & L\otimes Tp \ar[r] & 0
+		\end{tikzcd}
+	\end{equation*}
+	where $L$ is the tautological line bundle over $\P(E)$. This implies that $p^*TS^6\cong L\oplus (L\otimes Tp)$ as complex vector bundles. Twisting by $H\coloneqq L^{-1}$, we find $H\otimes p^*TS^6\cong \C\oplus Tp$. Thus, we see that
+	\begin{equation*}
+		c(Tp)=c(p^*TS^6\otimes H)
+	\end{equation*}
+	This Chern class is easily computed using the following formula, valid for any complex vector bundle $\mc E$ and line bundle $\mc L$:
+	\begin{equation*}
+		c_i(\mc E\otimes \mc L)=\sum_{j=0}^i 
+		\begin{pmatrix}
+			\rank_\C \mc E-j \\ i-j 
+		\end{pmatrix}
+		c_j(\mc E)c_1(\mc L)^{i-j}
+	\end{equation*}
+	We know that $c(p^*TS^6)=1+2x$ and $c(H)=1+y$, where $x,y$ were introduced in \cref{prop:cohomofPTS6}. This shows that $c(Tp)=1+3y+3y^2$. Now, we apply the Whitney product formula and find
+	\begin{equation*}
+		c(\P(TS^6))=(1+3y+3y^2)(1+2x)=1+3y+3y^2+2x+6xy+6xy^2
+	\end{equation*}
+	which was our claim.
+\end{myproof}
+
+Using the fact that $xy^2$ is the positive generator in top degree, the Chern numbers are easy to compute. Our results agree with those of Grama, Negreiros and Oliveira~\cite{GNO2017}\footnote{The relevant table in~\cite{GNO2017} contains some sign errors, so our agreement here is up to sign.}, who calculated the Chern numbers of the invariant almost complex structures of $G_2/U(2)_\pm$ by Lie-theoretic means. with the  Now, we apply the same method to $\P(T^*S^6)$:
+
+\begin{prop}
+	In the notation of \cref{prop:cohomofPT*S6}, the total Chern class of $\P(T^*S^6)$ is given by
+	\begin{equation*}
+		c(\P(T^*S^6))=1+3z+3z^2+2x+6xz+6xz^2
+	\end{equation*}
+\end{prop}
+\begin{myproof}
+	Denote the base point projection by $q$. As before, we write $T\P(T^*S^6)\cong Tq\oplus q^*TS^6$ and compute $c(Tq)$ from the formula $c(Tq)\cong c(q^*TS^6\otimes H)$, where $H$ now denotes the hyperplane bundle over $\P(T^*S^6)$ (as opposed to $\P(TS^6)$), with first Chern class $z$. Proceeding as before, we find:
+	\begin{equation*}
+		c(\P(T^*S^6))=(1+3z+3z^2)(1+2x)=1+3z+3z^2+2x+6xz+6xz^2
+	\end{equation*}
+	This is what we wanted to show.
+\end{myproof}
+
+The Chern numbers are once again easily obtained. All the Chern numbers computed thus far are displayed in \cref{tab:Qnumbers}. As announced, each can be distinguished by the their Chern numbers---in fact, they are already distinguished by the Chern number $c_1^5$.
+
+\begin{table}[ht!]\centering
+	\begin{tabular}{llll} \toprule
+		Chern Number& $Q$		& $\P(TS^6)$ 	& $\P(T^*S^6)$\\ \midrule
+		$c_5$ 		& $6$ 		& $6$ 			& $6$\\
+		$c_1^5$ 	& $6250$	& $-486$		& $486$\\
+		$c_1^3c_2$	& $2750$ 	& $-162$		& $162$\\
+		$c_1^2c_3$	& $650$ 	& $18$ 			& $18$\\
+		$c_1c_4$	& $90$ 		& $18$ 			& $18$\\
+		$c_1c_2^2$	& $1210$ 	& $-54$ 		& $54$\\
+		$c_2c_3$	& $286$ 	& $6$			& $6$\\ \bottomrule
+	\end{tabular}
+	\caption{Chern numbers of the invariant almost complex structures $Q$, $\P(TS^6)$ and $\P(T^*S^6)$.}\label{tab:Qnumbers}
+\end{table}
+
+\subsection{Flipping the fiber over \texorpdfstring{$S^6$}{the 6-sphere}}
+
+So far, we have encountered three out of the four invariant almost complex structures on $G_2/U(2)_-$. The fourth is obtained from $Q$ by flipping the fiber of the fibration $p_Q:Q\to S^6$, as we will now show. As remarked in \cref{sec:ACSs}, the tangent vectors along the fibers define a complex subbundle of $TZ$. We obtain a decomposition $TQ\cong Tp_Q\oplus D$, where $D$ is a complementary complex subbundle. Recall that $c(Q)=1+5h+11h^2+13h^3+9h^4+3h^5$, and that $h$ restricts to the hyperplane class on each fiber, which is just a copy of $\CP^2$. Thus $c_1(Tp_Q)=3h$, which forces $c_1(D)=2h$. Similarly, we find $c_2(Tp_Q)=3h^2$ and $c_2(D)=2h^2$. Since $Tp_Q$ has rank two, we see that $c_3(D)=h^3$ and $c(Q)$ factorizes as $c(Q)=(1+3h+3h^2)(1+2h+2h^2+h^3)$. 
+
+Now we flip the fiber, replacing $Tp_Q$ by its conjugate $\overline{Tp_Q}$. The resulting almost complex manifold will be denoted by $X$, and its tangent bundle has (by definition) a decomposition $TX\cong \overline{Tp_Q}\oplus D\cong (Tp_Q)^{-1}\oplus D$. The following is then obvious:
+
+\begin{prop}
+	$X$ has total Chern class 
+	\begin{equation*}
+		c(X)=c(Q)\frac{1-3h+3h^2}{1+3h+3h^2}
+		=1-h-h^2+h^3+3h^4+3h^5
+	\end{equation*}
+	\proofclear
+\end{prop}
+
+Note that the flip does not change the orientation, since $Tp_Q$ is a rank two subbundle. Therefore, $xy^2$ remains the positive generator of the cohomology in top degree. 
+
+It is already clear from the expression for the Chern class that the Chern numbers $X$ will be drastically different than those of $Q$, $\P(TS^6)$ and $\P(T^*S^6)$. They are shown in \cref{tab:QflipS6numbers}. This proves that we have found a fourth invariant almost complex manifold and therefore we have obtained a geometric description of every invariant almost complex structure on $G_2/U(2)_-$. The precise significance of $X$ in the general geometric picture is not yet completely clear. For instance, we do not know whether this almost complex structure admits any distinguished, compatible metrics.
+%WORK NEEDED: What to do?
+
+We already worked out the Chern classes of the (complex) vertical subbundles of $T\P(TS^6)$ and $T\P(T^*S^6)$, so it is clear how to implement flipping the fiber of the fibrations over $S^6$ in these cases. We denote the resulting manifolds by $R$ and $S$, respectively.
+
+\begin{prop}
+	The total Chern class of $R$ is 
+	\begin{equation*}
+		c(R)=c(\P(TS^6))\frac{1-3y+3y^2}{1+3y+3y^2}=1-3y+3y^2+2x-6xy+6xy^2
+	\end{equation*}
+	The total Chern class of $S$ is
+	\begin{equation*}
+		c(S)=c(\P(T^*S^6))\frac{1-3z+3z^2}{1+3z+3z^2}=1-3z+3z^2+2x-6xz+6xz^2
+	\end{equation*}
+	\proofclear
+\end{prop}
+
+Our definition of the almost complex structures on $\P(TS^6)$ and $\P(T^*S^6)$ in \cref{sec:ACSs} already makes it clear that we should find that $R=\P(T^*S^6)$ and $S=\P(TS^6)$. This is confirmed by the Chern numbers (which uniquely identify the invariant almost complex structures), shown in \cref{tab:QflipS6numbers}. 
+
+\begin{table}[ht!]\centering
+	\begin{tabular}{llll} \toprule
+		Chern Number& $R=\P(T^*S^6)$& $S=\P(TS^6)$	& $X$\\ \midrule
+		$c_5$ 		& $6$ 			& $6$ 			& $6$\\
+		$c_1^5$ 	& $486$			& $-486$		& $-2$\\
+		$c_1^3c_2$	& $162$ 		& $-162$		& $2$\\
+		$c_1^2c_3$	& $18$ 			& $18$ 			& $2$\\
+		$c_1c_4$	& $18$ 			& $18$ 			& $-6$\\
+		$c_1c_2^2$	& $54$ 			& $-54$ 		& $-2$\\
+		$c_2c_3$	& $6$ 			& $6$			& $-2$\\ \bottomrule
+	\end{tabular}
+	\caption{Chern numbers of the almost complex manifolds obtained after flipping the fiber over $S^6$.}\label{tab:QflipS6numbers}
+\end{table}
+
+\subsection{Flipping the fiber over \texorpdfstring{$G_2/SO(4)$}{G2 over SO(4)}}
+
+Now, we go through the same procedure for the fibration over $G_2/SO(4)=M$. The fibers yield a complex rank one subbundle of the tangent bundle for any invariant almost complex structure; after picking a complementary subbundle we obtain a decomposition of the tangent bundle. We know that the Chern classes must obey a Whitney sum formula, and in every case enforcing the factorization of the total Chern class uniquely determines the Chern class of the line bundle of tangent vectors along the fibers. 
+
+After flipping this complementary line bundle, we know that we must obtain one of the four invariant almost complex structures. The easiest way to determine which one is to compute the resulting Chern numbers. To do so, it is important to keep in mind that replacing the line bundle with its conjugate changes the orientation of the manifold. Hence, the positive generators of top degree cohomology switch sign. The results are summarized in the following proposition, and \cref{tab:QflipMnumbers}.
+
+\begin{prop}
+	After flipping the fiber, of $\pi_Q:Q\to M$, we obtain an almost complex manifold $X'$ with Chern class
+	\begin{equation*}
+		c(X')=c(Q)\frac{1-h}{1+h}=1+3h+3h^2-h^3-3h^4-3h^5
+	\end{equation*}
+	If we flip the fibers of $p':\P(TS^6)\to M$ and $q':\P(T^*S^6)\to M$, the resulting almost complex manifolds $R'$ and $S'$ have Chern classes
+	\begin{equation*}
+		c(R')=c(\P(TS^6))\frac{1+y}{1-y}=1+5y+11y^2+13y^3+9y^4+3y^5
+	\end{equation*}
+	and
+	\begin{equation*}
+		c(S')=c(\P(T^*S^6))\frac{1-z}{1+z}=1+z-z^2-z^3+3z^4-3z^5
+	\end{equation*}
+	\proofclear
+\end{prop}
+
+\begin{table}[ht!]\centering
+	\begin{tabular}{llll} \toprule
+		Chern Number& $R'=Q$	& $S'=X$	& $X'=\P(TS^6)$\\ \midrule
+		$c_5$ 		& $6$ 		& $6$ 		& $6$\\
+		$c_1^5$ 	& $6250$	& $-2$	& $-486$\\
+		$c_1^3c_2$	& $2750$ 	& $2$	& $-162$\\
+		$c_1^2c_3$	& $650$ 	& $2$ 		& $18$\\
+		$c_1c_4$	& $90$ 		& $-6$ 		& $18$\\
+		$c_1c_2^2$	& $1210$ 	& $-2$ 	& $-54$\\
+		$c_2c_3$	& $286$ 	& $-2$		& $6$\\ \bottomrule
+	\end{tabular}
+	\caption{Chern numbers of the almost complex manifolds obtained after flipping the fiber over $G_2/SO(4)$.}\label{tab:QflipMnumbers}
+\end{table}
+
+As before, the Chern numbers uniquely identify the invariant almost complex structures: $R'=Q$, while $S'=X$ and $X'=\P(TS^6)$.
+
+In summary, we have been able to realize all the invariant almost complex manifolds in a geometric fashion, and to compute all of their Chern classes and numbers. Moreover, the geometric interpretation of the invariant almost complex structures leads to a complete description of the relations between them (see \cref{fig:Qfliprelations}). Finally, we collect the Chern numbers of all the invariant almost complex structures in a single table for convenience.
+
+\begin{table}[ht!]\centering
+	\begin{tabular}{lllll} \toprule
+		Chern Number& $Q$		& $\P(TS^6)$ 	& $\P(T^*S^6)$	& $X$\\ \midrule
+		$c_5$ 		& $6$ 		& $6$ 			& $6$			& $6$\\
+		$c_1^5$ 	& $6250$	& $-486$		& $486$			& $-2$\\
+		$c_1^3c_2$	& $2750$ 	& $-162$		& $162$			& $2$\\
+		$c_1^2c_3$	& $650$ 	& $18$ 			& $18$			& $2$\\
+		$c_1c_4$	& $90$ 		& $18$ 			& $18$			& $-6$\\
+		$c_1c_2^2$	& $1210$ 	& $-54$ 		& $54$			& $-2$\\
+		$c_2c_3$	& $286$ 	& $6$			& $6$			& $-2$\\ \bottomrule
+	\end{tabular}
+	\caption{Chern numbers of all invariant almost complex structures on $G_2/U(2)_-$.}\label{tab:Qnumberscomplete}
+\end{table}
+
+\section{Rigidity and Chern classes of the twistor space}
+\label{sec:Zrigidity}
+
+In this final section, we discuss the complex geometry of $G_2/U(2)_+$. Rather than immediately launching into a computation of the Chern classes and numbers of its invariant almost complex structures, we start with a rigidity theorem for the canonical, integrable complex structure that casts $G_2/U(2)_+$ as the twistor space over $G_2/SO(4)$. This result is a precise analog of the classical uniqueness theorems reviewed in \cref{chap:uniqueness}. Finally, we will compute the Chern numbers of both the integrable twistor space structure and the nearly K\"ahler structure.
+
+\subsection{Rigidity of the canonical complex structure}
+
+Consider $Z$, i.e. the manifold $G_2/U(2)_+$ equipped with its canonical complex structure, which is K\"ahlerian and even admits a $G_2$-invariant K\"ahler-Einstein metric. Our aim is to prove that it is characterized, among K\"ahlerian complex manifolds, by its topology. In order to do so, we need one more piece of information: the Pontryagin classes. We determine them via the Pontryagin classes of the Wolf space $M=G_2/SO(4)$.
+
+\begin{lem}
+	The Pontryagin numbers of $M$ are $p_1^2[M]=4$ and $p_2[M]=7$.
+\end{lem}
+\begin{myproof}
+	This is an immediate consequence of the relations
+	\begin{gather*}
+		\frac{1}{45}(p_2[M]-p_1^2[M])=1\\ 
+		7p_1^2[M]-4p_2[M]=0
+	\end{gather*}
+	The first is an application of Hirzebruch's signature theorem $L[M]=\sigma(M)$, combined with the fact that $\sigma(M)=1$. The second follows from the Lichnerowicz argument, a famous application of the Atiyah-Singer index theorem (for an exposition, see~\cite{Roe1998}) which shows that the $\hat A$-genus of a spin manifold that admits a metric with positive scalar curvature vanishes. This result applies to $M$ due to \cref{prop:QK8nspin}, and the fact that $M$ is Einstein with positive Einstein constant.
+\end{myproof}
+
+Our description of the map $\pi_Z^*$ on degree four and eight (in the proof of \cref{prop:Zcohomology}) now implies that $\pi_Z^*p(M)=1+2\epsilon g_2+14g_4$, where $\epsilon=\pm 1$ is an undetermined sign. 
+
+\begin{lem}
+	The total Pontryagin class of $Z$ is $p(Z)=1+g_2+2g_4$.
+\end{lem}
+\begin{myproof}
+	The decomposition $TZ=\pi_Z^*TM\oplus T\pi_Z$ shows that the Pontryagin classes of $Z$ factorize: $p(Z)=\pi^*_Zp(M)p(T\pi_Z)$. Since $T\pi_Z$ is a complex line bundle, $p(T\pi_Z)=1+c_1^2(T\pi)=1+3g_2$, where the final equality follows from the fact that $c_1(Z)=3c_1(T\pi)=3g_1$ (cf. \cref{cor:twistorfano}). We conclude:
+	\begin{equation*}
+		p(Z)=1+(3+2\epsilon)g_2+(14+12\epsilon)g_4=1+p_1(Z)+p_2(Z)
+	\end{equation*}
+	On the other hand, we can express the Pontryagin classes in terms of the Chern classes of $Z$:
+	\begin{gather*}
+		p_1(Z)=c_1^2(Z)-2c_2(Z)\\
+		p_2(Z)=c_2^2(Z)-2c_1c_3(Z)+2c_4(Z)
+	\end{gather*}
+	By \cref{thm:LibgoberWoodChern}, $c_1c_4[Z]=c_1c_4[\CP^6]=90$. We already know that $c_1(Z)=3g_1$ and $g_1g_4=g_5$ by Poincare duality, hence $c_4(Z)=30g_4$. Setting $c_2(Z)=d_2g_2$ and $c_3(Z)=d_3g_3$ for $d_2,d_3\in\Z$, this translates to:
+	\begin{gather*}
+		p_1(Z)=(27-2d_2)g_2\\
+		p_2(Z)=(2d_2^2-18d_3 +60)g_4
+	\end{gather*}
+	Equating the two expression for the Pontryagin classes yields
+	\begin{gather*}
+		27-2d_2=3+2\epsilon\\
+		2d_2^2-18d_3+60=14+12\epsilon
+	\end{gather*}
+	These equations for $d_2$ and $d_3$ admit no integer solutions if $\epsilon=1$, hence $\epsilon=-1$ and we conclude that $p_1(Z)=g_2$ and $p_2(Z)=2g_4$.
+\end{myproof}
+
+Now we are ready to prove the main result of this section:
+
+\begin{thm}
+	If $X$ is a K\"ahler manifold homeomorphic to the twistor space $Z$ (equipped with its canonical complex structure), then it is biholomorphic to $Z$.
+\end{thm}
+\begin{myproof}
+	Just as for the rigidity theorems of \cref{chap:uniqueness}, our strategy is to determine the first Chern class. Since the cohomology of $Z$ (and hence of $X$) is so simple, the Hodge numbers are completely determined. In fact, they are equal to the Hodge numbers of $\CP^5$: $h^{p,p}=1$ for $p\leq 5$ and $h^{p,q}=0$ otherwise. By \cref{thm:LibgoberWoodChern}, we find $c_1c_4[X]=c_1c_4[\CP^5]=90$. Let $G_k$ be the positive generators of $H^{2k}(X;\Z)$ with respect to the (powers of the) K\"ahler class and set $c_1(X)=d G_1$; then $d$ is a divisor of $90$ (here, negative numbers are also allowed). Since $Z$ (and hence $X$) is not spin, $d$ must furthermore be odd. Kobayashi and Ochiai's results \ref{thm:KOCPn} and \ref{thm:KOQn} rule out $d\geq 5$, leaving the possibilities $d\in\{\pm 1,\pm 3,-5,-9,-15,-45\}$.
+	
+	Since the cohomology is torsion-free, the \emph{integral} Pontryagin classes are homeomorphism invariants (in the presence of torsion, this only holds for the rational Pontryagin classes), i.e. we have the relation $p(X)=f^*p(Z)$, where $f:X\to Z$ is a homeomorphism, which exists by assumption. Denoting the generators of $H^{2k}(Z;\Z)$ by $g_k$ as before, we have $f^*p_1(Z)=\frac{1}{2}f^*(g_1^2)=\frac{1}{2}G_1^2=G_2$, since $f^*g_1=\pm G_1$. Similarly, $f^*p_2(Z)=2G_4$. Expressing the Pontryagin classes in terms of Chern classes, we have:
+	\begin{gather*}
+		p_1(X)=c_1^2(X)-2c_2(X) \\
+		p_2(X)=c_2^2-2c_1c_3(X)+2c_4(X)
+	\end{gather*}
+	Using the Hirzebruch-Riemann-Roch theorem, the Todd (or arithmetic) genus
+	\begin{equation*}
+		\chi(X,\mc O)=\sum_p (-1)^p h^{0,p}=1
+	\end{equation*} 
+	yields another constraint on the Chern classes:
+	\begin{equation*}
+		1=\int_X\td(X)
+		=\frac{1}{1440}\big(-c_1^3c_2[X]+c_1^2c_3[X]+3c_1c_2^2[X]-c_1c_4[X]\big)
+	\end{equation*}
+	Plugging in $c_1c_4[X]=90$, we find:
+	\begin{equation*}
+		c_1^2c_3[X]=1530+c_1^3c_2[X]-3c_1c_2^2[X]
+	\end{equation*}
+	Together with the Pontryagin classes, this relation suffices to rule out all possible values except $d=3$, as we will now show. 
+	
+	First, assume $d=\pm 1$. Then $c_2(X)=G_2$, hence $c_1^2c_3[X]=1530\pm 4$ while at the same time
+	\begin{equation*}
+		c_1^2c_3[X]=\frac{1}{2}\big(c_1c_2^2[X]+2c_1c_4[X]-c_1p_2[X]\big)=90
+	\end{equation*}
+	This is a contradiction. If $d$ is a multiple of nine, we find $0\equiv 1530\mod 27$, which is also a contradiction. For $d=-15$, we have $c_4(X)=-6G_4$ and the expression for $p_1(X)$ yields $c_2(X)=337G_2$. But then the expression for $p_2(X)$ shows that $c_1c_3(X)=113562\cdot G_4$, which is not divisible by $15$ and therefore contradictory. 
+	
+	Now assume $d=-5$. Then $c_2(X)=37 G_2$ and we find $c_1c_3(X)=1350 G_4$, which implies that $c_1^2c_3[X]=-6750 $. On the other hand, $c_1^2c_3[X]>c_1^3c_2[X]-3c_1c_2^2[X]=13320$, ruling out this possibility. Finally, if $d=-3$ we find $c_2(X)=13 G_2$ and $c_4(X)=-30 G_4$. The two expressions for $c_1^2c_3[X]$ then yield the values $-411$ and $2286$. This leaves only the possibility that $d=3$.
+	
+	Now, we have established that $X$ is a Fano manifold; its Fano index $I(X)$ is three. The Fano \emph{coindex} $\dim X+1-I(X)$ also equals three, and thus we may appeal to the classification of Fano manifolds with coindex three, due to Mukai~\cite{Muk1989}. Under a technical assumption which was later verified by Mella~\cite{Mel1999}, Mukai~\cite[Prop.~1]{Muk1989} proves that $X$ is what he calls an \emph{$F$-manifold of the first species} with \emph{Fano genus} $g_X=\frac{1}{2}G_1^5+1=10$. In theorem 2 of the same paper, he establishes that this manifold is biholomorphic to the twistor space $Z$, equipped with its canonical complex structure (see also remark 1 in Mukai's paper). This completes our proof.
+\end{myproof}
+
+\begin{rem}
+	Using similar methods, it may be possible to prove analogous results for other Fano manifolds with low coindex and (extremely) simple cohomology.
+\end{rem}
+
+\subsection{Chern numbers of the invariant almost complex structures}
+
+The methods employed in the previous section allow us to quickly compute the Chern classes of $Z$. Indeed, $c_1(Z)=3g_1$ and since $c_1c_4[Z]=90$, $c_4(Z)=30g_4$. Using the formulas for the Pontryagin classes (and recalling $c_5(Z)=e(Z)$), the total Chern class turns out to  be
+\begin{equation*}
+	c(Z)=1+3g_1+13g_2+22g_3+30g_4+6g_5
+\end{equation*}
+Using the structure of the cohomology ring (cf. \cref{prop:Zcohomology}), the Chern numbers are now easy to compute (see \cref{tab:Znumbers}).
+
+Finally, we compute the Chern numbers of the other invariant almost complex structure: the nearly K\"ahler manifold (which we denote by $N$), obtained from the standard twistor space structure by the now-familiar procedure of flipping the fiber.
+
+\begin{prop}
+	The total Chern class of $N$ is 
+	\begin{equation*}
+		c(N)=1+g_1+g_2-6g_3-18 g_4-6g_5
+	\end{equation*}
+\end{prop}
+\begin{myproof}
+	Recall (cf.~\cref{chap:twistor}) that the fibers of the twistor projection $\pi_Z:Z\to G_2/SO(4)$ are holomorphic submanifolds, hence the vertical tangent bundle $T\pi_Z$ is a complex subbundle of $TZ$. We already know that its Chern class is $c(T\pi_Z)=1+g_2$, hence picking a complementary subbundle $D$ we find $c(Z)=(1+g_2)c(D)$ and $c(N)=(1-g_2)c(D)$. Working out $c(N)=c(Z)\frac{1-g_1}{1+g_1}$, one obtains the claimed formula.
+\end{myproof}
+
+While computing the Chern numbers of $N$, we keep in mind that the orientation is opposite to that of $Z$, i.e.~$g_5[N]=-1$. The results are given in \cref{tab:Znumbers}.
+
+\begin{table}[ht!]\centering
+	\begin{tabular}{lll} \toprule
+		Chern Number& $Z$		& $N$ \\ \midrule
+		$c_5$ 		& $6$		& $6$ \\
+		$c_1^5$ 	& $4374$	& $-18$\\
+		$c_1^3c_2$	& $2106$	& $-6$\\
+		$c_1^2c_3$	& $594$		& $18$\\
+		$c_1c_4$	& $90$		& $18$\\
+		$c_1c_2^2$	& $1014$	& $-2$\\
+		$c_2c_3$	& $286$		& $6$\\ \bottomrule
+	\end{tabular}
+	\caption{The Chern numbers of the two invariant almost complex structures on $G_2/U(2)_+$. See also~\cite{GNO2017}\protect\footnotemark.}\label{tab:Znumbers}
+\end{table}\vspace{-0.1cm}
+\footnotetext{The relevant table in this paper contains some errors in the Chern numbers of $N$.}

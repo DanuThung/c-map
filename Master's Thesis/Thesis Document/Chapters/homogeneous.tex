@@ -1,0 +1,219 @@
+\chapter{Homogeneous spaces and invariant geometric structures}
+\label{chap:homogeneous}
+
+In this chapter, we collect some facts from Riemannian geometry that will be of use to us, but may not be covered in standard introductory texts on the subject. We claim no originality in our discussion: This chapter largely follows parts of Besse's book on Einstein manifolds~\cite{Bes2008}, though the textbooks of Petersen~\cite{Pet2016} and Kobayashi and Nomizu~\cite{KN1963,KN1969} offer important alternatives.
+
+\section{Homogeneous spaces}
+
+Given a Riemannian manifold $(M,g)$ it is natural to consider its group of isometries, which we will denote by $I(M,g)$. Myers and Steenrod established the most fundamental properties of the isometry group; we recall their results without proof.
+
+\begin{thm}[Myers-Steenrod~\cite{MS1939}]
+	The isometry group $I(M,g)$ of a connected, Riemannian manifold $(M,g)$ is a Lie group acting smoothly on $M$. If $M$ is compact, then $I(M,g)$ is also compact. Furthermore, the isotropy subgroup $I_x(M,g)$ of isometries that fix $x\in M$ is closed, and the map $\rho:I_x(M,g)\to GL(T_xM)$ which sends $f$ to $\dif_x f$ defines an isomorphism onto a closed subgroup of $O(T_xM)$. Hence $I_x(M,g)$ is compact. 
+\end{thm}
+
+In this work, we study spaces on which the isometry group acts transitively.
+
+\begin{mydef}
+	A Riemannian manifold $(M,g)$ is called a \emph{(Riemannian) homogeneous space} if its isometry group $I(M,g)$ acts transitively. If $G\subset I(M,g)$ is a closed subgroup that acts transitively, we call $(M,g)$ \emph{$G$-homogeneous}. The underlying smooth manifold $M$ is called a ($G$-)homogeneous space.
+\end{mydef}
+
+When speaking about homogeneous spaces, we will typically think of the underlying smooth manifold, which may then be equipped with (possibly several distinct) metrics that turn it into a \emph{Riemannian} homogeneous space. Observe that $M$ may be $G$-homogeneous under more than one Lie group.
+
+We also note that our definition, strictly speaking, requires the action of $G$ to be effective. However, there are many natural examples where $G$ does not effectively on a homogeneous space $M=G/H$ ($H$ is the compact isotropy subgroup of $G$). In this case, there exists a (non-trivial) normal subgroup $N$ of $H$, which may cause the isotropy representation of $H$---to be introduced shortly---to fail to be faithful. Note, however, that $G'=G/N$ still acts transitively on $G/H$, with isotropy group $H'=H/N$. Now, the action on $G/H=G'/H'$ is effective, so we may pass to this situation. In all examples of interest to us, this will not cause any problems because $G$ will always act \emph{nearly} effectively, meaning that $H$ contains at most a discrete normal subgroup $N$. Thus, passing to $G'$ will not affect the Lie-algebraic data such as the isotropy representation and we can disregard this technical point.
+
+\begin{prop}
+	Any Riemannian homogeneous space $(M,g)$is complete.
+\end{prop}
+\begin{myproof}
+	Given any $x\in M$, there exists a closed ball $\bar B_\epsilon(0)$ of radius $\epsilon>0$ around the origin in $T_xM$ such that $\exp_x:T_xM\to M$ is defined on all of $\bar B_\epsilon(0)$. Now let $\gamma:[0,a]\to M$ be a unit speed geodesic starting at $x$. By homogeneity, there exists an isometry $\varphi\in I(M,g)$ such that $\varphi(x)=\gamma$. Then $\dif_{\gamma(a)}\varphi^{-1}(\dot \gamma(a))=v$ for some unit vector $v\in T_xM$. Set $\gamma(a+t)=\varphi(\exp_x(tX))$, $0\leq t\leq \epsilon$. This extends the original geodesic $\gamma$ by time $\epsilon$. 
+\end{myproof}
+
+Any homogeneous space $M$ is (equivariantly) diffeomorphic to a coset space $G/H$, and we will think of it as such. Here, $H$ is the stabilizer of a point in $M$; it is a closed (hence compact, since $G$ is closed) subgroup. Since for $h\in H$, left-multiplication $L_h$ fixes the coset $eH$, we have the following important representation of $H$:
+
+\begin{mydef}
+	Let $G/H$ be a homogeneous space.
+	\begin{numberedlist}
+		\item The \emph{(linear) isotropy representation} of $G/H$ is the homomorphism
+		\begin{equation*}
+			\begin{tikzcd}[row sep=-0.15cm]
+				\chi: &[-32pt]H \ar[r] & GL(T_{eH}G/H)\\
+				& h \ar[r,mapsto] & \dif_{eH} L_h
+			\end{tikzcd}
+		\end{equation*}
+		\item $G/H$ is called \emph{isotropy irreducible} if $\chi$ is an irreducible representation.
+	\end{numberedlist}
+\end{mydef}
+
+Let $G/H$ be a homogeneous space. If $\mf h$ denotes the Lie algebra of $H$ and $\pi:G\to G/H$ the canonical projection, then $\ker \dif_e \pi=\mf h$, hence $T_{eH}G/H\cong \mf g/\mf h$. In case $G$ is a compact Lie group, $\mf g$ admits an $\Ad_G$-invariant inner product; we then have a decomposition $\mf g=\mf h\oplus \mf m$, where $\mf m=\mf h^\perp$ is the orthogonal complement of $\mf h$ with respect to such an $\Ad_G$-invariant inner product. In particular, for any $h\in H$ we have $\Ad(h)\mf m\subset \mf m$; such a homogeneous space is called \emph{reductive}. 
+
+Observe that, in this setting, $T_{eH}G/H\cong \mf m$: The isomorphism is given by $\dif_e\pi$. Consider the representation $\Ad_{G/H}:H\to GL(\mf m)$, obtained by restricting $\Ad_G(H)$ to $\mf m$.
+
+\begin{prop}
+	Let $G/H$ be a reductive homogeneous space. Then the isotropy representation $\chi:H\to GL(T_{eH}G/H)$ is equivalent to $\Ad_{G/H}:H\to GL(\mf m)$, i.e.~the map $\dif_e\pi\big|_{\mf m}:\mf m\to T_{eH}G/H$ is an $H$-equivariant isomorphism.
+\end{prop}
+\begin{myproof}
+	We already know that $\dif_e\pi\big|_{\mf m}$ is a linear isomorphism, so we only need to show that for $X\in\mf m$ and $h\in H$, $\dif_e\pi(\Ad_G(h)X)=\dif_e\pi(\Ad_{G/H}(h)X)=\chi(h)(\dif_e\pi(X))$. Note that the left-hand side is well-defined because of the reductivity condition. This follows from the naturality of the exponential map:
+	\begin{align*}
+		\dif_e\pi(\Ad_G(h)Y)&=\od{}{t}\Big|_{t=0}\pi(\exp(t\Ad_G(h)Y))
+		=\od{}{t}\Big|_{t=0}\exp(t\Ad_G(h)Y)H\\
+		&=\od{}{t}\Big|_{t=0} L_h\exp(t Y) h^{-1}H
+		=\dif_{eH} L_h\bigg(\od{}{t}\Big|_{t=0}\exp(tY) H\bigg)\\
+		&=\chi(h)(\dif_e \pi(Y))
+	\end{align*}
+	This proves the claim.
+\end{myproof}
+
+Hence, we may use the representations $\chi$ and $\Ad_{G/H}$ interchangeably. Observe that, under the decomposition $\mf g=\mf h\oplus \mf m$, we have $\Ad_G(H)=\Ad_H\oplus \Ad_{G/H}$: This may be used to explicitly determine the isotropy representation in many cases.
+
+\subsection{Symmetric spaces}
+
+Symmetric spaces are a special kind of homogeneous spaces, which admit a geodesic-reversing ``symmetry'' around every point. They were classified in the 1920's by \'Elie Cartan, who made heavy use of the theory of Lie algebras developed by himself. We give a brief introduction here, since they will be relevant in the later chapters.
+
+\begin{mydef}
+	A connected Riemannian manifold $(M,g)$ is called a \emph{(Riemannian) symmetric space} if, for every $x\in M$, there exists an isometry $\sigma_x\in I(M,g)$ such that $\sigma_x(x)=x$ and $\dif_x \sigma_x=-\id_{T_xM}$. $\sigma_x$ is called the \emph{symmetry around $x$}.
+\end{mydef}
+
+\begin{rem}\leavevmode
+	\begin{numberedlist}
+		\item Since isometries on connected Riemannian manifolds are determined by their image and derivative at a single point, $\sigma_x$ is unique.
+		\item Weakening the above definition by only requiring the isometries $\sigma_x$ to be locally defined (i.e.~not necessarily a global isometry), one obtains the concept of a \emph{locally symmetric space}.
+	\end{numberedlist}
+\end{rem}
+
+\begin{prop}
+	A symmetric space is homogeneous (and hence complete).
+\end{prop}
+\begin{myproof}
+	We will first prove completeness directly: Let $\gamma:[0,a]\to M$ be a geodesic with $\gamma(0)=x$ and $\gamma(a)=y$. Now set $\gamma(a+t)=\sigma_y(\gamma(a-t))$ for $0\leq t\leq a$: This defines an extension of the geodesic $\gamma$.
+	
+	Using completeness and connectedness, we can find a geodesic connecting any two points. Then, the symmetry around the middle point (in the metric sense) of this geodesic is an isometry which interchanges the end points. Hence the isometry group acts transitively.
+\end{myproof}
+
+There are two important alternative points of view on symmetric spaces. The first of these stems from the observation that symmetric spaces have parallel curvature tensor. Indeed, for $X,Y,Z,W\in T_x M$ we have 
+\begin{align*}
+	\dif \sigma_x((\nabla_X R)(Y,Z)W)
+	&=-(\nabla_X R)(Y,Z)W\\
+	&=(\nabla_{\dif\sigma_x X}R)(\dif \sigma_x Y,\dif \sigma_x Z)\dif \sigma_x W\\
+	&=(\nabla_X R)(Y,Z)W
+\end{align*}
+A classical theorem due to Cartan gives a precise, partial converse (see~\cite{Pet2016} or~\cite{Hel1978} for a proof).
+
+\begin{thm}[\'{E}. Cartan]
+	If a Riemannian manifold $(M,g)$ has parallel curvature tensor, then for each $x\in M$ there exists an isometry $\sigma_x$ defined on a neighborhood of $x$ such that $\sigma_x(x)=x$ and $\dif_x \sigma_x=-\id_{T_xM}$. If $(M,g)$ is simply connected and complete, then every $\sigma_x$ can be globally defined and $(M,g)$ is symmetric.
+\end{thm}
+
+Thus, Riemannian manifold with parallel curvature tensors are \emph{locally symmetric} and the Riemannian universal covering of a complete locally symmetric space is symmetric.
+
+Finally, the structure of symmetric spaces may be encoded in terms of certain data on the Lie algebra of its isometry group. We will not try to describe this point of view here, and refer the interested reader to Helgason's classic textbook~\cite{Hel1978}. However, this point of view was the most useful for Cartan in his work on the classification of symmetric spaces.
+
+Note that a Riemannian homogeneous space $G/H$ is symmetric as soon as we find a symmetry around a single point $gH$, since if $f$ is an isometry taking $gH$ to $g'H$, we may define $\sigma_{g'H}=f\circ \sigma_{gH} \circ f^{-1}$. For example, compact Lie groups equipped with a bi-invariant metric are symmetric: The symmetry around the identity element is simply the inversion map. 
+
+However, compact Lie groups with bi-invariant metrics are not the only symmetric spaces. Very roughly, the classification of (simply connected) symmetric spaces can be sketched as follows (for details, see Helgason~\cite{Hel1978}). Using the Lie-algebraic description, Cartan first showed that a simply connected symmetric space decomposes as a Riemannian product of a Euclidean space with a finite number of \emph{irreducible} symmetric spaces. A symmetric space is called irreducible if its isotropy representation is irreducible. It remains to classify the simply connected, irreducible symmetric spaces.
+
+Cartan's detailed study revealed a natural division into four types. The first two correspond to compact manifolds, while the remaining two types are non-compact. In fact, there is a duality relating the compact and non-compact types: This gives rise to the notion of a ``(non-)compact dual'' of a symmetric space. Using his own classification results on Lie groups, Cartan was able to understand all four types and produce a complete classification. Lists detailing the final results are available (for example in \cite[Ch.~10]{Hel1978}).
+
+\section{Invariant geometric structures on homogeneous spaces}
+
+\subsection{Invariant Einstein metrics}
+
+Recall that on a Lie group $G$, $G$-invariant objects are described by Lie-algebraic data. This philosophy naturally generalizes to reductive homogeneous spaces $G/H$, where $G$-invariant objects correspond to $\Ad_{G/H}$-invariant objects on $\mf m$ (or $\chi$-invariant objects on $T_{eH}G/H$). We first discuss invariant metrics:
+
+\begin{mydef}
+	Let $G/H$ be a homogeneous space. A metric $g$ on $M$ is called \emph{$G$-invariant} (sometimes \emph{homogeneous}) if for every $k\in G$, left-multiplication by $k$, denoted by $L_k$, is an isometry.
+\end{mydef}
+
+Now, assume that $G/H$ is reductive (e.g.~$G$ is a compact Lie group, the case of main interest to us). Here, the above principle concretely manifests itself as follows:
+
+\begin{prop}\label{prop:invariantmetrics}
+	Let $G/H$ be a reductive homogeneous space, where $G$ has the Lie algebra $\mf g=\mf h\oplus \mf m$. Then the following objects are in bijective correspondence:
+	\begin{numberedlist}
+		\item $G$-invariant metrics on $G/H$.
+		\item $\chi$-invariant scalar products on $T_{eH}G/H$ or equivalently $\Ad_{G/H}$-invariant scalar products on $\mf m$.
+	\end{numberedlist}
+\end{prop}
+\begin{myproof}
+	Restricting a $G$-invariant metric on $G/H$ to $eH$, we obtain an $\chi$-invariant scalar product since $L_h$ ($h\in H$) is an isometry. Conversely, if $\langle-,-\rangle$ is a $\chi$-invariant scalar product on $T_{eH}G/H$, we define a manifestly $G$-invariant metric by $g_{aH}(X,Y)=\langle \dif_a L_{a^{-1}} X, \dif_a L_{a^{-1}} Y\rangle$. This is independent of the choice of representative of $aH$, since if $b=ah$ for some $h\in H$, we have
+	\begin{equation*}
+		\langle \dif_b L_{b^{-1}} X,\dif_b L_{b^{-1}} Y\rangle
+		=\langle \dif_{ah} L_{h^{-1}a^{-1}} X,\dif_{ah} L_{h^{-1}a^{-1}} Y\rangle
+		=\langle \dif_a L_{a^{-1}} X,\dif_a L_{a^{-1}} Y\rangle
+	\end{equation*}
+	by $\chi$-invariance.
+\end{myproof}
+
+The most important takeaway is that the Riemannian data of $G/H$, equipped with a $G$-invariant metric, are determined by the associated $\Ad_{G/H}$-invariant inner product on $\mf m$, together with the Lie algebraic data of $\mf g$. The invariance of the curvature tensor under isometries means it is determined by its value at $eH$. By the same token, the fact that $H$ acts by isometries implies that the curvature is $\chi$-invariant.
+
+Now consider a homogeneous space $G/H$, where $G$ is compact and semisimple. Then the Killing form $B$ on $\mf g$ is an $\Ad_G$-invariant scalar product on $\mf g$, and we identify $T_{eH}G/H\cong \mf m$, where $\mf m=\mf h^\perp$ is the orthogonal complement of $\mf h$ with respect to $B$. We have seen that $G$-invariant metrics correspond to inner products on $\mf m$ invariant under the isotropy representation. 
+
+Decompose $T_{eH}G/H\cong \mf m$ into irreducible summands under the isotropy representation: $\mf m=\mf m_1\oplus\dots\oplus \mf m_s$. If the $\mf m_j$ are pairwise non-equivalent, then this decomposition is unique. This is the case of interest to us. By a variant of Schur's lemma, the restriction of an invariant inner product to a summand $\mf m_j$ must be a multiple of (minus) the Killing form, restricted to $\mf m_j$:
+
+\begin{lem}\label{lem:Schurscalarproducts}
+	Let $\rho:G\to GL(V)$ be an irreducible representation. Then any two $\rho$-invariant scalar products on $V$ are proportional.
+\end{lem}
+\begin{myproof}
+	Let $\langle -,-\rangle_i$, $i=1,2$ be $\rho$-invariant scalar products and define $g_i:V\to V^*$ by $v\mapsto \langle v,-\rangle_i$. Now set $L=g_2^{-1}\circ g_1$. This linear map is easily seen to be symmetric with respect to the inner products and $\rho$-equivariant, hence its eigenspaces are $\rho$-invariant. Irreducibility then implies that $L=\lambda\cdot \id_V$ for some $\lambda\in \R$.
+\end{myproof}
+
+\begin{rem}
+	Actually, if $\langle -,-\rangle$ is an invariant scalar product and $A$ is an invariant, symmetric bilinear form, the exact same proof goes through to show that $A$ is proportional to $\langle-,-\rangle$, if one defines $a:V\to V^*$, $v\mapsto A(v,-)$ and sets $L=g^{-1}\circ a$. 
+\end{rem}
+
+Hence, in the above setup, homogeneous metrics are in bijective correspondence with inner products of the form
+\begin{equation}\label{eq:diagonalKillingmetrics}
+	\langle \ \ ,\ \, \rangle =x_1(-B)|_{\mf m_1}+\dots+x_s(-B)|_{\mf m_s} 
+	\qquad \qquad x_j>0\ \ \ \forall j
+\end{equation}
+Such $G$-invariant metrics, which are called \emph{diagonal}, are determined by the positive constants $x_1,x_2,\dots,x_s$. In particular, if $G/H$ is isotropy irreducible, then it admits a unique $G$-invariant metric, up to homothety.
+
+$G$-invariant metrics are privileged, but not as privileged as $G$-invariant \emph{Einstein} metrics.
+
+\begin{mydef}
+	A Riemannian manifold $(M,g)$ is called \emph{Einstein} if $r_g=\lambda g$ for some constant $\lambda\in \R$, where $r_g$ denotes the Ricci curvature of $g$.
+\end{mydef}
+
+\begin{rem}
+	Let $M$ be a compact manifold. It has been known since 1915 that Einstein metrics are precisely the critical points of the total scalar curvature functional
+	\begin{equation*}
+	S(g)=\int_M s_g \vol_g
+	\end{equation*}
+	This fact, due to Hilbert, is used to formulate the variational approach to Einstein's theory of general relativity (physicists call this functional the \emph{Einstein-Hilbert action}). This explains why these manifolds are called \emph{Einstein}.
+\end{rem}
+
+Wolf observed that, if the isotropy representation is irreducible, invariant metrics are automatically Einstein:
+
+\begin{prop}[Wolf,~\cite{Wol1968}]
+	If $G/H$ is an isotropy irreducible homogeneous space, then $G/H$ admits a unique (up to homothety) $G$-invariant metric, which is Einstein.
+\end{prop}
+\begin{myproof}
+	We have already established that all $G$-invariant metrics are proportional in this case; pick one of them an denote the induced inner product on $T_{eH}G/H$ by $\langle -,-\rangle$. The Ricci curvature corresponds to a $\chi$-invariant, symmetric bilinear form on $T_{eH}G/H$ and therefore must also be proportional to $\langle -,-\rangle$. By homogeneity, they must be proportional at every point.
+\end{myproof}
+
+This is certainly the simplest situation, but in other special cases $G$-invariant Einstein metrics can be studied directly as well. For instance, Wang and Ziller~\cite{WZ1985} considered so-called \emph{standard} homogeneous spaces. These are homogeneous spaces $G/H$ ($G$ compact, connected and semisimple) equipped with the $G$-invariant metric derived from the Killing form on $G$. In this simple and natural case, they were able to determine the necessary and sufficient condition for the standard homogeneous metric to be Einstein, using Lie-algebraic methods. 
+
+In~\cite{WZ1986a} (see also the follow-up paper~\cite{BWZ2004}), Wang and Ziller approached the problem from a different angle, outlining a variational approach for general compact homogeneous spaces based on the characterization of Einstein metrics as critical points of the total scalar curvature functional. Restricting this functional, which we called $S$ before, to the space $\ms M_G^1$ of $G$-invariant metrics of volume $1$, $s_g$ is constant and equal to $S(g)$; the critical points are exactly the $G$-invariant Einstein metrics.
+
+Decompose $T_{eH}G/H$ into isotropy irreducible summands $\mf m_i$. As mentioned before, we are primarily interested in the case where this decomposition is unique. Then all $G$-invariant metrics are diagonal with respect to this decomposition, i.e.~given by $\chi$-invariant inner products on of the form
+\begin{equation*}
+	Q=x_1 Q\big|_{\mf m_1}+\dots+ x_s Q\big|_{\mf m_s}\qquad \qquad x_j>0\ \ \forall j
+\end{equation*}
+In this setup, Wang and Ziller give an explicit, algebraic expression for the scalar curvature in terms of Lie-algebraic data of $\mf m$. This formula and its extensions were used by several authors to classify $G$-invariant Einstein metrics in many examples where the isotropy representation has only a few irreducible summands, when the equations are algebraically tractable (e.g.~\cite{Ker1996,PS1997,DK2008}). This includes many ``generalized flag manifolds'', which will be the focus of this work (see \cref{chap:flags,chap:invarstructures}).
+
+If one is interested in Einstein metrics in general, without necessarily requiring invariance, then there are several other approaches. One of them, which will be relevant to us later, uses the theory of so-called Riemannian submersions. In particular, the notion of ``canonical variation'' gives an efficient way of generating new Einstein metrics from old ones; this procedure also preserves invariance and can therefore be applied to obtain new invariant Einstein metrics from a given one. We have given a brief account of this framework, which will also be of use in \cref{chap:twistor}, in \cref{app:submersions}.
+
+\subsection{Invariant almost complex structures}
+
+The invariant objects that take center stage in this work are not metrics, but almost complex structures. Here, we immediately give the definition in terms of data on $T_{eH}G/H$ instead of giving a ``global'' definition (in terms of a $G$-invariant tensor field on $G/H$) and showing equivalence:
+
+\begin{mydef}
+	An almost complex structure $J$ on a homogeneous space $G/H$ is called \emph{$G$-invariant} if $J_{eH}$ commutes with the isotropy representation.
+\end{mydef}
+
+The study of invariant complex structures for specific classes of manifolds was initiated in the 1950's with papers by Wang, Koszul and Borel~\cite{Wan1954,Kos1955,Bor1954}; in \cref{chap:flags} we will discuss some of their results, in particular those concerning generalized flag manifolds.
+
+Not long after these pioneering works, Borel and Hirzebruch published a series of seminal papers, in which they gave a comprehensive treatment of invariant almost complex structures on general homogeneous spaces~\cite{BH1958a}. Their results include a recipe to enumerate invariant almost complex structures, a criterion for integrability and a method to compute characteristic classes in terms of purely Lie-algebraic data associated to the homogeneous space. They also gave many applications, often to generalized flag manifolds.
+
+As mentioned in the introduction, our aim in this work is to \emph{avoid} the Lie-theoretic framework and to give a more geometric treatment of certain examples which may alternatively be investigated by the methods of Borel and Hirzebruch. Therefore, we will not give an extended discussion of their results here. For a succinct summary of their treatment of generalized flag manifolds, we refer to Kotschick and Terzi\'c's paper~\cite[Sec.~2]{KT2009}. 
+
+We describe only one piece of information, namely how to enumerate invariant almost complex structures (cf.~\cite[\S 13.4--5]{BH1958a}); this will be useful to us later. Consider a homogeneous space $G/H$ which we assume admits at least one invariant almost complex structure. Decompose $T_{eH}G/H=\mf m_1\oplus\dots \oplus \mf m_k$ into irreducible summands under the isotropy representation. Then invariant almost complex structures must respect this decomposition, and the restrictions of any two invariant almost complex structures $J_1$, $J_2$ to $\mf m_j$ must be equal up to conjugation. This follows from a variant of Schur's lemma: Mimicking the proof of \cref{lem:Schurscalarproducts} on the complexification of $T_{eH}G/H$ (to ensure that $J_2^{-1}\circ J_1$ has an eigenvalue, which must be $\pm 1$) and restricting to the conjugation-invariant (i.e.~real) subspace shows that $J_2^{-1}\circ J_1=\pm \id_{T_{eH}G/H}$, which proves the claim. 
+
+Hirzebruch and Borel prove that each summand $\mf m_j$ indeed admits exactly one almost complex structure up to conjugation. Thus, $k$ irreducible summands give rise to $2^{k-1}$ distinct invariant almost complex structures, after identifying conjugate structures. This result applies to the spaces we focus on in this work, i.e.~generalized flag manifolds, since these always admit an invariant (almost) complex structure (see \cref{chap:flags}).

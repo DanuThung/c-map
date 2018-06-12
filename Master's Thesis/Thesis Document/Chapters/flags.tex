@@ -1,0 +1,342 @@
+\chapter{\texorpdfstring{$G_2$}{G2} flag manifolds}
+\label{chap:flags}
+
+In this chapter we introduce the manifolds that will be our main objects of study. They are examples of \emph{generalized flag manifolds}. Though we provide some general remarks on this class of manifolds in the first section, we quickly specialize to the case of $G_2$ flag manifolds, which will be our main focus. To define and study these spaces we first collect some facts about the exceptional Lie group $G_2$, which we define as the automorphism group of the octonions. These are then used to provide a geometric description of the generalized flag manifolds associated to $G_2$.
+
+
+\section{Generalized flag manifolds}
+\label{sec:genflags}
+
+\subsection{Motivation and definition}
+
+Recall that a (partial) flag is a strictly increasing sequence of subspaces of a finite-dimensional vector space $V$:
+\begin{equation*}
+	\{0\}=V_0\subset V_1\subset\cdots \subset V_{k-1}\subset V_k=V
+\end{equation*}
+At each step, the inclusion is proper, hence $\dim V_j>\dim V_{j-1}$ for every $j$. Setting $d_j=\dim V_j$, the dimensions are encoded by the signature $(d_1,\dots,d_{k-1})$. A flag is called \emph{complete} if $d_j=j$; a \emph{partial} flag can be obtained by omitting certain subspaces from a complete flag. A \emph{flag manifold} is the space parametrizing all flags of a given signature. Typically, one considers the case $V=\R^n$ or $\C^n$.
+
+\begin{ex}\leavevmode
+	\begin{numberedlist}
+		\item Projective spaces and more generally Grassmannians parametrize flags that consist of a single subspace.
+		\item Let $T^n$ denote the $n$-torus $U(1)\times\dots\times U(1)$. The \emph{complete} flag manifold $U(n)/T^n=SU(n)/S(U(1)\times\dots\times U(1))$ is the space of complete flags in $\C^n$:
+		\begin{equation*}
+			0=V_0\subset V_1\subset\dots \subset V_{n-1}\subset V_n=\C^n \qquad \dim V_j=j
+		\end{equation*}
+		\item One can impose additional conditions on the subspaces to obtain variations on the classical flag manifolds. A simple example is the oriented Grassmannian $\widetilde \Gr_2(\R^n)$ that parametrizes oriented real $2$-planes in $\R^n$. $SO(n)$ acts transitively on it, with isotropy subgroup $SO(2)\times SO(n-2)$. Hence we find that
+		\begin{equation*}
+			\widetilde \Gr_2(\R^n)=\frac{SO(n)}{SO(2)\times SO(n-2)}
+		\end{equation*}
+		\item Consider partial flags of the form $0=V_0\subset V_1\subset V_2\subset \C^n$, where $V_1$ is a complex line and $V_2$ a $2$-plane containing $V_1$. The corresponding flag manifolds $U(n)/U(1)\times U(1)\times U(n-2)$ were considered by Kotschick and Terzi\'c in~\cite{KT2009} (in many ways, our study will mirror their discussion). Note that the stabilizer of a point is itself not a torus, but centralizes the $3$-torus given by diagonal matrices $\diag(\lambda_1,\lambda_2,\lambda_3,\dots,\lambda_3)$, where $\lambda_j\in U(1)$.
+		\item More generally, a flag manifold that parametrizes partial flags in $\C^n$ takes the form 
+		\begin{equation*}
+			\frac{U(n)}{U(r_1)\times\dots\times U(r_k)}
+			=\frac{SU(n)}{S(U(r_1)\times\dots\times U(r_k))} \qquad \qquad 2\leq k\leq n
+		\end{equation*}
+		where $\{r_1,\dots,r_k\}$ is an ordered partition of $n$. Permuting the $r_j$ yields a diffeomorphic manifold. However, the result may not be identical as an (almost) complex manifold: This observation is the starting point of~\cite{KT2009}, which generalizes the ``minimal example'' worked out by Hirzebruch in~\cite{Hir2005}.
+	\end{numberedlist}
+\end{ex}
+
+The fact that any manifold of (partial) flags in $\C^n$ is homogeneous under $SU(n)$ derives from the fact that $SU(n)$ acts transitively on the set of complex, orthonormal bases of $\C^n$. Our last example shows that the isotropy subgroup $S(U(r_1)\times\cdots \times U(r_k))$ is always the centralizer of a torus (of dimension $k-1$). This motivates the following definition:
+
+\begin{mydef}
+	A \emph{(generalized) flag manifold} is a homogeneous space of the form $G/C(T)$, where $G$ is a compact, connected and semisimple Lie group and $C(T)$ is the centralizer of a torus $T\subset G$.
+\end{mydef}
+
+In case $T$ is a maximal torus, $T=C(T)$ and $G/T$ is called a \emph{complete} flag manifold. There is an alternative definition with a more representation-theoretic flavor to it:
+
+\begin{mydef}
+	A generalized flag manifold is an orbit of the adjoint action of a compact, connected and semisimple Lie group $G$ on its Lie algebra $\mf g$.
+\end{mydef} 
+
+Equivalence is established as follows:
+
+\begin{prop}
+	Let $G$ be a compact Lie group and $W\in \mf g$. Then we have:
+	\begin{numberedlist}
+		\item The closure $T_W$ of the Abelian subgroup $\exp (\R W)$ in $G$ is a torus.
+		\item The isotropy subgroup $K_W=\{g\in G\mid \Ad(g) W=W\}$ is the centralizer of $T_W$, i.e.~$K_W=C(T_W)$.
+	\end{numberedlist}
+\end{prop}
+
+\begin{myproof}\leavevmode
+	\begin{numberedlist}
+		\item $\overline{\exp (\R W)}$ is compact and Abelian, i.e.~a torus.
+		\item Suppose $g\in K_W$. Since the exponential map is local diffeomorphism at $0\in \mf g$, this is equivalent to $g \exp(tW)g^{-1}=\exp(tW)$ for sufficiently small $t$. But such elements $\exp(tW)$ generate $\exp(\R W)$, hence $K_W\subset C(\exp(\R W))=C(T_W)$ since the centralizers of $\exp (\R W)$ and $T_W$ coincide. Conversely, if $g\in C(T_W)$, it commutes with $\exp(tW)$ for small $t$ and hence $g\in K_W$.\qedhere
+	\end{numberedlist}
+\end{myproof}
+
+The second, algebraic point of view can be used to prove many general results about generalized flag manifolds. For instance, there is a classification in terms of so-called \emph{painted} Dynkin diagrams (see for instance~\cite[Ch.~7]{Arv2003}). We will not pursue this here, however, because our main interest is in understanding certain concrete examples of flag manifolds rather than the general theory.
+
+\subsection{Invariant geometric structures on generalized flag manifolds}
+
+As any homogeneous space, a generalized flag manifold $G/C(T)$ admits certain privileged geometric structures, namely the $G$-invariant ones. We will now briefly discuss some important general results regarding such structures, though we will not give proofs. As mentioned above, the general theory of flag manifolds was developed from a rather Lie-theoretic angle; we are primarily interested in giving a geometric interpretation of the invariant structures in specific examples, and will therefore not give a detailed exposition of the most general results.
+
+Early papers by Borel, Matsushima and Koszul~\cite{Bor1954,Kos1955,Mat1957} (also note related work by Wang~\cite{Wan1954}, who gave early examples of homogeneous complex manifold which are not K\"ahler) established the existence of an invariant complex structure on generalized flag manifolds, which even admits a compatible K\"ahler-Einstein metric. More precisely, the main result is the following:
+
+\begin{thm}
+	A generalized flag manifold $G/C(T)$ admits a canonical $G$-invariant complex structure and a unique (up to homothety) $G$-invariant K\"ahler-Einstein metric. This structure is compatible with the canonical complex structure and the metric has positive scalar curvature. 
+\end{thm}
+
+Equipped with this complex structure, the generalized flag manifold is projective and even rational, as proven by Goto~\cite{Got1954}. In fact, Borel's work~\cite{Bor1954} implies the following: Consider a homogeneous K\"ahler manifold, i.e.~a manifold equipped with an invariant K\"ahler structure. If it is compact and simply connected, then it is isomorphic, as a homogeneous complex manifold, to a generalized flag manifold. This was extended by Matsushima:
+
+\begin{thm}[Matsushima~\cite{Mat1957}]\label{thm:Matsu}
+	Every compact, homogeneous K\"ahler manifold is the product of a complex torus (equipped with a K\"ahler metric) and a generalized flag manifold.
+\end{thm}
+
+For a description of the (lengthy) proofs of these facts, see~\cite[Ch.~8]{Bes2008}.
+
+Regarding invariant \emph{almost} complex structures, the general methods of Borel and Hirzebruch (cf.~\cref{chap:homogeneous}) apply. Thus, one can enumerate all invariant almost complex structures based on Lie-algebraic data. In the work of Borel and Hirzebruch, the flag manifold $F_2=SU(4)/S(U(2)\times U(1)\times U(1))$ was mentioned as an example of an interesting phenomenon: It carries two invariant almost complex structures which may be distinguished by their Chern numbers \cite[\S 13.9 and \S 24.11]{BH1958a}. Kotschick and Terzi\'c generalized their example by showing that the same holds true for $F_n=SU(n+2)/S(U(n)\times U(1)\times U(1))$, $n\geq 2$. Taking inspiration from these examples, one might hope to find invariant almost complex structures that may be distinguished by their Chern numbers on other (generalized) flag manifolds. Indeed, we will see further examples of this interesting phenomenon in the next chapter.
+
+Concerning general invariant Einstein metrics, recall from \cref{chap:homogeneous} that a variational approach due to Wang and Ziller makes it possible to study $G$-invariant Einstein metrics through an explicit, algebraic equation for the scalar curvature. The equation involves Lie-algebraic data and in particular the positive constants $x_1,\dots,x_s$ that parametrize invariant metrics on homogeneous spaces whose isotropy representation uniquely splits into $s$ irreducible summands (as in \cref{eq:diagonalKillingmetrics}).
+
+Using the Lie-algebraic description, one can prove that for generalized flag manifolds, this decomposition is indeed unique (cf.~\cite[Thm.~7.3]{Arv2003}), and therefore this approach can be used. Indeed, in a recent series of papers Arvanitoyeorgos and Chrysikos have begun systematically classifying invariant Einstein metrics on generalized flag manifold with a low number of isotropy summands ($s\leq 5$) using this method. For an overview of their results, see~\cite{AC2010,ACS2013a}. Other authors, such as Kimura~\cite{Kim1990}, Kerr and Dickinson~\cite{Ker1996,DK2008}, have also contributed.
+
+\section{\texorpdfstring{$G_2$}{G2} and the octonions}
+
+In this section, we carry out the preparatory work needed to introduce the flag manifolds associated to $G_2$. We start at the very beginning, namely with the octonions. For our purposes, it is most convenient to define the octonions by means of the \emph{Cayley-Dickinson construction}, as described in detail by Baez~\cite{Bae2002}, whose discussion we follow in large parts of this section. Starting from $\R$, this construction produces the other normed division algebras, i.e.~the complex numbers, the quaternions $\H$ and the octonions $\O$, in that order. 
+
+The Cayley-Dickinson construction creates a new algebra $A'$ with conjugation out of an old one  $A$ (also equipped with a conjugation map $a\mapsto \bar a$) by taking its elements to be pairs $(a,b)$ of elements $a,b\in A$. Addition is defined component-wise and the multiplication rule is $(a,b)(c,d)=(ac-d\bar b,\bar ad+cb)$, where juxtaposition indicates multiplication in $A$. Conjugation is given by $(a,b)^*=(\bar a,-b)$. It is easily checked that this process, applied to $\R$ (with a trivial conjugation map, i.e.~$\bar a=a$), yields $\C$, then $\H$, then $\O$. At each stage, some nice property of the algebra is lost: Octonion multiplication turns out to be non-commutative and non-associative. 
+
+One can therefore view $\O$ as $\H\oplus \ell\H$ (the pair $(a,b)$ corresponds to $a+\ell b$), equipped with certain multiplication rules for $\ell$. As a real vector space, $\O$ is spanned by $\{1,i,j,k,\ell,\ell i,\ell j,\ell k\} = \{1,e_1,\dots,e_7\}$, where $\{e_1,\dots, e_7\}$ are imaginary units, which square to $-1$, switch sign under complex conjugation and anti-commute: if $i\neq j$ then $e_ie_j=-e_je_i$. They span the imaginary part $\Im \O$ of the octonions. For a clear exposition on how to efficiently manipulate octonions, see~\cite[Sec.~1]{Bry1982}.
+
+If we write a general octonion as $x=x_0 1+x_1 e_1+\dots + x_7 e_7$ (with real coefficients $x_j$), we have a scalar product
+\begin{equation*}
+	(x,y)=\sum_{r=0}^7 x_r y_r
+\end{equation*}
+which corresponds to the standard inner product on $\R^8$. Octonion multiplication (indicated by a dot, for now, to avoid confusion with multiplication of real coefficients) decomposes into three parts:
+\begin{align*}
+	x\cdot y&=\bigg(x_0y_0-\sum_{p=1}^7 x_p y_p\bigg)1
+	+\sum_{p=1}^7 (x_0y_p+y_0x_p) e_p
+	+\sum_{\substack{p,q\geq 1\\ p\neq q}} x_py_q e_p\cdot e_q\\
+	&\eqqcolon \bigg(x_0y_0-\sum_{p=1}^7 x_p y_p\bigg)1
+	+ \sum_{p=1}^7 (x_0y_p+y_0x_p) e_p + x\times y
+\end{align*}
+where the last expression defines the \emph{cross product} of octonions, which is equivalently expressed as $x\times y\coloneqq \frac{1}{2}(x\cdot y-y\cdot x)$. Observe that, if $x$ and $y$ are imaginary octonions, the simple relation $x\cdot y+(x,y)=x\times y$ holds. The cross product doesn't quite turn $\Im\O$ into a Lie algebra, as the Jacobi identity fails. Nevertheless, the analogy with Lie algebras can be helpful to build some intuition for the algebra $(\Im\O,\times)$. 
+
+Now we are ready to introduce the exceptional Lie group $G_2$:
+
+\begin{mydef}
+	The exceptional Lie group $G_2$ is defined to be the group of $\R$-algebra automorphisms of the octonions.
+\end{mydef}
+
+\begin{rem}
+	Historically speaking, this was not the original definition; the fact that $G_2$ can be regarded as the automorphism group of the octonions was discovered by \'{E}. Cartan~\cite[298]{Car1914}.
+\end{rem}
+
+The non-trivial algebraic information about the octonions is essentially contained in the cross product, hence the following is not surprising:
+
+\begin{prop}
+	The group $G_2$ is precisely the group of automorphisms of the algebra $(\Im\O,\times)$.
+\end{prop}
+\begin{myproof}
+	Clearly, any automorphism of $\O$ must preserve the cross product, since it is defined in terms of octonion multiplication. Conversely, assume $g$ is an automorphism of the algebra $(\Im\O,\times)$. The identity $x\times y=(x,y)+x\cdot y$, which holds for $x,y\in\Im\O$, shows that $g$ will preserve multiplication of imaginary octonions if we can express $(x,y)$ in terms of the cross product. 
+	
+	Consider the ``would-be Killing form'' $B$ on $\Im\O$, defined by $B(a,b)=\tr (a\times (b\times -))$. It is invariant under automorphisms of the algebra. Now, it is tedious but easy to check explicitly that $(a,b)=-\frac{1}{6}B(a,b)$, hence the inner product is invariant. We deduce that $g$ preserves multiplication of imaginary octonions. Since any automorphism of the octonions must fix $1\in \O$, $g$ uniquely extends to an automorphism of $\O$, proving our claim.
+\end{myproof}
+
+On $\Im\O$, one can define a three-form by $\phi(x,y,z)=(x\times y,z)$. In terms of the basis $\{\omega^r\}$ of $(\Im \O)^*$, dual to $\{e_r\}$, it is given by
+\begin{equation*}
+	\phi=\omega^{123}-\omega^{145}-\omega^{167}-\omega^{246}
+	+\omega^{257}-\omega^{347}-\omega^{356}
+\end{equation*}
+where we use the notational shorthand $\omega^{r_1,\dots,r_m}$ for $\omega^{r_1}\wedge\dots\wedge \omega^{r_m}$. Observe that $\phi(e_i,e_j,e_k)=f^{ijk}$, the structure constant defined by $e_i\times e_j=\sum_k f^{ijk}e_k$. Therefore, $\phi$ concisely encodes the multiplicative structure of the cross product, and it is obvious that $G_2$ can be equivalently defined as 
+\begin{equation*}
+	G_2=\{g\in GL(\Im\O)\mid g^*\phi=\phi\}
+\end{equation*}
+Indeed, this is the definition used in~\cite{Bry1987} (note that Bryant uses a different convention for $e_5$, $e_6$ and $e_7$). There, Bryant gives a slick proof of a number of fundamental facts about $G_2$:
+
+\begin{thm}
+	The Lie group $G_2$ is a compact subgroup of $SO(\Im\O)=SO(7)$. It is connected, simple and simply connected, and has dimension $14$.
+\end{thm}
+
+\section{Homogeneous spaces and flag manifolds of \texorpdfstring{$G_2$}{G2}}
+
+Now that we have set the stage, we will use the octonions to study certain $G_2$-homogeneous spaces. These examples are well-known, and appear scattered throughout the literature (e.g.~\cite{Ker1996,SW2015,Bry1982}). Perhaps the most famous example is the six-sphere:
+
+\begin{prop}\label{prop:G2S6}
+	There is a transitive action of $G_2$ on $S^6$, viewed as the unit imaginary octonions, with isotropy group isomorphic to $SU(3)$, i.e.~$S^6\cong G_2/SU(3)$.
+\end{prop}
+\begin{myproof}
+	First, we need to see that $G_2$ acts transitively on $S^6$. In fact, we can say a lot more: Consider two orthogonal unit imaginary octonions $x,y$. Then $x\times y$ is orthogonal to both and the subalgebra spanned by $\{1,x,y,x\times y\}$ is isomorphic to $\H$. The span of $\{x,y,x\times y\}$ is called an \emph{associative subspace} of $\Im \O$. 
+	
+	Recalling $\O=\H\oplus\ell\H$ we see that, if we find yet another unit imaginary octonion $z$ which is orthogonal to this associative subspace, then $x,y$ and $z$ generate $\O$. There is a unique octonion automorphism that carries $x,y,z$ to $i,j,\ell$, hence we can identify $G_2$ with the space of so-called \emph{basic} triples $\{x,y,z\}$. This induces a transitive action on $S^6$.
+	
+	Now, we will determine the isotropy subgroup. Consider $\ell\in S^6$ and assume $g$ lies in the stabilizer $(G_2)_\ell$ of $\ell$. Since $G_2$ preserves the inner product, it preserves orthogonal complements; denote the orthogonal complement of $\ell$ (inside $\Im\O$) by $V$. We may turn $V$ into a complex (three-dimensional) vector space by declaring the complex structure to be left-multiplication by $\ell$. As a complex vector space, it is then spanned by $\{i,j,k\}$. The identification with $\C^3$, equipped with its standard Hermitian scalar product $\langle z,w\rangle_{\C^3}=(z,w)_{\R^6}+i(z,iw)_{\R^6}$, induces the scalar product
+	\begin{equation*}
+		\langle v,w\rangle_V=(v,w)+\ell (v,\ell w)\qquad \qquad \qquad v,w\in V
+	\end{equation*}
+	Since $g\in (G_2)_\ell$ preserves $(-,-)$ and satisfies $\ell g(w)=g(\ell w)$, it also preserves $\langle -,-\rangle_V$. This means that $(G_2)_\ell\subset U(V)\cong U(3)$. To prove that $g\in SU(V)$, we explicitly compute its determinant. As a unitary transformation, it has an orthonormal basis of eigenvectors, which we may take to be of the form $u,v,u\times v=uv$. Since its eigenvalues have unit norm, we can write the eigenvalues of $u$ and $v$ as $e^{\theta\ell}$ and $e^{\varphi\ell}$ ($\theta,\varphi\in [0,2\pi)$). 
+	
+	Now, we want to show that the eigenvalue of $uv$ is $e^{-(\theta+\varphi)\ell}$. Recall the multiplication rule for octonions, viewed as pairs of quaternions $u=(u_1,u_2)$, $v=(v_1,v_2)$. In our setup, $u$ and $v$ are both imaginary \emph{and} orthogonal to $\ell$, which means that $u_1,u_2,v_1,v_2\in \Im\H$. The multiplication rule then simplifies to
+	\begin{equation*}
+		(u_1,u_2)(v_1,v_2)=(u_1v_1+v_2u_2,-u_1v_2+v_1u_2)
+		\qquad \qquad u_r,v_r\in \Im\H 
+	\end{equation*}
+	In particular, we have $\ell u=-u\ell=(u_2,-u_1)$ and $u_rv_r=-v_r u_r$. These expressions suffice to prove the following simple identities:
+	\begin{equation*}
+		(\ell u)(\ell v)=vu \qquad u(\ell v)=-\ell(uv)=(\ell u)v \qquad \qquad u,v\in V
+	\end{equation*}
+	Now we can easily compute the eigenvalue of $uv$, using $g(uv)=g(u)g(v)=e^{\theta\ell}ue^{\varphi \ell}v$:
+	\begin{align*}
+		g(uv)&=\cos\theta\cos\varphi (uv)+\sin\theta\sin\varphi (\ell u)(\ell v)
+		+\cos\theta \sin\varphi u(\ell v)+\sin\theta\cos\varphi (\ell u)v\\
+		&=(\cos\theta\cos\varphi-\sin\theta\sin\varphi) (uv)-(\cos\theta\sin\varphi+\sin\theta\cos\varphi) \ell(uv)\\
+		&=e^{-(\theta+\varphi)\ell}uv
+	\end{align*}
+	This proves that $(G_2)_\ell\subset SU(V)\cong SU(3)$. Of course $\dim (G_2)_\ell\leq \dim SU(3)=8$, but on the other hand $(G_2)_\ell$ can be defined by six equations expressing that an (orthonormal) basis of $V$ stays orthogonal to $\R\ell$, hence $\dim (G_2)_\ell\geq 14-6=8$. This shows that $(G_2)_\ell\cong SU(3)$, since $SU(3)$ is connected.
+\end{myproof}
+
+The octonions endow $S^6$ with its ``standard'' almost complex structure, which is already hinted at by the previous proof: Any point $x\in S^6\subset \Im\O$ defines, by left-multiplication, a linear map $L_x:\O\to\O$. It preserves the plane spanned by $\{1,x\}$ and its orthogonal complement. But the latter is naturally identified with the tangent space $T_x S^6$. Since $x^2=-1$ and for $x\perp y$, $x(xy)=(x^2)y=-y$, this endows $S^6$ with an almost complex structure $J$ by setting $J_x=L_x$. Observe that this almost complex structure is $G_2$-invariant.
+
+Soon after its discovery, it was proven by several people (e.g.~\cite{EL1951}) that this almost complex structure is not integrable. The question whether $S^6$ admits an integrable complex structure at all remains open to this day (despite numerous claimed proofs of both existence and non-existence).
+
+\begin{prop}
+	The space of associative subspaces of $\Im\O$, or equivalently of subalgebras of $\O$ isomorphic to $\H$, is diffeomorphic to $G_2/SO(4)$.
+\end{prop}
+\begin{myproof}
+	An associative subspace $V$ is determined by an orthonormal pair $\{x,y\}$ such that $\{x,y,x\times y\}$ spans $V$. The identification of $G_2$ with the space of basic triples shows that there are elements of $G_2$ that send $x\mapsto i$, $y\mapsto j$, inducing a transitive action. 
+	
+	Harvey and Lawson~\cite[Ch.~IV, Thm.~1.8]{HL1982} gave an explicit description of the stabilizer of the standard copy of $\H\subset \O$, which we will now reproduce\footnote{Note that Harvey and Lawson use different conventions for e.g.~octonionic multiplication, hence their formulas differ from ours.}. Given a pair of unit quaternions $(q_1,q_2)$, let it act on $(a,b)\in \O=\H\oplus\ell\H$ as follows: $(a,b)\mapsto (q_1a\bar q_1,q_1b\bar q_2)$. A brief computation shows that this defines an embedding of $SO(4)=Sp(1)\cdot Sp(1)$ into $G_2=\Aut \O$, and it is clear that this subgroup preserves the associative subspace $\xi$ spanned by $\{i,j,k\}$.
+	
+	Conversely, if $g$ lies in the isotropy subgroup $(G_2)_\xi$, it must be of the form $g=(g_1,g_2)$ where $g_1\in SO(3)=\Aut\H$ and $g_2\in O(4)$. The action of the embedded $SO(4)$-subgroup is transitive on pairs $(F,\alpha)$, where $F$ is an oriented orthonormal basis of $\xi$ and $\alpha$ is a unit vector in $\{0\}\times \ell\H\subset \O$. Thus, after applying an element of the $SO(4)$-subgroup, we may take $g=(\id,g_2)$, where $g_2$ fixes $1\in\O$. The fact that $g$ is an automorphism implies 
+	\begin{equation*}
+		g((0,a))=(0,g_2(a))=g((\bar a,0))g((0,1))=(\bar a,0)(0,1)=(0,a)
+	\end{equation*}
+	We conclude that $g_2=\id$ and thus, $g$ actually lies inside the $SO(4)$-subgroup.
+\end{myproof}
+
+\begin{prop}\label{prop:G2Planes}
+	The Lie group $G_2$ acts transitively on the oriented Grassmannian $\widetilde\Gr_2(\Im\O)=\widetilde \Gr_2(\R^7)$, with stabilizer isomorphic to $U(2)$.
+\end{prop}
+\begin{myproof}
+	Recall the characterization of an element $g\in G_2$ as the unique automorphism that send the triple $\{i,j,\ell\}$ to a triple $\{x,y,z\}$ of orthonormal imaginary octonions such that $z$ is orthogonal to $x\times y$ (as well as to $x$ and $y$). Forgetting about the third element of each triple, we obtain a transitive action on oriented $2$-planes. 
+	
+	Now consider the plane defined by the oriented basis $\{i,j\}$. If $g$ preserves the plane (including orientation) then $g(i)=i\cos\theta-j\sin \theta$ and $g(j)=i\sin\theta+j\cos\theta$ for some $\theta\in[0,2\pi)$. Because $g\in G_2$, we have $g(i\times j)=g(k)=g(i)\times g(j)=k$, hence $g$ fixes $k$, i.e.~$g\in (G_2)_k\cong SU(3)$. 
+	
+	We endow the complement $V$ of $k$ inside $\Im\O$ with a complex structure $J$ as in the proof of \cref{prop:G2S6}. Since $g$ preserves the complex line spanned by $i$ (note that $Ji=ki=j$) and the Hermitian scalar product of $V$, it also preserves the complex plane orthogonal to it, i.e.~$g$ is an element of $S(U(1)\times U(2))\subset SU(3)$. But this subgroup is isomorphic to $U(2)$: The isomorphism is given by $\varphi:U(2)\to S(U(1)\times U(2))$ which maps $A\mapsto ((\det A)^{-1},A)$. Thus, the stabilizer is contained in a subgroup isomorphic to $U(2)$. A dimension count shows that it has dimension at least  four: We conclude that $\widetilde\Gr_2(\R^7)\cong G_2/U(2)$.
+\end{myproof}
+
+Since we will shortly introduce another, distinct subgroup isomorphic to $U(2)$, we will from now on denote the above subgroup by $U(2)_-$, i.e.~we write $\widetilde\Gr_2(\R^7)\cong G_2/U(2)_-$. 
+
+\begin{rem}
+	The subgroups $SU(3)$, $SO(4)$ and $U(2)_-$ are closely related. Indeed, the stabilizer of $\Span\{i,j\}$ must also fix $1$ and $k$, hence $U(2)_-\subset SU(3)\cap SO(4)\subset G_2$. Conversely, any element of $SU(3)\cap SO(4)$ must fix $1$ and $k$, as well as preserving $\Span\{1,i,j,k\}$ and therefore $U(2)_-=SU(3)\cap SO(4)$. As a corollary, there is a fibration $SO(4)/U(2)_-=\CP^1\hookrightarrow G_2/U(2)_-\to G_2/SO(4)$.
+\end{rem}
+
+There is an elegant, complex-geometric description of $\widetilde\Gr_2(\Im\O)$:
+
+\begin{prop}
+	The Grassmannian $\widetilde\Gr_2(\R^n)$ is (diffeomorphic to) a quadric hypersurface in $\CP^{n-1}$. In particular, it is a smooth, projective variety, which we will denote by $Q$.
+\end{prop}
+\begin{myproof}
+	Consider a positively oriented orthonormal basis $\{e_1,e_2\}$ of a $2$-plane in $\R^n$. Now complexify $\R^n$ to obtain $\C^n=\R^n\otimes_\R \C$ and $\C$-linearly extend the standard scalar product $(-,-)$ on $\R^n$ to $\C^n$. Then the vector $z=e_1+ie_2$ satisfies $(z,z)=e_1\cdot e_1-e_2\cdot e_2=0$ and therefore defines a point in the \emph{zero quadric}:
+	\begin{equation*}
+		Q=\Bigg\{(z_1:\dots:z_n)\in \CP^{n-1}\, \bigg|\, \sum_{j=1}^n z_j^2=0\Bigg\}\subset \CP^{n-1}
+	\end{equation*}
+	This is independent of our choice of oriented orthonormal basis, since any other such basis $\{e_1',e_2'\}$ is related to $\{e_1,e_2\}$ by a rotation $A\in SO(2)=U(1)$ and hence maps to $z'=\lambda z$ for $\lambda\in U(1)$. This means that it defines the same point in $\CP^{n-1}$. The map to $Q$ defined in this fashion is easily seen to be bijective and smooth, as is its inverse.
+\end{myproof}
+
+\begin{rem}
+	Recall that $\widetilde\Gr_2 (\R^n)=SO(n)/(SO(2)\times SO(n-2))$. Therefore one may also prove the above proposition by explicitly describing an action of $SO(n)$ on $Q$ with isotropy subgroup $SO(2)\times SO(n-2)$, as done by Chern~\cite[188]{Che1965}.
+\end{rem}
+
+In the proof of \cref{prop:G2Planes} we saw that $g\in G_2$ that preserves an oriented $2$-plane $P$ with oriented, orthonormal basis $\{x,y\}$ must fix $x\times y=xy$. We also saw that this assignment does not depend on the choice of oriented, orthonormal basis. This can be used to prove the following:
+
+\begin{prop}
+	There is a diffeomorphism $G_2/U(2)_-\cong \P(TS^6)$, where $\P(E)$ denotes the projectivization of a complex vector bundle $E$, and $TS^6$ is regarded as a complex vector bundle, obtained by equipping $S^6$ with its standard almost complex structure.
+\end{prop}
+\begin{myproof}
+	Consider an oriented plane $P\in G_2/U(2)_-=\widetilde \Gr_2(\R^7)$ with oriented, orthonormal basis $\{x,y\}$. The above remark shows that there is a well-defined map $\pi: G_2/U(2)_-\to S^6$ which sends $P\mapsto x\times y=xy$. Recall that the standard almost complex structure $J$ on $S^6$ at the point $u\in S^6$ is given by $L_u$, and that $T_u S^6$ is identified with the orthogonal complement $V_u$ of $\R u$ inside $\Im \O$. 
+	
+	We use these remarks to show that we can identify $P$ with a complex line in $T_{xy} S^6$. Since $x\times y$ is orthonormal to both $x$ and $y$, $P$ can be considered as an oriented $2$-plane in $T_{xy}S^6$. Furthermore
+	\begin{equation*}
+		(L_{xy}x,y)=\big((xy)x,y\big)
+		=(xy,y\bar x)=-(xy,yx)=1
+	\end{equation*} 
+	and we can deduce that $L_{xy}x=y$. Similarly, one shows $L_{xy}y=-x$. Thus, $P$ is a complex line in $T_{xy}S^6$ and we can can identify elements of $G_2/U(2)_-$ with complex lines tangent to $S^6$. 
+	
+	Conversely we will prove that, given a complex line in $T_u S^6$, every oriented, orthonormal (real) basis $\{\alpha,\beta\}$ satisfies $\alpha\beta=u$. In fact, the action of $G_2$ allows us to verify this over just a single point, say $k\in S^6$. To see this, assume we have proven it for $T_k S^6$ and consider a complex line $L\subset T_uS^6$, where $u=g(k)$ for some $g\in G_2$. As a real $2$-plane, $L$ is spanned by an oriented, orthonormal basis $\{\alpha,\beta\}$, which satisfies $u\alpha=\beta$ and $u\beta=-\alpha$. We will prove that $\alpha\beta=u$.
+	
+	Set $x=g^{-1}(\alpha)$ and $y=g^{-1}(\beta)$. Then $g(k)g(x)=g(kx)=g(y)$ and therefore $kx=y$. Similarly, one shows that $ky=-x$, hence $\{g^{-1}(\alpha),g^{-1}(\beta)\}$ span a complex line in $T_kS^6$. Since we assumed that we showed that any oriented, orthonormal (real) basis $\{x,y\}$ of a complex line in $T_kS^6$ satisfies $xy=k$, this shows that $g^{-1}(\alpha)g^{-1}(\beta)=k$. Therefore $\alpha\beta=g(k)=u$, as we wanted to show.
+	
+	Now, we prove the claim for $T_k S^6$: Any oriented, orthonormal (real) basis $\{x,y\}$ of a complex line in $T_k S^6$ satisfies $xy=k$. Once we have established this, we see that the fiber of $\pi:G_2/U(2)_-\to S^6$ over $u\in S^6$ is precisely $\P(T_u S^6)$. This exhibits $G_2/U(2)_-$ as $\P(TS^6)$ with $\pi$ as the base point projection. 
+	
+	$T_kS^6$ is spanned, as a complex vector space, by $\{i,\ell,i\ell\}$ and thus any complex line $L$ corresponds to a complex combination $x=\alpha_1 i+\alpha_2 \ell+ \alpha_3 (i\ell)$, $\sum_j|\alpha_j|^2=1$, unique up to $U(1)$-transformation. In order to exploit $\R$-linearity of the octonion product, we split the coefficients into real and imaginary parts: $\alpha_j=a_j+kb_j$ and write $x$ in terms of real multiples of the unit imaginary octonions that span $(\R k)^\perp\subset \Im\O$. A real, oriented, orthonormal basis for $L$ is given by $\{x,kx\}$ and it is easily checked that if one takes $x$ to be any of the standard unit imaginary octonions spanning $(\R k)^\perp$, then $x(kx)=k$. The linearity of the octonion product then implies that this holds for any $x$.
+\end{myproof}
+
+\begin{rem}\leavevmode
+	\begin{numberedlist}
+		\item The diffeomorphism between $G_2/U(2)_-$, endowed with its K\"ahler structure induced by the identification with the quadric, and $\P(TS^6)$ is \emph{not} an isomorphism of almost complex manifolds. Similarly, the isomorphism $TS^6\cong T^*S^6$ as \emph{real} vector bundles induces a diffeomorphism $\P(TS^6)\cong \P(T^*S^6)$ which does not identify them as almost complex manifolds. We will prove these claims by computing the corresponding Chern classes and numbers in the next chapter.
+		\item The existence of this diffeomorphism was already pointed out in 1982 by Bryant~\cite[200]{Bry1982}, who leaves the verification as an exercise to the reader.
+	\end{numberedlist}
+\end{rem}
+
+If the six-sphere is complex, then the projectivization of the (co)tangent bundle endowed with the corresponding complex structure is complex as well. The total space is diffeomorphic to the projectivization of the tangent bundle with the standard complex structure. 
+
+To see this, it suffices to show that any almost complex structure is homotopic to the standard one as a section of the bundle of almost complex structures (which we can take compatible with the given orientation, without loss of generality), i.e.~the bundle with fiber $GL^+(6,\R)/GL(3,\C)$ associated to the $GL(6,\R)$-frame bundle of $TS^6$. Up to homotopy, we may additionally take our almost complex structure to be a section of the bundle of almost complex structures compatible with the round metric, which has fiber $SO(6)/U(3)=SU(4)/S(U(3)\times U(1))\cong \CP^3$. 
+%WORK NEEDED: Is this correct?
+
+Now, obstruction theory dictates that the obstruction to finding a homotopy over the $k$-skeleton of $S^6$ is a class in $H^k(S^6,\pi_k(\CP^3))$~\cite[Ch.~7]{DK2001}. Therefore, the only possible obstruction to finding a homotopy arises in $H^6(S^6,\pi_6(\CP^3))$. This group vanishes, since $\pi_6(\CP^3)=0$; this follows from $\CP^3=S^7/S^1$ and $\pi_6(S^7)=\pi_5(S^1)=1$. We have proven:
+
+\begin{prop}
+	If $S^6$ admits an (integrable) complex structure, then the quadric $Q_5$ admits at least two non-standard complex structures.\proofclear
+\end{prop}
+
+This is reminiscent of the relation between complex structures on $S^6$ and non-standard complex structures on $\CP^3$, obtained after blowing up a point (see, for instance, \cite{HKP2000}). In both cases, the exotic structures cannot be K\"ahler because of the rigidity results of \cref{chap:uniqueness}.
+%WORK NEEDED: Mention LeBrun and Kruglikov?
+
+Now recall from \cref{chap:twistor} that $G_2/SO(4)$ is a Wolf space. Its twistor space, which we will denote by $Z$, is also homogeneous under $G_2$; the stabilizer of a point is $U(1)\cdot Sp(1)\cong U(2)$. We will write $Z=G_2/U(2)_+$. Our identification $G_2/U(2)_-=Q$ casts $G_2/U(2)_-$ as the space of isotropic complex lines with respect to the $\C$-linearly extended inner product $(-,-)$ on $\Im\O\otimes_\R\C$. The twistor space $Z$ similarly has an octonionic description, as explained by Svensson and Wood~\cite{SW2015}; we only briefly sketch their arguments, omitting the details, as they will not be important to us in what follows.
+
+A point in $G_2/SO(4)$ corresponds to an associative subspace $\xi\subset \Im\O$, which is endowed with a canonical orientation such that for an orthonormal pair $\{x,y\}$, the basis $\{x,y,x\times y\}$ is positively oriented. Svensson and Wood identify the fiber $Z_x$ with the space of orthogonal complex structures on $\xi^\perp$, compatible with the orientation induced by requiring that the Hodge dual associative subspace is canonically oriented---they call these \emph{positive};
+%WORK NEEDED: How do they do that?!
+the (unique) corresponding $(1,0)$-subspace of $\xi^\perp\otimes_\R\C$ is also called positive. 
+
+They establish that such positive (complex) $2$-planes can be characterized by the property that the $\C$-linearly extended inner product and cross product both vanish identically on them, and call such planes \emph{complex coassociative}. Thus, the twistor space $G_2/U(2)_+$ is identified with the space of complex coassociative or (equivalently) positive, isotropic $2$-planes in $\Im\O\otimes_\R\C$.
+
+This explanation justifies the notation $U(2)_+$, and hints at another interpretation of $G_2/U(2)_-$. Indeed, in analogy with the above, Svensson and Wood interpret $G_2/U(2)_-$ as the space of \emph{negative}, isotropic $2$-planes of $\Im\O\otimes_\R\C$, meaning that they are the $(1,0)$-spaces of \emph{negative} complex structures on $\xi^\perp$. They also give an explicit description of the fibration of $G_2/U(2)_-$, viewed as the quadric of isotropic lines, over $G_2/SO(4)$. To an isotropic line $\ell\subset \Im\O\otimes_\R\C$, they assign the three-dimensional subspace $\ell\oplus\bar\ell\oplus(\ell\times\bar\ell)$. After establishing that such a subspace is always of the form $\xi\otimes_\R\C$ for an associative subspace $\xi$, one obtains the structure of a fiber bundle.
+
+Finally, they describe the complete $G_2$ flag manifold $G_2/T^2$ (maximal tori of $G_2$ are two-dimensional). Let $\ell$ be an isotropic line and define the \emph{annihilator} $\ell^a$ to be the subspace $\ell^a=\{x\in \Im\O\otimes_\R\C\mid x\times \ell=0\}$; it is isotropic and three-dimensional. Then $G_2/T^2$ is the space of pairs $(\ell,D)$ where $D$ is a $2$-plane containing $\ell$, and both are contained in $\ell^a$. 
+
+We write $D=\ell\oplus q$, where $q$ is the orthogonal complement with respect to the Hermitian scalar product inherited from the standard identification with $\C^7$. Then a fibration of $G_2/T^2$ over $G_2/SO(4)$ is obtained by sending $(\ell,D)\mapsto \xi$, where $\xi\otimes_\R\C=q\oplus\bar q\oplus (q\times\bar q)$. This can be regarded as the composition of a fibration over the quadric $G_2/U(2)_-$, given by $(\ell,D)\mapsto q$, with the map $G_2/U(2)_-\to G_2/SO(4)$ mentioned before.
+%The map G_2/T^2 to G_2/U(2)_- sends for instance q=L+iLK to all lines in the 2-plane spanned by I+iJ and LJ+iLI 
+Analogously, the map factors through a fibration over $G_2/U(2)_+$ which sends $(\ell,D)$ to the (unique) isotropic, complex-coassociative $2$-plane $P\subset \xi^\perp\otimes_\R\C$ containing~$q$.
+%WORK NEEDED: This Svensson & Woods stuff is still kind of dark magic.
+
+We have now discussed several $G_2$ homogeneous spaces; the relations between the corresponding isotropy subgroups are most easily summarized in a diagram:
+\begin{equation*}
+	\begin{tikzcd}[sep=tiny]
+		& U(2)_- \ar[draw=none]{r}[sloped,auto=false]{\scalebox{1.3}[1.3]{$\subset$}}
+		\ar[draw=none]{dr}[sloped,auto=false]{\scalebox{1.3}[1.3]{$\subset$}} 
+		& SU(3) \ar[draw=none]{r}[sloped,auto=false]{\scalebox{1.3}[1.3]{$\subset$}} 
+		& G_2 \\
+		T^2 \ar[draw=none]{ur}[sloped,auto=false]{\scalebox{1.3}[1.3]{$\subset$}}
+		\ar[draw=none]{dr}[sloped,auto=false]{\scalebox{1.3}[1.3]{$\subset$}} & 
+		& SO(4) \ar[draw=none]{r}[sloped,auto=false]{\scalebox{1.3}[1.3]{$\subset$}}
+		& G_2\\
+		& U(2)_+ \ar[draw=none]{ur}[sloped,auto=false]{\scalebox{1.3}[1.3]{$\subset$}}
+	\end{tikzcd}
+\end{equation*}
+We have also described a corresponding tower of fibrations between the homogeneous spaces:
+\begin{figure}[ht!]
+	\centering
+	\begin{tikzcd}[column sep=0.1cm]
+		& & G_2/T^2 \ar[dl] \ar[dr] & \\
+		& Q=G_2/U(2)_- \ar[dr,"\pi_Q"'] \ar[dl,"p" ] & 
+		& Z=G_2/U(2)_+\ar[dl,"\pi_Z"]\\
+		S^6=G_2/SU(3)& & G_2/SO(4)
+	\end{tikzcd}
+	\caption{}\label{fig:tower}
+\end{figure}
+
+The map $p:Q\to S^6$, which exhibits $G_2/U(2)_-$ as $\P(TS^6)$, of course has fiber $\CP^2$. All the other fibrations have fibers diffeomorphic to $\CP^1$.
+
+In fact, this diagram contains all $G_2$ flag manifolds. Of course, $G_2/T^2$ is the complete $G_2$ flag manifold. The subgroups $U(2)_\pm$ are the centralizers of the two $U(1)$-factors of a maximal torus and therefore $Q$ and $Z$ are also $G_2$ flag manifolds. We will confirm this in the next chapter, where we will describe explicit $G_2$-invariant K\"ahler-Einstein metrics on them (cf. \cref{thm:Matsu}). 
+
+The fibrations of $G_2/T^2$ over $Q$ and $Z$ are manifestations of a general fact:
+
+\begin{prop}[{\cite[\nopp 8.106]{Bes2008}}]
+	A complete flag manifold of a compact, connected and semisimple Lie group $G$ admits a holomorphic fibration over all generalized flag manifolds of $G$, with fiber a complete flag manifold.
+\end{prop}
+
+Note that this also implies the uniqueness (up to isomorphism of homogeneous complex manifolds) of the complete flag manifold of $G$. More generally, if the isotropy subgroups corresponding to two flag manifolds centralize conjugate tori, then they are isomorphic. Thus, there are only three $G_2$ flag manifolds and we have found all of them. Alternatively, one may invoke the classification of generalized flag manifolds in terms of painted Dynkin diagrams to see this.
+
+From now on, our focus is on the (partial) flag manifolds $Q$ and $Z$. Their geometric description, which is our main aim in the remaining chapter, involves all topics introduced thus far.

@@ -1,0 +1,921 @@
+\documentclass{scrartcl}
+\input{Preamble}
+\title{Notes for Thesis}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section{Big Picture}
+
+Related MathSciNet categories: 57T15, 14M17, 53C30, 32M10, 14M15.
+
+\subsection{General Setup}
+
+We can view $G_2$ as a subgroup of either $SO(7)$ or $U(7)$, defined as the automorphism group of $(V^7,\phi)$ where $V$ is a vector space, either real or complex, and $\phi$ is a form (3-form in the real case... 2-form in the complex case?).
+%WORK NEEDED
+It also contains the following subgroups
+\begin{equation*}
+	\begin{tikzcd}[sep=tiny]
+		& U(2) \ar[draw=none]{r}[sloped,auto=false]{\scalebox{1.3}[1.3]{$\subset$}}
+		\ar[draw=none]{dr}[sloped,auto=false]{\scalebox{1.3}[1.3]{$\subset$}} 
+		& SU(3) \ar[draw=none]{r}[sloped,auto=false]{\scalebox{1.3}[1.3]{$\subset$}} 
+		& G_2 \\
+		T^2 \ar[draw=none]{ur}[sloped,auto=false]{\scalebox{1.3}[1.3]{$\subset$}}
+		\ar[draw=none]{dr}[sloped,auto=false]{\scalebox{1.3}[1.3]{$\subset$}} & 
+		& SO(4) \ar[draw=none]{r}[sloped,auto=false]{\scalebox{1.3}[1.3]{$\subset$}}
+		& G_2\\
+		& U(2) \ar[draw=none]{ur}[sloped,auto=false]{\scalebox{1.3}[1.3]{$\subset$}}
+	\end{tikzcd}
+\end{equation*}
+The $T^2$ is a
+%WORK NEEDED
+maximal torus of $G_2$. This chain of inclusions gives a tower of fibrations (cf. Salamon's book, page 164):
+\begin{equation*}
+	\begin{tikzcd}[column sep=tiny]
+		& & G_2/T^2 \ar[dr,"\CP^1"] \ar[dl,"U(2)/T^2\cong \CP^1"'] \\
+		\CP^6 \ar[draw=none]{r}[sloped,auto=false]{\scalebox{1.3}[1.3]{$\supset$}}
+		&[-23pt] Q=G_2/U(2) \ar[dr,"\CP^1"'] & & Z=G_2/U(2) \ar[dl,"\CP^1"]\\
+		& & G_2/SO(4)
+	\end{tikzcd}
+\end{equation*}
+Here, labels of the arrows indicate fibers. The upper fibrations are holomorphic maps between complex manifolds. 
+%WORK NEEDED
+$G_2/T^2$ is the (or a?) ``complete flag manifold'' of isotropic subspaces, i.e. it is the parameter space of flags of isotropic subspaces of $\phi$. It turns out
+%WORK NEEDED
+that those flags are just given by $(\ell,P)$ where $\dim \ell=1,\dim P=2$ and $\ell\subset P$ (the last condition is necessary for any flag). The fibrations are just given by the maps $(\ell,P)\mapsto \ell$ or $P$. 
+
+\subsection{Information on $Q$ and $Z$}
+
+The left map maps to $\ell$, which explains why it is a subset of $\CP^6$, the set of all complex lines! In fact, we call it $Q$ because it is a \emph{quadric} inside $\CP^6$, which comes from the fact that the isotropy condition is a quadratic equation (something like $(\phi\wedge\phi)\big|_\ell=0$).
+%WORK NEEDED
+The right map is the projection to $P$, which apparently is also parametrized by $G_2/U(2)$.
+
+\medskip
+
+These manifolds are quite nice: $G_2/T^2$ has a unique complex structure which makes it into an algebraic variety. The spaces $Q,Z$ are both compact K\"{a}hler and projective. They have the same cohomology additively, namely that of $\CP^5$. For the quadric, this follows from the weak Lefschetz theorem while the argument for $Z$ is a little different (spelled out in Computations, subsection ``Chern classes of $Z$''). However, they are not homotopy equivalent: This follows from a computation of the cohomology ring, and can in fact already be seen from the Chern number $c_1^5$ for any given complex structures on $Q,Z$.
+
+\begin{rem}
+	Another way to see that they are not diffeomorphic (more roundabout) is to note that a paper by Brieskorn shows that a K\"{a}hler manifold diffeomorphic to a quadric (of odd dimension) is automatically biholomorphic to it. In particular, there is only one set of Chern numbers. This argument could perhaps be modified to get that they are not homotopy equivalent.
+\end{rem}
+
+\begin{prop}
+	The cohomology of both $Q$ and $Z$ is all of type $(k,k)$, $k\leq 5$.
+\end{prop}
+\begin{myproof}
+	The proof is similar to the fist part of the proof of theorem 2 of Kotschick \& Terzi\'{c}'s paper on flag manifolds (page 603): For any compact K\"{a}hler manifold $X$ we have the decomposition $b_{2k}(X)=h^{k,k}(X)+2h^{k+1,k-1}+\dots$. In our case, we know $b_{2k}(X)=1$ for every $k=1,\dots,5$. Since $X$ is K\"{a}hler, the powers of the K\"{a}hler class yield non-trivial $(k,k)$-cohomology, i.e. $h^{k,k}(X)\geq 1$ for every $k=1,\dots,5$. Hence every other Hodge number must vanish and all the cohomology is of type $(k,k)$.
+\end{myproof}
+
+They are simply connected (easy consequence of the long exact sequence for a fibration, using $\pi_1(G_2)=1$ and $\pi_0(U(2))=1$). 
+
+\medskip
+
+They are not $\Spin$: For $Q$, note that $\nu(Q)=\mc O(2)|_Q$ (Huybrechts, proposition 2.4.7), hence $c_1(\CP^6)=7\alpha=c_1(Q)+2\alpha$, where $\alpha$ is the standard generator of $H^2(\CP^n)$. Hence $c_1(Q)=5\alpha$. For $Z$, we use that $c_1^5=4374$. If $c_1\equiv 0\mod 2$ then $c_1^5\equiv 0\mod 32$, which is not true for $4374$.
+
+\medskip
+
+The bottom two fibrations are a bit different: $G_2/SO(4)$ is not complex, but it is a so-called ``quaternionic K\"{a}hler manifold'', to which we can associate a twistor space. The space $Z$ is in fact this twistor space (cf. Salamon's ``Harmonic and Holomorphic Maps''). In fact, $G_2/SO(4)$ is probably not even $\Spinc$, and by extension not almost complex (since an almost complex structure induces a canonical $\Spinc$ structure). To see this, use the long exact homotopy sequence
+\begin{equation*}
+	\begin{tikzcd}
+		\dots \ar[r] & 0 \ar[r] & \pi_2(G_2/SO(4)) \ar[r] & \pi_1(SO(4))=\Z_2 \ar[r] & 0 \ar[r] & \dots
+	\end{tikzcd}
+\end{equation*}
+where we used that $\pi_2(G)=0$ for any Lie group $G$ and that $\pi_1(G_2)=1$ (cf. \href{https://mathoverflow.net/questions/8957/homotopy-groups-of-lie-groups}{this}). This shows that $\pi_2(G_2/SO(4))=\Z_2$ and therefore by the Hurewicz theorem we have $H_2(G_2/SO(4);\Z)=\Z_2$. By the universal coefficients theorem, $H^2(G_2/SO(4);\Z)=0$ and also $H^2(G_2/SO(4);\Z_2)=\Z_2$; it seems likely that the nonzero element is in fact the Stiefel-Whitney class $w_2(G_2/SO(4))$ and in that case clearly $w_2$ does not have an integral lift, hence no $\Spinc$ structure.
+%WORK NEEDED: Make this more precise? Does this indeed work?
+
+\medskip
+
+There are several ways to argue that an almost complex structure must give rise to a $\Spinc$ structure (see e.g. \href{https://mathoverflow.net/questions/241495/spinc-structures-on-manifolds-with-almost-complex-structure}{here}). One way involves using $\bigoplus_k \bigwedge^{0,2k}$ as the positive spinor bundle (and the odd-degrees as negative spinors) and then using the symbold of $\p+\bar\p$ to define a $\Spinc$ structure. Alternatively, there is also an explicit classification of homogeneous spaces admitting an almost complex structure. 
+
+\medskip
+
+We want to compute Chern numbers of $Z$: The Kotschick \& Terzic paper explains how $c_1c_4$ is determined by the Hodge numbers (for $Q$, as a quadric in $\CP^6$, they are known to be $h^{k,k}=1,h^{k,l}=0$ for every $k\neq l$, $k,l\leq 3$). Since $Z$ should have the same cohomology groups as $Q$, this will fix $c_1c_4$ too.
+
+\medskip
+
+Furthermore, the paper by Semmelman and Weingart features the ``Hilbert polynomial'', which can be expressed with coefficients in terms of Chern numbers (using Hirzebruch-Riemann-Roch): This yields $c_1^5,c_1^3c_2$ (and one more relation between Chern numbers).
+
+\medskip
+
+Now, we explain how to get different \emph{almost} complex structures (with potentially different Chern numbers) on $Q,Z$ by using the fibrations: They both admit one $G_2$-invariant complex structure
+%WORK NEEDED
+but multiple almost complex structures. An almost complex structure is just a complex structure on the tangent bundle. Pulling back $T(G_2/SO(4))$ yields a complex subbundle of $TQ,TZ$, which we can complement, using the canonical K\"{a}hler-Einstein structure on $Q,Z$.
+%WORK NEEDED
+First of all, this raises the question of whether $T(G_2/SO(4))$ is already complex.
+%WORK NEEDED
+
+\medskip
+
+Secondly, now we have $TZ$ or $TQ$ decomposed as $T(G_2/SO(4))\oplus E$. We may ``flip'' the complex structure on either summand to obtain a different structure: Flipping one of them yields a \emph{nearly K\"{a}hler structure}: Using the information on how this manifold arises one could probably compute the Chern numbers of this nearly K\"{a}hler manifold: Doing this for $Z$, this should be the second column in the last stable of Grama et al. Similarly, the last column of the first table should arise from the first column by such a flipping for the $\CP^1$-bundle of $Q$ over $G_2/SO(4)$.
+%WORK NEEDED
+
+\medskip
+
+$Q$ has another fibration, this time over $S^6$:
+\begin{equation*}
+	\begin{tikzcd}[column sep=tiny]
+		& Q \ar[dr,"\CP^1"] \ar[dl,"\CP^2"'] \\ 
+		S^6\cong G_2/SU(3) &[-10pt] & G_2/SO(4)
+	\end{tikzcd}
+\end{equation*} 
+It is not completely clear if this is relevant here, or not. 
+
+\subsection{Complex Structures (on $S^6$)}
+
+What about the second and third columns of the firs table? These should be the projectivizations of the tangent and cotangent bundles of $S^6$, $\P(TS^6)$ and $\P(T^*S^6)$. $\Im \mathbb O$, the imaginary octonions, form a $7$-dimensional vector space, hence $G_2$ can be described in terms of the imaginary octonions. There is also a well-known almost complex (but not complex!) structure on $S^6\subset \Im \mathbb O$, described in terms of octonion multiplication, which is invariant under the $G_2$ action. 
+%WORK NEEDED
+
+\medskip
+
+This makes $TS^6$ (and $T^*S^6$) into a $G_2$-homogeneous bundle
+%WORK NEEDED
+and consequently the projectivization should be a $G_2$-homogeneous space, so it makes sense that $\P(TS^6)$ and $\P(T^*S^6)$ are diffeomorphic to $Q$.
+%WORK NEEDED
+One may hope to understand some things about $S^6$ through $Q$. In particular, we are interested in (almost) complex structures on $S^6$. It is well-known that if $S^6$ admits a complex structure, then by blowing up a point we get a complex structure on $\CP^3$ 
+%WORK NEEDED
+which is not K\"{a}hler for otherwise, by Hirzebruch-Kodaira,
+%WORK NEEDED
+it would be biholomorphic to the standard $\CP^3$, but it has different Chern numbers. This in fact yields a strategy of proving that $S^6$ is \emph{not complex}: If Hirzebruch-Kodaira could somehow be extended to drop the K\"{a}hler assumption, one could get a contradiction. 
+
+\medskip
+
+Similarly, since $\P(TS^6)\cong Q$, if $S^6$ had a complex structure then it would yield a complex structure on $Q$ with non-standard Chern numbers which can, by Brieskorn, not be K\"{a}hler. If the K\"{a}hler assumption could somehow be dropped from Brieskorn's theorem, we would get that $S^6$ has no complex structure. This makes this direction of research quite interesting. Points like these are also mentioned \href{http://mathoverflow.net/a/1984/52890}{here}.
+
+\section{Other Questions}
+
+\begin{numberedlist}
+	\item There is a clear geometric description of how the fibrations $G_2/T^2\to G_2/U(2)$ work. It should not be too hard to describe the second step fibrations $G_2/U(2)\to G_2/SO(4)$ in terms of the flag data too.
+	\item The composed fibration clearly has fibers that are $S^2$-bundles over $S^2$, i.e. either $S^2\times S^2$ or $\CP^2\#\overline{\CP^2}$. Since both spaces are simply connected, there is no torsion. We proved in the gauge theory course that modulo torsion, the parity of $w_2$ is the parity of the intersection form. In particular, we see that $S^2\times S^2$ is $\Spin$ while $\CP^2\#\overline{\CP^2}$ is not. So one could try to look at the preimage of a single point on $G_2/SO(4)$ under the double fibration (which will be a single copy of the $S^2$-bundle over $S^2$) and see if it is $\Spin$ or not.
+	\item Is there a $G_2$-invariant complex structure on $G_2/SO(4)$?
+	\item Is Salamon's K\"ahler-Einstein metric on $Z$ the unique $G_2$-invariant one? How to see this?
+	\item How to understand that every generalized flag manifold is rational-algebraic? What is rational, precisely? And algebraic?
+	\item How to transition from uniqueness of Chern class on $Z$ to uniqueness of K\"ahler structure?
+	\item How to prove that flipping the fiber does not mess with homogeneity?!
+	\item How can we find the sign of $p_1(G_2/SO(4))$? Can we use the class $u$ defined by Salaman, or the Bockstein of the class $\epsilon$? Alternatively, can we find the sign of $p_1(Q)$ directly, somehow?
+	\item How is the fourth ACS on $Q$?!?!
+	\item Which variation of Schur's lemma applies to ACS's?
+	\item For $\pi':Q\to S^6$, why are the fibers holomorphic submanifolds?
+	\item For $p,p':\P(T^{(*)}S^6)\to S^6$, is the fiber a complex subbundle? Yes, hopefully?
+	\item Is $\pi^*T(G_2/SO(4))$ a complex subbundle for the fibrations over $G_2/SO(4)$?
+	\item Is there an interpretation of the fact that the Chern numbers don't feel the sign of part of the Chern classes?
+	\item If $\pi:M\to B$ is a fibration with nice fibers and $B$ has an invariant ACS then do I always get one on $TM$?
+	\item Can the canonical variation for the submersion $Q\to G_2/SO(4)$ be used to find the fourth ACS?
+	\item Mention that $\P(T^*S^6)$ has a complex contact structure, while $\P(TS^6)$ doesn't. This explains, in some sense, the divisibility of $c_1$ being different.
+\end{numberedlist}
+
+\section{Geometric Description of the \texorpdfstring{$G_2$}{G2} Flag Manifolds}
+
+The quadric is described by Kerr. Also \href{https://chat.stackexchange.com/transcript/36/2017/2/18}{this explanation} to translate to a quadric.
+
+\medskip
+
+There is a flag description of all the spaces in ``Svensson \& Wood - Harmonic Maps into the Exceptional Symmetric Space $G_2/SO(4)$''.
+
+
+\section{Nearly K\"ahler Structures}
+
+``Gray - Riemannian Manifolds with Geodesic Symmetries of Order 3'' explains how to get nearly K\"ahler structures on 3-symmetric spaces.
+
+\medskip
+
+Where do I find the nearly K\"ahler structure on twistor spaces?
+
+\medskip
+
+What about homogeneity of these nearly K\"ahler structures, on both $Q$ and $Z$?
+
+\medskip
+
+Butruille and Nagy's papers?
+
+\section{Homogeneous and Symmetric Spaces; Riemannian Submersions}
+
+For Wolf spaces, study ``Wolf - Complex Homogeneous Contact Manifold and Quaternionic Symmetric Spaces''.
+
+\medskip
+
+For isotropy irreducible homogeneous spaces, see ``Wolf - The Geometry and Structure of Isotropy Irreducible Homogeneous Spaces''. 
+
+\medskip
+
+For 3-symmetric spaces, see ``Gray - Riemannian Manifolds with Geodesic Symmetries of Order 3''.
+
+\section{Einstein Metrics?}
+
+Petersen, Besse 
+
+\medskip
+
+``Alexandrov, Grantcharov \& Ivanov - Curvature Properties of Twistor Spaces of Quaternionic Kaehler Manifolds''
+
+\medskip
+
+For $Z$ specifically, ``Kerr - Some New Homogeneous Einstein Metrics on Symmetric Spaces'' has information.
+
+\medskip
+
+For $G_2/T^2$, the paper ``Arvanitoyeorgos, Chrysikos \& Sanake - Homogeneous Einstein Metrics on $G_2/T$'' gives the Einstein metrics.
+
+
+
+\section{Hirzebruch's 2005 Paper}
+
+The point of view that we are pursuing here was brought up in a short note by Hirzebruch from 2005 called \emph{The Projective Tangent Bundle of a Complex Three-Fold}---though it seems implicit already in Salamon's notes on Harmonic and Holomorphic maps (start of section 6). There, he considered partial flags of the form $(0)\subset (1)\subset (3)\subset (4)$ and $(0)\subset (1)\subset (2)\subset(4)$. The spaces of such flags are both diffeomorphic to $U(4)/(U(1)\times U(2)\times U(1))$, since the standard flag $0\subset \C\subset \C^3\subset \C^4$ is fixed by matrices of the form
+\begin{equation*}
+	\left( 
+	\begin{array}{@{}c|c@{}}
+		\begin{array}{@{}c|ccc@{}}
+			\begin{array}{@{}c@{}}
+				U(1)
+			\end{array} & & 0 & \\ \midrule
+			& & & \\
+			0 & & U(2) & \\
+			& & &
+		\end{array} 
+		& 0 \\\midrule
+		0 & U(1) \\
+	\end{array}
+	\right)
+\end{equation*}
+and $0\subset \C\subset \C^2\subset \C^4$ is fixed by matrices of the same form up to permutation of blocks. Call the first flag manifold $X_1$ and the second $X_2$. What's interesting about this pair of spaces is that they have different Chern numbers. This can be computed using Lie group and algebra representation theory.
+
+\medskip
+
+However, there is a different perspective on these spaces which is interesting in its own right. $X_1\cong \P(T^*\CP^3)$ as manifolds, while $X_2\cong \P(T\CP^3)$. To see this, first note that $(\ell,[\alpha])\in \P(T^*\CP^3)$ picks out a line in $\C^4$, namely $\ell$. Furthermore, $[\alpha]$ defines a $3$-plane as follows: Every representative $\alpha$ has the same kernel in $T_\ell \CP^3$. Let $\pi:\C^4\setminus \{0\}\to \CP^3$ be the canonical projection. Then $\pi^*\alpha$ has three-dimensional kernel in $T_z\C^4\cong \C^4$ for any point $z\in \ell\subset \C^4$, containing $\ell$ (since $\dif \pi$ kills all of $\ell$)! This is all different from the choice of $z\in\ell$ (which will just scale things, but not affect subspaces) and $\alpha\in[\alpha]$ (since every representative has the same kernel). We have obtained the crucial part of the flag, namely the inclusion $(1)\subset (3)$: The $(0)$ and $(4)$ involve no choice. Thus, the flag manifold is also $\P(T^*\CP^3)$.
+
+\medskip
+
+For the diffeomorphism $X_2\cong \P(T\CP^3)$, let $\gamma^1$ be the tautological line bundle over $\CP^3$, defined as a subbundle of the trivial rank $4$ bundle on $\CP^3$ and let $\gamma^\perp$ be its orthogonal complement. Then $T\CP^3\cong \Hom(\gamma^1,\gamma^\perp)$. In particular, $T_\ell \CP^3\cong \Hom(\ell,\ell^\perp)$, where $\ell^\perp\subset \C^4$ is a $3$-plane. A tangent vector at $\ell$ is determined by $v\in\ell^\perp\subset\C^4$ through the linear map $h\in\Hom(\ell,\ell^\perp)$ that sends a fixed representative $z\in\ell$ to $v$. 
+
+\medskip
+
+Note that picking a different representative may change things by a complex factor $\lambda\in U(1)$, but since we are working with subspace we don't mind. To obtain a $2$-plane $P$ containing $\ell$ from $v$, we simply take $P=\dif_z\pi^{-1}(\Span v)$, where we once again used a representative $z\in\ell$, but different choices only cause a scaling, which we do not care about. Since $\dif_z\pi(\ell)=0$ (after defining $T_z\C^4\cong \C^4$, $\ell\subset P$ and hence we have the crucial $(1)\subset (2)$ part of the flag, i.e. an identification $X_2\cong \P(T\CP^3)$ results.
+
+\section{Salamon's Notes on Harmonic and Holomorphic Maps}
+
+\subsection{Almost Hermitian Manifolds}
+
+An \emph{almost complex structure} (ACS) on a manifold $M^{2n}$ is a section $J\in \Gamma(\End M)$ such that $J^2=-\id$. This allows us to define the notion of a \emph{holomorphic} map: $\varphi:M\to N$ is said to be holomorphic if $\dif\varphi\circ J^M=J^N\circ \dif \varphi$. The ACS $J$ is said to be \emph{integrable} if there are local coordinates $z_j=x_j+iy_j$, $1\leq j\leq n$, such that $J(\p_{x_j})=\p_{y_j}$. Equivalently, every point has a neighborhood which is biholomorphic to an open subset of $\C^n$. Note that the usage of the word holomorphic in this paper does \emph{not} imply that we are talking about an integrable ACS (i.e. a complex manifold). 
+
+\medskip
+
+The set of orthonormal frames of the form $\{X_1,JX_1,\dots,X_n,JX_n\}$ yields a $GL(n,\C)$-structure on $M$, i.e. a principal $GL(n,\C)$-subbundle of the frame bundle. We can always pick a metric such that $g(JX,JY)=g(X,Y)$, reducing the structure group to $U(n)$. The resulting Riemannian, almost complex manifold is called \emph{almost Hermitian}. From now on, we mostly consider such manifolds and we will denote the principal $U(n)$-bundle by $P$.
+
+\medskip
+
+The ACS yields a decomposition $TM\otimes_\R \C=T^{1,0}\oplus T^{0,1}$ corresponding to the $\pm i$-eigenspaces of $J$. Similarly, we obtain a decomposition 
+\begin{equation*}
+	\bigwedge\nolimits^k TM\otimes_\R \C=\bigoplus_{p+q=k}T^{p,q}
+\end{equation*}
+Note that these are multi-vectors, not differential forms. Indeed, we can essentially forget about forms once we have the metric since it induces an isomorphism $(T^{p,q})^*\cong T^{q,p}=\overline{T^{p,q}}$. If we let $(X_j)$ be an ONB of $T_xM$ then the extension of $g$ to $\bigwedge^kTM$ makes $\{X_I,\ I=\{i_1<i_2<\dots,i_k\}$ into an orthonormal basis, hence the decomposition into $T^{p,q}$'s is orthogonal.
+
+The bundles $T^{p,q}$ are associated to $P$ via a $U(n)$-representation. We investigate it a little bit, introducing the \emph{fundamental bivector} $F$, which is dual to the usual fundamental 2-form $\omega$, defined by $\omega(X,Y)=g(JX,Y)$. Hence, $F$ is defined by
+\begin{equation*}
+	g(F,X\wedge Y)=g(JX,Y)
+\end{equation*}
+where $X\wedge Y$ is any bivector. Just like $\omega$, $F$ is of type $(1,1)$ (e.g. top of page 12 of my Huybrechts notes). Since $F$ is a section of $T^{1,1}$, we get a decomposition $T^{1,1}=\R\oplus T^{1,1}_0$.
+%WORK NEEDED Understand this!
+Similarly, if $\sigma\in T^{p-1,q-1}$ then $F\wedge\sigma$ is a section of $T^{p,q}$ and, denoting its complement by $T^{p,q}_0$ we find a decomposition 
+\begin{equation*}
+	T^{p,q}_0=\bigoplus_{r=0}^{\min\{p,q\}}T^{p-r,q-r}_0 
+\end{equation*}
+with $T^{p,q}_0=0$ if $p+q>n$. The representation of $U(n)$ corresponding to $T^{p,q}_0$ is known to be irreducible, but we see that the $T^{p,q}$'s are not irreducible.
+
+\medskip
+
+We will be using the Levi-Civita connection on $TM$. Recall that this is the unique torsion-free metric connection. Note that since any two of $(g,J,F)$ determine the third, $\nabla J$ and $\nabla F$ carry the same information content. 
+
+\begin{lem}
+	Let $\alpha,\beta\in T^{1,0}$ and $X\in TM_\C$. Then 
+	\begin{equation*}
+		g(\nabla_X F,\alpha\wedge\beta)=2ig(\nabla_X\alpha,\beta) \qquad \qquad 
+		g(\nabla_X F,\alpha\wedge\bar\beta)=0
+	\end{equation*}
+\end{lem}
+\begin{myproof}
+	This is a computation, using the metric property:
+	\begin{align*}
+		g(\nabla_X F,\alpha\wedge\beta)
+		&=X(g(J\alpha,\beta))-g(J\nabla_X \alpha,\beta)-g(J\alpha,\nabla_X\beta)\\
+		&=iXg(\alpha,\beta)+ig(\nabla_X \alpha,\beta)-ig(\alpha,\nabla_X\beta)
+		=2ig(\nabla_X\alpha,\beta)
+	\end{align*}
+	where in the last step we noted that the first and last term together equal the second. For the second computation, we do the same things but obtain
+	\begin{equation*}
+		g(\nabla_X F,\alpha\wedge\beta)
+		=iXg(\alpha,\bar\beta)-ig(\nabla_X \alpha,\bar\beta)
+		-ig(\alpha,\nabla_X\bar\beta)=0
+	\end{equation*}
+	as required.
+\end{myproof}
+
+Recall the \emph{second fundamental form} $\eta_X:T^{1,0}\to T^{0,1}$ given by $\pr_{0,1}\nabla_X$. It measures to which extent $\nabla_X$ fails to preserve $T^{1,0}$ and is an element of $\Hom(T^{1,0},T^{0,1})\cong T^{0,1}\otimes T^{0,1}$. Then, the lemma shows that $\eta_X\in T^{0,2}\subset T^{0,1}\otimes T^{0,1}$ and $\nabla_XF=2\Re(i\eta_X)$.
+%WORK NEEDED: Why?!
+
+\medskip
+
+
+Using the isomorphism $(T^{p,q})^*\cong T^{q,p}$, we have
+\begin{equation*}
+T^{0,2}\otimes (T^*M_\C)=T^{0,2}\otimes (T^{0,1}\oplus T^{1,0})
+=(T^{0,1}\otimes T^{0,2})\oplus T^{1,2}
+\end{equation*}
+The last equality just uses the definition of $T^{p,q}$. Therefore, we decompose
+\begin{equation*}
+	\nabla F=D_1 F+D_2 F \qquad \qquad D_1F\in (T^{0,1}\otimes T^{0,2})\oplus(T^{1,0}\otimes T^{2,0});\quad 
+	D_2F\in T^{2,1}\oplus T^{1,2}
+\end{equation*}
+The following important fact is known:
+
+\begin{lem}
+	\begin{align*}
+		D_1F&=0\Longleftrightarrow \nabla_X(T^{1,0})\subset T^{1,0} \qquad \forall X\in\Gamma(T^{1,0}) \\
+		D_2F&=0\Longleftrightarrow \nabla_X(T^{1,0})\subset T^{1,0} \qquad \forall X\in\Gamma(T^{0,1})
+	\end{align*}
+\end{lem}
+
+This lemma has the following consequences:
+
+\begin{prop}
+	\begin{align*}
+		D_1F&=0\Longleftrightarrow J\text{ is integrable}\\
+		D_2F&=0\Longleftrightarrow (\d\omega)^{1,2}=0
+	\end{align*}
+\end{prop}
+
+\begin{rem}
+	We call manifolds with the latter property ``$(1,2)$-symplectic''.
+\end{rem}
+
+\begin{mydef}
+	If $\nabla F=0$ we say that $M$ is \emph{K\"{a}hler}.
+\end{mydef}
+
+On a K\"{a}hler manifold, the Levi-Civita connection preserves $T^{1,0}$ completely. Therefore $\nabla$ descends to $P$ and therefore the holonomy group is contained in $U(n)$. Note that, once we are given a complex manifold, it suffices to find a $(1,2)$-closed 2-form $\omega$ such that $\omega(-,J-)$ is positive-definite to conclude that the manifold is K\"{a}hler.
+
+\begin{prop}
+	$S^6$ has a natural $(1,2)$-symplectic structure.
+\end{prop}
+
+In fact, $(\d\omega)^{0,3}$ completely determines $\nabla F$. We call such a manifold \emph{nearly K\"{a}hler} or $S^6$-like. In the proof, the following is needed:
+
+\begin{lem}
+	$G_2\action S^6$ transitively with stabilizer $SU(3)$.
+\end{lem}
+\begin{myproof}
+	We think of $G_2$ as the automorphism group of the octonions, which we can define as
+	\begin{equation*}
+		\O=\R\oplus \R i\oplus \R j \oplus \R k 
+		\oplus \R \ell \oplus \R i\ell \oplus \R j\ell \oplus \R k\ell
+		=\H\oplus \H\ell
+	\end{equation*}
+	with the multiplication table given by the well-known picture
+	\begin{equation*}
+		\begin{tikzpicture}
+			\draw[backarrowat=0.7] 
+				(0,0) -- (60:4cm) node[pos=0,anchor=north east]{$i\ell$} 
+				node[pos=0.5,anchor=south east]{$j$}
+				node[pos=1,anchor=south]{$k\ell$};
+			\draw[arrowat=0.3]
+				(0,0) -- (0:4cm) node[pos=0.5,anchor=north]{$k$}
+				node[pos=1,anchor=north west]{$j\ell$};
+			\draw[backarrowat=0.8]
+				(0,0) -- (30:3.46cm) node[pos=1,anchor=south west]{$i$};
+			\draw[xshift=4cm,arrowat=0.3] (0,0) -- (120:4cm);
+			\draw[xshift=4cm,backarrowat=0.8] (0,0) -- (150:3.46cm);
+			\draw[yshift=3.464cm,xshift=2cm,backarrowat=0.8] (0,0) -- (-90:3.46cm);
+			\draw[arrowat=0.3] (2,1.154) circle (1.154cm) 
+				node[anchor=south east]{$\ell$};
+		\end{tikzpicture}
+	\end{equation*}
+	It has an inner product given by $(x,y)=x\bar y=\sum_{r=0}^7 x_r y_r$ and a corresponding norm. The product of octonions is conveniently decomposed as follows:
+	\begin{equation*}
+		x\cdot y=\bigg(x_0y_0-\sum_{p=1}^7 x_py_p \bigg)1+\sum_{p\neq q}x_p y_q e_p \cdot e_q
+		\eqqcolon \bigg(x_0y_0-\sum_{p=1}^7 x_py_p \bigg)1+x\times y
+	\end{equation*}
+	where $(e_j)$ is a relabeling of the basis vectors, $\times$ is called the cross product. The sphere $S^6$ is realized as the space of imaginary octonions of unit norm. Now, we will show that $G_2$ acts transitively on $S^6$: Let $x\in S^6$ and consider $u,v\in S^6$ such that $(x,u)=(x,v)=(u,v)=(x,uv)=0$. What this means is that we find a subalgebra generated by $\{1,u,v,uv\}$ and orthogonal to $x$. This algebra is isomorphic to $\H$; we denote the isomorphism that identifies it with the copy $\H\subset \O=\H\oplus \H\ell$ by $\tau$. Then $\tau$ extends to an isomorphism $\sigma\in \Aut(\O)$ which sends $\alpha+\beta\ell\mapsto \tau(\alpha)+\tau(\beta)x$. In particular, $\sigma(\ell)=x$ (source for the detailed argument: ``The Octonions and $G_2$'').
+	
+	\medskip
+	
+	Now consider the isotropy group of $\ell\in S^6$. We already know that $G_2$ is a compact subgroup of $SO(7)$, hence $G_2$ preserves the orthogonal complement $V$ of $\ell$ in $\Im\O$. We can equip it with the structure of a complex vector space by defining the complex structure $J$ through $Ji\coloneqq i\ell$ and similarly for $j,k$. As a complex vector space, it is spanned by $\{i,j,k\}$. The isomorphism $V\cong\C^3$ induces a Hermitian inner product: Recall that on $\C^n$ the standard Hermitian inner product is given by
+	\begin{align*}
+		\langle \vec z,\vec w\rangle&=\sum_p \langle z_p,w_p\rangle_\C \\
+		\langle z_p,w_p\rangle_\C&=(x_p+iy_p)(u_p-iv_p)
+		=(x_pu_p+y_pv_p)+i(y_pu_p-x_pv_p)\\
+		&=(z,w)_{\R^2}+i(z,iw)_{\R^2} 
+	\end{align*}
+	Multiplication by $i$ in $\C$ is now replaced with right-multiplication by $\ell$, so we find that the induced inner product is:
+	\begin{equation*}
+		\langle v,w\rangle_V=(v,w)_{\R^8}+(v,w\ell)_{\R^8}\ell
+	\end{equation*}
+	where we used that $(-,-)_{\R^6}=(-,-)_{\R^8}\big|_{\R^6}$. We omit the subscripts from now on. Since $G_2$ is the automorphism group of octonions, any $g\in G_2$ satisfies
+	\begin{equation*}
+		-(x,y)g(1)+g(x\times y)=-(x,y)1+g(x\times y)
+		\overset{!}{=}-(g(x),g(y))1+g(x)\times g(y)
+	\end{equation*}
+	and matching real and imaginary parts shows that $(x,y)=(g(x),g(y))$. Now let $g$ lie in the isotropy subgroup $G_\ell$ of $\ell$. Then for any $v,w\in V$ we deduce
+	\begin{equation*}
+		\langle g(v),g(w)\rangle_V=(v,w)+(g(v),g(w)\ell)\ell=(v,w)+(g(v),g(w\ell))\ell
+		=(v,w)+(v,w\ell)\ell
+	\end{equation*}
+	and hence $G_\ell\subset U(V)\cong U(3)$. Now, we want to explicitly compute the determinant of $g\in G_\ell$. Since $g\in U(3)$, we have an orthonormal basis of eigenvectors $u,v,uv$. We view $V$ as a $\C$-vector space with ``multiplication by $i$'' given by right-multiplication by $\ell$. Therefore, the eigenvalues of $u$ and $v$ are of the form $e^{\theta\ell}$ and $e^{\varphi\ell}$. We need the following rule for octonion multiplication: View $u\in \O=\H\oplus\H\ell$ as a pair of quaternions. Then $uv=(u_1,u_2)(v_1,v_2)$ is given by $(u_1v_1-v_2\bar u_2,\bar u_1v_2+v_1u_2)$. In case $\Im\O\ni u,v\perp \ell$, i.e. $u_i$ and $v_i$ are purely imaginary, this simplifies to $(u_1,u_2)(v_1,v_2)=(u_1v_1+v_2u_2,-u_1v_2+v_1u_2)$. One may then verify that $(\ell u)(\ell v)=vu$, $u(\ell v)=-\ell(uv)$ and $(\ell u)v=-\ell(uv)$.
+	
+	\medskip
+	
+	Now, we can finally compute the eigenvalue of $uv$, using $g(uv)=g(u)g(v)=e^{\theta\ell}ue^{\varphi\ell}v$:
+	\begin{align*}
+		e^{\theta\ell}ue^{\varphi\ell}v
+		&=\cos\theta\cos\varphi (uv)+\sin\theta\sin\varphi (\ell u)(\ell v)
+		+\cos\theta \sin\varphi u(\ell v)+\sin\theta\cos\varphi (\ell u)v\\
+		&=(\cos\theta\cos\varphi-\sin\theta\sin\varphi) (uv)-(\cos\theta\sin\varphi+\sin\theta\cos\varphi) \ell(uv)
+		=e^{-(\theta+\varphi)\ell}uv
+	\end{align*}
+	This establishes that $\det g=1$, i.e. $G_\ell\subset SU(3)$.
+	
+	\medskip
+	
+	More abstract arguments are also possible (cf. Kerr). $SU(3)$ inherits the subspace topology from $G_2$, hence $G_\ell$ is a closed subgroup of $SU(3)$. Its dimension is at least $8=\dim SU(3)$ (and therefore exactly $8$) since it is cut out of $G_2$ by six equations and $\dim G_2=14$. 
+	
+	\medskip
+	
+	Finally, $G_\ell$ cannot be properly contained in $SU(3)$ because if it were, it would be a closed (properly contained) submanifold of codimension zero. This is not possible, since $SU(3)$ is connected.
+\end{myproof}
+
+\subsection{Bundles of Complex Structures}
+
+Even if we do not assume that an oriented Riemannian manifold $M$ of even dimension (with metric $h$) has an almost Hermitian structure, almost complex structures still exist locally. We study them by means of a bundle which we call $S$. The fiber over $x\in M$ is given by the set of complex structures on $T_xM$ that are compatible with the metric and orientation:
+\begin{equation*}
+	S_x=\{J\in \End T_xM\mid J^2=-\id_{T_xM},\ h(Jx,Jy)=h(x,y),\ J\text{ ``positive''}\}
+\end{equation*} 
+where we call $J$ ``positive'' if for any $\{x_1,\dots,x_n\}$, $x_1\wedge Jx_1\wedge\dots\wedge x_n\wedge J x_n$ is a non-negative multiple of the volume element induced by the orientation, i.e. if $J$ is compatible with the orientation.
+
+\medskip
+
+An oriented orthonormal basis gives an isomorphism $T_xM\cong \R^{2n}$ and the standard action $SO(2n)\action \R^{2n}$ induces an action on $\End T_xM$, namely by conjugation. This action is natural because it turns the contraction $\End T_xM\otimes T_xM\to T_xM$ into an equivariant map. A choice of $J$ is precisely an identification $T_xM\cong \C^n$, i.e. it picks out $n$ orthogonal (complex) planes on which $J$ is multiplication by $i$. 
+
+\medskip
+
+Given two such identifications there is always an isometry that sends an orthonormal, complex basis of $(\R^{2n},J)\cong \C^n$ to that of $(\R^{2n},J')\cong \C^n$. It preserves orientation (and hence is an element of $SO(2n)$) since both copies of $\C^n$ are oriented in the same way by construction. The induced conjugation maps $J$ to $J'$, hence $SO(2n)\action S_x$ transitively. The stabilizer is $U(n)$, since $U(n)$ is by definition the group that preserves the standard complex structure on $\R^{2n}$. Thus, $S_x\cong SO(2n)/U(n)$ and $S$ is the bundle with fiber $SO(2n)/U(n)$ associated to the principal $SO(2n)$-bundle of oriented, orthonormal frames on $M$.
+
+\medskip
+
+We consider some low-dimensional cases: $n=1$ yields $SO(2)/U(1)=\pt$, hence studying $S$ just amounts to studying $M$, endowed with a complex structure, i.e. viewed as a Riemann surface. For $n=2,3$ we have
+\begin{equation*}
+	\frac{SO(4)}{U(2)}\cong \frac{SU(2)}{U(1)}=\CP^1 \qquad \qquad 
+	\frac{SO(6)}{U(3)}\cong \frac{SU(4)}{S(U(1)\times U(3)}=\CP^3
+\end{equation*}
+The Levi-Civita connection on $M$ yields a splitting of the tangent bundle into horizontal and vertical components. Because $S$ is associated to the (oriented, orthonormal) frame bundle of $M$, $\nabla$ induces a splitting $TS=V\oplus H$. Here, $V$ consists of the vertical tangent vectors while $H\cong \pi^*TM$ ($\pi:S\to M$ the projection) can be described as follows: $J\in S_x$ corresponds uniquely to a fundamental bivector $F_J$---this defines an embedding $\iota:S\to \bigwedge^2 TM$. Given $J\in S_x$, extend $F_J$ to a parallel section, i.e. to a section $F$ such that $\nabla F|_x=0$. The tangent space to this section is then independent of the extension and equals the fiber of $H$ in $J$.
+%WORK NEEDED: Why?
+
+\medskip
+
+Since $J\in S_J$ is a complex structure on $T_x M$, we get an induced decomposition into eigenspaces of $J$: $(\pi^*TM_\C)_J=T^{1,0}_J\oplus T^{0,1}_J$. Doing this over every point $J\in S$, we obtain a canonical (up to our choice of connection)---indeed, one may even say tautological---complex structure on $\pi^*TM_\C$. The isomorphism $H\cong \pi^* TM$ (with inverse $\sigma\mapsto \sigma^h$) then induces a complex structure on $H_\C=(T^{1,0})^h\oplus (T^{0,1})^h$.
+
+\medskip
+
+Similarly, fixing $J\in S_x$, $\bigwedge^2 T_xM$ has a decomposition into $T_J^{1,1}\oplus T_J^{2,0}\oplus T_J^{0,2}$ and similarly 
+\begin{equation*}
+	\Big(\pi^*\bigwedge\nolimits^2 TM\Big)_\C=T^{1,1}\oplus (T^{2,0}\oplus T^{0,2})
+\end{equation*}
+The embedding $\iota: S\hookrightarrow \bigwedge^2 TM$ induces  $\iota_*:V\to \pi^*\bigwedge^2 TM$. Recall that we defined the horizontal fiber in $J\in S_x$ to be the tangent space to a path in $S$ that corresponds to $F:I\to \bigwedge^2 TM$ such that $\nabla F|_x=0$. From the first lemma, we know that $(\nabla_X F)^{1,1}=0$ for every $X\in TM_\C$ and since vertical tangent vectors correspond to nonzero components of $\nabla F$, we conclude $(\iota_*V)_\C\cong T^{2,0}\oplus T^{0,2}$.
+%WORK NEEDED Clarify
+
+\medskip
+
+This yields a decomposition $V_\C=(T^{2,0})^V\oplus (T^{0,2})^V$ and we get an almost complex structure by declaring $J^V$ to act as multiplication by $i$ on the first and by $-i$ on the second summand. Alternatively, one can simply induce a complex structure on $V$ from a natural complex structure on $SO(2n)/U(n)$, which is a so-called Hermitian symmetric space. Now we have almost complex structure on both $H$ and $V$, so we conclude:
+
+\begin{prop}
+	$S$ has two distinct almost complex structures, given by $J_1=J^h\oplus J^V$ and $J_2=J^h\oplus (-J^V)$.
+\end{prop}
+
+Correspondingly, we have bundles of $(1,0)$-vectors given by
+\begin{equation*}
+	T^{1,0}(S,J_1)=(T^{1,0})^h\oplus (T^{2,0})^V\qquad 
+	T^{1,0}(S,J_2)=(T^{1,0})^h\oplus (T^{0,2})^V
+\end{equation*}
+A switch between $J_1$ and $J_2$ is accomplished simply by flipping the sign of the points (i.e. the $J$'s) in each fiber, i.e. conjugation of the fibers, viewed as complex manifolds.
+
+\medskip
+
+We discuss holomorphic submanifolds, i.e. submanifolds whose tangent spaces are stable under the action of $J_\alpha$. The fibers are always holomorphic submanifolds for both $J_1,J_2$. Now let $f:U\to S$ be a local section on $U\subset M$ and consider the associated sections $J\in \Gamma(U,\End TM)$ as well as $F=\iota (J)\in \Gamma\big(U,\bigwedge^2 TM\big)$. We say that $f:(U,J)\to (S,J_\alpha)$ is $J_\alpha$-holomorphic if the following square commutes:
+\begin{equation*}
+	\begin{tikzcd}
+		TU \ar[r,"\dif f"] \ar[d,"J"'] & TS \ar[d,"J_\alpha"] \\
+		TU \ar[r,"\dif f"'] & TS
+	\end{tikzcd}
+\end{equation*} 
+Then the tangent space of $f(U)$ is stable under $J_\alpha$. Conversely, if $Tf(U)$ is stable under $J_\alpha$, $f$ is $J_\alpha$-holomorphic.
+%WORK NEEDED Why?!?!
+
+\begin{prop}
+	$f$ is $J_\alpha$-holomorphic if and only if $D_\alpha F=0$.
+\end{prop}
+\begin{myproof}
+	Set $f(x)=y\in S$. For $v\in \Gamma(TU)$, $\nabla_v F\in T^{2,0}U\oplus T^{0,2}U$, where the decomposition in $p$ is defined by $f(p)$. Let $(e_j)$ be a local frame of $TM$, parallel in $x$. Then the vertical component of $\dif_x f(v)$ is represented by $\nabla_v F=v(F^{ij}) e_i\wedge e_j$:
+	\begin{equation*}
+		\dif_x f(v)=v^h+(\nabla_v F)^V
+	\end{equation*}
+	The superscripts are just there to remind us that we used the identifications $\pi_*$ and $\iota_*$. $f$ is $J_\alpha$-holomorphic precisely if for every $v\in T^{1,0}U$, $\dif f (v)\in T^{1,0}(S,J_\alpha)$. However, 
+	\begin{equation*}
+		\nabla_v F=(D_1)_v F+(D_2)_v F
+	\end{equation*}
+	and since $v\in T^{1,0}U$ we have $(D_1)_vF\in T^{0,2}U\subset T^{1,0}(S,J_2)$ while $(D_2)_vF\in T^{2,0}\subset T^{1,0}(S,J_1)$. This makes it clear that if $D_1 F$ vanishes, $f$ is $J_1$-holomorphic and similarly for $D_2 F$ and $J_2$-holomorphicity.
+\end{myproof}
+
+The first section shows that the condition $D_1 F=0$ has something to do with integrability, so one may suppose that $J_1$ should be integrable, at least in some cases. The following is shown on pages 183-184:
+
+\begin{prop}
+	$(S,J_1)$ is a complex manifold if and only if $M^{2n}$ is conformally flat for $n\geq 3$ or anti-self dual for $n=2$.
+\end{prop}
+
+On the other hand:
+
+\begin{prop}
+	$(S,J_2)$ is never integrable.
+\end{prop}
+\begin{myproof}
+	Let $f(U)$ be the image of a section which is a $J_2$-holomorphic submanifold for which the induced almost complex structure $J$ on $U$ is integrable. Then by our discussion from the first section, $D_1 F=0$ but at the same time $f$ is $J_2$-holomorphic hence $\nabla F=0$, i.e. $f(U)$ is horizontal. But if $(S,J_2)$ were complex there would be many more such $f$.
+	%WORK NEEDED Why?
+\end{myproof}
+
+\subsection{Symmetric Spaces}
+
+The condition we established for integrability of $(S,J_1)$ is quite strong: $S$ is typically too ``large''. However, under certain conditions, there are naturally arising holomorphic submanifolds of $S$ that can be considered instead. This happens if the base space is a \emph{symmetric space}. Consider an even-dimensional symmetric space $M=G/H$ where $G$ acts almost effectively (i.e. the kernel of $G\to \Diff M$ is discrete). Choosing an orthonormal frame at the coset of $e\in G$ determines an orientation on $M$ as well as a representation $\rho:H\to SO(2n)$ called the \emph{isotropy} representation (since $H$ is the isotropy subgroup stabilizing the coset of $e$).
+
+Consider the subgroup $U(n)\subset SO(2n)$ and let $Z$ denote the center of $U(n)$. Finally, set $K=\{h\in H\mid \rho(h)\in U(n)\}$. We obtain an inclusion
+\begin{equation*}
+	H/K \hookrightarrow SO(2n)/U(n)
+\end{equation*} 
+and the bundle $\mc T=G/K$ is bundle isomorphic to the bundle, associated to $G\to M$, with fiber $H/K$. The above inclusion induces a natural $T\hookrightarrow S$. The following result allows us to carry over the almost complex structures on $S$ to $\mc T$:
+
+\begin{thm}\label{thm:symmetric}
+	If $Z\subset \rho(H)$, then $\mc T$ is a $J_\alpha$-holomorphic submanifold of $S$ for both $J_1$ and $J_2$ with $(T,J_1)$ being Hermitian and $(T,J_2)$ being $(1,2)$-symplectic for some $G$-invariant metric.
+\end{thm}
+The proof uses Lie theory and is given on pages 193-195. All possible such $\mc T$ are listed in a table on page 196.
+
+\subsection{K\"{a}hler Geometry}
+
+In this section, we work out a few examples in a little bit more detail. One series that occurs in the table is given by
+\begin{equation*}
+	\!G=U(m+n)\qquad\! H=U(m)\times U(n)\qquad\! K=U(m)\times U(k)\times U(n-k) 
+	\qquad\! H/K=\Gr_k(\C^n)
+\end{equation*}
+Thus, we have a twistor bundle
+\begin{equation*}
+	\mc T_k=\frac{U(m+n)}{U(m)\times U(k)\times U(n-k)}\longrightarrow \Gr_m(\C^{m+n})
+	=\frac{U(m+n)}{U(m)\times U(n)}
+\end{equation*}
+The case $n=2,k=1$ corresponds to the series considered by Kotschick \& Terzi\'{c}, as does $m=k=1$ (reflecting the duality $\Gr_k(\C^l)=\Gr_{l-k}(\C^l)$). Using Lie-theoretic techniques developed by Borel and Hirzebruch, it can be shown that up to conjugation, $J_2$ is the non-integrable invariant almost complex structure on $\mc T_k$, and that there are (again, up to conjugation) three independent invariant almost complex structures. 
+
+\medskip
+
+The case $m=1$ makes the base into $\CP^{n+1}$ and the flag manifold
+\begin{equation*}
+	\mc T_k=\frac{U(n+1)}{U(n-k)\times U(k)\times U(1)}
+\end{equation*}
+of flags $(1)\subset (k+1)\subset (n)$ can be identified with $\Gr_k(T^{1,0}\CP^n)$ ($T^{1,0}\CP^n$ is just $T\CP^n$ as a real vector bundle) in the same way as explained in the Hirzebruch paper---this time, we pick linearly independent $v_1,\dots,v_k\in \ell^\perp$ and consider $\dif_\ell \pi^{-1}(\Span\{v_1,\dots, v_k\})$. This is a $k+1$-plane in $\C^{n+1}$.
+
+\medskip
+
+Let $J$ denote the standard complex structure on $\CP^n$. An element $W\in (\mc T_k)_x$ represents a $\dim_\R=2k$, $J$-invariant subspace of the real tangent space. However, since $W$ is an element in a bundle of complex structures, it also defines an almost complex structure on $T_x \CP^n$ which is
+\begin{equation*}
+	J_W=
+	\begin{cases}
+		J\qquad \text{on}\ W\\
+		-J\qquad \text{on}\ W^\perp
+	\end{cases}
+\end{equation*}
+%WORK NEEDED How can I deduce this from the definitions of J_1, J_2?
+This prescription can be generalized to arbitrary K\"{a}hler manifolds to realize $\Gr_k(T^{1,0}M)$ as a subbundle of $S$---the K\"{a}hler assumption is used to ensure that the Levi-Civit\`{a} connection and the $J_\alpha$'s reduce from $S$ to $\Gr_k(T^{1,0}M)$. 
+
+\medskip
+
+Finally, let us mention that $\mc T_1$, the flag manifold considered by Kotschick and Terzi\'{c}, is the total space of a triple fibration
+\begin{equation*}
+	\begin{tikzcd}
+		& \mc T_1 \ar[dl,"\pi"'] \ar[d,"\pi'"] \ar[dr,"\pi''"] \\
+		\CP^n & \CP^n & \Gr_2(\C^{n+1})
+	\end{tikzcd}
+\end{equation*}
+where the first fibration is the one discussed above, the second is the map that sends the flag $(0)\subset(1)\subset (2)\subset (n)$ to $(1)$ and the last sends the flag to $(2)$. Applying \cref{thm:symmetric} to all three fibrations gives non-integrable almost complex structures $J_2,J_2',J_2''$. However, they must all agree up to conjugation (does this follow from Lie theory?). This situation is analogous to the situation we have with the space $Q$, which fibers over both $S^6$ and $G_2/SO(4)$. Perhaps we get the same result there: That the almost complex structures obtained by flipping the fibers are the same.
+%WORK NEEDED Why?
+
+Finally, we consider the case where the fiber is given by $H/K=\CP^1$. In that case, we call the base manifold \emph{quaternionic K\"{a}hler}, though it does not have to be K\"{a}hler in the ordinary sense. In fact, it may fail to be almost complex. However, around each point there is a neighborhood $U$ on which there exist almost complex structures $I,Jk<\in \Gamma(U,\mc T)$ such that $IJ=K=-JI$. Then $\mc T_x$ parametrizes the 2-sphere:
+\begin{equation*}
+	\mc T_x=\{aI+bJ+cK\mid a^2+b^2+c^2=1\}
+\end{equation*}
+Examples include $\Gr_2(\C^{n+1})$: In fact, the third fibration from the diagram above exhibits $\mc T_1$ as the twistor space.
+
+\section{Salamon's Paper ``Quaternionic K\"{a}hler Manifolds''}
+
+\subsubsection{Personal Preliminary Notes}
+
+Under the identifications $\H\cong \C^2\cong \R^4$, we have $a+bi+cj+dk\mapsto (a+bi,c+di)\mapsto (a,b,c,d)$. We can also cast quaternion multiplication in terms of $2\times 2$ complex matrices, or $4\times 4$ real matrices. Since left-multiplication is not $\C$-linear (with respect to the usual action of $i$ on $\C^2$ from the left), it is right-multiplication instead that can be cast in this form. 
+
+\medskip
+
+In particular, $Sp(1)\cong SU(2)$ where we define $Sp(1)$ as the unit quaternions, which act on $\H$ from the right by multiplication, while $SU(2)$ acts as usual from the left. This identification maps $a+bi+cj+dk\mapsto 
+\begin{psmallmatrix}
+	a+bi & -c+di \\ c+di & a-bi
+\end{psmallmatrix}$, which is immediately the standard expression for the most general $SU(2)$ matrix. The embedding $SU(2)\hookrightarrow SO(4)$ induced by $\C^2\cong \R^4$ is given by
+\begin{equation*}
+	\begin{pmatrix}
+		a+bi & -c+di \\
+		c+ di& a-bi
+	\end{pmatrix}
+	\longmapsto
+	\begin{pmatrix}
+		a & -b & -c & -d \\
+		b & a & d & -c \\
+		c & -d & a & b \\
+		d & c & -b & a
+	\end{pmatrix}
+\end{equation*}
+Furthermore (cf. Br\"ocker \& Tom Dieck, pages 7-8), a $\H$-linear endomorphism of $\H^n$ can be thought of as a special kind of $\C$-linear endomorphism of $\C^{2n}$, namely those which commute with the $\R$-linear map $j$, which sends $(z,w)=z+wj\mapsto j(z+wj)=-\bar w+\bar zj=(-\bar w,\bar z)$, which of course just encodes left-multiplication by $j\in \H$. This is equivalent to being of the form 
+$\begin{psmallmatrix}
+	A & -\bar B \\ B & \bar A
+\end{psmallmatrix}$ for $A,B\in \End_\C(\C^n)$. In particular, $Sp(n)$ consists of those elements of $U(2n)$ of this block-form. Now, we are ready to start on the paper.
+
+\subsection{Preliminaries}
+
+Denoting the inclusion $Sp(1)\hookrightarrow SO(4n)$ by $\lambda$, we can define $Sp(n)$ as the subgroup of $SO(4n)$ that commutes with its image. By our earlier discussion, we see that the product $Sp(n)\lambda(Sp(1))$, henceforth denoted by simply $Sp(n)Sp(1)$, is isomorphic to $(Sp(n)\times Sp(1))/\Z_2$: The action of $\Z_2$ identifies $(\pm \id_{4n},\pm\id_4)$.
+
+\medskip
+
+In this paper, $M$ will denote a $4n$-dimensional quaternionic K\"ahler manifold. This means that $M$ is oriented, Riemannian with linear holonomy group reducible from $SO(4n)$ to $Sp(n)Sp(1)$: We will work with $n\geq 2$ mostly. This yields a reduction of the frame bundle to a $Sp(n)Sp(1)$-principal bundle $P$; the Levi-Civit\`a connection reduces to a connection on $P$. Locally, we can lift $P$ to a $Sp(n)\times Sp(1)$-principal bundle $\tilde P$. Given any representation $\rho$ of $Sp(n)\times Sp(1)$ on $V$, we (still only locally) get a vector bundle $\mc V=\tilde P\times_\rho V$, which is globally defined if either the lift $\tilde P$ actually exists globally, or $\rho$ factors through $Sp(n)Sp(1)$.
+
+\medskip
+
+The standard complex representations of $Sp(n),Sp(1)$ will be denoted by $E,H$, respectively. The identification of $\C^{2n}$ with $\H^n$ shows that both representations are ``quaternionic'' in the sense that left-multiplication by $j$ in $\H^n$ induces a $\C$-antilinear map which squares to $-1$. We denote the image of $v$ under this map by $\tilde v$. This map is orthogonal with respect to the standard inner product on $\C^{2n}$, hence we find a 2-form $\omega_E$ ($\omega_H$), given by $\omega(-,-)=\langle J-,-\rangle$. Obviously, $\omega(v,Jv)>0$ for any $v\neq 0$. Furthermore
+\begin{equation*}
+	\omega(Jv,Jw)=-\langle v,Jw\rangle=-\overline{\langle Jw,v\rangle}
+	=\overline{\omega(v,w)}
+\end{equation*}
+$\omega$ yields an isomorphism of $E$ (or $H$) with its dual via the mapping $v\mapsto \omega(-,v)$. If $v\in H$ satisfies $\omega_H(v,\tilde v)=1$ then under the identification $H\cong H^*$ we have $\omega_H=v\wedge \tilde v$. An orthonormal pair $\{v,\tilde v\}$ with this property is called a \emph{standard} basis. This discussion carries over to the corresponding vector bundles, which we denote by $E,H$ as well: We have a canonical section $\omega_H$ of $\Lambda^2 H\cong \Lambda^2 H^*$ (and similarly for $E$) and also have a notion of standard (local) basis for $H$.
+
+\medskip
+
+Since $E,H$ are faithful and self-dual representations of $Sp(n)$ and $Sp(1)$, the Peter-Weyl theorem implies
+%WORK NEEDED: Understand this?
+that any irreducible representation of $Sp(n)\times Sp(1)$ is contained in a subspace of $(\otimes^p E)\otimes (\otimes^q H)$, $p,q\geq 0$. These factor through $Sp(n)Sp(1)$ if and only if $p+q$ is even, since then the elements $(\pm \id_{4n},\pm\id_{4})$ are identified. We view $E,H$ and bundles built up from them as \emph{real} representations, e.g. $S^2H,\Lambda^2E$ are real vector spaces of rank $3,n(2n-1)$. We will keep using $E,H$ throughout.
+
+\medskip
+
+Any vector bundle that is naturally associated to the Riemannian manifold $M$ corresponds to an $SO(4n)$ representation and, by restriction, to a $Sp(n)Sp(1)$ representation. The (co)tangent bundle corresponds to the fundamental representation of $SO(4n)$, which induces the representation $E\otimes H$, which indeed factors through $Sp(n)Sp(1)$, though it ``comes from'' the direct product. We will identify $T^*M=E\otimes H$ (and $TM$ its isomorphic dual). One may also take this as the definition of the $Sp(n)Sp(1)$ structure. We may take the Riemannian metric to be $g=\omega_E\otimes \omega_H\in \Gamma(\Lambda^2 E\otimes \Lambda^2H)\subset \Gamma(S^2T^*M)$, where we regard the symmetric and exterior algebras as embedded in the tensor algebra, identifying $v_1\wedge v_2=v_1\otimes v_2-v_2\otimes v_1$ and $v_1\vee v_2=v_1\otimes v_2+v_2\otimes v_1$.
+
+\subsection{The Coefficient Bundle}
+
+We return to some linear algebra: The group $Sp(1)$ consists of automorphisms of the vector space $H$ and its Lie algebra is a subset of $\End H=H\otimes H^*$. Note that $\mf{sp}(1)$, identified with the imaginary quaternions, corresponds to $\mf{su}(2)$. $\omega_H$ yields an identification $H\otimes H^*\cong H\otimes H$, $v\otimes \omega_H(-,w)\mapsto v\otimes w$. If $e_1$, $e_2$ is the standard basis of $\C^2$ and $\{e_1^*,e_2^*\}$ the dual basis, then $e_1^*=\omega_H(-,e_2)$ and $e_2^*=\omega_H(-,-e_1)$. Thus, we find:
+\begin{equation*}
+	\mf{su}(2)\ni
+	\begin{pmatrix}
+		ai & -b+ci \\
+		b+ci & -ai
+	\end{pmatrix}
+	\leftrightarrow ai(e_1\otimes e_2+e_2\otimes e_1)+(b-ci) e_1\otimes e_1 +(b+ci) e_2\otimes e_2 
+\end{equation*}
+The space of such elements is isomorphic to $S^2H$, which therefore corresponds to $\mf{su}(2)$.
+%WORK NEEDED: Wtf is going on with real/complex dimenisions here?!  
+Let $T=E^*\otimes H^*$ be the tangent space representation. Then $\lambda:Sp(1)\hookrightarrow SO(4n)$ induces $\lambda_*:S^2H\hookrightarrow \End T$. The action of $S^2H$ is explicitly given by
+\begin{equation*}
+	T\otimes S^2H\hookrightarrow 
+	(E^*\otimes\, \underbracket{\!\! H^*)\otimes (H\!\!}\,\otimes H^*) 
+	\to E^*\otimes H^*=T
+\end{equation*}
+Now let $J,K\in S^2H$. Then $JK+KJ=-\langle J,K\rangle \id$ as elements of $\End T$. Here, $\langle-,-\rangle$ is quaternionic inner product induced by $\mf{sp}(1)$; the identity follows from the properties of the Pauli matrices. If we view $S^2H$ as $\mf{sp}(1)$, the imaginary quaternions (which act, through the outlined identifications, by right-multiplication), we see that $S^2H$ locally has a basis $\{I,J,K\}$ that satisfies the quaternion algebra: $I^2=J^2=-\id$ and $IJ=-JI=K$.
+
+\medskip
+
+This is equivalent to choosing $I,J\in S^2H$ orthogonal with norm $\sqrt 2$, with respect to $\langle -,- \rangle$. One explicit example of such a basis is expressed in terms of a standard basis of $H$ as $I=ih\vee \tilde h$, $J=h\otimes h+\tilde h\otimes \tilde h$ and $K=i(h\otimes h-\tilde h\otimes \tilde h)$. Any two such bases are related by an $SO(3)$ transformation, since $SO(n+1)$ acts transitively on $\{I,J\in S^n\mid I\perp J\}$ (in fact, $SO(n+1)\cong \{I_1,\dots,I_n\in S^n\mid x_i\text{'s mutually orthogonal}\}$, since this is just the set of positively oriented bases of $\R^{n+1}$).
+
+\medskip
+
+Now, consider the bundle $Z=\{J\in S^2 H\mid |J|=\sqrt 2\}$ with fiber $S^2$ over $M$. Note that any $J\in Z_x$ is an almost complex structure on $T_xM$. In fact, $Z_x$ is the space of almost complex structures compatible with the $Sp(n)Sp(1)$ structure (as ``embodied by'' $g=\omega_E\otimes\omega_H$). This is in accordance with the fact that
+\begin{equation*}
+	\frac{Sp(n)Sp(1)}{U(2n)\cap Sp(n)Sp(1)}\cong \frac{Sp(1)}{U(1)}\cong S^2
+\end{equation*}
+Choose the orientation of $M$ so as to be consistent with these almost complex structures, i.e. any basis of the forms $\{v_1,v_1J,v_2,v_2 J,\dots,v_{2n}J\}$ is positively oriented.
+
+\medskip
+
+We now give an alternative description of $Z$. Fixing $x\in M$, the bundles $E$ and $H$ may defined locally around $x$; let $E_x,H_x$ denote their fibers. Any $h\in H_x\setminus \{0\}$ defines an almost complex structure $J_h$ on $T_xM$ by declaring the subspace of $(1,0)$-forms to be
+\begin{equation}\label{eq:holoforms}
+	A^{1,0}_x=E_x\otimes \C h\subset T^*_xM\otimes_\R \C
+\end{equation} 
+By complex conjugating, we find $A^{0,1}_x=E_x\otimes \C\tilde h$. We can also define $J_h=\frac{ih\vee\tilde h}{\omega_H(h,\tilde h)}$, which clearly is unchanged if we multiply $h$ by a scalar, hence we identify $Z$ with $\P(H)$, which is globally defined even though $H$ is not, in general.
+
+\medskip
+
+There are some characteristic classes associated to $Z$, and thereby to the quaternionic structure of $M$. The principal bundle $P$ can be regarded as an element of the \v{C}ech cohomology group $H^1(M;Sp(n)Sp(1))$. The short exact sequence 
+\begin{equation*}
+	\begin{tikzcd}
+		0\ar[r] & \Z_2 \ar[r] & Sp(n)\times Sp(1) \ar[r] & Sp(n)Sp(1) \ar[r] & 0
+	\end{tikzcd}
+\end{equation*}
+yields a (co)boundary homomorphism $\delta:H^1(M; Sp(n)Sp(1))\to H^2(M;\Z_2)$. We denote $\delta(P)$ by $\epsilon$. It is clearly the obstruction to lifting $P$ to a principal $Sp(n)\times Sp(1)$ bundle $\tilde P$, or \emph{equivalently} the global existence of $E$ and $H$. The identification $Sp(1)\cong S^3=SU(2)$ yields a surjective homomorphism $Sp(1)\to SO(3)$ with kernel $\Z_2$. This coincides with the representation of $Sp(n)Sp(1)$ on $S^2H$,
+%WORK NEEDED
+and we therefore obtain a homomorphism of between short exact sequences:
+\begin{equation*}
+	\begin{tikzcd}
+		0\ar[r] & \Z_2 \ar[r] \ar[draw=none]{d}[sloped,auto=false]{\scalebox{1.3}[1.3]{$=$}}
+		& Sp(n)\times Sp(1) \ar[r] \ar[d] & Sp(n)Sp(1) \ar[r] \ar[d] & 0\\
+		0\ar[r] & \Z_2 \ar[r] & Sp(1) \ar[r] & SO(3) \ar[r] & 0
+	\end{tikzcd}
+\end{equation*}
+The induced map on the level of sheaf cohomology sends $P$ to $S^2H$, hence we identify $\epsilon=\delta(P)=w_2(S^2H)$ 
+\begin{equation*}
+	\begin{tikzcd}[column sep=small]
+		\dots \ar[r] & H^1(M;Sp(n)\times Sp(1)) \ar[r] \ar[d]
+		& H^1(M;Sp(n)Sp(1)) \ar[r,"\delta"] \ar[d] & H^2(M;\Z_2) \ar[r]
+		 \ar[draw=none]{d}[sloped,auto=false]{\scalebox{1.3}[1.3]{$=$}} & \dots\\
+		\dots\ar[r] & H^1(M;Sp(1) \ar[r] & H^1(M;SO(3)) \ar[r,"w_2"'] 
+		& H^2(M;\Z_2) \ar[r] & \dots
+	\end{tikzcd}
+\end{equation*}
+
+Now, suppose $\epsilon=0$ so that $H$ is globally defined and $Z=\P(H)$ with projection $q:Z\to M$. The tautological line bundle $L^{-1}$ over $Z$ (a subbundle of $q^*H$) has a dual $L$ which restricts to the hyperplane bundle over $q^{-1}(x)=\CP^1$. The Leray-Hirsch theorem asserts that $H^*(Z;\R)$ is a free module over $H^*(M;\R)$, generated by $\ell=c_1(L)$, subject to a relation which defines the Chern classes of $H$. Since $H\cong H^*$, $c_1(H)=0$ and thus we find $\ell^2=-c_2(H)\eqqcolon u$.
+
+\medskip
+
+In general, this discussion only goes through over an open set $U\subset M$. The quotient of $L^{-1}\hookrightarrow q^*H$ over $U$ is isomorphic to $L^{-1}\otimes T_F$, where $T_F$ is the holomorphic tangent bundle of the fibers. This sets up a short exact sequence
+\begin{equation*}
+	\begin{tikzcd}
+		0 \ar[r] & L^{-1} \ar[r] & q^*H \ar[r] & L^{-1}\otimes T_F \ar[r] & 0
+	\end{tikzcd}
+\end{equation*}
+and therefore $q^*H\cong L^{-1} \oplus (L^{-1}\otimes T_F)$. Taking the second exterior power and recalling that $\omega_H$ trivializes $\Lambda^2H$, we find $T_F\cong L^2$. This shows that $L^2$ \emph{is} globally defined.
+
+\begin{mydef}
+	 We redefine $\ell$ and $u$ in a consistent way, maintaining $\ell^2=u$ while referring only to globally defined quantities: $u=\frac{1}{4}p_1(S^2H)$ and $\ell=\frac{1}{2}c_1(L^2)$.
+\end{mydef}
+
+\begin{rem}
+	Here, we use the fact that if $\epsilon=0$, $c_1(L^2)=2c_1(L)$ \& $p_1(S^2H)=-4c_2(H)$. To derive the latter, use that $c(\Lambda^2 H)=1+c_1(H)=1$ and $S^2H\oplus \Lambda^2H=H\otimes H$. The fact that 
+	\begin{equation*}
+		c(H\otimes H)=1+4c_1(H)+5c_1^2(H)+4c_2(H)+2c_1^3(H)+8c_1(H)c_2(H)+4c_1^2(H)c_2(H)
+	\end{equation*} 
+	which simplifies to $1+4c_2(H)$, shows that $c_2(S^2H)=4c_2(H)$.
+	%WORK NEEDED: What's going on here? Factor -2?!
+\end{rem}
+
+\begin{prop}
+	$w_2(M)=\epsilon$ if $n$ is odd and zero if $n$ is even. In particular, quaternionic K\"ahler manifolds of dimension $8n$ are $\Spin$.
+\end{prop}
+\begin{myproof}
+	Pages 148--9.
+\end{myproof}
+
+\subsection{Curvature}
+
+We only give some facts; the proofs can be found on pages 149--152.
+
+\begin{thm}
+	Quaternionic K\"ahler manifolds are Einstein and the Riemannian curvature is of the form $R=s_g R_0+R_1$, where $s_g$ is the scalar curvature, $R_0$ the curvature of $\HP^n$ and $R_1$ a section of $S^2(S^2E)$.
+\end{thm}
+
+The previously introduced characteristic class $u$ may be computed using the curvature of the bundle $H$, and there is a covariantly constant $4$-form $\Phi$ which is analogous to the K\"ahler form: $\Phi\wedge$ determines an injection $H^p(M;\R)\hookrightarrow H^{p+4}(M;\R)$ for $p\neq n-3$. The power of $\Phi$ give non-zero elements of $H^{4p}(M;\R)$ for every $p\leq n$.
+
+\subsection{The Twistor Space}
+
+\begin{thm}
+	Let $M$ be quaternionic K\"ahler. Then the associated manifold $Z$ has a natural complex structure.
+\end{thm}
+
+\begin{myproof}
+	Recall that locally, $Z=\P(H)$. For any $x\in M$, pick $h\in H_x\setminus \{0\}\subset H\setminus 0$, with projection $p$. The Levi-Civit\`a connection of $M$ induces a connection on $H$ which yields a decomposition $T^*_h(H\setminus 0)\cong T^*_h (H_x\setminus \{0\})\oplus p^* T^*_x M$. The ``vertical'' tangent bundle (along the fibers) inherits an almost complex structure from the complex structure of $H_x\cong \C^2$. We already outlined how $[h]\in \P(H)$ induces an almost complex structure on $T^*_xM$, so now we have an almost complex structure on $T^*_h(H\setminus 0)$. Since $\C^*$ acts holomorphically on $H\setminus 0$, its complex structure will descend to one on $\P(H)$, hence all that remains is to show that it is integrable
+	
+	\medskip
+	
+	Let $\{h_1,h_2\}$ be a standard basis of $H$ and $\{e_i\}$ a local basis of $E$ on $U$. Define the connection one-forms $\sigma^j_i$ and  $\omega^j_i$ by $\nabla e_i=e_j\otimes \sigma^j_i$ and $\nabla h_i=h_j\otimes \omega^j_i$. Let $s$ be a local section of $H$ and $z^i$ coordinates parametrizing the vertical directions of $\C^2\times U$, the trivialized bundle. The covariant derivative of $s$ is given by
+	\begin{equation*}
+		\nabla s=h_i \otimes s^*(\d z^i+z^j \omega^i_j)
+	\end{equation*}
+	where we identified $\omega^i_j$ on $H$ with $\omega^i_j$ on the trivialized bundle. Therefore, the forms $\theta^i=\d z^i+z^j\omega^i_j$ annihilate horizontal tangent vectors. Since the $z^i$ are holomorphic functions on each fiber, $\{\theta^i\}$ span the distribution of $(1,0)$-forms corresponding to the vertical subbundle. Consider the forms $e_i\otimes h_j\in \Gamma(T^*M)\otimes \C)$ on $U$ and set $\eta_i=z^j p^*(e_i\otimes h_j)$, which defines forms on $T^*M$. Using \cref{eq:holoforms}, it is clear that the set $\{\eta_i\}$ spans the space of $(1,0)$-forms coming from the horizontal part.
+	
+	\medskip
+	
+	By the Newlander-Nirenberg theorem, it suffices to prove that $D\coloneqq \Span\{\theta^i,\eta_j\}\subset \Gamma(T^*(H\setminus 0))$ satisfies $d(D)\subset D\wedge (T^*(H\setminus 0)\otimes \C)$. Thus, we need to compute $\d \eta_i$ and $\d \theta^i$. We omit the computation (page 153). 
+	%WORK NEEDED: What is this form of NN?
+\end{myproof}
+
+\begin{rem}
+	If $M$ is $4$-dimensional, oriented and Riemannian, we may define $Z$ either as the $2$-sphere bundle in $S^2H=\Lambda^2_+T^*M$ or as the projectivization of the positive spinor bundle $\P(V_+)$. In this case, however, the almost complex structure on $Z$ is not always integrable. There is a curvature condition, namely that half of the Weyl tensor must vanish. The construction of $Z$ in this case is called the Penrose twistor construction. Therefore, $Z$ is called the \emph{twistor space} in general; our discussion of $Z$ is parallel to that of Atiyah, Hitchin and Singer in their paper on the $4$-dimensional case.
+\end{rem}
+
+For a twistor space $q:Z\to M$ over a quaternionic K\"ahler manifold, each fiber is a complex submanifold. The quaternionic structure map of the fibers of $H$ yields an involution $\tau:Z\to Z$ which, for $h\in H\setminus 0$, sends $J_h\mapsto -J_h$. Thus, $\tau$ has no fixed points but preserves each fiber $S^2$, acting as the antipodal map. $\tau$ gives $Z$ a ``real structure'' with respect to which $M$ parametrizes a family of real lines.
+%WORK NEEDED: Wat?
+
+\medskip
+
+As usual, we view $Z$ locally as $\P(H)$ and see that the tautological line bundle $L^{-1}$ over $q^{-1}(U)$ is in fact a holomorphic line bundle with respect to the complex structure induced by $H\setminus 0$.
+%WORK NEEDED: Why?
+
+\begin{thm}
+	The pullback $q^*E$ of the (locally defined) vector bundle $E$ is holomorphic. If $\mc A^1$ denotes the bundle of holomorphic $1$-forms on $Z$, there is a (global) holomorphic short exact sequence
+	\begin{equation}\label{eq:pullbackSES}
+		\begin{tikzcd}
+			0 \ar[r] & L^{-2} \ar[r] & \mc A \ar[r] & L^{-1}\otimes q^*E \ar[r] & 0
+		\end{tikzcd}
+	\end{equation}
+	of vector bundles over $Z$.
+\end{thm}
+\begin{myproof}
+	%WORK NEEDED
+\end{myproof}
+
+\begin{thm}
+	Let $M$ be quaternionic K\"ahler with $s_g\neq 0$. Then $Z$ admits a complex contact structure.
+\end{thm}
+\begin{myproof}
+	%WORK NEEDED
+\end{myproof}
+
+\subsection{Examples}
+
+Being Einstein, examples of quaternionic K\"ahler manifolds can be split in three cases, corresponding to the sign of the scalar curvature.
+
+\medskip
+
+For $s_g>0$, the only known examples are the so-called \emph{Wolf spaces} (there is a surprisingly useful \href{https://en.wikipedia.org/wiki/Quaternion-K%C3%A4hler_symmetric_space}{wikipedia link}).
+They arise as homogeneous spaces of Lie groups and include the case $G_2/SO(4)$, as well as a few infinite families
+\begin{equation*}
+	\HP^n=\frac{Sp(n+1)}{Sp(n)\times Sp(1)}\qquad\qquad 
+	X^n=\frac{SU(n+2)}{S(U(n)\times U(2)}\qquad\qquad
+	Y^n=\frac{SO(n+4)}{S(O(n)\times O(4))}
+\end{equation*}
+Note that the $X^n$ and $Y^n$ are partial flag manifolds. Including the case $n=1$ yields $\HP^1\cong Y^1\cong S^4$ and $X^1\cong \CP^2$ (which are ``Einstein self-dual manifolds''). The Wolf spaces all have $\epsilon\neq 0$ except for $\HP^n$ and $Y^1$ and moreover, if $M$ is one of the \emph{exceptional} Wolf spaces or $Y^n$ for $n\geq 3$, the homotopy exact sequence combined with the universal coefficients theorem yields $\Z_2=\pi_2(M)\cong H^2(M;\Z_2)$ and $\epsilon$ is the generator of $H^2(M;\Z_2)$.
+
+%WORK NEEDED: More to be said about the examples
+
+\subsection{Positive Scalar Curvature}
+
+\begin{thm}
+	If $M$ is a quaternionic K\"ahler manifold with positive scalar curvature, then the twistor space $Z$ admits a K\"ahler-Einstein metric of positive scalar curvature.
+\end{thm}
+\begin{myproof}
+	%WORK NEEDED
+\end{myproof}
+
+The proof of the above theorem shows that $\ell$ is represented by $\frac{i}{2\pi}\omega$, where $\omega$ is the K\"ahler form. Therefore, we deduce:
+
+\begin{cor}
+	$\ell$ is a positive element of $H^{1,1}(Z;\R)$.
+\end{cor}
+
+\Cref{eq:pullbackSES} shows that the canonical bundle of $Z$ is given by
+\begin{equation*}
+	K_Z=\Lambda^{2n+1}\mc A=L^{-2}\otimes \Lambda^{2n}(L^{-1}\otimes q^*E)=L^{-2(n+1)}\otimes \Lambda^{2n}(q^*E)
+	=L^{-2(n+1)}
+\end{equation*}
+where the last equality follows from the fact that $E\cong E^*$ and therefore $c_1(E)=c_1(\Lambda^{2n}E)=0$; the latter must then be trivial as a complex line bundle. Thus, it is clear that $c_1(Z)=-c_1(K_Z)=(n+1)\ell>0$; $-K_Z$ is a positive (hence ample, using the Kodaira embedding theorem) line bundle on $Z$; this shows that $Z$ is Fano. 
+
+\medskip
+
+Recall that $\ell$ is an integral cohomology class if and only if $\epsilon=0$. In this case, the Fano index of $Z$ is $2(n+1)c_1(L)$ (since $L$ is well-defined in this case), and $Z$ is a complex manifold of dimension $2n+1=2(n+1)-1$. In this setup, Kobayashi and Ochiai showed that if $c_1(Z)\geq 2(n+1)c_1(L)$ for any line bundle $L$, then $Z\cong \CP^{2n+1}$. 
+%WORK NEEDED: How to make the step to just the divisibility/Fano index, without first having the line bundle?
+
+\begin{rem}
+	For the case $Z=G_2/U(2)$, the twistor space over $G_2/SO(4)$, this is clearly not the case. Therefore the divisibility of $c_1(G_2/U(2))$ is exactly $3$, not $6$. Hence $2\ell=c_1(L^2)=c_1(T_F)$ is a/the positive generator of $H^2(Z;\Z)$. 
+\end{rem}
+
+We now omit a bunch of results which we will not need.
+
+\begin{thm}
+	Any quaternionic K\"ahler manifold with positive scalar curvature is simply connected and has odd Betti numbers zero.
+\end{thm}
+
+\begin{myproof}
+	Proven using that $Z$ has only $(p,p)$-cohomology, which is supposedly stronger!
+	%WORK NEEDED: Why?
+\end{myproof}
+
+\subsection{Low Dimensions}
+
+\begin{prop}
+	An $8$-dimensional quaternionic K\"ahler manifold with $s_g>0$ has $\chi(M)=3\sigma(M)$.
+\end{prop}
+\begin{myproof}
+	This follows from the three following relations:
+	\begin{gather*}
+		7p_2-p_1^2=45\sigma(M)\\
+		-4p_2+7p_1^2=0\\
+		4p_2-p_1^2=8\chi(M)
+	\end{gather*}
+	The first one is Hirzebruch's signature theorem. For the second, it is known that its right hand side equals $45\cdot 2^6\hat A_2(M)$. Since $M$ is $\Spin$, the Atiyah-Singer index theorem asserts that $\hat A_2(M)$ is the dimension of the space of harmonic spinors. The Lichnerowicz argument shows that this is zero, since $s_g>0$. The last one is proven on pages 165--166.
+	%WORK NEEDED
+\end{myproof}
+
+\begin{thm}
+	An $8$-dimensional quaternionic K\"ahler manifold with $s_g>0$ has Betti numbers $b_1=0=b_3$, $b_4^+=1+b_2$ and $b_4^-=0$.
+\end{thm}
+\begin{myproof}
+	The vanishing of the odd Betti numbers was already proven.
+	%WORK NEEDED
+\end{myproof}
+
+\begin{ex}
+	Starting from the fact that $M=G_2/SO(4)$ is simply connected and $\pi_2(M)=\Z_2=H_2(M;\Z)$, the universal coefficients theorem implies that $H^2(M;\Z)=0$ and hence $b_2(M)=0$. Therefore, $G_2/SO(4)$ has the same real cohomology is $\HP^2$, but the class $\epsilon\in H^2(M;\Z)$ distinguishes it from $\HP^2$.
+\end{ex}
+
+\end{document}

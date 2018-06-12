@@ -1,0 +1,48 @@
+\documentclass[parskip=half,BCOR=10mm,11pt,appendixprefix=true]{scrbook}
+
+\input{thesis-preamble}
+
+\hyphenation{in-va-ri-ant}
+\hyphenation{ma-ni-folds}
+\hyphenation{ma-ni-fold}
+
+\begin{document}
+	
+\frontmatter
+\includepdf{Chapters/titlepage}
+
+\thispagestyle{empty} \ \clearpage 
+
+\thispagestyle{empty}
+\vspace*{4cm} 
+
+\begin{flushright}
+	To Christianna, thank you\\ 
+	for your love,
+	your constant encouragement\\
+	and many happy days in Munich\\
+\end{flushright} 
+\clearpage %to make sure the main text starts on an odd page
+
+\thispagestyle{empty} \ \clearpage 
+
+\thispagestyle{empty} \ \clearpage
+\setcounter{page}{1}
+
+\tableofcontents
+
+\mainmatter
+\input{Chapters/intro}
+\input{Chapters/homogeneous}
+\input{Chapters/QKandtwistor}
+\input{Chapters/uniqueness}
+\input{Chapters/flags}
+\input{Chapters/invarstructures}
+\appendix
+\input{Chapters/submersions}
+
+
+\backmatter
+\addcontentsline{toc}{chapter}{References}
+\printbibliography
+\end{document}
