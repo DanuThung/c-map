@@ -1,0 +1,362 @@
+\documentclass[parskip=half]{scrartcl}
+\input{NotesPreamble}
+\title{Introduction to Geometric Quantization}
+\author{Danu Thung}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Some Notions from Symplectic Geometry}
+
+Recall that the phase space of a classical mechanical system (such as $n$ particles in $\R^3$) can be modeled by a symplectic manifold $(M,\omega)$, where $\omega$ is a closed and non-degenerate two-form. Observables of the system are given by functions on $M$. To each observable $f\in C^\infty(M)$, we canonically associate a vector field $X_f$ by requiring $\omega(X_f,-)=-\d f$ (the sign is convention-dependent). Such a vector field is called \emph{Hamiltonian}.
+
+\begin{mydef}
+	For $f,g\in C^\infty(M)$, we define the \emph{Poisson bracket} $\{f,g\}$ by the formula $\{f,g\}\coloneqq\omega(X_f,X_g)$.
+\end{mydef}
+
+\begin{rem}
+	Note that $\{f,g\}=-\omega(X_g,X_f)=\d g(X_f)=X_f(g)=-X_g(f)$.
+\end{rem}
+
+\begin{lem}
+	$(C^\infty(M),\{-,-\})$ is a Lie algebra, and the map $(C^\infty(M),\{-,-\})\to (\mf X(M),[-,-])$ which sends $f\mapsto X_f$ is a Lie algebra homomorphism.
+\end{lem}
+\begin{myproof}
+	We first prove that $X_{\{f,g\}}=[X_f,X_g]$. First note that for any $f\in C^\infty(M)$, $L_{X_f}\omega=\d \iota_{X_f}\omega=\d^2f=0$, i.e.~Hamiltonian vector fields are symplectic. Hence 
+	\begin{align*}
+		\omega([X_f,X_g],-)&=\omega(L_{X_f}X_g,-)=L_{X_f}(\omega(X_g,-))-(L_{X_f}\omega)(X_g,-)\\
+		&=\d\iota_{X_f}\iota_{X_g}\omega+\iota_{X_f}\d \iota_{X_g}\omega=\d(\omega(X_g,X_f))+\iota_{X_f}L_{X_g}\omega\\
+		&=-\d(\{f,g\})=\omega(X_{\{f,g\}},-)
+	\end{align*}
+	To check that the Poisson bracket endows $C^\infty(M)$ with the structure of a Lie algebra, we show that the Jacobi identity holds:
+	\begin{align*}
+		\{f,\{g,h\}\}+\{g,\{h,f\}\}+\{h,\{f,g\}\}
+		&=-X_{\{g,h\}}(f)+X_gX_h(f) - X_h X_g(f)\\
+		&=(-X_{\{g,h\}}+[X_g,X_h])f=0
+	\end{align*}
+\end{myproof}
+
+Of course, there is a second algebraic structure induced by point-wise multiplication, which turns $C^\infty(M)$ into a commutative and associative algebra. The two algebraic structures are compatible:
+
+\begin{prop}
+	The Poisson bracket is a derivation of the algebra $(C^\infty(M),\cdot)$.
+\end{prop}
+\begin{myproof}
+	We want to show that $\{f,g\cdot h\}=\{f,g\}\cdot h + g\cdot \{f,h\}$. Starting from the left-hand side, we find $\{f,g\cdot h\}=X_f(g\cdot h)=X_f(g)\cdot h +g \cdot X_f(h)=\{f,g\}\cdot h+g\{f,\cdot h\}$, where we used the Leibniz rule for vector fields.
+\end{myproof}
+
+These compatible algebraic structures turn $C^\infty(M)$ into a \emph{Poisson} algebra.
+
+\section{Prequantization}
+
+\subsection{Basic Idea of Prequantization}
+
+One of the main goals of modern physics is to \emph{quantize} classical systems. One wants to promote observables (i.e.~functions) to (symmetric) \emph{operators}, which are supposed to act on (a dense subspace of) a Hilbert space of quantum states. This map should ideally be compatible with all the algebraic structures. In certain simple examples, this can successfully be achieved by naively applying a recipe that is often attributed to Dirac: Assign to each function a linear operator on a yet-to-be-specified state space $\mc H$, and replace the Poisson bracket by the commutator, up to a factor $i\hbar^{-1}$. In short, $f\in C^\infty(M)$ gets mapped to $\hat f\in \End \mc H$ and $\{f,g\}\mapsto \frac{i}{\hbar}[\hat f,\hat g]$. One also requires that constant functions get mapped to the corresponding multiplication operator, and in particular $\hat 1=\Unit$.
+
+Ideally, we would even like to have compatibility with the full Poisson structure of $C^\infty(M)$. This would mean that composite observables $h=f\cdot g$ get mapped to composite operators $\hat h=\hat f \cdot \hat g$. However, this leads to all kinds of problems (e.g.~ordering ambiguities) and we will not attempt this now.
+
+However, if we only insist on constructing a Lie algebra representation of $C^\infty(M)$ on a suitable Hilbert space, it turns out that this is always possible (under a mild technical assumption). This procedure, which takes a symplectic manifold and its Lie algebra of functions as input, and spits out a Hilbert space which carries a Lie algebra representation of $C^\infty(M)$, is formalized by what is called \emph{prequantization} in mathematics. There is one technical assumption that needs to be made, namely that the cohomology class defined by the symplectic form $\omega$ is \emph{integral} (the meaning of this term will be clarified soon)\footnote{Some authors, including Hitchin, prefer to assume $\frac{1}{2\pi}[\omega]$ is integral, but this is just a convention.}. To understand this condition, and why we need to impose it, we have to introduce sheaves and \v{C}ech cohomology.
+
+\subsection{Interlude: Sheaves and \v{C}ech Cohomology}
+
+I will be extremely brief, only giving definitions without extensive motivation or examples.
+
+\begin{mydef}
+	Given a topological space $(X,\mc T)$, a presheaf of Abelian groups ($R$-modules, etc.) is a pair $(\mc F,\rho)$ consisting of
+	\begin{numberedlist}
+		\item A family $\mc F=(\mc F(U))_{U\in \mc T}$ of Abelian groups ($\mc F(U)$ is called the \emph{space of sections} of $\mc F$ over $U$);
+		\item A family $\rho=(\rho^U_V)_{U,V\in \mc T,V\subset U}$ of group homomorphisms $\rho^U_V:\mc F(U)\to \mc F(V)$ (\emph{restriction} homomorphisms) such that $\rho^U_U=\id_{\mc F(U)}$ and if $W\subset V\subset U$, then $\rho^U_W=\rho^U_V\circ\rho^V_W$.
+	\end{numberedlist}
+\end{mydef}
+
+\begin{rem}
+	A presheaf is precisely a contravariant functor $\mc C\to \operatorname{AbGrp}$, where $\mc C$ is the category whose objects are open sets in $X$ and whose morphisms are the inclusion maps.
+\end{rem}
+
+A sheaf is a presheaf which satisfies some additional axioms:
+
+\begin{mydef}
+	A sheaf on a topological space $X$ is a presheaf $\mc F$ on $X$ such that for any open set $U\subset X$ and any family $U_i\subset U$ with $U=\bigcup U_i$, the following holds:
+	\begin{numberedlist}
+		\item If two sections $f,g\in \mc F(U)$ satisfy $f|_{U_i}\coloneqq \rho^U_{U_i}f=g|_{U_i}$ for every $U_i$, then $f=g$.
+		\item Given a family $f_i\in \mc F(U_i)$ such that for $f_i|_{U_i\cap U_j}=f_j|_{U_i\cap U_j}$ for any $i,j$, then there exists a section $f\in F(U)$ such that $f|_{U_i}=f_i$.
+	\end{numberedlist}
+	These axioms are often called \emph{locality} and \emph{gluing}, respectively.
+\end{mydef}
+
+One of the principal reasons to introduce sheaves is \emph{\v{C}ech cohomology}, which we will now define. 
+
+\begin{mydef}
+	Let $\mc U=\{U_i\}_{i\in I}$ be an open covering of a topological space $X$, and let $\mc F$ be a (pre)sheaf of Abelian groups on $X$. Then the \emph{\v{C}ech cochain groups} with respect to the open covering $\mc U$ are defined as follows:
+	\begin{equation*}
+		C^k(\mc U,\mc F)\coloneqq \prod_{(i_0,\dots,i_k)\in I^{k+1}} \mc F(U_{i_0})\cap\dots \cap \mc F(U_{i_k})
+	\end{equation*}
+	Hence, a $k$-cochain is a family $(f_{i_0,\dots,i_k})_{(i_0,\dots,i_k)\in I^{k+1}}$ of sections: Each $f_{i_0,\dots,i_k}$ is a section over $U_{i_0\dots i_k}\coloneqq U_{i_0}\cap\dots\cap U_{i_k}$.
+\end{mydef}
+We obtain a complex by introducing the \v{C}ech coboundary operator $\delta$, which raises the degree by one, through the equation
+\begin{equation*}
+	(\delta f)_{i_0,\dots,i_{k+1}}=\sum_{j=0}^k (-1)^j f_{i_0\dots \hat i_j\dots i_{k+1}} 
+	\qquad \qquad \text{on}\ U_{i_0\dots i_k}
+\end{equation*}
+Here, $f\in C^k(\mc U,\mc F)$ and the hat denotes omission of an index. It is easily checked that indeed $\delta^2=0$; we have constructed the \v{C}ech cochain complex. Now one defines the cohomology as usual:
+
+\begin{mydef}
+	Let $X,\mc U$ and $\mc F$ be as before. We call $(f_{i_0\dots i_k})\in C^k(\mc U,\mc F)$ a \emph{cocycle} if $\delta f=0$, and a \emph{coboundary} if there exists some $(g_{i_0\dots i_{k-1}})\in C^{k-1}(\mc U,\mc F)$ such that $f=\delta g$. The space of $k$-cocycles is denoted by $Z^k(\mc U,\mc F)$ and the space of $k$-coboundaries by $B^k(\mc U,\mc F)$. Then the \emph{\v{C}ech cohomology groups} of $\mc F$ with respect to $\mc U$ are defined as
+	\begin{equation*}
+		\check H^k(\mc U;\mc F)\coloneqq \frac{Z^k(\mc U,\mc F)}{B^k(\mc U,\mc F)}
+	\end{equation*}
+\end{mydef}
+
+All of this depended on a choice of covering, but we are interested in a cohomology theory that is independent of this choice. In general, this is done by taking a direct limit over (arbitrarily fine) open coverings of $X$:
+
+\begin{mydef}
+	The \emph{sheaf cohomology groups} of a sheaf $\mc F$ on $X$ are defined as
+	\begin{equation*}
+		\check H^k(X;\mc F)\coloneqq \varinjlim_{\mc U} \check H^k(\mc U;\mc F)
+	\end{equation*}
+\end{mydef}
+
+However, since we are interested in manifolds we do not need to go through these technicalities, because we can instead resort to using certain nice coverings:
+
+\begin{mydef}
+	Let $X$ be a topological space. We call a covering $\mc U=\{U_i\}$ of $X$ \emph{good} if all finite intersections $U_{i_1\dots i_k}=U_{i_1}\cap\dots\cap U_{i_k}$ are contractible.
+\end{mydef}
+
+Any smooth manifold admits a good covering; they can be constructed by for instance picking a Riemannian metric and using so-called geodesically convex neighborhoods around every point. We will use the following classic result:
+
+\begin{thm}[Leray]
+	Let $\mc U$ be a good covering of $X$, and let $\mc F$ be any sheaf on $X$. Then $\check H^k(\mc U;\mc F)=\check H^k(X;\mc F)$.
+\end{thm}
+
+\begin{rem}
+	In fact, Leray proved something stronger: It suffices to assume that, for every $k>0$, $H^k(U_{i_1\dots i_k},\mc F)=0$.
+\end{rem}
+
+Now we related the sheaf cohomology of the sheaf whose sections are locally constant real-valued functions to de Rham cohomology
+
+\begin{prop}\label{prop:dRCech}
+	There is a canonical isomorphism $H^2_\text{dR}(M;\R)\cong \check H^2(M;\R)$.
+\end{prop}
+\begin{myproof}
+	Let $\mc U=\{U_i\}$ be a good covering for $M$ and consider $[\alpha]\in H^2_\text{dR}(M;\R)$. Since $U_i$ is contractible, there exists a family of one-forms $\beta_i$ such that $\alpha|_{U_i}=\d \beta_i$. On (non-empty) overlaps $U_{ij}$, we must have $\d(\beta_j-\beta_i)=0$, hence $\beta_j-\beta_i$ is closed on $U_{ij}$, hence exact: $\beta_j-\beta_i=\d f_{ij}$ for some smooth function $f_{ij}$ on $U_{ij}$.
+	
+	Now define the family $c_{ijk}=f_{jk}-f_{ik}+f_{ij}$ (on $U_{ijk}$). These functions are locally constant by construction, hence define an element in $C^2(\mc U,\R)$. To see that they define a cocycle, we simply compute
+	\begin{equation*}
+		(\delta c)_{ijkl}=f_{kl}-f_{jl}+f_{jk}
+		-(f_{kl}-f_{il}+f_{ik})
+		+f_{jl}-f_{il}+f_{ij}
+		-(f_{jk}-f_{ik}+f_{ij})=0
+	\end{equation*}
+	The \v{C}ech cohomology class of $c_{ijk}$ is independent of the choices we made. First, pick a different representative $\alpha+\d \gamma$ of $[\alpha]$. Then $\beta_i\mapsto \beta_i+\gamma$, hence $f_{ij}$ is unchanged. Similarly, we could only modify $\beta_i$ by a closed, hence exact form $\d\alpha_i$. This means that $f_{ij}$ is modified by $\alpha_i-\alpha_j$, but then $c_{ijk}$ is unchanged, since the $\alpha$'s cancel out. Finally, suppose we modify the $f_{ij}$ by constants $k_{ij}$. Then $c_{ijk}$ is modified by $k_{jk}-k_{ik}+k_{ij}$, but since the $k$'s are already constants, this is just the coboundary of $(k_{ij})\in C^1(\mc U,\R)$.
+	
+	Thus, we have obtained a well-defined map $H^2_\text{dR}(M;\R)\to \check H^2(M;\R)$. Since all the constructions involved are linear, it is a homomorphism. To show that it is in fact an isomorphism, we will construct its inverse. Given $(c_{ijk})\in Z^2(\mc U,\R)$, it satisfies
+	\begin{equation*}
+		(\delta c)_{ijkl}=c_{jkl}-c_{ikl}+c_{ijl}-c_{ijk}=0
+	\end{equation*}
+	We may regard the cocycle $c$ as a cocycle of smooth functions. Let $\{\varphi_j\}$ be a partition of unity subordinate to $\mc U=\{U_i\}$, so that in particular $\supp \varphi_j\subset U_j$. Then $\varphi_k c_{ijk}$ vanishes outside $U_i$ and hence may be regarded as a section of the sheaf of smooth functions over $U_{jk}$ after extending it by zero. Because partitions of unity are locally finite, $f_{ij}\coloneqq \sum_k \varphi_k c_{ijk}$ also yields a well-defined section of this sheaf over $U_{ij}$. Furthermore,
+	\begin{align*}
+		(\delta f)_{ijk}&=f_{jk}-f_{ik}+f_{ij}=\sum_i \varphi_l(c_{jkl}-c_{ikl} + c_{ijl})\\
+		&=\sum_l \varphi_l c_{ijk}=c_{ijk}
+	\end{align*}
+	where, in going to the second line, we used the cocycle condition. Note that $(c_{ijk})$ is \emph{not} a coboundary when regarded as an element of $C^2(\mc U,\R)$, since $(f_{ij})$ does not typically consist of locally constant functions.
+	
+	Now consider $(\d f_{ij})$ as a cochain of smooth one-forms. It is in fact a cocycle, since $(\delta (\d f))_{ijk}=\d f_{jk}-\d f_{ik}+ \d f_{ij}=\d (c_{ijk})=0$. Proceeding as before, it is easy to show using a partition of unity that then $(\d f_{ij})$ is in fact a coboundary, i.e.~we have a $0$-cochain of one-forms $(\beta_i)$ such that $(\delta \beta)_{ij}=\beta_j-\beta_i=\d f_{ij}$. Then clearly $\d(\beta_j-\beta_i)=0$ on $U_{ij}$, hence $\d \beta_i=\d\beta_j$ and by the gluing axiom for the sheaf of smooth $2$-forms, there exists a global $2$-form $\alpha$ such that $\alpha|_{U_i}=\beta_i$. It is clear from this description that this map is the inverse of the earlier constructed homomorphism $H^2_\text{dR}(M;\R)\to \check H^2(M;\R)$, hence we have established a (canonical) isomorphism.
+\end{myproof}
+
+\begin{rem}\leavevmode
+	\begin{numberedlist}
+		\item The same method can be used to establish isomorphisms $H^k_\text{dR}(M;\R)\cong \check H^2(M;\R)$ for any $k\geq 0$. 
+		\item The crucial fact we used in constructing the inverse map is that the sheaves of smooth functions and forms admit partitions of unity, which implies that cocycles are always coboundaries. Such sheaves are called \emph{fine}, and the method we uses applies directly to prove that for any fine sheaf $\mc F$, $H^{k\geq 1}(M;\mc F)=0$.
+	\end{numberedlist}
+\end{rem}
+
+\subsection{Prequantization Line Bundles}
+
+Now that we've constructed a canonical isomorphism $H^2_\text{dR}(M;\R)\cong \check H^2(M;\R)$, it is clear what should be understood by an integral class in $H^2_\text{dR}(M;\R)$. Inside $\check H^2(M;\R)$, there is a subset $\iota_*(\check H^2(M;\Z))\subset \check H^2(M;\R)$, where $\iota:\Z\hookrightarrow \R$ is the standard inclusion. The corresponding classes in $H^2_\text{dR}(M;\R)$ are called \emph{integral}. The integral classes are of course precisely those for which the cocycle $(c_{ijk})$ can be chosen to take integer values. Now, we provide the motivation for our above-mentioned requirement of integrality of the cohomology class defined by the symplectic form in prequantization:
+
+\begin{prop}
+	Let $M$ be a smooth manifold and $\omega$ a closed two-form on $M$. Then $[\omega]\in H^2_\text{dR}(M;\R)$ is an integral class if and only if $\omega$ can be realized as the curvature of a connection on a $T^1$-principal bundle $P$, where $T^1=\R/\Z$.
+\end{prop}
+\begin{myproof}
+	Pick a good cover $\mc U=\{U_i\}$ of $M$ and assume that $\omega$ is integral. Then the corresponding class in \v{C}ech cohomology can be represented by an integer-valued cocycle $(c_{ijk})$. Using a partition of unity as before we obtain smooth functions $f_{ij}$ such that for every $U_{ijk}$ we have
+	\begin{equation*}
+		f_{jk}-f_{ik}+f_{ij}=c_{ijk}\equiv 0 \mod \Z
+	\end{equation*}
+	This means that these functions descend to a one-cocycle $(\tilde f_{ij})$ of the sheaf of smooth functions into $T^1$. Such a cocycle contains precisely the data needed to define a $T^1$-principal bundle $\pi:P\to M$. Indeed, consider the trivial bundles $U_i\times T^1$, and view the $(\tilde f_{ij})$ as transition functions, i.e.~identify $(x,t)\sim(x,t+\tilde f_{ij}(x))$ for every $x\in U_{ij}$. The consistency of this gluing construction is equivalent to the cocycle condition.	
+	
+	The one-forms $\beta_i$ which obey $\beta_j-\beta_i=\d f_{ij}$ define local connection one-forms; the rule $
+	\beta_j=\beta_i+\d f_{ij}$ is precisely the correct transformation behavior for a $T^1$-connection (proof given in the next paragraph), hence the local forms glue together to a globally defined connection $\theta$ on $P$. The curvature $F$ of $\theta$ can thought of as a two-form on $M$, characterized by the equation $\pi^*F^\theta=\d\theta$, which implies that for local trivializing sections $s_i:U_i\to P$, we have $F^\theta|_{U_i}=s_i^*\d \theta=\omega|_{U_i}$. By locality, we conclude that $F^\theta=\omega$.
+	
+	Conversely, let $F^\theta$ be the curvature of a connection $\theta$ on a principal bundle $P$ over $M$. Then we obtain local one-forms $\beta_i$ by picking sections $s_i:U_i\to P$ and setting $\beta_i=s_i^*\theta$. They satisfy $\d \beta_i=s_i^*\d\theta=s_i^*\pi^*\omega=\omega|_{U_i}$. Since $U_{ij}$ is contractible, $s_j-s_i=\tilde f_{ij}$ can be lifted to a real-valued function $f_{ij}:U_{ij}\to \R$ such that $s_j-s_i\equiv f_{ij}\mod \Z$. This means that 
+	\begin{equation*}
+		c_{ijk}=f_{jk}-f_{ik}+f_{ij}\equiv 0 \mod \Z
+	\end{equation*}
+	so if we can show that $\d f_{ij}=\beta_j-\beta_i$, then we have proven that $F^\theta$ is an integral class. To establish this last claim, we recall $s_j=s_i+\tilde f_{ij}$; write $s_j^*\theta=(s_i+\tilde f_{ij})^*\theta$ and act on a tangent vector $X=\dot\gamma(0)\in T_x M$, for some curve $\gamma$ with $\gamma(0)=x$. This yields
+	\begin{equation*}
+		(s_i+f_{ij})^*\theta(X)=\theta\bigg(\od{}{t}\bigg|_{t=0}(s_i(\gamma(t))+ \tilde f_{ij}(\gamma(t))\bigg)
+		=\theta\bigg(\od{}{t}\bigg|_{t=0}(R_{\tilde f_{ij}(\gamma(t))}s_i(\gamma(t))\bigg)
+	\end{equation*}
+	where $R_t$ denotes right-multiplication (i.e.~addition, in this group). Applying the product rule, we have
+	\begin{equation*}
+		(s_i+f_{ij})^*\theta(X)
+		=\theta\bigg(\od{}{t}\bigg|_{t=0}\Big(R_{\tilde f_{ij}(\gamma(t))}s_i(x)
+		+R_{\tilde f_{ij}(x)}s_i(\gamma(t))\Big)\bigg)
+	\end{equation*}
+	The action of $T^1$ on $P$ defines, given $s_i(x)\in P$, \emph{orbit map} $\varphi_{s_i(x)}:T^1\to P$ which sends $a\mapsto R_a(s_i(x))$. This shows that we may write the first term as $\theta(\dif_{0} \varphi_{s_i(x)}(\dif \tilde f_{ij}(X)))$, where $\dif \tilde f_{ij}(X)$ is regarded as an element of $T_0 T^1=\R$ (which we may do since we may identify $T_{\tilde f_{ij}(x)}T^1$ with $T_0T^1$). By definition of a principal connection, we find
+	\begin{equation*}
+		\theta(\dif_0\varphi_{s_i(x)}(\dif \tilde f_{ij}(X)))=\dif \tilde f_{ij}(X)=\d f_{ij}(X)
+	\end{equation*}
+	where we identified the differentials of $\tilde f_{ij}$ and its lift $f_{ij}$ in the last step. Now, we come to the second term, which can be written as $\theta(\dif R_{\tilde f_{ij}(x)}\circ \dif s_i(X))$. Using the definition of a principal connection once more (namely its right-invariance), this equals $\theta(\dif s_i(X))$. Putting it all together, we have shown
+	\begin{equation*}
+		s_j^*\theta=s_i^*\theta+\d f_{ij}
+	\end{equation*}
+	which was precisely our claim. Thus, the integer-valued cocycle $c_{ijk}$ constructed above corresponds to $F^\theta$.
+\end{myproof}
+
+\begin{rem}\leavevmode
+	\begin{numberedlist}
+		\item Regarding uniqueness, one may prove (using \v{C}ech cohomology that the space of $T^1$-principal bundles with connection with curvature $\omega$ is an Abelian group canonically isomorphic to $H^1(M,T^1)\cong \Hom(H_1(M,\Z),T^1)\cong \Hom(\pi_1(M),T^1$, where we used the universal coefficients theorem, plus the fact that any homomorphism $\pi_1(M)\to T^1$ must factor through the Abelianization $H_1(M,\Z)$. In particular, if $M$ is simply connected then there is a unique such bundle. 
+		\item The standard symplectic structure on the cotangent bundle of a smooth manifold is exact, hence trivially integral. Thus, this construction applies to these important examples.
+	\end{numberedlist}
+\end{rem}
+
+We can henceforth think of an integral symplectic form as the curvature of a $T^1$-principal bundle $P$. Representations of $T^1$ yield \emph{associated bundles} of $P$. Since $T^1$ is Abelian, the only irreducible representations are one-dimensional; they are of the form $\rho_k: T^1\to S^1\subset \C^*$, $t\mapsto e^{2\pi i k t}$. These are just $k$-fold tensor powers of the fundamental representation $\rho_1$ (or its dual, for negative $k$). To each of them, we associate the line bundle
+\begin{equation*}
+	L_k=P\times_{\rho_k}\C
+\end{equation*}
+where $P\times_{\rho_k}\C$ is defined as $P\times \C/\sim$, with $(p,z)\sim (p',z')$ when there exists some $t\in T^1$ such that $(p-t,e^{2\pi ik t}z)=(p',z')$. Setting $L=L_1$, note that $L_k\cong L^{\otimes k}$. We may equip these line bundles with natural Hermitian metrics as follows: Let $u$ be a local section of $P$, and let $s_1=[(u,f_1)]$ and $s_2=[(u,f_2)]$ be local sections of $L_k$. Then we define $\langle s_1,s_2\rangle=f_1\bar f_2$, which is well-defined since for any $t\in T^1$, $f_1\bar f_2=e^{2\pi ik t}f_1 \overline{e^{2\pi ikt}f_2}$.
+
+\begin{prop}
+	A principal $T^1$-connection on $P$ induces a Hermitian connection $\nabla$ on $(L_k,\langle-,-\rangle)$ for every $k\in\Z$.
+\end{prop}
+\begin{myproof}
+	We give a local description of the covariant derivative. Let $u:U\to P$; then a local section $s$ of $L_k$ takes the form $s=[(u,f)]$ for a complex function $f$. We define the connection by the formula
+	\begin{equation*}
+		\nabla_X s=[(u,X(f)+2\pi i k u^*\theta(X)f)]\eqqcolon [(u,\nabla^u_X f)]
+	\end{equation*} 
+	A priori, this seems to depend on our choice of $u$: We will now show independence, which implies well-definedness of $\nabla$. If $u'$ is some other gauge, $u-u'\eqqcolon a$ is a smooth map $U\to T^1$, and we have to check that
+	\begin{equation*}
+		[(u,X(f)+2\pi i k (u^*\theta)(X) f)]=[(u-a,X(e^{2\pi i k a}f)+2\pi i k ((u-a)^*\theta)(X) e^{2\pi i k a}f)]
+	\end{equation*}
+	Using the product rule on the first term, we obtain $e^{2\pi i k a}X(f)+2\pi i k X(a) f$. Proceeding as in the previous proof, one shows $u^*\theta-u'^*\theta=\d a$, hence $(u-a)^*\theta=u^*\theta-\d a$. This implies that 
+	\begin{gather*}
+		[(u-a,X(e^{2\pi i k a} f)+2\pi i k ((u-a)^*\theta)(X) e^{2\pi i k a} f)]\\
+		=[(u-a,e^{2\pi i k a}\big[X(f)+2\pi i k X(a)f+2\pi i k u^*\theta(X)f-2\pi i k X(a)f\big]\\
+		=[(u,X(f)+2\pi i k u^*\theta(X) f)]
+	\end{gather*}
+	Thus, we have a well-defined connection. Now we check that it is Hermitian. $s_1,s_2$ be local sections and $f_1,f_2$ the corresponding complex functions. Then
+	\begin{align*}
+		X(\langle s_1,s_2\rangle)&=X(f_1\bar f_2)=X(f_1)\bar f_2+f_1\overline{X (f_2)}\\
+		&=X(f_1)\bar f_2+2\pi i k u^*\theta(X)f_1 \bar f_2 + f_1\overline{X f_2)}+f_1\overline{2\pi i k u^*\theta(X)f_2}\\
+		&=\nabla^u_X(f_1)\bar f_2+f_1\overline{\nabla^u_X f_2}\\
+		&=\langle \nabla_X s_1,s_2\rangle+\langle s_1,\nabla_X s_2\rangle
+	\end{align*}
+	which is to say that $\nabla$ is Hermitian.
+\end{myproof}
+
+\begin{rem}\leavevmode
+	\begin{numberedlist}
+		\item More generally, a connection on a principal bundle $P$ always induces a connection on every associated vector bundle by the formula 
+		\begin{equation*}
+			\nabla_X s=[(u,\dif \phi(X)+\rho_*((u^*\theta)(X)) \phi)]
+		\end{equation*}
+		where $u$ and $s=[(u,\phi)]$ are sections as before, $\dif$ denotes the differential and $\rho_*$ the induced representation $\mf g\to \End V$ of the Lie algebra of $G$. It is not obvious that this is independent of our choice of local section $u$ of $P$, but this can be verified by a (long) computation. These induced connections are always compatible with any $G$-invariant bundle metric.
+		\item In the case we are interested in, we can easily compute the curvature of the induced connection on the associated vector bundle, by determining
+		\begin{align*}
+			F^\nabla(X,Y) f&=[\nabla^u_X,\nabla^u_Y] f -\nabla^u_{[X,Y]}f\\
+			&=\nabla^u_X(Y(f)+2\pi i k u^*\theta(Y)f) - (X\leftrightarrow Y)\\
+			&\hspace{0.6cm}-[X,Y](f)-2\pi i k u^*\theta([X,Y])f)		
+		\end{align*}
+		We use the fact that 
+		\begin{equation*}
+			\theta([X,Y])=L_X(\theta(Y))-(L_X\theta)(Y)=X(\theta(Y))-Y(\theta(X))-\d \theta(X,Y)
+		\end{equation*}
+		and several cancellations between terms to find that 
+		\begin{equation*}
+			F^\nabla(X,Y)f=2\pi i k u^*(\d \theta)(X,Y)f=2\pi i k F^\theta
+		\end{equation*}
+		where we finally used our definition $\pi_P^*F^\theta=\d\theta$. In particular, 
+		\begin{equation*}
+			c_1(L_k)=-k[\omega]
+		\end{equation*}
+		where the sign is convention-dependent. In particular, $c_1(L_{-1}=[\omega]$, and thus $L_{-1}$ is the line bundle Hitchin considers.
+	\end{numberedlist}
+\end{rem}
+
+\subsection{The Prequantization Map}
+
+Now we are in a position to define a Lie algebra representation of $C^\infty(M)$ on a (family of) Hilbert space(s) naturally associated to the symplectic structure. This ``prequantization map'' is the final main result of this lecture. To each of the line bundles $L_k$, we can associate its space of smooth sections with compact support, denoted by $\Gamma_c(L_k)$. There is a natural $L^2$ inner product, induced by the Hermitian structure of $L_k$ and the symplectic volume form on $M$: For $s_1,s_2\in\Gamma_c(L_k)$, define
+\begin{equation*}
+	(s_1,s_2)=\int_M \langle s_1,s_2\rangle \frac{\omega^n}{n!}
+\end{equation*}
+$\Gamma_c(L_k)$ is of course a complex vector space, but it is not yet a Hilbert space since it may fail to be complete. To remedy this, we may take the closure with respect to the $L^2$-inner product: $\mc H_k\coloneqq \overline{\Gamma_c(L_k)}^{L^2}$. On the dense subset $\Gamma_c(L_k)$ we can define differential operators and in particular we have a notion of \emph{first order} differential operators\footnote{Given a differential operator $P$ between vector bundles $E$ and $F$, let $e\in \Gamma(E)$ be arbitrary and choose $f\in C^\infty(M)$ such that $f(p)=0$ and $\dif_p f=\xi$ for some $\xi\in T^*_pM$. We say that $P$ is of order at most $1$ if $(P f^{2}e)_p= 0$ for any $e$.}, which are of the form $\nabla_X+A$ for a vector field $X$ an endomorphism $A\in \Gamma(\End(E))$. The commutator of differential operators is defined in the obvious way, up to a factor: $[D_1,D_2]_\hbar s=\frac{i}{\hbar}(D_1D_2s-D_2D_1s)$. Thanks to the curvature formula $F^\nabla(X,Y)=[\nabla_X,\nabla_Y]-\nabla_{[X,Y]}$, the space $\mc D_1$ of (at most) first-order differential operators forms a Lie (sub)algebra.
+
+\begin{prop}
+	Let $(M,\omega)$ be a symplectic manifold with integral symplectic form and let $(L_k,\langle-,-\rangle,\nabla)$ be as above. Then the map
+	\begin{equation*}
+		f\longmapsto \hat f \coloneqq -i\hbar (\nabla_{X_f}-2\pi i k f)=-i\hbar \nabla_{X_f}-2\pi \hbar kf
+	\end{equation*}
+	which assigns a first-order differential operator to every smooth function defines a Lie algebra homomorphism $(C^\infty(M),\{-,-\})\to (\mc D_1,[-,-])$. Moreover, these densely defined operators are \emph{symmetric}: $(\hat f s_1,s_2)=(s_1,\hat f s_2)$ for every $s_1,s_2\in \Gamma_c(L_k)$.
+\end{prop}
+\begin{myproof}
+	To establish the homomorphism property, we simply compute
+	\begin{align*}
+		\frac{i}{\hbar}[\hat f,\hat g]&=-i\hbar [\nabla_{X_f},\nabla_{X_g}]-2\pi k\hbar (X_f(g)-X_g(f))\\
+		&=-i\hbar (F^\nabla(X_f,X_g)+\nabla_{[X,Y]})-4\pi k\hbar \{f,g\}\\
+		&=2\pi k\hbar  \omega(X_f,X_g)-i\hbar \nabla_{X_{\{f,g\}}}-4\pi k\hbar \{f,g\}
+		=-i\hbar \nabla_{X_{\{f,g\}}}-2\pi k\hbar \{f,g\}\\
+		&=\widehat{\{f,g\}}
+	\end{align*}
+	Now we check symmetry. Since $\nabla$ is compatible with $\langle-,-\rangle$, we have 
+	\begin{align*}
+		((-i\hbar \nabla_{X_f}-2\pi \hbar k f)s_1,s_2)
+		&=\int_M \langle (-i\hbar \nabla_{X_f}-2\pi \hbar k f)s_1,s_2\rangle \frac{\omega^n}{n!}\\
+		&=\int_M \Big( \langle s_1,(-i\hbar \nabla_{X_f}-2\pi \hbar k f)s_2\rangle
+		-i\hbar X_f\langle s_1,s_2\rangle\Big) \frac{\omega^n}{n!}
+	\end{align*}
+	Hence, it suffices to show that 
+	\begin{equation*}
+		\int_M X_f\langle s_1,s_2\rangle \omega^n=0
+	\end{equation*}
+	Since $L_{X_f}\omega^n=0$, the integrand equals $L_{X_f}(\langle s_1,s_2\rangle \omega^n)=\d\iota_{X_f}(\langle s_1,s_2\rangle \omega^n)$. But both sections have compact support, hence the integrand does too and we may invoke Stokes' theorem to conclude that the integral vanishes.
+\end{myproof}
+
+\begin{rem}
+	In order to have the desired property $\hat 1=\Unit$, we must set $\hbar=-(2\pi k)^{-1}$.
+\end{rem}
+
+\begin{ex}
+	To get a feeling for what the result of prequantization looks like, we carry the procedure out in the case where $M$ is the cotangent bundle $\pi:T^*N\to N$ of a smooth manifold, equipped with its standard symplectic structure $\omega=-\d \lambda$, where $\lambda$ is the tautological one-form defined through $\lambda_{\alpha_p}(X_{\alpha_p})=\alpha_p(\dif\pi X_{\alpha_p})$ (or $\lambda =\sum p_i \d q^i$ in local coordinates $q^j=x^j\circ \pi$ and $p_j(\xi)=\xi(\p_{x^j})$ associated to local coordinates $\{x^j\}$ on $N$). Since $\omega$ is exact, the corresponding principal $T^1$-bundle $p:P\to M$ is trivial. The curvature of the connection $\theta=\d t-p^*\lambda$ satisfies $F^\theta=-\d \lambda=\omega$. 
+	
+	To induce connections on the associated line bundles $L_k$, we use the canonical section $u:M\to M\times T^1$ which sends $x\mapsto (x,[0])$. Then $u^*\d t=0$, hence $u^*\theta=-\lambda$ and we have
+	\begin{equation*}
+		\nabla_X s = [(u,X(f)+2\pi i k \lambda (X)f)]
+	\end{equation*}
+	Since locally $\omega=\sum \d q^j \wedge \d p_j$ we have $X_{q^j}=-\p_{p_j}$ and $X_{p_j}=\p_{q^j}$ and therefore
+	\begin{equation*}
+		\nabla_{X_{q^j}}s=[(u,-\p_{p_j}f)] \qquad \qquad \qquad 
+		\nabla_{X_{p_j}}s=[(u,\p_{q^j}f+2\pi i k p_jf)]
+	\end{equation*}
+	and consequently
+	\begin{equation*}
+		\widehat{q^j}[(u,f)]=[(u,i\hbar \p_{p_j}f-2\pi k \hbar q^jf)]\qquad \qquad 
+		\widehat{p_j}[(u,f)]=[(u,-i\hbar \p_{q^j}f)]
+	\end{equation*}
+	We conclude:
+	\begin{gather*}
+		\widehat{q^j}=i\hbar\pd{}{p_j} -2\pi k \hbar q^j\\
+		\widehat{p_j}=-i\hbar \pd{}{q^j}
+	\end{gather*}
+	The second term of $\widehat{q^j}$ is in accordance with the usual prescription of canonical quantization if we impose the above-mentioned equation $\hbar =-(2\pi k)^{-1}$.
+	
+	\begin{rem}
+		In fact, it seems reasonable from a physical point of view to set $\hbar =\frac{1}{2\pi}$, which forces $k=-1$. This seems rather satisfactory, since this is also the (only) line bundle which satisfies $c_1(L_{-1})=\omega$.
+	\end{rem}
+	
+	However, the first term is completely off! There is one obvious remedy: Restricting to functions which only depend on the functions $q^j$, or equivalently $\pi^*C^\infty(N)\subset C^\infty(M)$. Another characterization of these functions is the following: $f\in \pi^*C^\infty(N)$ if and only if the corresponding section $s=[(u,f)]$ satisfies $\nabla_X s=0$ for every $X\in \Gamma(T^VN)$, where $T^VN=\ker \dif \pi\subset TM$ is the vertical tangent bundle.
+\end{ex}
+
+It turns out that this failure of prequantization is a general feature: The restriction to certain types of functions and sections which are \emph{parallel} along a (Lagrangian) distribution leads to the notion of what is called \emph{quantization} without the pre-. This will be discussed in the following lecture.
+
+\end{document}

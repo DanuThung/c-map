@@ -1,0 +1,169 @@
+\documentclass[parskip=half]{scrartcl}
+\input{NotesPreamble}
+
+\title{Invariant almost complex structures of $G_2$ flag manifolds\\[0.5cm]}
+\subtitle{Research seminar on differential geometry, University of Hamburg}
+\author{Danu Thung\\[1cm]}
+\date{8 January 2018}
+
+\begin{document}
+\maketitle
+
+\section{What are flag manifolds, and why study them?}
+
+\subsection{Definition of a flag manifold}
+
+To define what a flag manifold is, we first recall what a flag is.
+
+\begin{onboard}
+\begin{mydef}
+	A \emph{(partial) flag} is a strictly increasing sequence of subspaces of a finite-dimensional vector space $V$:
+	\begin{equation*}
+		\{0\}=V_0\subset V_1 \subset \dots \subset V_k \subset V_{k+1}=V
+	\end{equation*}
+	If $d_j=\dim V_j$, then $(d_1,\dots,d_k)$ is the \emph{signature} of the flag.
+\end{mydef}
+\end{onboard}
+If $d_j=j$ for every $j$, the flag is called \emph{complete}. Clearly, partial flags can always be obtained by deleting some subspaces from a complete flag.
+
+Informally, a flag manifold is supposed to be the space parametrizing all flags of a given signature. To get a feeling for what kind of spaces these are, let's consider one of the simplest cases:
+
+\begin{ex}[Flags in $\C^n$]\leavevmode
+	\begin{numberedlist}
+		\item The space of all lines is 
+		\begin{onboard}
+			$\CP^n$, and more generally \emph{Grassmannians} parametrize flags that consist of a single non-trivial subspace.
+		\end{onboard} 
+		Every $k$-plane can be taken to any other by a special unitary transformation, realizing Grassmannians as homogeneous spaces:
+		\begin{onboard}
+		\begin{equation*}
+			\Gr_k(\C^n)\cong \frac{SU(n)}{S(U(k)\times U(n-k))}
+		\end{equation*}
+		\end{onboard}
+		as is easy to see by considering the standard embedding $\C^k\hookrightarrow\C^n$ onto the first $k$ coordinates: The stabilizer then consists of the block-diagonal matrices consisting of a $k$-block and an $n-k$-block.
+		\item A complete flag in $\C^n$ can be described by an equivalence class of ordered orthonormal bases of $\C^n$, and 
+		\begin{onboard}
+			the natural transitive action of $U(n)$ on the space of all orthonormal bases induces a transitive action of $SU(n)$ on the manifold parametrizing complete flags in $\C^n$, the so-called complete flag manifold $U(n)/T^n\cong SU(n)/T^{n-1}$:
+		\end{onboard}
+		It is easy to see that the isotropy subgroup of the standard maximal flag is indeed a maximal torus.
+		\item Since any flag can be obtained by deleting subspaces from a complete flag, the above shows that 
+		\begin{onboard}
+			any manifold of flags in $\C^n$ is homogeneous under $SU(n)$.
+		\end{onboard}
+		Now we would like to understand the general structure of the isotropy subgroup. By considering the ``standard flag'' of a given signature $(d_1,\dots, d_k)$, where the first subspace is given by the standard embedding $\C^{d_1}\hookrightarrow \C^n$, etc., we see that the flag manifold is given by
+		\begin{onboard}
+		\begin{equation*}
+			\frac{SU(n)}{S\big(U(d_1)\times U(d_2) \times \dots \times U(n-\sum_j d_j)\big)}
+		\end{equation*}
+		\end{onboard}
+		and the isotropy subgroup can be thought of as block-diagonal matrices. A good way to describe such matrices is by the fact that they commute with those (special) unitary matrices that restrict to a multiple of the identity on every block,
+		\begin{onboard}
+			i.e.~the isotropy group is the centralizer of a torus of dimension $k+1$,
+		\end{onboard}
+		where $k$ is the number of non-trivial subspaces in the flag.
+	\end{numberedlist}
+\end{ex}
+
+We could go through the analogous discussion for $\R^n$ and discover a bunch of homogeneous spaces under $SO(n)$; again, the isotropy subgroups are centralizers of tori. Making a simple generalization, we arrive at the following definition:
+
+\begin{onboard}
+	\begin{mydef}
+		A \emph{(generalized) flag manifold} is a homogeneous space of the form $G/C(T)$, where $G$ is a compact, connected and semisimple Lie group, and $C(T)$ is the centralizer of a torus $T\subset G$.
+	\end{mydef}
+\end{onboard}
+
+There is an alternative definition, which has a more algebraic flavor:
+
+\begin{onboard}
+	\begin{mydef}
+		A \emph{(generalized) flag manifold} is an orbit of the adjoint action of a compact, connected and semisimple Lie group on its Lie algebra.
+	\end{mydef}
+\end{onboard}
+
+This suggests that there is a Lie-algebraic approach to the study of flag manifolds, and indeed the algebraic approach to these spaces has historically proven very fruitful.
+
+\subsection{Geometric structures on flag manifolds: general results}
+
+A natural question to ask is: Why would people be interested in studying flag manifolds? The answer is simple: 
+\begin{onboard}
+	For their geometric structures!
+\end{onboard} 
+Since flag manifolds are homogeneous spaces, it is natural to look for geometric structures on them which are compatible, in an appropriate sense, with the group translations, i.e.~\emph{invariant}. These are particularly simple to study by algebraic means, because their study can essentially be reduced to tensors acting on the tangent space to the identity coset.
+\begin{onboard}
+	In the 1950's, it was shown (using Lie theory) that flag manifolds admit extremely special invariant geometric structures:
+
+\begin{thm}[Borel, Koszul]
+	A generalized flag manifold $G/C(T)$ admits a canonical $G$-invariant complex structure and a unique (up to homothety) $G$-invariant K\"ahler-Einstein structure. It is compatible with the canonical complex structure and has positive scalar curvature.
+\end{thm}
+\end{onboard}
+
+In fact, flag manifolds are the only compact, simply connected manifolds with an invariant K\"ahler structure. Dropping the assumption of simple connectedness, the only possibility is a Riemannian product of a flag manifold with a torus (equipped with a flat K\"ahler metric), and so flag manifolds are essentially the only homogeneous K\"ahler manifolds.
+
+\subsection{Hirzebruch and Borel's work on characteristic classes and homogeneous spaces}
+
+\begin{onboard}
+	Besides their canonical invariant complex structure, flag manifolds can also carry several other, invariant \emph{almost} complex structures.
+\end{onboard} 
+An almost complex structure on a manifold corresponds precisely to a complex structure on its tangent bundle, and therefore perhaps the simplest and most important invariants of an almost complex structure are the Chern classes and numbers associated to the tangent bundle.
+
+These, among others, were studied in detail by Borel and Hirzebruch in a famous series of papers from the late 1950's. In those papers, they study homogeneous spaces in general, and use techniques from the theory of Lie algebras to study their characteristic classes. In particular, 
+\begin{onboard}
+	Hirzebruch and Borel gave a recipe for enumerating the invariant almost complex structures of homogeneous spaces and a method of computing their Chern numbers.
+\end{onboard}
+
+So, since about sixty years ago, there has been an essentially satisfactory understanding of the invariant geometric structures on flag manifolds from a purely \emph{algebraic} point of view. However, much more recently, there have been some interesting developments from a geometric angle, which eventually suggested the questions I discuss in my thesis, and which I will now tell you about.
+
+In their celebrated series of paper, Hirzebruch and Borel discussed many interesting application of their techniques. In one example, they considered the flag manifold
+\begin{onboard}
+	\begin{equation*}
+	SU(4)/S(U(2)\times U(1)\times U(1))
+\end{equation*}
+\end{onboard}
+which admits 
+\begin{onboard}
+	two integrable complex structures $X,Y$. These two complex structures can be distinguished by the Chern number $c_1^5$, which takes the values $4500$ and $4860$ on them.
+\end{onboard} 
+At the time, these were interesting examples, because they showed that there exist complex manifolds which are diffeomorphic but can nonetheless be distinguished by their Chern numbers. Other than that, this little fact carried no special significance. 
+
+Fast-forward more than 40 years ahead, to March 2005, when the Institute for Advanced Study celebrated its 75th birthday and Hirzebruch, among others, was invited to give a talk about his time at the IAS. He decided to talk about his joint work with Borel, which was done between 1952 and 1954 at the IAS. He gave some highlights of their papers, and at the end of his talk brought up the above example with the different Chern numbers. The beauty of our modern world is that you can really go to YouTube and watch this lecture, and see the origins of my master's thesis right there!
+
+Soon after this talk, a short paper of Hirzebruch appeared in a memorial volume of some journal, dedicated to Armand Borel, who had passed in 2003, where the example is revisited once more. Hirzebruch explains that, after his lecture in Princeton finished, he was approached by
+\begin{onboard}
+	Calabi, who informed him that $X=\P(T\CP^3)$ and $Y=\P(T^*\CP^3)$.
+\end{onboard}
+The diffeomorphism between them is induced by dualization of the real tangent bundle of $\CP^3$. With this geometric description, it is simple to compute the cohomology ring and
+\begin{onboard}
+	determine the Chern classes without even using the fact that we are dealing with a homogeneous space.
+\end{onboard}
+This is a satisfying geometric ``explanation'', if you will, of the facts Hirzebruch and Borel had proven long ago algebraically. However, our story does not end here! The projectivized (co)tangent bundles of course admit a holomorphic fibration over $\CP^3$. However, there is another fibration, namely over the Grassmannian of $2$-planes in $\C^4$. This fibration was recognized, by my master's supervisor professor Kotschick in Munich, as the so-called twistor fibration which casts the flag manifold as the so-called twistor space of the Grassmannian, which carries a quaternionic K\"ahler structure. If this terminology is not known to everybody, don't worry: I'll explain more soon! 
+
+The point of this observation is that it connects these flag manifolds to a whole bunch of other interesting geometry---as we will see, the twistor space story gives an explicit geometric reason why this flag manifold must carry a K\"ahler-Einstein metric, as well as a geometric understanding of one of the complex structures of this flag manifold, namely the one corresponding to $\P(T^*\CP^3)$. 
+
+In fact, this space admits one more, non-integrable invariant almost complex structure, and it also arises naturally from the geometry of the twistor space, which allows one to easily compute its Chern numbers. Putting it all together, one not only recovers all the algebraically known results (all the invariant almost complex structures and their Chern classes) from a purely geometric framework, but also put them in a natural geometric context, which yields new insights and clarifies ``what's really happening''. In fact, this one example was generalized by Kotschick and Terzic to an infinite series, namely the flag manifolds
+\begin{equation*}
+	SU(n+2)/S(U(n)\times U(1)\times U(1))
+\end{equation*}
+for any natural number $n$. There, the story is completely analogous. This finally brings me to the topic of my own work, which was...
+
+\section{$G_2$ and its flag manifolds}
+
+\begin{onboard}
+	Goal: Develop analogous geometric understanding for different examples, namely $G_2$ flag manifolds. 
+	\begin{numberedlist}
+		\item Give a geometric construction of all invariant almost complex structures.
+		\item Compute all Chern numbers.
+	\end{numberedlist}
+\end{onboard}
+
+
+
+
+
+%Detail the history, starting from their series of papers through Hirzebruch's \href{https://www.youtube.com/watch?v=nn8Fb3O6ebM}{lecture}, the subsequent \href{https://mathscinet.ams.org/mathscinet-getitem?mr=2201324}{paper}, Kotschick's generalization to an infinite series in \href{https://arxiv.org/abs/0709.3026}{his paper with Terzic}, of which my thesis is essentially an ``exceptional analog'', using $G_2$ flag manifolds instead of flag manifolds from the 
+
+
+
+
+\section{}
+
+\end{document}
