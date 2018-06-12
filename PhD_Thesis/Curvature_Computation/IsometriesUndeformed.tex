@@ -1,0 +1,335 @@
+\section{Isometries of the Undeformed Ferrara-Sabharwal Metric}
+
+\subsection{The Unit Ball as a Homogeneous Space}
+
+To understand the symmetries of the $c$-map image of $\C H^n$, we first study the base PSK in a bit more depth. $\C H^n$ is the unit ball in $\C^n$, equipped with a symmetric metric of constant negative curvature. Its standard realization is as a homogeneous space under $SU(n,1)$, which is most easily understood by viewing the unit ball as a subset of $\CP^n$. Let $[z_0:\dots : z_n]$ be homogeneous coordinates on $\CP^n$, and consider the open set $U=\{z_n\neq 0\}\subset \CP^n$. Then the standard affine chart
+\begin{equation*}
+	\begin{tikzcd}[row sep=0cm]
+		U \arrow{r} & (\C^n,1) \\
+		{[z_1:\dots : z_n]} \arrow[mapsto]{r} & \Big(\frac{z_1}{z_{n+1}},\dots, \frac{z_n}{z_{n+1}},1\Big)
+	\end{tikzcd}
+\end{equation*}
+shows us that we can realize the unit ball in $\C^n$ as
+\begin{equation*}
+	B= \bigg\{[z_1:\dots: z_{n+1}]\in \CP^n\ \bigg|\ \sum_{j=1}^n\abs{z_j}^2-\abs{z_{n+1}}^2=\langle z,z\rangle<0\bigg\}
+\end{equation*}
+
+Consider $\C^{n+1}$, equipped with the indefinite Hermitian form 
+\begin{equation*}
+	\langle z, w \rangle = \sum_{j=1}^n z_j \bar w_j - z_{n+1}\bar w_{n+1}
+\end{equation*}
+Now $SU(n,1)$ is defined as the set of special linear transformations which preserve this form. Its action on $\C^{n+1}$ descends to $\CP^n$, and preserves the unit ball $B$ since $B$ is defined by the sign of $\langle z,z\rangle$. 
+
+To prove transitivity of this action, we will show that any point can be mapped to the origin. Recall that $U(n)$, essentially by definition, acts simply transitively on the space of orthonormal bases of $\C^n$. This shows that $SU(n)$ acts transitively on the sphere of radius $r$, so we have reduced the claim to showing that we can map $(r,0,\dots,0)$ to the origin, where $r\in \R$. There is a copy of $SU(1,1)$ sitting inside $SU(n,1)$, given by matrices of the following form:
+\begin{equation*}
+	\begin{pmatrix}
+		a 	& 0				& b \\ 
+		0 	&\Unit_{n-1} 	& 0 \\
+		c 	& 0				& d
+	\end{pmatrix}
+\end{equation*}
+Acting on projective space, it sends
+\begin{equation*}
+	[r:0:\dots:0:1]\mapsto [ar+b:0:\dots:0:cr+d]=\bigg[\frac{ar+b}{cr+d}:0:\dots: 0 : 1\bigg]
+\end{equation*}
+and correspondingly it sends
+\begin{equation*}
+	\begin{tikzcd}
+		(r,0,\dots, 0) \ar[r,mapsto] & \Big(\frac{ar+b}{cr+d},0\dots,0\Big)
+	\end{tikzcd}
+\end{equation*}
+The condition that 
+$\begin{psmallmatrix}
+	a & b \\ c & d
+\end{psmallmatrix}$ lies inside $SU(1,1)$ means that $ad-bc=1$ while also $\abs{a}^2-\abs{c}^2=1=\abs{b}^2-\abs{d}^2$ and $a\bar b-c \bar d=0$. If $b=0$, we easily get that $c=0$ and $d=a^*$, while if $b\neq 0$ we find
+\begin{equation*}
+	a=\frac{c\bar d }{\bar b}\implies \frac{c\bar d}{\bar b}-bc=1
+	\implies \frac{c}{\bar b}(\abs{d}^2-\abs{b}^2)=1\implies c=\bar b\implies a=\bar d
+\end{equation*}
+and we see that the matrix takes the form
+$\begin{psmallmatrix}
+a & b \\ b^* & a^*
+\end{psmallmatrix}$. Now, we want to satisfy $\frac{ar+b}{b^*r+a^*}=0$ as well as $\abs{a}^2-\abs{b}^2=1$. If we force $ar+b=0$, we only have the condition $\abs{b}^2=(r^{-2}-1)^{-1}$, which obviously admits a solution.
+
+Now, we determine the isotropy subgroup. Let 
+$\begin{psmallmatrix}
+	A & \vec b \\
+	\vec c^T & d
+\end{psmallmatrix}$ be an $(n+1)\times (n+1)$ complex matrix. It fixes $[0:\dots:0:1]\in \CP^n$, or correspondingly $0\in\C^n$, if and only if $\vec b=0$. It then lies in $U(n,1)$ precisely if 
+\begin{equation*}
+	\begin{pmatrix}
+		\Unit & 0 \\ 0 & -1
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		A & 0 \\ \vec c^T & d
+	\end{pmatrix}^\dagger 
+	\begin{pmatrix}
+		\Unit & 0 \\ 0 & -1 
+	\end{pmatrix}
+	\begin{pmatrix}
+		A & 0 \\ \vec c^T & d
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		A^\dagger A-\vec{\bar c}\vec c^T & -d \vec{\bar c}\\
+		-\bar d \vec c^T & -\abs{d}^2
+	\end{pmatrix}
+\end{equation*}
+For it to lie in $SU(n,1)$, we must have $d\neq 0$ and it follows that $\vec c=0$ as well as $A\in U(n)$ and finally $d\in U(1)$ such that $d \det A=1$. This means that the stabilizer is $S(U(n)\times U(1))\cong U(n)$ and we conclude
+\begin{equation*}
+	\C H^n\cong \frac{SU(n,1)}{U(n)}
+\end{equation*}
+
+\subsection{The Unit Ball as a Lie Group}
+
+There is a general decomposition, called the Iwasawa decomposition, which casts a non-compact semisimple Lie group $G$ uniquely (up to conjugation) as a product (as a manifold, but not a direct product of Lie groups!) $G=KAN$, where $K$ is the maximal compact subgroup (unique up to conjugation), $A$ is maximal Abelian (its dimension gives the rank) and $N$ is nilpotent. The subgroup $AN\subset G$ is called the \emph{Iwasawa subgroup} of $G$; it is always simply connected. 
+
+It is a fact, which we assume known, that $U(n)$ is the maximal compact subgroup of $SU(n,1)$, hence we can identify $\C H^n$ with the Iwasawa subgroup $\Iwa(SU(n,1))$, which therefore acts simply transitively on the unit ball. As such, $\C H^n$ admits a group structure. We will denote this group by $G(n)$ This group is of course diffeomorphic to $\R^{2n}$, and its group structure not very hard to describe explicitly, at least on the level of Lie algebras.
+
+As described in CHM (page 199), $G(n)=\Iwa(SU(n,1))$ is a rank one extension of the Heisenberg group of dimension $2n-1$. On the level of Lie algebras, we therefore have
+\begin{equation*}
+	\mf g=\mf{D}+\mf{heis}
+\end{equation*}
+where $+$ denotes a direct sum of vector spaces, but not as Lie algebras. $\mf D$ is one-dimensional, spanned by $D$. The Lie algebra of the Heisenberg group is constructed as follows: Consider the standard symplectic vector space $(\R^{2n-2},\omega_\text{std})$. Then $\mf{heis}$ is defined as follows: $\mf{heis}=\mf Z+\R^{2n-2}$, where $\mf Z$ is one-dimensional and spanned by $Z$, and the Lie bracket is defined as follows: For $X,Y\in \R^{2n-2}$, $[X,Y]=\omega(X,Y)Z$, while $[Z,X]=0$. Clearly, $Z$ spans the (one-dimensional) center, and the Lie algebra structure only depends on the symplectic structure on $\R^{2n-2}$. Now that we have the Lie algebra structure of $\mf{heis}$, we only need to know the action of $\ad_D$. It is given by $[D,Z]=Z$ and $[D,X]=\frac{1}{2}X$ for $X\in \R^{2n-2}\subset \mf{heis}$: The factor $\frac{1}{2}$ is what makes the Jacobi identity work out. 
+
+The group multiplication can be explicitly written out: Let $(\tilde\zeta,\zeta,\tilde\phi,\phi),(\tilde\zeta',\zeta',\tilde\phi',\phi')\in \R^{n-1}\times \R^{n-1}\times\R\times \R=\R^{2n}$; then their product is
+\begin{equation*}
+	(\tilde\zeta+e^{\phi/2}\tilde\zeta',\zeta+e^{\phi/2}\zeta',\tilde\phi+e^{\phi}\tilde\phi'+e^{\phi/2}(\zeta^T\tilde\zeta'-\zeta'^T\tilde\zeta),\phi+\phi')
+\end{equation*}
+In CHM, $G(n)$ is described as $\R^{2n-1}\times \R_+$, an identification achieved by the diffeomorphism $(\tilde\zeta,\zeta,\tilde\phi,\phi)\mapsto (\tilde\zeta,\zeta,\tilde\phi,e^\phi)$.
+
+\subsection{The Group Structure of the \texorpdfstring{$c$}{c}-map Image}
+
+Recall from \cref{sec:undeformedFSderivation} that the undeformed Ferrara-Sabharwal metric on the $c$-map image of $\C H^n$ is 
+\begin{align*}
+	g_{FS}=&\frac{1}{1-\abs{X}^2}\Bigg(\sum \d X^\mu \d \bar X^\mu 
+	+ \frac{1}{1-\abs{X}^2}\bigg|\sum \bar X^\mu \d X^\mu \bigg|^2\Bigg)\\
+	&+\frac{1}{4\phi^2}\d \phi^2 
+	+\frac{1}{4\phi^2}\bigg(\d\tilde\phi-4\Im\bigg[\bar w_0\d w_0 - \sum \bar w_\mu \d w_\mu\bigg]\bigg)^2\\
+	&-\frac{2}{\phi} \bigg( \d w_0 \d \bar w_0 - \sum \d w_\mu \d \bar w_\mu \bigg)
+	+\frac{1}{\phi}\frac{4}{1-\abs{X}^2}\bigg|\d w_0 + \sum X^\mu \d w_\mu \bigg|^2
+\end{align*}
+where the coordinates $(X,\phi,\tilde\phi,w)$ take values in $\C^n\times \R_+\times \R\times \C^{n+1}$ and $\abs{X}<1$.
+
+It is known (see CDS, example 14) that this metric turns the $c$-map image $N$ into the symmetric space $SU(n+1,2)/S(U(n+1)\times U(2))\cong\Iwa(SU(n+1,2))$. In particular, it should be left-invariant with respect to a group structure described above. The base PSK manifold and the fiber each have a group structure or equivalently admit a simply transitive group action, but the group structure on $N$ cannot be simply a direct product structure, since the metric on the fibers depends on the point in the base. Thus, we have to try to understand the group structure on $N$, which is amounts to finding a simply transitive group action, which furthermore is isometric. 
+
+The action of $G(n+2)$ on the fiber is of course simply transitive, and since the metric on the base does not depend on the fiber this group, one may expect that $G(n+2)$ is a normal subgroup of the group we are looking for: Indeed, if we can extend the action of $G(n)$ on the base to an isometric action on all of $N$, then we will have realized $N$ as a semidirect product of $G(n)$ with $G(n+2)$, where the latter is the normal subgroup since the base metric does not depend on the fiber. This also amounts to presenting $\Iwa(SU(n+1,2))$ as $G(n)\ltimes G(n+2)$.
+
+Thus, we are looking to define an action $G(n)\action G(n+2)$ with respect to which the $c$-map metric (Ferrara-Sabharwal metric) is left-invariant. Since $G(n)=\Iwa(SU(n,1))$, we have a natural inclusion $G(n)\subset SU(n,1)\subset Sp(2n+2)$. This allows us to act on the $w$-coordinates by symplectic transformations, which is natural from a physical perspective because string-theoretic arguments dictate that there should be some kind of $Sp(2n+2)$-duality symmetry---we will check whether/that these transformations are isometries of the $c$-map metric.
+%WORK NEEDED: Yes? Idk!
+
+To do this, we need two ingredients: 
+\begin{numberedlist}
+	\item Explicit expressions for the isometric action $G(n)\action \C H^n$.
+	\item An explicit embedding $G(n)=\Iwa(SU(n,1))\subset Sp(2n+2)$.
+\end{numberedlist}
+
+For simplicity, we will start by considering the case $n=1$. In this case, we know that 
+\begin{equation*}
+	SU(1,1)=\bigg\{
+	\begin{pmatrix}
+		a & b \\ b^* & a^*
+	\end{pmatrix}
+	\bigg|
+	\abs{a}^2-\abs{b}^2=1\bigg\}
+\end{equation*}
+Our discussion of the Lie group model of $\C H^n$ shows that, in the case $n=1$, the quotient $SU(1,1)/U(1)$ is given by considering $a$ modulo $U(1)$, which means simply that we may realize the Iwasawa subgroup as the subgroup for which $a$ is positive and real---in fact $a>1$ because $\abs{b}^2=a^2-1$.
+
+We start with the second step. The embedding $SU(1,1)\subset Sp(4)$ is given by first embedding it into $Sp(2,2)$: This map is induced by the identification $\C^2=\R^4$. Composing this with the isomorphism $Sp(2,2)\cong Sp(4)$ induced by the permutation $(x_1,y_1,x_2,y_2)\mapsto (x_1,y_1,y_2,x_2)$, we find that the image of $G(1)=\Iwa(SU(1,1))$ is:
+\begin{equation*}
+	A=
+	\begin{pmatrix}
+		a & 0 & -\Im b & \Re b\\
+		0 & a & \Re b & \Im b \\
+		-\Im b & \Re b & a & 0 \\
+		\Re b & \Im b & 0 & a
+	\end{pmatrix}
+	\qquad \qquad 
+	\R\ni a\geq 1 \qquad \abs{b}^2=a^2-1
+\end{equation*} 
+
+For the first step, we have the unit disk in $\C$, acted upon by $SU(1,1)$. The most obvious action is by fractional linear transformations: $X\mapsto \frac{aX+b}{b^*X+a^*}$. It is not hard to check that the PSK metric (which is also induced by $g_{FS}$) on the disk is left-invariant with respect to this action of $SU(1,1)$. In the $n=1$ case, the metric on the base simplifies to
+\begin{equation*}
+	\frac{\d X \d \bar X}{(1-\abs{X}^2)^2}
+\end{equation*} 
+As $X\mapsto \frac{aX+b}{b^*X+a^*}$, we have
+\begin{equation*}
+	\d X \longmapsto \frac{1}{(b^*X+a^*)^2}\big(a(b^*X+a^*) - b^*(aX+b)\big)\d X
+	=\frac{\d X}{(b^*X+a^*)^2}
+\end{equation*}
+and so we obtain
+\begin{equation*}
+	\frac{\d X \d \bar X}{\big[\abs{b^*X+a^*}^2\big(1-\abs{\frac{aX+b}{b^*X+a^*}}^2\big)\big]^2}
+	=\frac{\d X \d \bar X}{(\abs{b^*X+a^*}^2-\abs{aX+b}^2)^2}
+	=\frac{\d X \d \bar X}{(1-\abs{X}^2)^2}
+\end{equation*}
+where the final step uses $\abs{a}^2-\abs{b}^2=1$.
+
+This choice of action, however, is not at all unique. Other actions can be obtained by precomposing the standard action by an automorphism of $SU(1,1)$, but also by conjugating with a biholomorphism $\varphi$ of the unit disk which is compatible with the PSK structure in the sense that $\varphi(X)$ still gives a \emph{special} (i.e. preferred) coordinate system corresponding to a PSK structure on the disk. Later, we will make use of the example $\varphi(X)=iX$. The metric on the base remains invariant.
+
+\subsection{Homogeneity of the Metric (\texorpdfstring{$n=1$}{n=1})}
+
+Now, we want to show that $g_{FS}$ is invariant under the action of $G(1)$ which is the standard action on the base, but simultaneously acts in the above form (as a symplectic transformation) on the copy of $\R^4$ spanned by $(\tilde\zeta_0,\zeta^0,\tilde\zeta_1,\zeta^1)$ in the fiber. To do this, we first write the metric in terms of the $\zeta$'s, using $w_0=\frac{1}{2}(\tilde \zeta_0+i\zeta^0)$ and $w_\mu=\frac{1}{2}(\tilde\zeta_\mu-i\zeta^\mu)$.
+\begin{align*}
+	g_{FS}=&\frac{\d X \d \bar X}{(1-\abs{X}^2)^2} + \frac{1}{4\phi^2}\d \phi^2
+	+\frac{1}{4\phi^2}\bigg(\d \tilde{\phi}+\zeta^0 \d \tilde{\zeta}_0 -\tilde{\zeta}_0 \d \zeta^0
+	+\zeta^1 \d \tilde{\zeta}_1 -\tilde{\zeta}_1 \d \zeta^1\bigg)^2\\
+	&-\frac{1}{2\phi} \big(\d \tilde\zeta_0^2+ (\d \zeta^0)^2 - \d \tilde \zeta_1^2 - (\d \zeta^1)^2\big)\\
+	&+\frac{1}{\phi}\frac{1}{1-\abs{X}^2}\Big(\d \tilde\zeta_0^2+(\d \zeta^0)^2
+	+ \abs{X}^2\big(\d \tilde\zeta_1^2+(\d \zeta^1)^2\big)\\
+	&\hspace{2.4cm}+2\Re X \big(\d \tilde\zeta_0\d \tilde\zeta_1 - \d \zeta^0 \d \zeta^1 \big) 
+	+2\Im X \big(\d \tilde\zeta_0 \d \zeta^1 + \d \zeta^0\d \tilde\zeta_1 \big) \Big)
+\end{align*}
+We already checked invariance of the first term, and for the second term it is trivial since $\phi,\tilde\phi$ are invariant. Our method to check invariance for the remaining terms is to treat them one-by-one as follows: Write $g_{FS}=(\d \vec x)^T G(X,\vec x) \d \vec x$, where $\vec x=(\tilde\zeta_0,\zeta^0,\tilde\zeta_1,\zeta^1)$ and $G$ is the matrix of metric coefficients. Now, invariance of the metric means that
+\begin{equation*}
+	A^T G\bigg(\frac{a X+b}{b^* X+a}, A\vec x \bigg) A=G(X,\vec x)
+\end{equation*}
+We should check three terms: The last term on the first line, the second line, and the third plus fourth lines. Using \texttt{Mathematica}, it is not hard to check invariance of the first and second line terms. For the last part, we put the components of this piece of the metric in a matrix (with respect to the basis $(\tilde\zeta_0,\zeta^0,\tilde\zeta_1,\zeta^1)$):
+\begin{equation*}
+	B(X)=
+	\frac{1}{1-\abs{X}^2}
+	\begin{pmatrix}
+		1 & 0 & \Re X & \Im X \\ 
+		0 & 1 & \Im X & -\Re X\\
+		\Re X & \Im X & \abs{X}^2 & 0 \\
+		\Im X & -\Re X & 0 & \abs{X}^2
+	\end{pmatrix}
+\end{equation*}
+Invariance then translates to 
+\begin{equation*}
+	A^TB(X')A=B(X) \qquad \qquad 
+	X'=A\cdot X
+\end{equation*}
+where $A\cdot X$ denotes the action of $\Iwa(SU(1,1))$ on $X$. We first compute $A^TG(X)A$ and only then perform the transformation on $X$. 
+
+To do the matrix multiplication by hand, one needs the following facts:
+\begin{gather*}
+	\begin{pmatrix}
+		-\Im b & \Re b \\ \Re b & \Im b
+	\end{pmatrix}^2
+	=
+	\begin{pmatrix}
+		\abs{b}^2 & 0 \\ 0 & \abs{b}^2
+	\end{pmatrix} \qquad \qquad 
+	\begin{pmatrix}
+		\Re X & \Im X \\ \Im X & -\Re X
+	\end{pmatrix}^2
+	=
+	\begin{pmatrix}
+		\abs{X}^2 & 0 \\ 0 & \abs{X}^2
+	\end{pmatrix}\\
+	\begin{pmatrix}
+	-\Im b & \Re b \\ \Re b & \Im b
+	\end{pmatrix}
+	\begin{pmatrix}
+		\Re X & \Im X \\ \Im X & -\Re X
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		-\Im(\bar bX) & -\Re(\bar bX) \\ \Re(\bar bX) & \Im(\bar bX)
+	\end{pmatrix}\\
+	\begin{pmatrix}
+	\Re X & \Im X \\ \Im X & -\Re X
+	\end{pmatrix}
+	\begin{pmatrix}
+	-\Im b & \Re b \\ \Re b & \Im b
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+	\Im(\bar bX) & \Re(\bar bX) \\ -\Re(\bar bX) & \Im(\bar bX)
+	\end{pmatrix}\\
+	\begin{pmatrix}
+	-\Im b & \Re b \\ \Re b & \Im b
+	\end{pmatrix}
+	\begin{pmatrix}
+		\Im(\bar bX) & \Re(\bar bX) \\ -\Re(\bar bX) & \Im(\bar bX)
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		-\Re(\bar b^2X) & \Im(\bar b^2X) \\ \Im(\bar b^2X) & \Re(\bar b^2X)
+	\end{pmatrix}
+\end{gather*}
+This allows us to calculate $A^T(GA)$ with relative ease (note, by the way, that $A^T=A$). The result is
+\begin{equation*}
+	A^TB(X)A=\frac{1}{1-\abs{X}^2}
+	\begin{pmatrix}
+		\alpha & \beta \\ \beta & \gamma
+	\end{pmatrix}
+\end{equation*}
+where
+\begin{align*}
+	\alpha &=
+	\begin{pmatrix}
+		a^2+2a\Im (\bar bX) + \abs{bX}^2 & 0 \\
+		0 & a^2+2a\Im (\bar bX) + \abs{bX}^2
+	\end{pmatrix} \\
+	 &=
+	 \begin{pmatrix}
+	 	\abs{a-i\bar b X}^2 & 0 \\ 0 & \abs{a-i\bar b X}^2
+	 \end{pmatrix}\\
+	 \gamma &= 
+	\begin{pmatrix}
+		\abs{b^2}+2a\Im(\bar bX) + a^2\abs{X}^2 & 0 \\
+		0 & \abs{b}^2+ 2a\Im(\bar bX) + a^2\abs{X}^2
+	\end{pmatrix}\\
+	&= 
+	\begin{pmatrix}
+		\abs{b-ia X}^2 & 0 \\ 0 & \abs{b-ia X}^2
+	\end{pmatrix}\\
+	\beta &=
+	\begin{pmatrix}
+		 a(1+\abs{X}^2)\Im \bar b -\Re(\bar b^2X)+a^2 \Re X 
+		 & \beta_{12}=\beta_{21} \\
+		 a(1+\abs{X}^2)\Re \bar b +\Im(\bar b^2X)+a^2\Im X
+		 & \beta_{22}=-\beta_{11}
+	\end{pmatrix}
+\end{align*}
+This result is confirmed by a computation in \texttt{Mathematica}. Now, we have to carry out the $\Iwa(SU(1,1))$-transformation on the base manifold.
+
+\subsubsection{Choosing the Correct Base Transformation} 
+
+As discussed above, perhaps the most natural choice for the base action is the correspondence 
+$\begin{psmallmatrix}
+	a & b \\ b^* & a
+\end{psmallmatrix} \longleftrightarrow
+\Big(X\mapsto \frac{aX+b}{b^*X+a}\Big)$. It is easy to check that the prefactor transforms as
+\begin{equation*}
+	\frac{1}{1-\abs{X}^2}\longmapsto \frac{\abs{\bar b X+a}^2}{1-\abs{X}^2}
+\end{equation*}
+Hence, invariance is equivalent to the statement that the components of $\alpha,\beta,\gamma$ are transformed simply by a multiplicative factor $\abs{\bar b X+a}^{-2}$. However, this does not seem to be the case. The simplest way to see this is to consider the non-zero part of $\alpha$. It is sent to
+	\begin{equation*}
+		\frac{\abs{a(\bar b X+a)-i\bar b (a X+b)}^2}{\abs{\bar b X+a}^2}
+	\end{equation*}
+which gives us what we need if the factor $i$ is replaced by a $1$, as the $X$-dependent terms cancel. As is, however, this does not work. 
+
+The factor $i$ suggests that one should try to modify the action to get an extra factor $-i$ on the second term. Precomposing the action by an automorphism of $SU(1,1)$ does not seem like a real possibility, since it would mean that the transformation essentially gets multiplied by $i$, which can never be the result of an automorphism (since $i^2=-1$). 
+
+However, we \emph{can} conjugate our action by the biholomorphic map $\varphi(X)=iX$. This is allowed since if $(\C H^1,g,i,\nabla)$ is the standard PSK structure on $\C H^1$, for which $X$ is the special coordinate, then $iX$ is the special coordinate for $(\C H^1,g,i,\nabla')$, where $\nabla'=-i \circ\nabla \circ i$. In general, a PSK manifold can be equipped with such a \emph{conjugate} PSK structure, and the new special coordinates are obtained from the old ones by multiplication by $i$. The corresponding action is:
+\begin{equation*}
+	X\longmapsto -i\frac{a(iX)+b}{b^*(iX)+a}
+	=\frac{aX-ib}{ib^*X+a}
+\end{equation*}
+This action clearly leads to the correct results for $\alpha,\gamma$. The fact that it does for $\beta$ as well was done by computer, though it should be feasible by hand as well. This concludes the proof that $g_{FS}$ is a left-invariant metric on the Lie group $\Iwa(SU(1,1))\ltimes \Iwa(SU(3,1))$, with the semidirect product structure described above.
+
+\subsubsection{The Extension to All of \texorpdfstring{$SU(1,1)$}{SU(1,1)}}
+
+Since the metric $g_{FS}$ is in fact the symmetric metric on the non-compact symmetric space
+\begin{equation*}
+	N=\frac{SU(n+1,2)}{S(U(n+1)\times U(2))}
+\end{equation*}
+we know that it should even be $SU(n+1,2)$-invariant. In particular, the action of \emph{all} of $SU(n,1)$ should extend symplectically to an isometric action on the fibers. 
+
+We will now continue with the case $n=1$; we already checked the metric on the base, so we only need to check it on the fiber. This is done in \texttt{Mathematica}: Again, the last lines of the metric are the only ones that are difficult to check. \texttt{Mathematica} is able to sufficiently simplify the off-diagonal blocks to show that their entries do reduce to the correct expressions, but the diagonal blocks resist its attempts. However, starting from \texttt{Mathematica}'s result after applying the symplectic matrix, it is not hard to show by hand that they give the correct result. To demonstrate this, we explicitly carry out the computation for the $(4,4)$-entry, for which \texttt{Mathematica} gives:
+\begin{equation*}
+	(X\bar a-\Im b)(\bar X a -\Im b)+\Re b (\Re b-2 X\Im a +2 a \Im X)
+\end{equation*}
+We rewrite this as follows:
+\begin{align*}
+	&\abs{b}^2+\abs{aX}^2-\Im b(\bar a X+a \bar X)+2\Re b(a \Im X- X\Im a)\\
+	=&\abs{b}^2+\abs{aX}^2-2\Im b\Re(\bar a X)-i\Re b(\bar a X-a\bar X)\\
+	=&\abs{b}^2+\abs{aX}^2-2\Im b\Re(\bar a X)+2\Re b\Im(\bar a X)\\
+	=&\abs{b}^2+\abs{aX}^2+2\Im(\bar b \bar a X)\\
+	=&\abs{b-i\bar a X}^2
+\end{align*}
+As we transform $X$ in the same fashion as before, this turns into $\abs{X}^2$, which is what we wanted to show. Thus, the metric is invariant under all of $SU(1,1)$ (though this action is of course not free).

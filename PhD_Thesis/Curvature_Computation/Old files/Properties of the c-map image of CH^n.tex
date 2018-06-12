@@ -1,0 +1,1018 @@
+\documentclass[parskip=half]{scrartcl}
+\input{NotesPreamble}
+\title{The (One-Loop Deformed) Ferrara-Sabharwal Metric for the PSK manifolds \texorpdfstring{$\C H^n$}{CH^n}}
+\author{Danu Thung}
+\date{}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section{General Setup}
+
+If $(M,g_M)$ is a projective special K\"ahler (PSK) manifold of complex dimension $n$, the supergravity $c$-map associates a quaternionic K\"ahler (QK) manifold $(N,g_N)$ of dimension $4n+4$ to it. $N$ is diffeomorphic to $M\times \R^{2n+3}\times \R_+\cong M\times \R^{2n+4}$ and its metric is given by the following expression:
+\begin{align*}
+	g_N&=g_M+g_G\\
+	g_G&=\frac{1}{4\phi^2}\Bigg[\d \phi^2
+	+\bigg(\d \tilde{\phi}+\sum_I \zeta^I \d \tilde{\zeta}_I-\tilde{\zeta}_I \d \zeta^I\bigg)^2\Bigg]\\
+	+&\frac{1}{2\phi}\bigg[\sum_{IJ} \mc J_{IJ}(p)\d \zeta^I\d\zeta^I+
+	\sum_{IJ}\mc J^{IJ}\bigg(\d \tilde \zeta_I+\sum_K \mc R_{IK}(p)\d \zeta^K\bigg)
+	\bigg(\d\tilde \zeta_J + \sum_L \mc R_{JL}(p)\d \zeta^L\bigg)\bigg]
+\end{align*}
+where $(\phi,\tilde\phi,\zeta^I,\tilde\zeta_I)$, $I=0,\dots, n$ are coordinates on $\R_+\times \R^{1+(n+1)+(n+1)}$ and $\phi>0$. The matrix $\mc J_{IJ}$ is symmetric and positive-definite, with inverse $\mc J^{IJ}$. 
+
+\subsection{Basic Expressions for the Fiber \texorpdfstring{$G$}{G}}
+
+A more compact notation can be adopted. Define the column vector $p_a=(\tilde \zeta_I,\zeta^I)$, where $a=1,\dots,2n+2$. Furthermore consider the positive-definite matrix
+\begin{equation*}
+	\tilde H^{ab}\coloneqq 
+	\begin{pmatrix}
+		\mc J^{-1} & \mc J^{-1}\mc R\\
+		\mc R\mc J^{-1} & \mc J+\mc R\mc J^{-1}\mc R
+	\end{pmatrix}
+\end{equation*}
+with inverse matrix
+\begin{equation*}
+	(\tilde H^{-1})_{ab}\coloneqq 
+	\begin{pmatrix}
+		\mc J+\mc R\mc J^{-1}\mc R & -\mc R\mc J^{-1}\\
+		-\mc J^{-1}\mc R & \mc J^{-1}
+	\end{pmatrix}
+\end{equation*}
+Then we have 
+\begin{equation*}
+	g_G=\frac{1}{4\phi^2}\Bigg[\d \phi^2
+	+\bigg(\d \tilde{\phi}+\sum_I \zeta^I \d \tilde{\zeta}_I-\tilde{\zeta}_I \d \zeta^I\bigg)^2\Bigg]
+	+\sum_{a,b}\frac{1}{2\phi}\d p_a \tilde H^{ab} \d p_b
+\end{equation*}
+
+\begin{rem}
+	The matrix $\tilde H^{ab}$ corresponds to $H^{ab}$ in the paper \emph{Completeness in Supergravity Constructions} by Cort\'es, Han and Mohaupt. They think of $H^{ab}$ as the inverse of $H_{ab}$, but we will think of $\tilde H^{ab}$ as the ``original'' one, so translating to their notation comes with an inversion of $H$ (though the position of the indices does match). 
+\end{rem}
+
+This can be further simplified by noting that
+\begin{equation*}
+	\sum_I \zeta^I\d\tilde\zeta_I-\tilde\zeta_I \d \zeta^I=
+	\begin{pmatrix}
+		\tilde\zeta_I,\zeta^I
+	\end{pmatrix}
+	\begin{pmatrix}
+		0_{n+1} & -\Unit_{n+1}\\ \Unit_{n+1} & 0_{n+1}
+	\end{pmatrix}
+	\begin{pmatrix}
+		\d \tilde \zeta_I \\ \d \zeta^I
+	\end{pmatrix}
+	\eqqcolon p_a K^{ab} \d p_b
+\end{equation*}
+Thus, the metric takes the form
+\begin{equation*}
+	g_G\!\!=\!\frac{1}{4\phi^2}\bigg[\d \phi^2+\d \tilde\phi^2
+	+\sum_{a,b}p_a K^{ab} (\d p_b \d \tilde\phi +\d \tilde \phi\d p_b)\bigg]
+	+\sum_{a,b}\bigg[\bigg(\frac{1}{2\phi}p_a K^{ab}\d p_b\bigg)^2+ \frac{1}{2\phi}\d p_a \tilde H^{ab} \d p_b\bigg]
+\end{equation*}
+Alternatively, we may take $P_a=(-\tilde \zeta_I,\zeta^I)$ and find 
+\begin{equation*}
+	g_G=\frac{1}{4\phi^2}\bigg[\d \phi^2+\d \tilde\phi^2
+	+\sum_{a,b}P_a K^{ab}(\d P_b \d \tilde\phi +\d \tilde \phi\d P_b)\bigg]
+	+\sum_{a,b}\bigg[\frac{1}{4\phi^2}\d P_a\d P_b+ \frac{1}{2\phi}\d P_a \bar H^{ab} \d P_b\bigg]
+\end{equation*}
+Note that some entries of $\bar H$ have different sign. 
+
+We can write the metric in matrix form as follows:
+\begin{equation*}
+	g_G=
+	\begin{pmatrix}
+		\frac{1}{4\phi^2} & 0 & 0 \\
+		0 & \frac{1}{4\phi^2} & \frac{1}{4\phi^2}\sum_a p_a K^{ab}\\
+		0 & \frac{1}{4\phi^2}\sum_a p_a K^{ab} & \frac{1}{4\phi^2} p_a K^{ab} p_c K^{cf}+\frac{1}{2\phi}\tilde H^{bf}
+	\end{pmatrix}
+\end{equation*}
+
+The inverse is given by the formula
+\begin{equation*}
+	\begin{pmatrix}
+		A & B\\
+		C & D
+	\end{pmatrix}^{-1}
+	=
+	\begin{pmatrix}
+		A^{-1}+A^{-1}B(D-CA^{-1}B)^{-1}CA^{-1} & -A^{-1}B (D-CA^{-1}B)^{-1}\\
+		-(D-CA^{-1}B)^{-1}CA^{-1} & (D-CA^{-1}B)^{-1}
+	\end{pmatrix}
+\end{equation*}
+which is valid for any block-matrix. The inverse metric is easy to determine:
+\begin{align*}
+	g^{-1}_G&=
+	\begin{pmatrix}
+		4\phi^2 & 0 & 0 \\
+		0& 4\phi^2+2\phi p_a K^{ab}(\tilde H^{-1})_{bc}p_f K^{fc} & -2\phi p_c K^{cb}(\tilde H^{-1})_{ba} \\
+		0& -2\phi (\tilde H^{-1})_{ab}p_f K^{fb} & 2\phi (\tilde H^{-1})_{ab}
+	\end{pmatrix}\\
+	&=
+	\begin{pmatrix}
+		4\phi^2 & 0 & 0\\
+		0 & 4\phi^2+2\phi p_a \tilde H^{ab} p_b & -2\phi p_c K^{cb}(\tilde H^{-1})_{ba} \\
+		0 & -2\phi (\tilde H^{-1})_{ab}p_f K^{fb} & 2\phi (\tilde H^{-1})_{ab}
+	\end{pmatrix}\\
+\end{align*}
+where we used the fact that $K^{ab}(\tilde H^{-1})_{bc}K^{fc}=\tilde H^{af}$.
+%
+%Now, we will use some results from CHM, namely that $g_G$ is a left-invariant metric on a Lie group, with a left-invariant coframe given by the following expressions:
+%\begin{align*}
+%	\xi_{n+1}&\coloneqq \frac{\d\phi}{\phi}\qquad \qquad 
+%	&\eta^{n+1}\coloneqq \frac{1}{\phi}
+%	\bigg(\d\tilde\phi+\sum(\zeta^I\d \tilde \zeta_I - \tilde \zeta_I \d \zeta^I)\bigg)
+%	=\frac{1}{\phi}\big(\d\tilde\phi+p_aK^{ab}\d p_b\big)\\
+%	\eta^I&\coloneqq \sqrt{\frac{2}{\phi}}\d \zeta^I \qquad \qquad 
+%	&\xi_I\coloneqq \sqrt{\frac{2}{\phi}}
+%	\bigg( \d \tilde \zeta_I+\sum_K \mc R_{IK}(p) \d \zeta^K\bigg)
+%\end{align*}
+%Using our expression for the inverse metric, we can find the dual frame of tangent vectors. This is a tedious computation, but simple in principle:
+%\begin{align*}
+%	X_{n+1}&\coloneqq \xi_{n+1}^*=4\phi \p_\phi \\
+%	Y^{n+1}&\coloneqq (\eta^{n+1})^*\\
+%	&=\big(4\phi+2p_a \tilde H^{ab}p_b\big) \p_{\tilde \phi} - 2(\tilde H^{-1})_{ab}p_f K^{fb}\p_{p_a} \\
+%	&\quad\ -2p_a\tilde H^{ab}p_b\p_{\tilde \phi} + 2(\tilde H^{-1})_{ab}p_c K^{cb}\p_{p_a}\\
+%	&=4\phi \p_{\tilde \phi}\\
+%	Y^I&\coloneqq (\eta^I)^*\\
+%	&=\sqrt{8\phi}\Bigg(\bigg[\sum_{I,J,K}\mc J^{IJ}\mc R_{JK} \zeta^I +\sum_{I,J}\mc J^{IJ}\tilde\zeta_I\bigg]\p_{\tilde\phi}
+%	-\sum_{I,J,K} \mc J^{IJ}\mc R_{JK}\p_{\tilde\zeta_I} + \sum_{I,J} \mc J^{IJ}\p_{\zeta_I}\Bigg)\\
+%	X_I&\coloneqq (\xi_I)^*=-\sqrt{8\phi}\bigg[\sum_{I,J} \mc J^{IJ}\zeta^I+\sum_{\substack{I,J,\\K,L}}\mc R_{IJ}\mc J^{JK} \mc R_{KL} \zeta^I+\sum_{I,J,K}\mc R_{IJ}\mc J^{JK}\tilde\zeta_I\bigg]\p_{\tilde\phi}\\
+%	&\qquad\qquad \ \ +\sqrt{8\phi}
+%	\Bigg(\sum_{I,J} \bigg[\mc J_{IJ} +\sum_{K,L} \mc R_{IK} \mc J^{KL} \mc R_{LJ}\bigg]\p_{\tilde\zeta_I}
+%	-\sum_{I,J,K}\mc J^{IK}\mc R_{KJ}\p_{\zeta^I}\Bigg)\\
+%	&\qquad\qquad \ \ +\sqrt{8\phi}	\bigg[\sum_{\substack{I,J,\\K,L}}\mc J^{IJ}\mc R_{JK}\mc R_{KL} \zeta^I +\sum_{I,J,K}\mc J^{IJ}\mc R_{JK}\tilde\zeta_I\bigg]\p_{\tilde\phi}\\
+%	&\qquad \qquad \ \ -\sqrt{8\phi}\sum_{\substack{I,J,\\K,L}} \mc J^{IJ}\mc R_{JK}\mc R_{KL}\p_{\tilde\zeta_I} 
+%	+ \sqrt{8\phi}\sum_{I,J,K} \mc J^{IJ}\mc R_{JK}\p_{\zeta_I}\\
+%	&=\sqrt{8\phi}\Bigg(
+%	\bigg[\sum_{\substack{I,J,K}}[\mc J^{-1},\mc R]_{IJ}\mc R_{JK} \zeta^I
+%	+\sum_{I,K}[\mc J^{-1},\mc R]_{IK}\tilde\zeta_I - \sum_{I,J} \mc J^{IJ}\zeta^I\bigg]\p_{\tilde\phi}\\
+%	&\qquad\qquad +\sum_I \Big[\Big(\sum_J\mc J_{IJ} 
+%	-\sum_{J,K} [\mc J^{-1},\mc R]_{IJ} \mc R_{JK}\Big)\p_{\tilde\zeta_I}\Big]
+%	+\sum_{I,J}[\mc J^{-1},\mc R]_{IJ}\p_{\zeta^I}
+%	\Bigg)
+%\end{align*}
+%
+%
+%\subsubsection{The Case \texorpdfstring{$\mc J=\Unit$}{J=1}}
+%
+%Obviously, the final expression greatly simplifies if we may assume that $\mc R$ and $\mc J^{-1}$ commute. On page 200 of CHM, it is assumed that $J_{IJ}=\delta_{IJ}$, which would make things even easier. In that case, we have:
+%\begin{align*}
+%	X_{n+1}&=4\phi\p_\phi \qquad \qquad \qquad \qquad Y^{n+1}=4\phi\p_{\tilde\phi}\\
+%	Y^I&=\sqrt{8\phi}\bigg(\Big[\sum_{I,J} \mc R_{IJ} \zeta^I +\sum_J \tilde\zeta_J\Big]\p_{\tilde\phi}
+%	-\sum_{I,J}\mc R_{IJ} \p_{\tilde\zeta_I}+\sum_I \p_{\zeta_I} \bigg)\\
+%	X_I&=\sqrt{8\phi}\sum_I \zeta^I \p_{\tilde\phi}
+%	+\sum_I \p_{\tilde\zeta_I}
+%\end{align*}
+%
+%\begin{rem}
+%	The combination $A_J(\tilde\zeta_I,\zeta^I,p)\coloneqq \sum_I\mc R_{IJ}(p) \zeta^I+\tilde\zeta^I$ occurs in the metric, in $\xi_I$, and also in our expression for $Y^I$. For instance, if we set $A=\sum_J A_J$, we have
+%	\begin{equation*}
+%		Y^I=\sqrt{8\phi} A\p_{\tilde\phi}+(\p_{\zeta^I}A)\p_{\tilde\zeta_I}+(\p_{\tilde\zeta_I}A)\p_{\zeta^I}
+%	\end{equation*}
+%\end{rem}
+%
+%Now that we have a basis for the Lie algebra $\mf g$ of left-invariant vector fields, we want to make it orthonormal with respect to the metric. In fact, in CHM, it is already said that this basis is orthogonal, and that all the vectors have norm 2, hence our basis is orthonormal after scaling by $1/2$. This is done by observing that (under the assumption $\mc J=\Unit$) $g_G(p)=\frac{1}{4}\sum_{i=0}^{n+1} \xi_i^2+(\eta^i)^2$. Thus, an orthonormal basis for $\mf g$ is given by 
+%\begin{align*}
+%	X_{n+1}&=2\phi\p_\phi \qquad \qquad \qquad \qquad Y^{n+1}=2\phi\p_{\tilde\phi}\\
+%	Y^I&=\sqrt{2\phi}\bigg(\Big[\sum_{I,J} \mc R_{IJ} \zeta^I +\sum_J \tilde\zeta_J\Big]\p_{\tilde\phi}
+%	-\sum_{I,J}\mc R_{IJ} \p_{\tilde\zeta_I}+\sum_I \p_{\zeta_I} \bigg)\\
+%	X_I&=\sqrt{2\phi}\sum_I \zeta^I \p_{\tilde\phi}
+%	+\sum_I \p_{\tilde\zeta_I}
+%\end{align*}
+%
+%\subsection{The Curvature of \texorpdfstring{$G$}{G}}
+%
+%Setting $X_{n+1}=e_1$, $Y^{n+1}=e_2$, $X_I=e_{I+3}$ and $Y^I=e_{I+n+4}$, we have the structure constants
+%\begin{equation*}
+%	f_{ijk}=g_G([e_i,e_j],e_k) 
+%\end{equation*}
+%We will now show how to express the sectional curvature of $(G,g_G)$ in terms of the structure constants. Let $\nabla$ be the Levi-Civit\`a connection of $g_G$. Since $g_G(X,Y)$ is constant for left-invariant vector fields $X,Y$, we have
+%\begin{equation*}
+%	g_G(\nabla_V X,Y)+g_G(X,\nabla_V Y)=0
+%\end{equation*}
+%Using the absence of torsion, it is now easy to derive that
+%\begin{align*}
+%	g_G(\nabla_{e_i}e_j,e_k)
+%	&=\frac{1}{2}\big(g_G([e_i,e_j],e_k) - g_G([e_j,e_k],e_i) + g_G([e_k,e_i],e_j)\big)\\\numberthis\label{eq:strcomm}
+%	&=\frac{1}{2}(f_{ijk}-f_{jki}-f_{kij})
+%\end{align*}
+%The curvature tensor 
+%\begin{equation*}
+%	R(X,Y)Z=[\nabla_X,\nabla_Y]Z-\nabla_{[X,Y]}Z
+%\end{equation*}
+%can therefore clearly be computed in terms of commutators alone. The most convenient way to do so is in terms of the sectional curvature. Since $\{e_j\}$ is an orthonormal basis of the tangent spaces at every point, the sectional curvature $\kappa$ is given by
+%\begin{equation*}
+%	\kappa(e_i,e_j)=g_G(R(e_i,e_j)e_j,e_i)
+%\end{equation*}
+%Plugging \cref{eq:strcomm} into the expression for the Riemann tensor, a computation shows
+%\begin{equation*}
+%	\kappa(e_i,e_j)=\sum_k \bigg[\frac{1}{2}f_{ijk}(-f_{ijk}+f_{jki}+f_{kij})-f_{kii}f_{kjj}
+%	-\frac{1}{4}(f_{ijk}-f_{jki}+f_{kij})(f_{ijk}+f_{jki}-f_{kij})\bigg]
+%\end{equation*}
+%This can also be found as the first lemma in Milnor's paper ``\emph{Curvature of Left Invariant Metrics on Lie Groups}''.
+%
+%Now, all that we have to do is to apply this formalism to our case to find the curvature. We start by computing commutators:
+%\begin{align*}
+%	[e_1,e_2]&=2\phi(\p_\phi (2\phi)\p_{\tilde \phi}=4\phi \p_{\tilde\phi}=2e_2\\
+%	[e_1,e_{k+3}]&=2\phi\p_{\phi}(\sqrt{2\phi}\cdot (\phi-\text{independent}))=e_{k+3} & k=0,\dots,n\\
+%	[e_1,e_{k+n+4}]&=e_{k+n+4} & k=0,\dots,n
+%\end{align*}
+%Hence 
+%\begin{equation*}
+%	f_{1jk}=
+%	\begin{cases}
+%		2 \qquad \qquad & j=k=2\\
+%		1 & j=k>2\\
+%		0 & \text{otherwise}
+%	\end{cases}
+%\end{equation*}
+%Since all components of all vectors are $\tilde\phi$-independent (and none except $e_1$ contain $\p_\phi$), we immediately have:
+%\begin{equation*}
+%	f_{2jk}=
+%	\begin{cases}
+%		-2 \qquad \qquad & j=1,k=2\\
+%		0 &\text{otherwise}
+%	\end{cases}
+%\end{equation*}
+%We continue:
+%\begin{align*}
+%	[e_{k+3},e_{\ell+3}]&=4\phi\sum_J \big(\mc R_{kJ}-\mc R_{\ell J}\big)\p_{\tilde \phi}
+%	=2 \sum_J \big(\mc R_{kJ}-\mc R_{\ell J}\big)e_2; \ \ k,\ell=0,\dots,n,\ \ k\neq \ell\\
+%	[e_{k+3},e_{\ell+n+4}]&=(\p_{\tilde\phi}-\p_{\tilde\phi})=0 \qquad \qquad k,\ell=0,\dots,n,
+%\end{align*}
+%and therefore we find (for $i=0,\dots,n$):
+%\begin{equation*}
+%	f_{(i+3)jk}=
+%	\begin{cases}
+%		-1 \qquad \qquad & j=1,k=i+3\\
+%		2\sum_J \big(\mc R_{kJ}-\mc R_{\ell J}\big) & j=\ell+3, k=2\ \ (\ell=0,\dots,n)\\
+%		0 &\text{otherwise}
+%	\end{cases}
+%\end{equation*}
+%Finally, we have
+%\begin{equation*}
+%	[e_{k+n+4},e_{\ell+n+4}]=0 \qquad \qquad k,\ell=0,\dots,n
+%\end{equation*}
+%and therefore
+%\begin{equation*}
+%	f_{(i+n+4)jk}\equiv 0
+%\end{equation*}
+%Now we have computed all the structure constants, we are in principle finished: The curvature tensor is now easy to compute.
+
+\section{The Undeformed FS Metric for \texorpdfstring{$M=\C H^n$}{Complex Hyperbolic Space}}
+
+\subsection{The Unit Ball as a Homogeneous Space and as a Lie Group}
+
+\subsubsection{The Unit Ball as a Homogeneous Space}
+
+One particularly important case is when the base PSK manifold is the complex hyperbolic space $\C H^n$. This is the unit ball in $\C^n$, equipped with its standard metric (of constant negative curvature). Its standard realization is as a homogeneous space under $SU(n,1)$, which is most easily understood by viewing the unit ball as a subset of $\CP^n$. Let $[z_0:\dots : z_n]$ be homogeneous coordinates on $\CP^n$, and consider the open set $U=\{z_n\neq 0\}\subset \CP^n$. Then the standard affine chart
+\begin{equation*}
+	\begin{tikzcd}[row sep=0cm]
+		U \arrow{r} & (\C^n,1) \\
+		{[z_1:\dots : z_n]} \arrow[mapsto]{r} & \Big(\frac{z_1}{z_{n+1}},\dots, \frac{z_n}{z_{n+1}},1\Big)
+	\end{tikzcd}
+\end{equation*}
+shows us that we can realize the unit ball in $\C^n$ as
+\begin{equation*}
+	B= \bigg\{[z_1:\dots: z_{n+1}]\in \CP^n\ \bigg|\ \sum_{j=1}^n\abs{z_j}^2-\abs{z_{n+1}}^2=\langle z,z\rangle<0\bigg\}
+\end{equation*}
+
+Consider $\C^{n+1}$, equipped with the indefinite Hermitian form 
+\begin{equation*}
+	\langle z, w \rangle = \sum_{j=1}^n z_j \bar w_j - z_{n+1}\bar w_{n+1}
+\end{equation*}
+Now $SU(n,1)$ is defined as the set of special linear transformations which preserve this form. Its action on $\C^{n+1}$ descends to $\CP^n$, and preserves the unit ball $B$ since $B$ is defined by the sign of $\langle z,z\rangle$. 
+
+To prove transitivity of this action, we will show that any point can be mapped to the origin. Recall that $U(n)$, essentially by definition, acts simply transitively on the space of orthonormal bases of $\C^n$. This shows that $SU(n)$ acts transitively on the sphere of radius $r$, so we have reduced the claim to showing that we can map $(r,0,\dots,0)$ to the origin, where $r\in \R$. There is a copy of $SU(1,1)$ sitting inside $SU(n,1)$, given by matrices of the following form:
+\begin{equation*}
+	\begin{pmatrix}
+		a 	& 0				& b \\ 
+		0 	&\Unit_{n-1} 	& 0 \\
+		c 	& 0				& d
+	\end{pmatrix}
+\end{equation*}
+Acting on projective space, it sends
+\begin{equation*}
+	[r:0:\dots:0:1]\mapsto [ar+b:0:\dots:0:cr+d]=\bigg[\frac{ar+b}{cr+d}:0:\dots: 0 : 1\bigg]
+\end{equation*}
+and correspondingly it sends
+\begin{equation*}
+	\begin{tikzcd}
+		(r,0,\dots, 0) \ar[r,mapsto] & \Big(\frac{ar+b}{cr+d},0\dots,0\Big)
+	\end{tikzcd}
+\end{equation*}
+The condition that 
+$\begin{psmallmatrix}
+	a & b \\ c & d
+\end{psmallmatrix}$ lies inside $SU(1,1)$ means that $ad-bc=1$ while also $\abs{a}^2-\abs{c}^2=1=\abs{b}^2-\abs{d}^2$ and $a\bar b-c \bar d=0$. If $b=0$, we easily get that $c=0$ and $d=a^*$, while if $b\neq 0$ we find
+\begin{equation*}
+	a=\frac{c\bar d }{\bar b}\implies \frac{c\bar d}{\bar b}-bc=1
+	\implies \frac{c}{\bar b}(\abs{d}^2-\abs{b}^2)=1\implies c=\bar b\implies a=\bar d
+\end{equation*}
+and we see that the matrix takes the form
+$\begin{psmallmatrix}
+a & b \\ b^* & a^*
+\end{psmallmatrix}$. Now, we want to satisfy $\frac{ar+b}{b^*r+a^*}=0$ as well as $\abs{a}^2-\abs{b}^2=1$. If we force $ar+b=0$, we only have the condition $\abs{b}^2=(r^{-2}-1)^{-1}$, which obviously admits a solution.
+
+Now, we determine the isotropy subgroup. Let 
+$\begin{psmallmatrix}
+	A & \vec b \\
+	\vec c^T & d
+\end{psmallmatrix}$ be an $(n+1)\times (n+1)$ complex matrix. It fixes $[0:\dots:0:1]\in \CP^n$, or correspondingly $0\in\C^n$, if and only if $\vec b=0$. It then lies in $U(n,1)$ precisely if 
+\begin{equation*}
+	\begin{pmatrix}
+		\Unit & 0 \\ 0 & -1
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		A & 0 \\ \vec c^T & d
+	\end{pmatrix}^\dagger 
+	\begin{pmatrix}
+		\Unit & 0 \\ 0 & -1 
+	\end{pmatrix}
+	\begin{pmatrix}
+		A & 0 \\ \vec c^T & d
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		A^\dagger A-\vec{\bar c}\vec c^T & -d \vec{\bar c}\\
+		-\bar d \vec c^T & -\abs{d}^2
+	\end{pmatrix}
+\end{equation*}
+For it to lie in $SU(n,1)$, we must have $d\neq 0$ and it follows that $\vec c=0$ as well as $A\in U(n)$ and finally $d\in U(1)$ such that $d \det A=1$. This means that the stabilizer is $S(U(n)\times U(1))\cong U(n)$ and we conclude
+\begin{equation*}
+	\C H^n\cong \frac{SU(n,1)}{U(n)}
+\end{equation*}
+
+\subsubsection{The Unit Ball as a Lie Group}
+
+There is a general decomposition, called the Iwasawa decomposition, which casts a non-compact semisimple Lie group $G$ uniquely (up to conjugation) as a product (as a manifold, but not a direct product of Lie groups!) $G=KAN$, where $K$ is the maximal compact subgroup (unique up to conjugation), $A$ is maximal Abelian (its dimension gives the rank) and $N$ is nilpotent. The subgroup $AN\subset G$ is called the \emph{Iwasawa subgroup} of $G$; it is always simply connected. 
+
+It is a fact, which we assume known, that $U(n)$ is the maximal compact subgroup of $SU(n,1)$, hence we can identify $\C H^n$ with the Iwasawa subgroup $\Iwa(SU(n,1))$, which therefore acts simply transitively on the unit ball. As such, $\C H^n$ admits a group structure. We will denote this group by $G(n)$ This group is of course diffeomorphic to $\R^{2n}$, and its group structure not very hard to describe explicitly, at least on the level of Lie algebras.
+
+As described in CHM (page 199), $G(n)=\Iwa(SU(n,1))$ is a rank one extension of the Heisenberg group of dimension $2n-1$. On the level of Lie algebras, we therefore have
+\begin{equation*}
+	\mf g=\mf{D}+\mf{heis}
+\end{equation*}
+where $+$ denotes a direct sum of vector spaces, but not as Lie algebras. $\mf D$ is one-dimensional, spanned by $D$. The Lie algebra of the Heisenberg group is constructed as follows: Consider the standard symplectic vector space $(\R^{2n-2},\omega_\text{std})$. Then $\mf{heis}$ is defined as follows: $\mf{heis}=\mf Z+\R^{2n-2}$, where $\mf Z$ is one-dimensional and spanned by $Z$, and the Lie bracket is defined as follows: For $X,Y\in \R^{2n-2}$, $[X,Y]=\omega(X,Y)Z$, while $[Z,X]=0$. Clearly, $Z$ spans the (one-dimensional) center, and the Lie algebra structure only depends on the symplectic structure on $\R^{2n-2}$. Now that we have the Lie algebra structure of $\mf{heis}$, we only need to know the action of $\ad_D$. It is given by $[D,Z]=Z$ and $[D,X]=\frac{1}{2}X$ for $X\in \R^{2n-2}\subset \mf{heis}$: The factor $\frac{1}{2}$ is what makes the Jacobi identity work out. 
+
+The group multiplication can be explicitly written out: Let $(\tilde\zeta,\zeta,\tilde\phi,\phi),(\tilde\zeta',\zeta',\tilde\phi',\phi')\in \R^{n-1}\times \R^{n-1}\times\R\times \R=\R^{2n}$; then their product is
+\begin{equation*}
+	(\tilde\zeta+e^{\phi/2}\tilde\zeta',\zeta+e^{\phi/2}\zeta',\tilde\phi+e^{\phi}\tilde\phi'+e^{\phi/2}(\zeta^T\tilde\zeta'-\zeta'^T\tilde\zeta),\phi+\phi')
+\end{equation*}
+In CHM, $G(n)$ is described as $\R^{2n-1}\times \R_+$, an identification achieved by the diffeomorphism $(\tilde\zeta,\zeta,\tilde\phi,\phi)\mapsto (\tilde\zeta,\zeta,\tilde\phi,e^\phi)$.
+
+\subsection{The Riemannian Structure of the \texorpdfstring{$c$}{c}-map Image of \texorpdfstring{$\C H^n$}{Complex Hyperbolic Space}}
+
+Recall from the first section that the $c$-map sends a projective special K\"ahler (PSK) manifold $M$ of (real) dimension $2n$ to a quaternionic K\"ahler (QK) manifold $N$ of dimension $4n+4$, diffeomorphic to the direct product $M\times G(n+2)$. The Riemannian structure, however, is not simply that of a product metric. However, the metric on $\{p\}\times G\cong G$ is left-invariant. In our special case, $M=G(n)$, so smoothly we have $N=G(n)\times G(n+2)=\Iwa(SU(n,1))\times \Iwa(SU(n+2,1))$. In fact, it is known (see CDS, example 14) that this manifold is the symmetric space $N=SU(n+1,2)/S(U(n+1)\times U(2))\cong\Iwa(SU(n+1,2))$. 
+
+The metric that the $c$-map assigns to this space is the following:
+\begin{align*}
+	g_{FS}=&\frac{1}{1-\abs{X}^2}\Bigg(\sum \d X^\mu \d \bar X^\mu 
+	+ \frac{1}{1-\abs{X}^2}\bigg|\sum \bar X^\mu \d X^\mu \bigg|^2\Bigg)\\
+	&+\frac{1}{4\phi^2}\d \phi^2 
+	+\frac{1}{4\phi^2}\bigg(\d\tilde\phi-4\Im\bigg[\bar w_0\d w_0 - \sum \bar w_\mu \d w_\mu\bigg]\bigg)^2\\
+	&-\frac{2}{\phi} \bigg( \d w_0 \d \bar w_0 - \sum \d w_\mu \d \bar w_\mu \bigg)
+	+\frac{1}{\phi}\frac{4}{1-\abs{X}^2}\bigg|\d w_0 + \sum X^\mu \d w_\mu \bigg|^2
+\end{align*}
+Here, the coordinates $(X,\phi,\tilde\phi,w)$ take values in $\C^n\times \R_+\times \R\times \C^{n+1}$ and $\abs{X}<1$.
+
+\subsection{The Group Structure of the \texorpdfstring{$c$}{c}-map Image}
+
+This metric should be the metric that realizes this space as a symmetric space. In particular, it should be left-invariant with respect to a group structure on $N$. The base PSK manifold and the fiber each have a group structure or equivalently admit a simply transitive group action, but the group structure on $N$ cannot be simply a direct product structure, since the metric on the fibers depends on the point in the base. Thus, we have to try to understand the group structure on $N$, which is amounts to finding a simply transitive group action, which furthermore is isometric. 
+
+The action of $G(n+2)$ on the fiber is of course simply transitive, and since the metric on the base does not depend on the fiber this group, one may expect that $G(n+2)$ is a normal subgroup of the group we are looking for: Indeed, if we can extend the action of $G(n)$ on the base to an isometric action on all of $N$, then we will have realized $N$ as a semidirect product of $G(n)$ with $G(n+2)$, where the latter is the normal subgroup since the base metric does not depend on the fiber. This also amounts to presenting $\Iwa(SU(n+1,2))$ as $G(n)\ltimes G(n+2)$.
+
+Thus, we are looking to define an action $G(n)\action G(n+2)$ with respect to which the $c$-map metric (Ferrara-Sabharwal metric) is left-invariant. Since $G(n)=\Iwa(SU(n,1))$, we have a natural inclusion $G(n)\subset SU(n,1)\subset Sp(2n+2)$. This allows us to act on the $w$-coordinates by symplectic transformations, which is natural from a physical perspective because string-theoretic arguments dictate that there should be some kind of $Sp(2n+2)$-duality symmetry---we will check whether/that these transformations are isometries of the $c$-map metric.
+%WORK NEEDED: Yes? Idk!
+
+To do this, we need two ingredients: 
+\begin{numberedlist}
+	\item Explicit expressions for the isometric action $G(n)\action \C H^n$.
+	\item An explicit embedding $G(n)=\Iwa(SU(n,1))\subset Sp(2n+2)$.
+\end{numberedlist}
+
+For simplicity, we will start by considering the case $n=1$. In this case, we know that 
+\begin{equation*}
+	SU(1,1)=\bigg\{
+	\begin{pmatrix}
+		a & b \\ b^* & a^*
+	\end{pmatrix}
+	\bigg|
+	\abs{a}^2-\abs{b}^2=1\bigg\}
+\end{equation*}
+Our discussion of the Lie group model of $\C H^n$ shows that, in the case $n=1$, the quotient $SU(1,1)/U(1)$ is given by considering $a$ modulo $U(1)$, which means simply that we may realize the Iwasawa subgroup as the subgroup for which $a$ is positive and real---in fact $a>1$ because $\abs{b}^2=a^2-1$.
+
+We start with the second step. The embedding $SU(1,1)\subset Sp(4)$ is given by first embedding it into $Sp(2,2)$: This map is induced by the identification $\C^2=\R^4$. Composing this with the isomorphism $Sp(2,2)\cong Sp(4)$ induced by the permutation $(x_1,y_1,x_2,y_2)\mapsto (x_1,y_1,y_2,x_2)$, we find that the image of $G(1)=\Iwa(SU(1,1))$ is:
+\begin{equation*}
+	A=
+	\begin{pmatrix}
+		a & 0 & -\Im b & \Re b\\
+		0 & a & \Re b & \Im b \\
+		-\Im b & \Re b & a & 0 \\
+		\Re b & \Im b & 0 & a
+	\end{pmatrix}
+	\qquad \qquad 
+	\R\ni a\geq 1 \qquad \abs{b}^2=a^2-1
+\end{equation*} 
+
+For the first step, we have the unit disk in $\C$, acted upon by $SU(1,1)$. The most obvious action is by fractional linear transformations: $X\mapsto \frac{aX+b}{b^*X+a^*}$. It is not hard to check that the PSK metric (which is also induced by $g_{FS}$) on the disk is left-invariant with respect to this action of $SU(1,1)$. In the $n=1$ case, the metric on the base simplifies to
+\begin{equation*}
+	\frac{\d X \d \bar X}{(1-\abs{X}^2)^2}
+\end{equation*} 
+As $X\mapsto \frac{aX+b}{b^*X+a^*}$, we have
+\begin{equation*}
+	\d X \longmapsto \frac{1}{(b^*X+a^*)^2}\big(a(b^*X+a^*) - b^*(aX+b)\big)\d X
+	=\frac{\d X}{(b^*X+a^*)^2}
+\end{equation*}
+and so we obtain
+\begin{equation*}
+	\frac{\d X \d \bar X}{\big[\abs{b^*X+a^*}^2\big(1-\abs{\frac{aX+b}{b^*X+a^*}}^2\big)\big]^2}
+	=\frac{\d X \d \bar X}{(\abs{b^*X+a^*}^2-\abs{aX+b}^2)^2}
+	=\frac{\d X \d \bar X}{(1-\abs{X}^2)^2}
+\end{equation*}
+where the final step uses $\abs{a}^2-\abs{b}^2=1$.
+
+This choice of action, however, is not at all unique. Other actions can be obtained by precomposing the standard action by an automorphism of $SU(1,1)$, but also by conjugating with a biholomorphism $\varphi$ of the unit disk which is compatible with the PSK structure in the sense that $\varphi(X)$ still gives a \emph{special} (i.e. preferred) coordinate system corresponding to a PSK structure on the disk. Later, we will make use of the example $\varphi(X)=iX$. The metric on the base remains invariant.
+
+\subsection{Checking Invariance of the Metric (\texorpdfstring{$n=1$}{n=1})}
+
+Now, we want to show that $g_{FS}$ is invariant under the action of $G(1)$ which is the standard action on the base, but simultaneously acts in the above form (as a symplectic transformation) on the copy of $\R^4$ spanned by $(\tilde\zeta_0,\zeta^0,\tilde\zeta_1,\zeta^1)$ in the fiber. To do this, we first write the metric in terms of the $\zeta$'s, using $w_0=\frac{1}{2}(\tilde \zeta_0+i\zeta^0)$ and $w_\mu=\frac{1}{2}(\tilde\zeta_\mu-i\zeta^\mu)$.
+\begin{align*}
+	g_{FS}=&\frac{\d X \d \bar X}{(1-\abs{X}^2)^2} + \frac{1}{4\phi^2}\d \phi^2
+	+\frac{1}{4\phi^2}\bigg(\d \tilde{\phi}+\zeta^0 \d \tilde{\zeta}_0 -\tilde{\zeta}_0 \d \zeta^0
+	+\zeta^1 \d \tilde{\zeta}_1 -\tilde{\zeta}_1 \d \zeta^1\bigg)^2\\
+	&-\frac{1}{2\phi} \big(\d \tilde\zeta_0^2+ (\d \zeta^0)^2 - \d \tilde \zeta_1^2 - (\d \zeta^1)^2\big)\\
+	&+\frac{1}{\phi}\frac{1}{1-\abs{X}^2}\Big(\d \tilde\zeta_0^2+(\d \zeta^0)^2
+	+ \abs{X}^2\big(\d \tilde\zeta_1^2+(\d \zeta^1)^2\big)\\
+	&\hspace{2.4cm}+2\Re X \big(\d \tilde\zeta_0\d \tilde\zeta_1 - \d \zeta^0 \d \zeta^1 \big) 
+	+2\Im X \big(\d \tilde\zeta_0 \d \zeta^1 + \d \zeta^0\d \tilde\zeta_1 \big) \Big)
+\end{align*}
+We already checked invariance of the first term, and for the second term it is trivial since $\phi,\tilde\phi$ are invariant. Our method to check invariance for the remaining terms is to treat them one-by-one as follows: Write $g_{FS}=(\d \vec x)^T G(X,\vec x) \d \vec x$, where $\vec x=(\tilde\zeta_0,\zeta^0,\tilde\zeta_1,\zeta^1)$ and $G$ is the matrix of metric coefficients. Now, invariance of the metric means that
+\begin{equation*}
+	A^T G\bigg(\frac{a X+b}{b^* X+a}, A\vec x \bigg) A=G(X,\vec x)
+\end{equation*}
+We should check three terms: The last term on the first line, the second line, and the third plus fourth lines. Using \texttt{Mathematica}, it is not hard to check invariance of the first and second line terms. For the last part, we put the components of this piece of the metric in a matrix (with respect to the basis $(\tilde\zeta_0,\zeta^0,\tilde\zeta_1,\zeta^1)$):
+\begin{equation*}
+	B(X)=
+	\frac{1}{1-\abs{X}^2}
+	\begin{pmatrix}
+		1 & 0 & \Re X & \Im X \\ 
+		0 & 1 & \Im X & -\Re X\\
+		\Re X & \Im X & \abs{X}^2 & 0 \\
+		\Im X & -\Re X & 0 & \abs{X}^2
+	\end{pmatrix}
+\end{equation*}
+Invariance then translates to 
+\begin{equation*}
+	A^TB(X')A=B(X) \qquad \qquad 
+	X'=A\cdot X
+\end{equation*}
+where $A\cdot X$ denotes the action of $\Iwa(SU(1,1))$ on $X$. We first compute $A^TG(X)A$ and only then perform the transformation on $X$. 
+
+To do the matrix multiplication by hand, one needs the following facts:
+\begin{gather*}
+	\begin{pmatrix}
+		-\Im b & \Re b \\ \Re b & \Im b
+	\end{pmatrix}^2
+	=
+	\begin{pmatrix}
+		\abs{b}^2 & 0 \\ 0 & \abs{b}^2
+	\end{pmatrix} \qquad \qquad 
+	\begin{pmatrix}
+		\Re X & \Im X \\ \Im X & -\Re X
+	\end{pmatrix}^2
+	=
+	\begin{pmatrix}
+		\abs{X}^2 & 0 \\ 0 & \abs{X}^2
+	\end{pmatrix}\\
+	\begin{pmatrix}
+	-\Im b & \Re b \\ \Re b & \Im b
+	\end{pmatrix}
+	\begin{pmatrix}
+		\Re X & \Im X \\ \Im X & -\Re X
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		-\Im(\bar bX) & -\Re(\bar bX) \\ \Re(\bar bX) & \Im(\bar bX)
+	\end{pmatrix}\\
+	\begin{pmatrix}
+	\Re X & \Im X \\ \Im X & -\Re X
+	\end{pmatrix}
+	\begin{pmatrix}
+	-\Im b & \Re b \\ \Re b & \Im b
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+	\Im(\bar bX) & \Re(\bar bX) \\ -\Re(\bar bX) & \Im(\bar bX)
+	\end{pmatrix}\\
+	\begin{pmatrix}
+	-\Im b & \Re b \\ \Re b & \Im b
+	\end{pmatrix}
+	\begin{pmatrix}
+		\Im(\bar bX) & \Re(\bar bX) \\ -\Re(\bar bX) & \Im(\bar bX)
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		-\Re(\bar b^2X) & \Im(\bar b^2X) \\ \Im(\bar b^2X) & \Re(\bar b^2X)
+	\end{pmatrix}
+\end{gather*}
+This allows us to calculate $A^T(GA)$ with relative ease (note, by the way, that $A^T=A$). The result is
+\begin{equation*}
+	A^TB(X)A=\frac{1}{1-\abs{X}^2}
+	\begin{pmatrix}
+		\alpha & \beta \\ \beta & \gamma
+	\end{pmatrix}
+\end{equation*}
+where
+\begin{align*}
+	\alpha &=
+	\begin{pmatrix}
+		a^2+2a\Im (\bar bX) + \abs{bX}^2 & 0 \\
+		0 & a^2+2a\Im (\bar bX) + \abs{bX}^2
+	\end{pmatrix} \\
+	 &=
+	 \begin{pmatrix}
+	 	\abs{a-i\bar b X}^2 & 0 \\ 0 & \abs{a-i\bar b X}^2
+	 \end{pmatrix}\\
+	 \gamma &= 
+	\begin{pmatrix}
+		\abs{b^2}+2a\Im(\bar bX) + a^2\abs{X}^2 & 0 \\
+		0 & \abs{b}^2+ 2a\Im(\bar bX) + a^2\abs{X}^2
+	\end{pmatrix}\\
+	&= 
+	\begin{pmatrix}
+		\abs{b-ia X}^2 & 0 \\ 0 & \abs{b-ia X}^2
+	\end{pmatrix}\\
+	\beta &=
+	\begin{pmatrix}
+		 a(1+\abs{X}^2)\Im \bar b -\Re(\bar b^2X)+a^2 \Re X 
+		 & \beta_{12}=\beta_{21} \\
+		 a(1+\abs{X}^2)\Re \bar b +\Im(\bar b^2X)+a^2\Im X
+		 & \beta_{22}=-\beta_{11}
+	\end{pmatrix}
+\end{align*}
+This result is confirmed by a computation in \texttt{Mathematica}. Now, we have to carry out the $\Iwa(SU(1,1))$-transformation on the base manifold.
+
+\subsubsection{Choosing the Correct Base Transformation} 
+
+As discussed above, perhaps the most natural choice for the base action is the correspondence 
+$\begin{psmallmatrix}
+	a & b \\ b^* & a
+\end{psmallmatrix} \longleftrightarrow
+\Big(X\mapsto \frac{aX+b}{b^*X+a}\Big)$. It is easy to check that the prefactor transforms as
+\begin{equation*}
+	\frac{1}{1-\abs{X}^2}\longmapsto \frac{\abs{\bar b X+a}^2}{1-\abs{X}^2}
+\end{equation*}
+Hence, invariance is equivalent to the statement that the components of $\alpha,\beta,\gamma$ are transformed simply by a multiplicative factor $\abs{\bar b X+a}^{-2}$. However, this does not seem to be the case. The simplest way to see this is to consider the non-zero part of $\alpha$. It is sent to
+	\begin{equation*}
+		\frac{\abs{a(\bar b X+a)-i\bar b (a X+b)}^2}{\abs{\bar b X+a}^2}
+	\end{equation*}
+which gives us what we need if the factor $i$ is replaced by a $1$, as the $X$-dependent terms cancel. As is, however, this does not work. 
+
+The factor $i$ suggests that one should try to modify the action to get an extra factor $-i$ on the second term. Precomposing the action by an automorphism of $SU(1,1)$ does not seem like a real possibility, since it would mean that the transformation essentially gets multiplied by $i$, which can never be the result of an automorphism (since $i^2=-1$). 
+
+However, we \emph{can} conjugate our action by the biholomorphic map $\varphi(X)=iX$. This is allowed since if $(\C H^1,g,i,\nabla)$ is the standard PSK structure on $\C H^1$, for which $X$ is the special coordinate, then $iX$ is the special coordinate for $(\C H^1,g,i,\nabla')$, where $\nabla'=-i \circ\nabla \circ i$. In general, a PSK manifold can be equipped with such a \emph{conjugate} PSK structure, and the new special coordinates are obtained from the old ones by multiplication by $i$. The corresponding action is:
+\begin{equation*}
+	X\longmapsto -i\frac{a(iX)+b}{b^*(iX)+a}
+	=\frac{aX-ib}{ib^*X+a}
+\end{equation*}
+This action clearly leads to the correct results for $\alpha,\gamma$. The fact that it does for $\beta$ as well was done by computer, though it should be feasible by hand as well. This concludes the proof that $g_{FS}$ is a left-invariant metric on the Lie group $\Iwa(SU(1,1))\ltimes \Iwa(SU(3,1))$, with the semidirect product structure described above.
+
+\subsubsection{The Extension to All of \texorpdfstring{$SU(1,1)$}{SU(1,1)}}
+
+Since the metric $g_{FS}$ is in fact the symmetric metric on the non-compact symmetric space
+\begin{equation*}
+	N=\frac{SU(n+1,2)}{S(U(n+1)\times U(2))}
+\end{equation*}
+we know that it should even be $SU(n+1,2)$-invariant. In particular, the action of \emph{all} of $SU(n,1)$ should extend symplectically to an isometric action on the fibers. 
+
+We will now continue with the case $n=1$; we already checked the metric on the base, so we only need to check it on the fiber. This is done in \texttt{Mathematica}: Again, the last lines of the metric are the only ones that are difficult to check. \texttt{Mathematica} is able to sufficiently simplify the off-diagonal blocks to show that their entries do reduce to the correct expressions, but the diagonal blocks resist its attempts. However, starting from \texttt{Mathematica}'s result after applying the symplectic matrix, it is not hard to show by hand that they give the correct result. To demonstrate this, we explicitly carry out the computation for the $(4,4)$-entry, for which \texttt{Mathematica} gives:
+\begin{equation*}
+	(X\bar a-\Im b)(\bar X a -\Im b)+\Re b (\Re b-2 X\Im a +2 a \Im X)
+\end{equation*}
+We rewrite this as follows:
+\begin{align*}
+	&\abs{b}^2+\abs{aX}^2-\Im b(\bar a X+a \bar X)+2\Re b(a \Im X- X\Im a)\\
+	=&\abs{b}^2+\abs{aX}^2-2\Im b\Re(\bar a X)-i\Re b(\bar a X-a\bar X)\\
+	=&\abs{b}^2+\abs{aX}^2-2\Im b\Re(\bar a X)+2\Re b\Im(\bar a X)\\
+	=&\abs{b}^2+\abs{aX}^2+2\Im(\bar b \bar a X)\\
+	=&\abs{b-i\bar a X}^2
+\end{align*}
+As we transform $X$ in the same fashion as before, this turns into $\abs{X}^2$, which is what we wanted to show. Thus, the metric is invariant under all of $SU(1,1)$ (though this action is of course not free).
+
+\section{The One-Loop Deformed Metric}
+
+From a physical point of view, $g_{FS}$ is a \emph{classical} object which will receive corrections from quantum effects. Because of certain supersymmetric non-renormalization theorems, the only perturbative corrections arise at one-loop order, i.e. the metric is perturbatively one-loop exact. The one-loop corrections lead to a one-parameter family of complete quaternionic-K\"ahler metrics, parametrized by a real, positive constant $c$. For $c=0$, we recover the standard Ferrara-Sabharwal metric, while any two metrics corresponding to $c,c'>0$ are isometric (cf. CDS, proposition 10). In the case at hand, the one-loop deformed metric is
+\begin{align*}
+	g_{FS}^c=&\,\frac{\phi+c}{\phi}\frac{1}{1-\abs{X}^2}\Bigg(\sum \d X^\mu \d \bar X^\mu 
+	+ \frac{1}{1-\abs{X}^2}\bigg|\sum \bar X^\mu \d X^\mu \bigg|^2\Bigg)\\
+	&+\frac{\phi+2c}{\phi+c}\frac{1}{4\phi^2}\d \phi^2 
+	-\frac{2}{\phi} \bigg( \d w_0 \d \bar w_0 - \sum \d w_\mu \d \bar w_\mu \bigg)\\
+	&+\frac{\phi+c}{\phi^2}\frac{4}{1-\abs{X}^2}\bigg|\d w_0 + \sum X^\mu \d w_\mu \bigg|^2\\
+	&+\frac{\phi+c}{\phi+2c}\frac{1}{4\phi^2}\bigg(\d\tilde\phi
+	-4\Im\bigg[\bar w_0\d w_0 - \sum \bar w_\mu \d w_\mu\bigg]
+	+\frac{2c}{1-\abs{X}^2}\Im\bigg[\sum \bar X^\mu \d X^\mu\bigg]\bigg)^2
+\end{align*}
+In the case $n=1$, we have
+\begin{align*}
+	g_{FS}^c=&\,\frac{\phi+c}{\phi}\frac{\d X \d \bar X}{(1-\abs{X}^2)^2}
+	+\frac{\phi+2c}{\phi+c}\frac{1}{4\phi^2}\d \phi^2 
+	-\frac{2}{\phi} \big( \d w_0 \d \bar w_0 - \d w_1 \d \bar w_1 \big)\\
+	&+\frac{\phi+c}{\phi^2}\frac{4}{1-\abs{X}^2}\big|\d w_0 + X \d w_1 \big|^2\\
+	&+\frac{\phi+c}{\phi+2c}\frac{1}{4\phi^2}\bigg(\d\tilde\phi
+	-4\Im\big[\bar w_0\d w_0 - \bar w_1 \d w_1\big]
+	+\frac{2c}{1-\abs{X}^2}\Im\big[ \bar X \d X\big]\bigg)^2
+\end{align*}
+
+Decomposing the $w$'s into $\zeta$-coordinates and setting $X=x+iy$, this is:
+\begin{align*}
+	g_{FS}^c=&\frac{\phi+c}{\phi}\frac{\d x^2+\d y^2}{(1-x^2-y^2)^2} 
+	+ \frac{\phi+2c}{\phi+c}\frac{1}{4\phi^2}\d \phi^2
+	-\frac{1}{2\phi} \big(\d \tilde\zeta_0^2+ (\d \zeta^0)^2 - \d \tilde \zeta_1^2 - (\d \zeta^1)^2\big)\\
+	&+\frac{\phi+c}{\phi^2}\frac{1}{1-x^2-y^2}\Big(\d \tilde\zeta_0^2+(\d \zeta^0)^2
+	+(x^2+y^2)\big(\d \tilde\zeta_1^2+(\d \zeta^1)^2\big)\\
+	&\hspace{3.6cm}+2x \big(\d \tilde\zeta_0\d \tilde\zeta_1 - \d \zeta^0 \d \zeta^1 \big) 
+	+2y \big(\d \tilde\zeta_0 \d \zeta^1 + \d \zeta^0\d \tilde\zeta_1 \big) \Big)\\
+	&+\frac{\phi+c}{\phi+2c}\frac{1}{4\phi^2}\bigg(\d \tilde{\phi}+\zeta^0 \d \tilde{\zeta}_0 -\tilde{\zeta}_0 \d \zeta^0
+	+\zeta^1 \d \tilde{\zeta}_1 -\tilde{\zeta}_1 \d \zeta^1+\frac{2c}{1-x^2-y^2}(x\d y-y \d x)\bigg)^2\\
+	=&\frac{\phi+c}{\phi}\frac{\d x^2+\d y^2}{(1-x^2-y^2)^2} 
+	+ \frac{\phi+2c}{\phi+c}\frac{1}{4\phi^2}\d \phi^2\\
+	&+\bigg(\frac{\phi+c}{\phi^2}\frac{1}{1-x^2-y^2}-\frac{1}{2\phi}\bigg) (\d \tilde\zeta_0^2+(\d \zeta^0)^2)\\
+	&+\bigg(\frac{\phi+c}{\phi^2}\frac{x^2+y^2}{1-x^2-y^2}+\frac{1}{2\phi}\bigg) (\d \tilde\zeta_1^2+(\d \zeta^1)^2)\\
+	&+\frac{\phi+c}{\phi^2}\frac{1}{1-x^2-y^2}
+	\Big(2x \big(\d \tilde\zeta_0\d \tilde\zeta_1 - \d \zeta^0 \d \zeta^1 \big) 
+	+2y \big(\d \tilde\zeta_0 \d \zeta^1 + \d \zeta^0\d \tilde\zeta_1 \big) \Big)\\
+	&+\frac{\phi+c}{\phi+2c}\frac{1}{4\phi^2}\bigg(\d \tilde{\phi}+\zeta^0 \d \tilde{\zeta}_0 -\tilde{\zeta}_0 \d \zeta^0
+	+\zeta^1 \d \tilde{\zeta}_1 -\tilde{\zeta}_1 \d \zeta^1+\frac{2c}{1-x^2-y^2}(x\d y-y \d x)\bigg)^2
+\end{align*}
+an orthonormal (co)frame of one-forms $\{\theta^I\}_{I=1,\dots,8}$, in which the metric takes the form $g^c_{FS}=\sum_I (\theta^I)^2$ can be found in analogy with CHM (p.~199). It is given by
+\begin{align*}
+	\theta^1&=\sqrt{\frac{\phi+c}{\phi}}\frac{\d x}{1-x^2-y^2}\qquad \qquad 
+	\qquad \qquad \theta^2=\sqrt{\frac{\phi+c}{\phi}}\frac{\d y}{1-x^2-y^2}\\
+	\theta^7&=\frac{1}{2\phi}\bigg(\d \tilde{\phi}+\zeta^0 \d \tilde{\zeta}_0 -\tilde{\zeta}_0 \d \zeta^0
+	+\zeta^1 \d \tilde{\zeta}_1 -\tilde{\zeta}_1 \d \zeta^1
+	+\frac{2c}{1-x^2-y^2}(x\d y-y \d x)\bigg)\\ 
+	\theta^8&=\frac{1}{2\phi}\sqrt{\frac{\phi+2c}{\phi+c}}\d \phi\\
+\end{align*}
+
+
+\subsection{The Unbroken Subgroup of Isometries (\texorpdfstring{$n=1$}{n=1})}
+
+We expect that many of the isometries of the undeformed FS metric remain isometries in the deformed case, but not all of them can survive. Our expectation is that the unbroken subgroup acts by nonzero but low cohomogeneity.
+
+We start by considering $G(3)$ acting only on the fibers. Here, the expectation is that the isometries corresponding to $\phi\mapsto \alpha\phi$ for $\alpha\neq 0$ are no longer isometries, but all the others are.
+
+We first check invariance under the (symplectically extended) $SU(1,1)$ transformations. All terms except for the last line are the same (up to a factor) as the old ones, so we only need to check invariance of the last line. Inspecting the final term, we see that the base metric will get an additional term
+\begin{equation*}
+	\frac{2c}{1-\abs{X}^2}(\bar X^2 \d X^2+ X^2\d \bar X^2-2\abs{X}^2\d X \d \bar X)
+\end{equation*}
+Imposing invariance of the base metric, it is already clear that the transformation
+\begin{equation*}
+	X\longmapsto \frac{aX-ib}{i\bar b X+\bar a}
+\end{equation*}
+can only be an isometry if the prefactor $(1-\abs{X}^2)^{-1}$ is invariant: If it transforms by a non-trivial factor, then this factor simply cannot be canceled. This is equivalent to requiring $|i\bar b X+\bar a|^2=1$, which in turn is equivalent to $b=0$, $a=e^{i\theta}$, where $\theta\in \R$ is a phase; at the same time, $X\mapsto e^{2i\theta}X$. Thus, the subgroup of isometries corresponding to $SU(1,1)$ is broken to a circle subgroup, \emph{at best}. We will now check that the full metric is indeed invariant under this subgroup.
+
+The easiest way to proceed is to translate the transformation of $(\tilde\zeta_0,\zeta^0,\tilde\zeta_1,\zeta^1)$ to one of $(w_0,w_1)$: Recall that $w_0=\frac{1}{2}(\tilde\zeta_0+i\zeta^0)$ while $w_1=\frac{1}{2}(\tilde\zeta_1-i\zeta^1)$; then it is not hard to see that $w_0\mapsto e^{i\theta}w_0$ while $w_1\mapsto e^{-i\theta}w_1$. By inspection, one immediately sees that all terms except perhaps $\abs{\d w_0-X\d w_1}^2$ are invariant. But this term is invariant too, since $X\mapsto e^{2i\theta}X$. Thus, we have an unbroken $S^1$-subgroup of isometries of the deformed metric, i.e. the base is acted on with cohomogeneity one. The orbits are standard circles in $\C$, rotating $X$ while leaving $\abs{X}$ constant.
+
+Now, we consider the group $G(n+2)$ acting on the fibers in the deformed case. The action is described in CHM, equation (4.4):
+\begin{equation*}
+	(\tilde\zeta,\zeta,\tilde\phi,\phi)\longmapsto
+	(e^{\lambda/2}\tilde\zeta+\tilde v,e^{\lambda/2}\zeta+v,
+	e^{\lambda/2}(\tilde v^T \zeta - v^T \tilde\zeta) +e^\lambda\tilde\phi +\alpha, e^\lambda \phi)
+\end{equation*}
+where $(\tilde v,v,\alpha,e^\lambda)\in \R^{2n+3}\times \R_+\cong G(n+2)$. Clearly, the shift-invariance of $\tilde\phi$ is not spoiled by the one-loop deformation, but scaling $\phi$ is now no longer a symmetry. The shifts in $\tilde\zeta$ and $\zeta$, which are compensated (in the last term) by the shift in $\tilde\phi$, also remain symmetries. Thus, $G(n+2)$ acts with cohomogeneity one as well; every orbit corresponds to a fixed value of $\phi\in \R_+$.
+
+Thus, the deformed metric is acted on by a group of isometries of cohomogeneity 2. We would like to go further and compute the full isometry group of the deformed space. Our method to try to prove this is to start with arguing that every isometry must in fact preserve every orbit of the group remaining subgroup of $G(n)\ltimes G(n+2)$ which acts by isometries, i.e. fix the pair $(\phi,|X|)$. To prove this, we proceed in analogy with the $n=0$ case, namely we will look for (real) functions which are invariant under isometries by construction and distinguish all orbits. Since the action is cohomogeneity two, we must find two functions: The most natural thing to try is to take functions built from the curvature tensor, i.e. certain norms of it and its covariant derivative. Computing these is the next step.
+
+We start by computing the so-called \emph{Kretschmann scalar} $\kappa$, which (in a local frame) is given by the coordinate-expression $R^{ijkl} R_{ijkl}$, where $R$ is the curvature tensor. Viewing $R$ as an endomorphism $\mc R:\bigwedge^2 T^*M\to \bigwedge^2 T^*M$, the Kretschmann scalar is proportional to its Hilbert-Schmidt norm $\norm{\mc R}^2=\sum \lambda^2$, where $\lambda\in\R$ are its eigenvalues (recall that $\mc R$ is self-adjoint, hence there exists an orthonormal eigenbasis). A computation using \texttt{Mathematica} shows that
+\begin{equation*}
+	\kappa=\frac{128(176c^6 + 528c^5\phi + 672c^4\phi^2 + 464c^3\phi^3 + 186c^2\phi^4 + 42c\phi^5+5 \phi^6)}{(2 c+\phi)^6}
+\end{equation*}
+
+\section{Next steps to find out more about the deformed isometry group}
+
+There are two possible directions we may want to explore next, in order to determine the deformed isometry group.
+
+\subsection{Pointwise methods}
+
+We are interested in finding potential isometries changing the value of $\abs{X}$, but in fact we can already draw some interesting conclusions if we are able to find the other isometries: Since $M$ is of cohomogeneity at most $2$, there exist (many) points $p\in M$ such that the orbit $\mc L\cdot p$ under the remainder of the undeformed isometry group $\mc L$ is six-dimensional. In fact, this is the case whenever $X(p)\neq 0$ 
+%WORK NEEDED correct?
+Assume that we can determine the stabilizer $K=G_p$ ($G$ denotes the full isometry group) and denote its Lie algebra by $\mf k$. If $\mf l$ denotes the Lie algebra of $\mc L$, we know that either $\mf g=\mf k + \mf l$ or $\mf k + \mf l$ defines a codimension one subspace (since the cohomogeneity is at least 1). In many cases, knowledge of $\mf k$ lets us shed some light on this question.
+
+Consider $W\coloneqq T_p (\mc L\cdot p)\subset T_p M$, and the action of $\mf k$ on this subspace. Then we have the following cases:
+\begin{numberedlist}
+	\item $\mf k\cdot W\not\subset W$. Then there must be some non-stabilizing elements of (the identity component of) $G$ which lie \emph{outside} $\mc L$, since if $g\cdot p\in \mc L\cdot p$ for every $g\in G$ then $\mf g\cdot W\subset W$. Thus, we know that $\mf g$ is strictly \emph{larger} than $\mf k +\mf l$.
+	\item $\mf k\cdot W\subset W$ and $\mf k \cdot W^\perp \neq 0$. Then $\mf g=\mf k + \mf l$.
+	%WORK NEEDED Why?!
+	\item $\mf k \cdot W\subset W$ and $\mf k \cdot W^\perp=0$. Then we cannot decide whether $\mf g$ is larger than $\mf k +\mf l$ or not. However, in any case, we can look at the Lie algebra $\mf k +\mf l$, which forms a Lie subalgebra of $\mf g$, and consider all of its one-dimensional extensions. There might not be many, and so we may only have a few candidate isometry groups.
+\end{numberedlist}
+
+To find $K$ or $\mf k$, we can try to solve the equations
+\begin{equation*}
+	A \cdot R=0 \qquad \qquad A\cdot g=0
+\end{equation*}
+where we can consider $A\in SO(T_p M)$ to determine $K$ or its linearization $A\in \mf{so}(T_p M)$ to find $\mf k$.
+
+\subsection{Using the HK/QK Correspondence}
+
+There should be a way to carry HK isometries or, in fact, isometries of the CASK manifold preserving the CASK structure and commuting with the $\C^*$-action, through to the QK manifold.
+
+\section{Manifolds Related to the PSK Manifolds \texorpdfstring{$\C H^n$}{Complex Hyperbolic Space}}
+
+
+Over the course of several years, Cort\'es and collaborators have worked out the following diagram:
+\begin{equation*}
+	\begin{tikzcd}[row sep=small,column sep=large]
+		\text{CASK} \ar[r,"\text{rigid }c"] \ar[dd,"\C^*"'] & \text{HK} 
+		\ar[dd,"\text{HK/QK}"'] \ar[dr,dashed, leftrightarrow,"\text{conify}"] & \\
+		& & \widehat{\text{HK}}\\
+		\text{PSK} \ar[r,"\text{SUGRA }c"'] & \text{QK} \ar[ur,leftrightarrow,dashed,"\text{Swann}"'] &
+	\end{tikzcd}
+\end{equation*}
+In our case, we have the PSK manifold $\C H^n$, equipped with its symmetric metric. The corresponding quaternionic K\"ahler manifold is the symmetric space $SU(n+1,2)/S(U(n+1)\times U(2))$. We would now like to understand the other spaces involved.
+
+\subsection{The Conical Affine Special K\"ahler Manifold}
+
+To obtain the CASK (conical affine special K\"ahler) manifold corresponding to $\C H^n$, we simply regard the latter as a subset of $\CP^n$, and simply take the preimage under the projection $\pi: \C^{n+1}\setminus \{0\}\to \CP^n$. This means that, as a smooth manifold, the CASK is given by
+\begin{equation*}
+	X=\bigg\{ (z_0,\dots,z_n)\in \C^{n+1}\,\bigg|\, [z_0:z_1:\dots : z_n]\in \C H^n\subset \CP^n\bigg\}
+\end{equation*}
+or equivalently 
+\begin{equation*}
+	X=\bigg\{ (z_0,\dots,z_n)\in \C^{n+1}\,\bigg|\, -\abs{z_0}^2+\sum_{i=1}^n \abs{z_i}^2<0\bigg\}
+\end{equation*}
+Since the metric
+\begin{equation*}
+	-\d z_0 \d \bar z_0 + \sum_{i=1}^n\d z_i\d \bar z_i
+\end{equation*}
+induces the standard symmetric metric on $\C H^n$, and the CASK metric should induces its negative (and should correspondingly be of mostly negative signature), we have
+\begin{equation*}
+	g_X=\d z_0 \d \bar z_0 - \sum_{i=1}^n\d z_i\d \bar z_i
+\end{equation*}
+since this metric is already flat, the special K\"ahler connection on $X$ is simply the trivial connection $\d$, which is simultaneously the Levi-Civit\`a connection. 
+%WORK NEEDED: And what is the Euler field?
+
+\subsection{The Hyper-K\"ahler Manifold}
+
+Now, we would like to apply the rigid $c$-map and find the corresponding hyper-K\"ahler manifold, to which we may apply the HK/QK correspondence. The rigid $c$-map is explained on page 18 of ACM (Conification paper). Starting from the (pseudo)-CASK manifold $X$, we consider its cotangent bundle $p:N=T^*X\to X$ and split its tangent bundle into horizontal and vertical subbundles using the special K\"ahler connection (in this case simply the Levi-Civit\`a connection $\d$). We then have $TN=T^hN\oplus T^vN\cong p^*TX\oplus p^*T^*X$ where the isomorphism comes from the projection on the first summand and is canonical on the second. In our case, $X$ is an open subset of $\C^{n+1}$ and therefore its (co)tangent bundle is trivial; $p$ is simply projection onto the first factor. 
+
+With respect to the above decomposition of $TN$, we can define the hyper-K\"ahler structure on $N$ as follows:
+\begin{equation*}
+	g_N=
+	\begin{pmatrix}
+		g_X & 0 \\ 0 & g_X^{-1}
+	\end{pmatrix}
+	\qquad \qquad 
+	J_1=
+	\begin{pmatrix}
+		J_X & 0 \\ 0 & J_X^*
+	\end{pmatrix}
+	\qquad \qquad 
+	J_2=
+	\begin{pmatrix}
+		0 & -\omega_X^{-1} \\ \omega_X & 0
+	\end{pmatrix}
+\end{equation*}
+Here, $g_X$ is the metric on $X$ and $g^{-1}_X$ is the induced metric on $T^*X$, $J_X$ is the complex structure of $X$ and $J^*_X$ the induced complex structure on the cotangent bundle. Finally, $\omega_X$ is the standard symplectic form on $X\subset \C^{n+1}\cong \R^{2n+2}$, regarded as an isomorphism $TX\to T^*M$ (and hence as an endomorphism of $TN$, by identifying one-forms of the coordinates on $X$ with vectors along the fibers via $\d x_j=\p_{a_j}$ and $\d y_j=-\p_{b_j}$(!)). Notice that pullbacks are suppressed throughout.
+
+In this case, we have $X=\C H^n\times \C^*$ and $N=\C H^n\times \C^*\times \C^{n+1}$; if $(\vec z,\vec w)=((\vec x,\vec y), (\vec a,\vec b))$ are (standard) global coordinates on $X$, we have
+\begin{equation*}
+	g_X =2\bigg( \d z_0 \d \bar z_0 - \sum_{i=1}^n \d z_i \d \bar z_i \bigg) \qquad \qquad 
+	J=i \qquad \qquad 
+	\omega_X=i\bigg(\d z_0 \wedge \d \bar z_0 - \sum_{i=1}^n \d z_i \wedge \d \bar z_i\bigg)
+\end{equation*}
+which yields explicit expressions for the hyper-K\"ahler data on $N$. For easier comparison with ACDM, page 24--25, we have multiplied our previous expression for $g_X$ by two. We set $G_{00}=1$, $G_{ii}=-1$ for $i>0$ and $G_{ij}=0$ for $i\neq j$. We then have
+\begin{gather*}
+	g_N=2\Bigg[\sum_{i=0}^n G_{ii} \d z_i \d \bar z_i+\sum_{i=0}^n G_{ii} \d w_i \d \bar w_i\Bigg]\\
+	J_1\p_{x_j}=\p_{y_j} \qquad J_1\p_{y_j}=-\p_{x_j} \qquad \qquad J_1 \p_{a_j}=\p_{b_j} \qquad J_1 \p_{b_j}=-\p_{a_j}\\
+	\omega_1=i\Bigg[\sum_{i=0}^n G_{ii}\d z_i \wedge \d \bar z_i+\sum_{i=0}^n G_{ii}\d w_i \wedge \d \bar w_i\Bigg]\\
+	J_2\p_{x_j}=-G_{jj}\p_{b_j}\qquad J_2\p_{y_j}=-G_{jj}\p_{a_j} \qquad \qquad J_2 \p_{a_j}=G_{jj}\p_{y_j}\qquad J_2\p_{b_j}=G_{jj}\p_{x_j}\\
+	\omega_2=i\Bigg[\sum_{i=0}^n \d z_i \wedge \d w_i - \d \bar z_i \wedge \d \bar w_i\Bigg]
+	=-2\Im\bigg(\sum_{i=0}^n \d z_i \wedge \d w_i\bigg)\\
+	J_3\p_{x_j}=G_{jj}\p_{a_j} \qquad J_3\p_{y_j}=-G_{jj}\p_{b_j}\qquad \qquad J_3\p_{a_j}=-G_{jj}\p_{x_j}
+	\qquad J_3\p_{b_j}=G_{jj}\p_{y_j}\\
+	\omega_3=\sum_{i=0}^n \d z_i\wedge \d w_i+\d \bar z_i \wedge \d \bar w_i
+	=2\Re\bigg(\sum_{i=0}^n \d z_i \wedge \d w_i\bigg)
+\end{gather*}
+which summarizes the hyper-K\"ahler data on $N$. 
+
+\subsection{Explicit Computation of the HK/QK Correspondence}
+
+\subsubsection{The Set-Up}
+
+Now, we consider the field $Z$ generating the $S^1$-action on $N$: The action comes from the units inside $\C^*$, which acts diagonally on the base manifold $X$; the normalization of $Z$ is derived from the requirement $L_Z J_2=-2J_3$. The diagonal action of $S^1\subset \C^*$ on the base $X$ implies that $Z$ is proportional to the standard angular coordinate vector field in every copy of $\C$, i.e.
+\begin{equation*}
+	Z= iC\sum_{i=0}^n (z_i \p_{z_i}-\bar z_i \p_{\bar z_i}) \qquad \qquad C\in \R
+\end{equation*}
+To compute the Lie derivative of $J_2$, we use
+\begin{equation*}
+	(L_ZJ_2)(X)=[Z,J_2(X)]-J_2([Z,X])
+\end{equation*}
+We use that
+\begin{equation*}
+	[Z,\p_{x_j}]=-C\p_{y_j} \qquad \qquad [Z,\p_{y_j}]=C\p_{x_j} \qquad \qquad [Z,\p_{a_j}]=[Z,\p_{b_j}]=0
+\end{equation*}
+to find
+\begin{gather*}
+	(L_ZJ_2)(\p_{x_j})=-CG_{jj}\p_{a_j} \qquad 
+	(L_ZJ_2)(\p_{y_j})=CG_{jj}\p_{b_j} \\
+	(L_ZJ_2)(\p_{a_j})=CG_{jj}\p_{x_j} \qquad
+	(L_ZJ_2)(\p_{b_j})=-CG_{jj}\p_{y_j}
+\end{gather*}
+comparing with the expressions for $J_3$, we see that $C=2$ is the correct normalization. It is easily computed that
+\begin{equation*}
+	g(Z,Z)=8\sum_{i=0}^n G_{ii}\abs{z_i}^2
+\end{equation*}
+From the fact that $Z$ is an angular vector field and the form of the metric, it is clear that $Z$ is Killing. To see that it is symplectic with respect to $\omega_1$, one checks $L_ZJ_1=0$, which is another short computation. In fact, it is a Hamiltonian vector field:
+\begin{equation*}
+	\omega_1(Z,-)=-2\sum_{i=0}^n G_{ii}z_i \d \bar z_i+\bar z_i \d \bar z_i
+	=-\d\Bigg(2\sum_{i=0}^n G_{ii} \abs{z_i}^2\Bigg)\eqqcolon -\d f
+\end{equation*}
+where $f\eqqcolon r^2$ is the standard choice of Hamiltonian (shifts in $f$ will correspond to the one-loop deformation). Now we set
+\begin{equation*}
+	f_1\coloneqq f-\frac{1}{2}g(Z,Z)=-2\sum_{i=0}^n G_{ii} \abs{z_i}^2=-r^2
+\end{equation*}
+Now, we consider the (trivial) principal bundle $P=N\times S^1$, which we equip with a connection $\eta$ with curvature $\d\eta=\pi^*(\omega_1-\frac{1}{2}\d (g(Z,-)))$. Since
+\begin{equation*}
+	g(Z,-)= 2i\sum_{i=0}^n G_{ii} (z_i\d \bar z_i-\bar z_i \d z_i)
+\end{equation*}
+a natural choice for $\eta$ is
+\begin{align*}
+	\eta&=\d s+\frac{i}{2}\sum_{i=0}^nG_{ii}(z_i\d \bar z_i - \bar z_i \d z_i+w_i\d \bar w_i - \bar w_i \d w_i)-\frac{1}{2}g(Z,-)\\
+	&=\d s -\frac{i}{2}\sum_{i=0}^n G_{ii} (z_i \d \bar z_i - \bar z_i \d z_i)
+	+\frac{i}{2}\sum_{i=0}^n G_{ii} (w_i \d \bar w_i-\bar w_i \d w_i)\\
+	& \eqqcolon \d s -\frac{r^2}{4}\tilde\eta+\eta_\text{can}\\
+	&\eqqcolon \d s + \eta_N
+\end{align*}
+where $s$ is the standard (angular) coordinate on the circle $S^1=\{e^{is}\mid s\in \R\}$, and $\eta_\text{can}$ is universal, while $\tilde\eta\coloneqq\frac{1}{r^2}g(Z,-)$ is given by
+\begin{equation*}
+	\tilde\eta=2i\frac{\sum_{i=0}^n G_{ii} (z_i \d \bar z_i - \bar z_i \d z_i)}{r^2}
+	=\frac{i\sum_{i=0}^n G_{ii} (z_i \d \bar z_i - \bar z_i \d z_i)}{\sum_{j=0}^n G_{jj} \abs{z_j}^2}
+\end{equation*}
+The fundamental vector field of the principal action $S^1\action P$ is simply $\p_s$, and the $\eta$-horizontal lift $\tilde Z$ of $Z$ (which satisfies $\eta(\tilde Z)=0$) is of course simply $Z-\eta_N(Z)\p_s$. Now if we set $Z_1=\tilde Z+f_1 \p_s$, the fact that $\eta_N(Z)=-r^2$ implies that $Z_1=Z$. We define the one-forms $\theta^P_i$, $i=0,1,2,3$ on $P$ via
+\begin{gather*}
+	\theta^P_0=-\frac{1}{2}\d f=\frac{1}{2}\omega_1(Z,-)\qquad \qquad 
+	\theta^P_1=\eta+\frac{1}{2}g(Z,-)\\
+	\theta^P_2=\frac{1}{2}\omega_3(Z,-)\qquad \qquad 
+	\theta^P_3=-\frac{1}{2}\omega_2(Z,-)
+\end{gather*}
+which are given by
+\begin{align*}
+	\theta^P_0&=-2\sum_{i=0}^n G_{ii}(z_i \d \bar z_i+\bar z_i \d z_i)\\
+	\theta^P_1&=\d s +\frac{i}{2}\sum_{i=0}^n G_{ii}
+	(z_i \d \bar z_i - \bar z_i \d z_i + w_i \d \bar w_i - \bar w_i \d w_i)\\
+	\theta^P_2&=i\sum_{i=0}^n z_i \d w_i - \bar z_i \d \bar w_i\\
+	\theta^P_3&=-\sum_{i=0}^n z_i \d w_i + \bar z_i \d \bar w_i
+\end{align*}
+Together with 
+\begin{equation*}
+	g_P\coloneqq\frac{2}{f_1}\eta^2+p^*g_N
+\end{equation*}
+they yield the tensor field 
+\begin{equation*}
+	\tilde g_P\coloneqq g_P-\frac{2}{f}\sum_{a=0}^3 (\theta^P_a)^2
+\end{equation*}
+which will yield the quaternionic K\"ahler metric on a hypersurface $M'\subset P$ transversal to $Z$, via the expression
+\begin{equation*}
+	g_{QK}=\frac{1}{2\abs{f}}\tilde g_P\big|_{M'}=\frac{1}{2r^2}\tilde g_P\big|_{M'}
+\end{equation*}
+
+\subsubsection{The QK Metric; Undeformed Case}
+
+Following ACDM, we pick $M'=\{\arg z_0=0\} \subset P$. We set $\varphi=\arg z_0$; the coordinate differential $\d\varphi$ can be written as
+\begin{equation*}
+	\d \varphi=\frac{1}{2i}\bigg(\frac{\d z_0}{z_0}-\frac{\d \bar z_0}{z_0}\bigg)=\frac{1}{2i\abs{z_0}^2}(\bar z_0\d z_0-z_0\d\bar z_0)=\frac{i}{2\abs{z_0}^2}(z_0\d \bar z_0-\bar z_0 \d z_0)
+\end{equation*}
+and therefore we have
+\begin{equation*}
+	g(Z,-)\big|_{M'}=2i\sum_{i=1}^n G_{ii}(z_i \d \bar z_i - \bar z_i \d z_i)
+\end{equation*}
+since the first summand vanishes. Similarly 
+\begin{equation*}
+	\eta_N\big|_{M'}=-\frac{i}{2}\sum_{i=1}^n G_{ii}(z_i \d \bar z_i - \bar z_i \d z_i)
+	+\frac{i}{2}\sum_{i=0}^n G_{ii} (w_i \d \bar w_i -\bar w_i \d w_i)
+\end{equation*}
+Following ACDM and CDS, we define $\rho=r^2$, $w_j\eqqcolon \frac{1}{2}(\tilde \zeta_j+iG_{jj}\zeta^j)$ and $X_{i>0}=z_i/z_0$. Then $\{X_i,\rho,\tilde\zeta_i,\zeta^i,s\}\in \C^n \times \R_{>0}\times \R^{n+1}\times \R^{n+1}\times \R$ are local coordinates around any point in $M'$ (recall that $\vec X$ lies in the unit ball in $\C^n$). We now proceed to write the prospective metric on $M'$ in terms of these coordinates. the replacements $w_i\mapsto (\tilde\zeta_i,\zeta^i)$ are rather simple: 
+\begin{gather*}
+	\eta_\text{can}=\frac{1}{4}\sum_{i=0}^n \tilde \zeta_i \d \zeta^i-\zeta^i \d \tilde \zeta_i\\
+	\sum_{i=0}^n G_{ii} \d w_i \d \bar w_i
+	=\frac{1}{2}\sum_{i=0}^n \big((\d \tilde\zeta_i)^2+(\d \zeta^i)^2\big)
+\end{gather*}
+Now we want to replace the $z_i$-expressions by equations featuring $\rho,X_i$. On $M'$, the following identity holds:
+\begin{equation*}
+	\frac{1}{\abs{z_0}^2}\sum_{i=1}^n G_{ii} (z_i \d \bar z_i - \bar z_i \d z_i)
+	=\sum_{i=1}^n G_{ii}(X_i \d \bar X_i - \bar X_i \d X_i)
+\end{equation*}
+This implies
+\begin{equation*}
+	\tilde\eta\big|_{M'}
+	=\frac{i\sum_{i=1}^n G_{ii} (z_i \d \bar z_i - \bar z_i \d z_i)}{\sum_{j=0}^n G_{jj} \abs{z_j}^2}\\
+	=\frac{i\sum_{i=1}^n (X_i \d \bar X_i - \bar X_i \d X_i)}{1-\sum_{i=1}^n\abs{X_i}^2}
+\end{equation*}
+Furthermore, since $\rho=2\abs{z_0}^2(1-\sum_i \abs{X_i}^2)$ and $\varphi=0$ on $M'$, we have
+\begin{equation*}
+	\sqrt{2}z_0|_{M'}=\sqrt{\frac{\rho}{1-\sum_i \abs{X_i}^2}}
+\end{equation*}
+and consequently
+\begin{equation*}
+	\frac{\d z_0}{z_0}\bigg|_{M'}=\frac{1}{2}\bigg(\frac{\d \rho}{\rho}
+	+\frac{\sum_i X_i\d \bar X_i + \bar X_i \d X_i}{1-\sum_j \abs{X_j}^2}\bigg)
+\end{equation*}
+Thus, we may write 
+\begin{align*}
+	\frac{1}{\abs{z_0}^2}\sum_{i=0}^n & G_{ii} \d z_i \d \bar z_i \Big|_{M'}
+	=\frac{\d z_0}{z_0}\frac{\d \bar z_0}{\bar z_0}-\sum_{i=1}^n \frac{\d z_i}{z_0} \frac{\d \bar z_i}{\bar z_0}\\
+	=&\frac{1}{4}\bigg(1-\sum \abs{X_k}^2\bigg)\bigg(\frac{\d \rho}{\rho}+\frac{\sum X_i \d \bar X_i + \bar X_i \d X_i}{1-\sum \abs{X_j}^2}\bigg)^2\\
+	&-\sum \d X_i \d \bar X_i 
+	-\frac{1}{2}\sum(X_k \d \bar X_k+ \bar X_k \d X_k)
+	\bigg(\frac{\d \rho}{\rho}+\frac{\sum X_i \d \bar X_i + \bar X_i \d X_i}{1-\sum \abs{X_j}^2}\bigg)\\
+	=&\frac{1}{4}\bigg(1-\sum \abs{X_k}^2\bigg) \bigg(\frac{\d \rho^2}{\rho^2}
+	+\bigg[\frac{\sum X_i \d \bar X_i + \bar X_i \d X_i}{1-\sum \abs{X_j}^2}\bigg]^2\bigg)\\
+	&-\sum \d X_i \d \bar X_i
+	-\frac{1}{2}\frac{\big(\sum X_i \d \bar X_i + \bar X_i \d X_i\big)^2}{1-\sum\abs{X_j}^2}\\
+	=&\frac{1}{4}\bigg(1-\sum \abs{X_k}^2\bigg) \bigg(\frac{\d \rho^2}{\rho^2}
+	-\bigg[\frac{\sum X_i \d \bar X_i + \bar X_i \d X_i}{1-\sum \abs{X_j}^2}\bigg]^2\bigg)
+	-\sum \d X_i \d \bar X_i
+\end{align*}
+where we used $\d z_i/z_0=\d X_i + z_i/z_0^2 \d z_0=\d X_i + X_i \d z_0/z_0$, and canceled some terms in each further step. We conclude (using $\rho=2\abs{z_0}^2(1-\sum \abs{X_j}^2)$) that
+\begin{equation*}
+	\frac{1}{2\rho}\sum_{i=0}^n G_{ii} \d z_i \d \bar z_i \Big|_{M'}
+	=\frac{1}{16}\bigg(\frac{\d \rho^2}{\rho^2}
+	-\bigg[\frac{\sum X_i \d \bar X_i + \bar X_i \d X_i}{1-\sum \abs{X_j}^2}\bigg]^2\bigg)
+	-\frac{1}{4}\frac{\sum \d X_i \d \bar X_i}{1-\sum \abs{X_j}^2}
+\end{equation*}
+and correspondingly 
+\begin{align*}
+	\frac{1}{2\rho}p^*g_N\big|_{M'}
+	&=\frac{1}{8}\bigg(\frac{\d \rho^2}{\rho^2}
+	-\bigg[\frac{\sum X_i \d \bar X_i + \bar X_i \d X_i}{1-\sum \abs{X_j}^2}\bigg]^2\bigg)\\
+	&\qquad -\frac{1}{2}\frac{\sum \d X_i \d \bar X_i}{1-\sum \abs{X_j}^2}
+	+\frac{1}{2\rho}\sum_{i=0}^n \big( (\d \tilde\zeta_i)^2+(\d \zeta^i)^2\big)
+\end{align*}
+This is the first piece of the quaternionic K\"ahler metric $g_{QK}$. The next piece is
+\begin{align*}
+	\frac{1}{2\rho}\frac{2}{f_1}\eta^2&=-\frac{\eta^2}{\rho^2}
+	=-\frac{1}{\rho^2}\bigg(\d s - \frac{\rho\tilde\eta}{4}+\eta_\text{can}\bigg)^2\\
+	&=-\frac{1}{\rho^2}(\d s +\eta_\text{can})^2-\frac{\tilde\eta^2}{16}
+	+\frac{1}{2\rho}\tilde\eta(\d s +\eta_\text{can})
+\end{align*}
+where we separated out the universal part. We compute its terms one-by-one (implicitly restricting to $M'$ throughout):
+\begin{gather*}
+	-\frac{1}{\rho^2}(\d s + \eta_\text{can})^2
+	=-\frac{1}{16\rho^2}\bigg(4\d s+ \sum_{i=0}^n \tilde\zeta_i \d \zeta^i - \zeta^i \d \tilde\zeta_i\bigg)^2\\
+	-\frac{\tilde\eta^2}{16}
+	=-\frac{1}{16}\bigg[\frac{\sum_{i=1}^n (X_i \d \bar X_i - \bar X_i \d X_i)}{1-\sum_{i=1}^n\abs{X_i}^2}	\bigg]^2
+\end{gather*}
+We need not bother with the final (cross-)term, because we will soon see it cancels out with the terms
+\begin{equation*}
+	-\frac{1}{2f}\frac{2}{f}\sum_{i=0}^3(\theta_i^P)^2
+	=-\frac{1}{f^2}\sum_{i=0}^3 (\theta^P_i)^2=-\frac{1}{\rho^2}\sum_{i=0}^3 (\theta^P_i)^2
+\end{equation*}
+We note that $\theta^P_0=-r\d r=-\frac{1}{2}\d \rho$, so $-1/\rho^2(\theta_0^P)^2=-\frac{\d \rho^2}{4\rho^2}$. Furthermore,
+\begin{align*}
+	\theta^P_1&=\d s + \eta_\text{can} +\frac{\rho\tilde\eta}{4} \\
+	-\frac{1}{\rho^2}(\theta_1^P)^2
+	&=-\frac{1}{\rho^2}(\d s +\eta_\text{can})^2-\frac{\tilde\eta^2}{16}
+	-\frac{1}{2\rho}\tilde\eta(\d s + \eta_\text{can})
+\end{align*}
+which yields the promised cancellation. Finally, we have
+\begin{equation*}
+	(\theta^P_2)^2+(\theta^P_3)^2=4\sum_{i,j=0}^n z_i \bar z_j \d w_i \d \bar w_j
+\end{equation*}
+hence
+\begin{align*}
+	&-\frac{1}{\rho^2}\big((\theta^P_2)^2+(\theta^P_3)^2\big)=-\frac{2}{\rho}\frac{\sum_{i,j=0}^nz_i\bar z_j \d w_i \d \bar w_j}{\abs{z_0}^2\big(1-\sum_k \abs{X_k}^2\big)}\\
+	&\qquad\qquad=-\frac{2}{\rho}\frac{\d w_0 \d \bar w_0+\sum_{i=1}^n X_i \d w_i \d \bar w_0+\bar X_i \d w_0 \d \bar w_i
+	+\sum_{i,j=1}^n X_i\bar X_j \d w_i \d \bar w_j}{1-\sum_k \abs{X_k}^2}\\
+	&\qquad\qquad=-\frac{2}{\rho}\frac{1}{1-\sum_k \abs{X_k}^2}\Big|\d w_0 + \sum_{i=1}^n X_i \d w_i\Big|^2
+\end{align*}
+Now, all that is left to do is add up all the pieces to obtain the (undeformed) Ferrara-Sabharwal metric on the corresponding quaternionic K\"ahler manifold. We will use the notation of CDS, where the metric is explicitly written out in Corollary 15. We have
+\begin{align*}
+	-\frac{\eta^2}{\rho^2}&-\frac{1}{\rho^2}\sum_{i=0}^3(\theta_i^P)^2
+	=-\frac{2}{\rho^2}(\d s+\eta_\text{can})^2-\frac{\tilde\eta^2}{8}-\frac{\d \rho^2}{4\rho^2}
+	-\frac{2}{\rho}\frac{\Big|\d w_0 + \sum_{i=1}^n X_i \d w_i\Big|^2}{1-\sum \abs{X_k}^2}\\
+	&=-\frac{1}{8\rho^2}\bigg(\d \tilde\phi-4\Im \sum_{i=0}^n G_{ii} \bar w_i \d w_i\bigg)^2
+	-\frac{\d \rho^2}{4\rho^2}
+	- \frac{2}{\rho}\frac{\Big|\d w_0 + \sum_{i=1}^n X_i \d w_i\Big|^2}{1-\sum \abs{X_k}^2}\\
+	&\qquad -\frac{1}{8}\bigg[\frac{\sum_{i=1}^n(X_i \d \bar X_i - \bar X_i \d X_i)}{1-\sum_{i=1}^n\abs{X_i}^2}	\bigg]^2
+\end{align*}
+where we set $\tilde\phi=-4s$ and pulled out the sign of the first squared term. To this, we must add
+\begin{align*}
+	\frac{1}{2\rho}p^*g_N\big|_{M'}
+	&=\frac{1}{8}\bigg(\frac{\d \rho^2}{\rho^2}
+	-\bigg[\frac{\sum X_i \d \bar X_i + \bar X_i \d X_i}{1-\sum \abs{X_j}^2}\bigg]^2\bigg)\\
+	&\qquad -\frac{1}{2}\frac{\sum \d X_i \d \bar X_i}{1-\sum \abs{X_j}^2}
+	+\frac{1}{\rho}\sum_{i=0}^n G_{ii}\d w_i \d \bar w_i
+\end{align*}
+which yields
+\begin{align*}
+	g'&=-\frac{\d \rho^2}{\rho^2}+\frac{1}{\rho}\sum_{i=0}^n G_{ii} \d w_i \d \bar w_i 
+	-\frac{2}{\rho}\frac{\Big|\d w_0 + \sum_{i=1}^n X_i \d w_i\Big|^2}{1-\sum \abs{X_k}^2}\\
+	&\quad\ -\frac{1}{8\rho^2}\Big(\d \tilde\phi-4\Im \sum_{i=0}^n G_{ii} \bar w_i \d w_i\Big)^2\\
+	&\quad\ -\frac{1}{2}\frac{1}{1-\sum \abs{X_k}^2}\Big(\sum \d X_i \d \bar X_i
+	+\frac{\sum\abs{X_i \d \bar X_i}^2}{1-\sum \abs{X_j}^2}\Big)
+\end{align*}
+This is precisely $-\frac{1}{2}g_{FS}$, where $g_{FS}$ is the undeformed Ferrara-Sabharwal metric.
+\end{document}

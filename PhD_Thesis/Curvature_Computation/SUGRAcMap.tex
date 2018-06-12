@@ -1,0 +1,255 @@
+\section{The Supergravity \texorpdfstring{$c$}{c}-Map}
+
+The above method gives us one explicit method of deriving the metric, but there is another method to arrive at this expression. This method will be helpful to us in determining the isometry group of the $c$-map image; it is a more direct description, which immediately gives us the quaternionic K\"ahler metric from the PSK metric on $\C H^n$; it is known as the \emph{supergravity (SUGRA) $c$-map}.
+
+\subsection{General Setup}
+
+If $(M,g_M)$ is a projective special K\"ahler (PSK) manifold of complex dimension $n$, the supergravity $c$-map associates a quaternionic K\"ahler (QK) manifold $(N,g_N)$ of dimension $4n+4$ to it. $N$ is diffeomorphic to $M\times \R^{2n+3}\times \R_+\cong M\times \R^{2n+4}$ and its metric is given by the following expression:
+\begin{align*}
+	g_N&=g_M+g_G\\
+	g_G&=\frac{1}{4\phi^2}\Bigg[\d \phi^2
+	+\bigg(\d \tilde{\phi}+\sum_I \zeta^I \d \tilde{\zeta}_I-\tilde{\zeta}_I \d \zeta^I\bigg)^2\Bigg]\\
+	+&\frac{1}{2\phi}\bigg[\sum_{IJ} \mc J_{IJ}(p)\d \zeta^I\d\zeta^I+
+	\sum_{IJ}\mc J^{IJ}\bigg(\d \tilde \zeta_I+\sum_K \mc R_{IK}(p)\d \zeta^K\bigg)
+	\bigg(\d\tilde \zeta_J + \sum_L \mc R_{JL}(p)\d \zeta^L\bigg)\bigg]
+\end{align*}
+where $(\phi,\tilde\phi,\zeta^I,\tilde\zeta_I)$, $I=0,\dots, n$ are coordinates on $\R_+\times \R^{1+(n+1)+(n+1)}$ and $\phi>0$. The matrix $\mc J_{IJ}$ is symmetric and positive-definite, with inverse $\mc J^{IJ}$. 
+
+\subsection{Basic Expressions for the Fiber \texorpdfstring{$G$}{G}}
+
+A more compact notation can be adopted. Define the column vector $p_a=(\tilde \zeta_I,\zeta^I)$, where $a=1,\dots,2n+2$. Furthermore consider the positive-definite matrix
+\begin{equation*}
+	\tilde H^{ab}\coloneqq 
+	\begin{pmatrix}
+		\mc J^{-1} & \mc J^{-1}\mc R\\
+		\mc R\mc J^{-1} & \mc J+\mc R\mc J^{-1}\mc R
+	\end{pmatrix}
+\end{equation*}
+with inverse matrix
+\begin{equation*}
+	(\tilde H^{-1})_{ab}\coloneqq 
+	\begin{pmatrix}
+		\mc J+\mc R\mc J^{-1}\mc R & -\mc R\mc J^{-1}\\
+		-\mc J^{-1}\mc R & \mc J^{-1}
+	\end{pmatrix}
+\end{equation*}
+Then we have 
+\begin{equation*}
+	g_G=\frac{1}{4\phi^2}\Bigg[\d \phi^2
+	+\bigg(\d \tilde{\phi}+\sum_I \zeta^I \d \tilde{\zeta}_I-\tilde{\zeta}_I \d \zeta^I\bigg)^2\Bigg]
+	+\sum_{a,b}\frac{1}{2\phi}\d p_a \tilde H^{ab} \d p_b
+\end{equation*}
+
+\begin{rem}
+	The matrix $\tilde H^{ab}$ corresponds to $H^{ab}$ in the paper \emph{Completeness in Supergravity Constructions} by Cort\'es, Han and Mohaupt. They think of $H^{ab}$ as the inverse of $H_{ab}$, but we will think of $\tilde H^{ab}$ as the ``original'' one, so translating to their notation comes with an inversion of $H$ (though the position of the indices does match). 
+\end{rem}
+
+This can be further simplified by noting that
+\begin{equation*}
+	\sum_I \zeta^I\d\tilde\zeta_I-\tilde\zeta_I \d \zeta^I=
+	\begin{pmatrix}
+		\tilde\zeta_I,\zeta^I
+	\end{pmatrix}
+	\begin{pmatrix}
+		0_{n+1} & -\Unit_{n+1}\\ \Unit_{n+1} & 0_{n+1}
+	\end{pmatrix}
+	\begin{pmatrix}
+		\d \tilde \zeta_I \\ \d \zeta^I
+	\end{pmatrix}
+	\eqqcolon p_a K^{ab} \d p_b
+\end{equation*}
+Thus, the metric takes the form
+\begin{equation*}
+	g_G\!\!=\!\frac{1}{4\phi^2}\bigg[\d \phi^2+\d \tilde\phi^2
+	+\sum_{a,b}p_a K^{ab} (\d p_b \d \tilde\phi +\d \tilde \phi\d p_b)\bigg]
+	+\sum_{a,b}\bigg[\bigg(\frac{1}{2\phi}p_a K^{ab}\d p_b\bigg)^2+ \frac{1}{2\phi}\d p_a \tilde H^{ab} \d p_b\bigg]
+\end{equation*}
+Alternatively, we may take $P_a=(-\tilde \zeta_I,\zeta^I)$ and find 
+\begin{equation*}
+	g_G=\frac{1}{4\phi^2}\bigg[\d \phi^2+\d \tilde\phi^2
+	+\sum_{a,b}P_a K^{ab}(\d P_b \d \tilde\phi +\d \tilde \phi\d P_b)\bigg]
+	+\sum_{a,b}\bigg[\frac{1}{4\phi^2}\d P_a\d P_b+ \frac{1}{2\phi}\d P_a \bar H^{ab} \d P_b\bigg]
+\end{equation*}
+Note that some entries of $\bar H$ have different sign. 
+
+We can write the metric in matrix form as follows:
+\begin{equation*}
+	g_G=
+	\begin{pmatrix}
+		\frac{1}{4\phi^2} & 0 & 0 \\
+		0 & \frac{1}{4\phi^2} & \frac{1}{4\phi^2}\sum_a p_a K^{ab}\\
+		0 & \frac{1}{4\phi^2}\sum_a p_a K^{ab} & \frac{1}{4\phi^2} p_a K^{ab} p_c K^{cf}+\frac{1}{2\phi}\tilde H^{bf}
+	\end{pmatrix}
+\end{equation*}
+
+The inverse is given by the formula
+\begin{equation*}
+	\begin{pmatrix}
+		A & B\\
+		C & D
+	\end{pmatrix}^{-1}
+	=
+	\begin{pmatrix}
+		A^{-1}+A^{-1}B(D-CA^{-1}B)^{-1}CA^{-1} & -A^{-1}B (D-CA^{-1}B)^{-1}\\
+		-(D-CA^{-1}B)^{-1}CA^{-1} & (D-CA^{-1}B)^{-1}
+	\end{pmatrix}
+\end{equation*}
+which is valid for any block-matrix. The inverse metric is easy to determine:
+\begin{align*}
+	g^{-1}_G&=
+	\begin{pmatrix}
+		4\phi^2 & 0 & 0 \\
+		0& 4\phi^2+2\phi p_a K^{ab}(\tilde H^{-1})_{bc}p_f K^{fc} & -2\phi p_c K^{cb}(\tilde H^{-1})_{ba} \\
+		0& -2\phi (\tilde H^{-1})_{ab}p_f K^{fb} & 2\phi (\tilde H^{-1})_{ab}
+	\end{pmatrix}\\
+	&=
+	\begin{pmatrix}
+		4\phi^2 & 0 & 0\\
+		0 & 4\phi^2+2\phi p_a \tilde H^{ab} p_b & -2\phi p_c K^{cb}(\tilde H^{-1})_{ba} \\
+		0 & -2\phi (\tilde H^{-1})_{ab}p_f K^{fb} & 2\phi (\tilde H^{-1})_{ab}
+	\end{pmatrix}\\
+\end{align*}
+where we used the fact that $K^{ab}(\tilde H^{-1})_{bc}K^{fc}=\tilde H^{af}$.
+%
+%Now, we will use some results from CHM, namely that $g_G$ is a left-invariant metric on a Lie group, with a left-invariant coframe given by the following expressions:
+%\begin{align*}
+%	\xi_{n+1}&\coloneqq \frac{\d\phi}{\phi}\qquad \qquad 
+%	&\eta^{n+1}\coloneqq \frac{1}{\phi}
+%	\bigg(\d\tilde\phi+\sum(\zeta^I\d \tilde \zeta_I - \tilde \zeta_I \d \zeta^I)\bigg)
+%	=\frac{1}{\phi}\big(\d\tilde\phi+p_aK^{ab}\d p_b\big)\\
+%	\eta^I&\coloneqq \sqrt{\frac{2}{\phi}}\d \zeta^I \qquad \qquad 
+%	&\xi_I\coloneqq \sqrt{\frac{2}{\phi}}
+%	\bigg( \d \tilde \zeta_I+\sum_K \mc R_{IK}(p) \d \zeta^K\bigg)
+%\end{align*}
+%Using our expression for the inverse metric, we can find the dual frame of tangent vectors. This is a tedious computation, but simple in principle:
+%\begin{align*}
+%	X_{n+1}&\coloneqq \xi_{n+1}^*=4\phi \p_\phi \\
+%	Y^{n+1}&\coloneqq (\eta^{n+1})^*\\
+%	&=\big(4\phi+2p_a \tilde H^{ab}p_b\big) \p_{\tilde \phi} - 2(\tilde H^{-1})_{ab}p_f K^{fb}\p_{p_a} \\
+%	&\quad\ -2p_a\tilde H^{ab}p_b\p_{\tilde \phi} + 2(\tilde H^{-1})_{ab}p_c K^{cb}\p_{p_a}\\
+%	&=4\phi \p_{\tilde \phi}\\
+%	Y^I&\coloneqq (\eta^I)^*\\
+%	&=\sqrt{8\phi}\Bigg(\bigg[\sum_{I,J,K}\mc J^{IJ}\mc R_{JK} \zeta^I +\sum_{I,J}\mc J^{IJ}\tilde\zeta_I\bigg]\p_{\tilde\phi}
+%	-\sum_{I,J,K} \mc J^{IJ}\mc R_{JK}\p_{\tilde\zeta_I} + \sum_{I,J} \mc J^{IJ}\p_{\zeta_I}\Bigg)\\
+%	X_I&\coloneqq (\xi_I)^*=-\sqrt{8\phi}\bigg[\sum_{I,J} \mc J^{IJ}\zeta^I+\sum_{\substack{I,J,\\K,L}}\mc R_{IJ}\mc J^{JK} \mc R_{KL} \zeta^I+\sum_{I,J,K}\mc R_{IJ}\mc J^{JK}\tilde\zeta_I\bigg]\p_{\tilde\phi}\\
+%	&\qquad\qquad \ \ +\sqrt{8\phi}
+%	\Bigg(\sum_{I,J} \bigg[\mc J_{IJ} +\sum_{K,L} \mc R_{IK} \mc J^{KL} \mc R_{LJ}\bigg]\p_{\tilde\zeta_I}
+%	-\sum_{I,J,K}\mc J^{IK}\mc R_{KJ}\p_{\zeta^I}\Bigg)\\
+%	&\qquad\qquad \ \ +\sqrt{8\phi}	\bigg[\sum_{\substack{I,J,\\K,L}}\mc J^{IJ}\mc R_{JK}\mc R_{KL} \zeta^I +\sum_{I,J,K}\mc J^{IJ}\mc R_{JK}\tilde\zeta_I\bigg]\p_{\tilde\phi}\\
+%	&\qquad \qquad \ \ -\sqrt{8\phi}\sum_{\substack{I,J,\\K,L}} \mc J^{IJ}\mc R_{JK}\mc R_{KL}\p_{\tilde\zeta_I} 
+%	+ \sqrt{8\phi}\sum_{I,J,K} \mc J^{IJ}\mc R_{JK}\p_{\zeta_I}\\
+%	&=\sqrt{8\phi}\Bigg(
+%	\bigg[\sum_{\substack{I,J,K}}[\mc J^{-1},\mc R]_{IJ}\mc R_{JK} \zeta^I
+%	+\sum_{I,K}[\mc J^{-1},\mc R]_{IK}\tilde\zeta_I - \sum_{I,J} \mc J^{IJ}\zeta^I\bigg]\p_{\tilde\phi}\\
+%	&\qquad\qquad +\sum_I \Big[\Big(\sum_J\mc J_{IJ} 
+%	-\sum_{J,K} [\mc J^{-1},\mc R]_{IJ} \mc R_{JK}\Big)\p_{\tilde\zeta_I}\Big]
+%	+\sum_{I,J}[\mc J^{-1},\mc R]_{IJ}\p_{\zeta^I}
+%	\Bigg)
+%\end{align*}
+%
+%
+%\subsubsection{The Case \texorpdfstring{$\mc J=\Unit$}{J=1}}
+%
+%Obviously, the final expression greatly simplifies if we may assume that $\mc R$ and $\mc J^{-1}$ commute. On page 200 of CHM, it is assumed that $J_{IJ}=\delta_{IJ}$, which would make things even easier. In that case, we have:
+%\begin{align*}
+%	X_{n+1}&=4\phi\p_\phi \qquad \qquad \qquad \qquad Y^{n+1}=4\phi\p_{\tilde\phi}\\
+%	Y^I&=\sqrt{8\phi}\bigg(\Big[\sum_{I,J} \mc R_{IJ} \zeta^I +\sum_J \tilde\zeta_J\Big]\p_{\tilde\phi}
+%	-\sum_{I,J}\mc R_{IJ} \p_{\tilde\zeta_I}+\sum_I \p_{\zeta_I} \bigg)\\
+%	X_I&=\sqrt{8\phi}\sum_I \zeta^I \p_{\tilde\phi}
+%	+\sum_I \p_{\tilde\zeta_I}
+%\end{align*}
+%
+%\begin{rem}
+%	The combination $A_J(\tilde\zeta_I,\zeta^I,p)\coloneqq \sum_I\mc R_{IJ}(p) \zeta^I+\tilde\zeta^I$ occurs in the metric, in $\xi_I$, and also in our expression for $Y^I$. For instance, if we set $A=\sum_J A_J$, we have
+%	\begin{equation*}
+%		Y^I=\sqrt{8\phi} A\p_{\tilde\phi}+(\p_{\zeta^I}A)\p_{\tilde\zeta_I}+(\p_{\tilde\zeta_I}A)\p_{\zeta^I}
+%	\end{equation*}
+%\end{rem}
+%
+%Now that we have a basis for the Lie algebra $\mf g$ of left-invariant vector fields, we want to make it orthonormal with respect to the metric. In fact, in CHM, it is already said that this basis is orthogonal, and that all the vectors have norm 2, hence our basis is orthonormal after scaling by $1/2$. This is done by observing that (under the assumption $\mc J=\Unit$) $g_G(p)=\frac{1}{4}\sum_{i=0}^{n+1} \xi_i^2+(\eta^i)^2$. Thus, an orthonormal basis for $\mf g$ is given by 
+%\begin{align*}
+%	X_{n+1}&=2\phi\p_\phi \qquad \qquad \qquad \qquad Y^{n+1}=2\phi\p_{\tilde\phi}\\
+%	Y^I&=\sqrt{2\phi}\bigg(\Big[\sum_{I,J} \mc R_{IJ} \zeta^I +\sum_J \tilde\zeta_J\Big]\p_{\tilde\phi}
+%	-\sum_{I,J}\mc R_{IJ} \p_{\tilde\zeta_I}+\sum_I \p_{\zeta_I} \bigg)\\
+%	X_I&=\sqrt{2\phi}\sum_I \zeta^I \p_{\tilde\phi}
+%	+\sum_I \p_{\tilde\zeta_I}
+%\end{align*}
+%
+%\subsection{The Curvature of \texorpdfstring{$G$}{G}}
+%
+%Setting $X_{n+1}=e_1$, $Y^{n+1}=e_2$, $X_I=e_{I+3}$ and $Y^I=e_{I+n+4}$, we have the structure constants
+%\begin{equation*}
+%	f_{ijk}=g_G([e_i,e_j],e_k) 
+%\end{equation*}
+%We will now show how to express the sectional curvature of $(G,g_G)$ in terms of the structure constants. Let $\nabla$ be the Levi-Civit\`a connection of $g_G$. Since $g_G(X,Y)$ is constant for left-invariant vector fields $X,Y$, we have
+%\begin{equation*}
+%	g_G(\nabla_V X,Y)+g_G(X,\nabla_V Y)=0
+%\end{equation*}
+%Using the absence of torsion, it is now easy to derive that
+%\begin{align*}
+%	g_G(\nabla_{e_i}e_j,e_k)
+%	&=\frac{1}{2}\big(g_G([e_i,e_j],e_k) - g_G([e_j,e_k],e_i) + g_G([e_k,e_i],e_j)\big)\\\numberthis\label{eq:strcomm}
+%	&=\frac{1}{2}(f_{ijk}-f_{jki}-f_{kij})
+%\end{align*}
+%The curvature tensor 
+%\begin{equation*}
+%	R(X,Y)Z=[\nabla_X,\nabla_Y]Z-\nabla_{[X,Y]}Z
+%\end{equation*}
+%can therefore clearly be computed in terms of commutators alone. The most convenient way to do so is in terms of the sectional curvature. Since $\{e_j\}$ is an orthonormal basis of the tangent spaces at every point, the sectional curvature $\kappa$ is given by
+%\begin{equation*}
+%	\kappa(e_i,e_j)=g_G(R(e_i,e_j)e_j,e_i)
+%\end{equation*}
+%Plugging \cref{eq:strcomm} into the expression for the Riemann tensor, a computation shows
+%\begin{equation*}
+%	\kappa(e_i,e_j)=\sum_k \bigg[\frac{1}{2}f_{ijk}(-f_{ijk}+f_{jki}+f_{kij})-f_{kii}f_{kjj}
+%	-\frac{1}{4}(f_{ijk}-f_{jki}+f_{kij})(f_{ijk}+f_{jki}-f_{kij})\bigg]
+%\end{equation*}
+%This can also be found as the first lemma in Milnor's paper ``\emph{Curvature of Left Invariant Metrics on Lie Groups}''.
+%
+%Now, all that we have to do is to apply this formalism to our case to find the curvature. We start by computing commutators:
+%\begin{align*}
+%	[e_1,e_2]&=2\phi(\p_\phi (2\phi)\p_{\tilde \phi}=4\phi \p_{\tilde\phi}=2e_2\\
+%	[e_1,e_{k+3}]&=2\phi\p_{\phi}(\sqrt{2\phi}\cdot (\phi-\text{independent}))=e_{k+3} & k=0,\dots,n\\
+%	[e_1,e_{k+n+4}]&=e_{k+n+4} & k=0,\dots,n
+%\end{align*}
+%Hence 
+%\begin{equation*}
+%	f_{1jk}=
+%	\begin{cases}
+%		2 \qquad \qquad & j=k=2\\
+%		1 & j=k>2\\
+%		0 & \text{otherwise}
+%	\end{cases}
+%\end{equation*}
+%Since all components of all vectors are $\tilde\phi$-independent (and none except $e_1$ contain $\p_\phi$), we immediately have:
+%\begin{equation*}
+%	f_{2jk}=
+%	\begin{cases}
+%		-2 \qquad \qquad & j=1,k=2\\
+%		0 &\text{otherwise}
+%	\end{cases}
+%\end{equation*}
+%We continue:
+%\begin{align*}
+%	[e_{k+3},e_{\ell+3}]&=4\phi\sum_J \big(\mc R_{kJ}-\mc R_{\ell J}\big)\p_{\tilde \phi}
+%	=2 \sum_J \big(\mc R_{kJ}-\mc R_{\ell J}\big)e_2; \ \ k,\ell=0,\dots,n,\ \ k\neq \ell\\
+%	[e_{k+3},e_{\ell+n+4}]&=(\p_{\tilde\phi}-\p_{\tilde\phi})=0 \qquad \qquad k,\ell=0,\dots,n,
+%\end{align*}
+%and therefore we find (for $i=0,\dots,n$):
+%\begin{equation*}
+%	f_{(i+3)jk}=
+%	\begin{cases}
+%		-1 \qquad \qquad & j=1,k=i+3\\
+%		2\sum_J \big(\mc R_{kJ}-\mc R_{\ell J}\big) & j=\ell+3, k=2\ \ (\ell=0,\dots,n)\\
+%		0 &\text{otherwise}
+%	\end{cases}
+%\end{equation*}
+%Finally, we have
+%\begin{equation*}
+%	[e_{k+n+4},e_{\ell+n+4}]=0 \qquad \qquad k,\ell=0,\dots,n
+%\end{equation*}
+%and therefore
+%\begin{equation*}
+%	f_{(i+n+4)jk}\equiv 0
+%\end{equation*}
+%Now we have computed all the structure constants, we are in principle finished: The curvature tensor is now easy to compute.

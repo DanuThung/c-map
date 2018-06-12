@@ -1,0 +1,115 @@
+\section{Isometries of the One-Loop Deformed Metric}
+
+Recall the one-loop deformed metric from \cref{sec:deformedFSderivation}:
+\begin{align*}
+	g_{FS}^c=&\,\frac{\phi+c}{\phi}\frac{1}{1-\abs{X}^2}\Bigg(\sum \d X^\mu \d \bar X^\mu 
+	+ \frac{1}{1-\abs{X}^2}\bigg|\sum \bar X^\mu \d X^\mu \bigg|^2\Bigg)\\
+	&+\frac{\phi+2c}{\phi+c}\frac{1}{4\phi^2}\d \phi^2 
+	-\frac{2}{\phi} \bigg( \d w_0 \d \bar w_0 - \sum \d w_\mu \d \bar w_\mu \bigg)\\
+	&+\frac{\phi+c}{\phi^2}\frac{4}{1-\abs{X}^2}\bigg|\d w_0 + \sum X^\mu \d w_\mu \bigg|^2\\
+	&+\frac{\phi+c}{\phi+2c}\frac{1}{4\phi^2}\bigg(\d\tilde\phi
+	-4\Im\bigg[\bar w_0\d w_0 - \sum \bar w_\mu \d w_\mu\bigg]
+	+\frac{2c}{1-\abs{X}^2}\Im\bigg[\sum \bar X^\mu \d X^\mu\bigg]\bigg)^2
+\end{align*}
+In the case $n=1$, we have
+\begin{align*}
+	g_{FS}^c=&\,\frac{\phi+c}{\phi}\frac{\d X \d \bar X}{(1-\abs{X}^2)^2}
+	+\frac{\phi+2c}{\phi+c}\frac{1}{4\phi^2}\d \phi^2 
+	-\frac{2}{\phi} \big( \d w_0 \d \bar w_0 - \d w_1 \d \bar w_1 \big)\\
+	&+\frac{\phi+c}{\phi^2}\frac{4}{1-\abs{X}^2}\big|\d w_0 + X \d w_1 \big|^2\\
+	&+\frac{\phi+c}{\phi+2c}\frac{1}{4\phi^2}\bigg(\d\tilde\phi
+	-4\Im\big[\bar w_0\d w_0 - \bar w_1 \d w_1\big]
+	+\frac{2c}{1-\abs{X}^2}\Im\big[ \bar X \d X\big]\bigg)^2
+\end{align*}
+
+Decomposing the $w$'s into $\zeta$-coordinates and setting $X=x+iy$, this is:
+\begin{align*}
+	g_{FS}^c=&\frac{\phi+c}{\phi}\frac{\d x^2+\d y^2}{(1-x^2-y^2)^2} 
+	+ \frac{\phi+2c}{\phi+c}\frac{1}{4\phi^2}\d \phi^2
+	-\frac{1}{2\phi} \big(\d \tilde\zeta_0^2+ (\d \zeta^0)^2 - \d \tilde \zeta_1^2 - (\d \zeta^1)^2\big)\\
+	&+\frac{\phi+c}{\phi^2}\frac{1}{1-x^2-y^2}\Big(\d \tilde\zeta_0^2+(\d \zeta^0)^2
+	+(x^2+y^2)\big(\d \tilde\zeta_1^2+(\d \zeta^1)^2\big)\\
+	&\hspace{3.6cm}+2x \big(\d \tilde\zeta_0\d \tilde\zeta_1 - \d \zeta^0 \d \zeta^1 \big) 
+	+2y \big(\d \tilde\zeta_0 \d \zeta^1 + \d \zeta^0\d \tilde\zeta_1 \big) \Big)\\
+	&+\frac{\phi+c}{\phi+2c}\frac{1}{4\phi^2}\bigg(\d \tilde{\phi}+\zeta^0 \d \tilde{\zeta}_0 -\tilde{\zeta}_0 \d \zeta^0
+	+\zeta^1 \d \tilde{\zeta}_1 -\tilde{\zeta}_1 \d \zeta^1+\frac{2c}{1-x^2-y^2}(x\d y-y \d x)\bigg)^2\\
+	=&\frac{\phi+c}{\phi}\frac{\d x^2+\d y^2}{(1-x^2-y^2)^2} 
+	+ \frac{\phi+2c}{\phi+c}\frac{1}{4\phi^2}\d \phi^2\\
+	&+\bigg(\frac{\phi+c}{\phi^2}\frac{1}{1-x^2-y^2}-\frac{1}{2\phi}\bigg) (\d \tilde\zeta_0^2+(\d \zeta^0)^2)\\
+	&+\bigg(\frac{\phi+c}{\phi^2}\frac{x^2+y^2}{1-x^2-y^2}+\frac{1}{2\phi}\bigg) (\d \tilde\zeta_1^2+(\d \zeta^1)^2)\\
+	&+\frac{\phi+c}{\phi^2}\frac{1}{1-x^2-y^2}
+	\Big(2x \big(\d \tilde\zeta_0\d \tilde\zeta_1 - \d \zeta^0 \d \zeta^1 \big) 
+	+2y \big(\d \tilde\zeta_0 \d \zeta^1 + \d \zeta^0\d \tilde\zeta_1 \big) \Big)\\
+	&+\frac{\phi+c}{\phi+2c}\frac{1}{4\phi^2}\bigg(\d \tilde{\phi}+\zeta^0 \d \tilde{\zeta}_0 -\tilde{\zeta}_0 \d \zeta^0
+	+\zeta^1 \d \tilde{\zeta}_1 -\tilde{\zeta}_1 \d \zeta^1+\frac{2c}{1-x^2-y^2}(x\d y-y \d x)\bigg)^2
+\end{align*}
+%an orthonormal (co)frame of one-forms $\{\theta^I\}_{I=1,\dots,8}$, in which the metric takes the form $g^c_{FS}=\sum_I (\theta^I)^2$ can be found in analogy with CHM (p.~199). It is given by
+%\begin{align*}
+%	\theta^1&=\sqrt{\frac{\phi+c}{\phi}}\frac{\d x}{1-x^2-y^2}\qquad \qquad 
+%	\qquad \qquad \theta^2=\sqrt{\frac{\phi+c}{\phi}}\frac{\d y}{1-x^2-y^2}\\
+%	\theta^7&=\frac{1}{2\phi}\bigg(\d \tilde{\phi}+\zeta^0 \d \tilde{\zeta}_0 -\tilde{\zeta}_0 \d \zeta^0
+%	+\zeta^1 \d \tilde{\zeta}_1 -\tilde{\zeta}_1 \d \zeta^1
+%	+\frac{2c}{1-x^2-y^2}(x\d y-y \d x)\bigg)\\ 
+%	\theta^8&=\frac{1}{2\phi}\sqrt{\frac{\phi+2c}{\phi+c}}\d \phi\\
+%\end{align*}
+
+
+\subsection{The Unbroken Subgroup of Isometries (\texorpdfstring{$n=1$}{n=1})}
+
+We expect that many of the isometries of the undeformed FS metric remain isometries in the deformed case, but not all of them can survive. The expectation is that the unbroken subgroup acts by nonzero but low cohomogeneity.
+
+We can do this for the fiber isometries for arbitrary $n$. The group $G(n+2)$ acts on the fibers as follows (cf.~CHM, equation (4.4)):
+\begin{equation*}
+	(\tilde\zeta,\zeta,\tilde\phi,\phi)\longmapsto
+	(e^{\lambda/2}\tilde\zeta+\tilde v,e^{\lambda/2}\zeta+v,
+	e^{\lambda/2}(\tilde v^T \zeta - v^T \tilde\zeta) +e^\lambda\tilde\phi +\alpha, e^\lambda \phi)
+\end{equation*}
+where $(\tilde v,v,\alpha,e^\lambda)\in \R^{2n+3}\times \R_+\cong G(n+2)$. Clearly, the shift-invariance of $\tilde\phi$ is not spoiled by the one-loop deformation, but scaling $\phi$ is now no longer a symmetry. The shifts in $\tilde\zeta$ and $\zeta$, which are compensated (in the last term) by the shift in $\tilde\phi$, also remain symmetries. Thus, $G(n+2)$ acts with cohomogeneity one; every orbit corresponds to a fixed value of $\phi\in \R_+$.
+
+We now restrict to $n=1$, where we check the isometries coming from the base, i.e.~the the (symplectically extended) $SU(1,1)$ transformations. All terms except for the last line are the same (up to a factor) as the old ones, so we only need to check invariance of the last line. Inspecting the final term, we see that the base metric will get an additional term
+\begin{equation*}
+	\frac{2c}{1-\abs{X}^2}(\bar X^2 \d X^2+ X^2\d \bar X^2-2\abs{X}^2\d X \d \bar X)
+\end{equation*}
+Imposing invariance of the base metric, it is already clear that the transformation
+\begin{equation*}
+	X\longmapsto \frac{aX-ib}{i\bar b X+\bar a}
+\end{equation*}
+can only be an isometry if the prefactor $(1-\abs{X}^2)^{-1}$ is invariant: If it transforms by a non-trivial factor, then this factor simply cannot be canceled. This is equivalent to requiring $|i\bar b X+\bar a|^2=1$, which in turn is equivalent to $b=0$, $a=e^{i\theta}$, where $\theta\in \R$ is a phase; at the same time, $X\mapsto e^{2i\theta}X$. Thus, the subgroup of isometries corresponding to $SU(1,1)$ is broken to a circle subgroup, \emph{at best}. We will now check that the full metric is indeed invariant under this subgroup.
+
+The easiest way to proceed is to translate the transformation of $(\tilde\zeta_0,\zeta^0,\tilde\zeta_1,\zeta^1)$ to one of $(w_0,w_1)$: Recall that $w_0=\frac{1}{2}(\tilde\zeta_0+i\zeta^0)$ while $w_1=\frac{1}{2}(\tilde\zeta_1-i\zeta^1)$; then it is not hard to see that $w_0\mapsto e^{i\theta}w_0$ while $w_1\mapsto e^{-i\theta}w_1$. By inspection, one immediately sees that all terms except perhaps $\abs{\d w_0-X\d w_1}^2$ are invariant. But this term is invariant too, since $X\mapsto e^{2i\theta}X$. Thus, we have an unbroken $S^1$-subgroup of isometries of the deformed metric, i.e. the base is acted on with cohomogeneity one. The orbits are standard circles in $\C$, rotating $X$ while leaving $\abs{X}$ constant.
+
+Thus, the deformed metric is acted on by a group of isometries of cohomogeneity at most 2. We would like to go further and compute the full isometry group of the deformed space. Our method to try to prove this is to start with arguing that every isometry must in fact preserve every orbit of the group remaining subgroup of $G(n)\ltimes G(n+2)$ which acts by isometries, i.e. fix the pair $(\phi,|X|)$. To prove this, we proceed in analogy with the $n=0$ case, namely we will look for (real) functions which are invariant under isometries by construction and distinguish all orbits. Since the action is cohomogeneity two, we must find two functions: The most natural thing to try is to take functions built from the curvature tensor, i.e. certain norms of it and its covariant derivative. Computing these is the next step.
+
+We start by computing the so-called \emph{Kretschmann scalar} $\kappa$, which (in a local frame) is given by the coordinate-expression $R^{ijkl} R_{ijkl}$, where $R$ is the curvature tensor. Viewing $R$ as an endomorphism $\mc R:\bigwedge^2 T^*M\to \bigwedge^2 T^*M$, the Kretschmann scalar is proportional to its Hilbert-Schmidt norm $\norm{\mc R}^2=\sum \lambda^2$, where $\lambda\in\R$ are its eigenvalues (recall that $\mc R$ is self-adjoint, hence there exists an orthonormal eigenbasis). A computation using \texttt{Mathematica} shows that
+\begin{equation*}
+	\kappa=\frac{128(176c^6 + 528c^5\phi + 672c^4\phi^2 + 464c^3\phi^3 + 186c^2\phi^4 + 42c\phi^5+5 \phi^6)}{(2 c+\phi)^6}
+\end{equation*}
+However, proceeding with the computation of further polynomial invariants in the curvature and its covariant derivatives, one finds that it is hard to find any that depend on $\abs{X}$. Thus, we are lead to suspect that there is another (continuous) isometry changing the value of $\abs{X}$.
+
+\subsection{Determining the Cohomogeneity}
+
+There are two possible directions we may want to explore next, in order to determine the full deformed isometry group.
+
+\subsubsection{Pointwise methods}
+
+We are interested in finding potential isometries changing the value of $\abs{X}$, but in fact we can already draw some interesting conclusions if we are able to find the other isometries: Since $M$ is of cohomogeneity at most $2$, there exist (many) points $p\in M$ such that the orbit $\mc L\cdot p$ under the remainder of the undeformed isometry group $\mc L$ is six-dimensional. In fact, this is the case whenever $X(p)\neq 0$ 
+%WORK NEEDED correct?
+Assume that we can determine the stabilizer $K=G_p$ ($G$ denotes the full isometry group) and denote its Lie algebra by $\mf k$. If $\mf l$ denotes the Lie algebra of $\mc L$, we know that either $\mf g=\mf k + \mf l$ or $\mf k + \mf l$ defines a codimension one subspace (since the cohomogeneity is at least 1). In many cases, knowledge of $\mf k$ lets us shed some light on this question.
+
+Consider $W\coloneqq T_p (\mc L\cdot p)\subset T_p M$, and the action of $\mf k$ on this subspace. Then we have the following cases:
+\begin{numberedlist}
+	\item $\mf k\cdot W\not\subset W$. Then there must be some non-stabilizing elements of (the identity component of) $G$ which lie \emph{outside} $\mc L$, since if $g\cdot p\in \mc L\cdot p$ for every $g\in G$ then $\mf g\cdot W\subset W$. Thus, we know that $\mf g$ is strictly \emph{larger} than $\mf k +\mf l$.
+	\item $\mf k\cdot W\subset W$ and $\mf k \cdot W^\perp \neq 0$. Then $\mf g=\mf k + \mf l$.
+	%WORK NEEDED Why?!
+	\item $\mf k \cdot W\subset W$ and $\mf k \cdot W^\perp=0$. Then we cannot decide whether $\mf g$ is larger than $\mf k +\mf l$ or not. However, in any case, we can look at the Lie algebra $\mf k +\mf l$, which forms a Lie subalgebra of $\mf g$, and consider all of its one-dimensional extensions. There might not be many, and so we may only have a few candidate isometry groups.
+\end{numberedlist}
+
+To find $K$ or $\mf k$, we can try to solve the equations
+\begin{equation*}
+	A \cdot R=0 \qquad \qquad A\cdot g=0
+\end{equation*}
+where we can consider $A\in SO(T_p M)$ to determine $K$ or its linearization $A\in \mf{so}(T_p M)$ to find $\mf k$.
+
+\subsubsection{Using the HK/QK Correspondence}
+
+As mentioned in \cref{sec:deformedFSderivation}, the one-loop deformation is rather trivial on the hyper-K\"ahler side of the HK/QK correspondence. Therefore, if we can find a way to carry over isometries from from the hyper-K\"ahler to the quaternionic K\"ahler side, there is a good chance that this procedure will be insensitive to the one-loop deformation, and therefore will give us a way to deform isometries to remain such on the quaternionic K\"ahler side. The next section is dedicated to this approach.

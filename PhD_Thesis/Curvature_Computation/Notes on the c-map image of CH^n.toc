@@ -1,0 +1,47 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1}Manifolds Related to the PSK Manifolds $\mathbb {C}H^n$}{1}{section.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1}The Conical Affine Special K\"ahler Manifold}{2}{subsection.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.2}The Hyper-K\"ahler Manifold}{2}{subsection.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3}Tensors Involved in the HK/QK Correspondence}{3}{subsection.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.4}Deriving the QK Metric Through the HK/QK Correspondence; Undeformed Case}{5}{subsection.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.5}The One-Loop Deformation}{8}{subsection.1.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2}The Supergravity $c$-Map}{11}{section.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1}General Setup}{11}{subsection.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2}Basic Expressions for the Fiber $G$}{11}{subsection.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3}Isometries of the Undeformed Ferrara-Sabharwal Metric}{12}{section.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1}The Unit Ball as a Homogeneous Space}{12}{subsection.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2}The Unit Ball as a Lie Group}{14}{subsection.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3}The Group Structure of the $c$-map Image}{14}{subsection.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.4}Homogeneity of the Metric ($n=1$)}{16}{subsection.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.4.1}Choosing the Correct Base Transformation}{17}{subsubsection.3.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.4.2}The Extension to All of $SU(1,1)$}{18}{subsubsection.3.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4}Isometries of the One-Loop Deformed Metric}{19}{section.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1}The Unbroken Subgroup of Isometries ($n=1$)}{20}{subsection.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2}Determining the Cohomogeneity}{21}{subsection.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.2.1}Pointwise methods}{21}{subsubsection.4.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.2.2}Using the HK/QK Correspondence}{22}{subsubsection.4.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5}Twists and the HK/QK Correspondence}{22}{section.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6}The Twist Construction}{22}{section.6}

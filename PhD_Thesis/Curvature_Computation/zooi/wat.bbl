@@ -1,0 +1,57 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist{entry}{nty}
+    \entry{CDS2017}{incollection}{}
+      \name{labelname}{3}{}{%
+        {{hash=72462bf9b9b358f1fffd08ff5af1d91c}{Cortés}{C\bibinitperiod}{Vicente}{V\bibinitperiod}{}{}{}{}}%
+        {{hash=bcd2f8a7b659938c4c8c23584ff3a404}{Dyckmanns}{D\bibinitperiod}{Malte}{M\bibinitperiod}{}{}{}{}}%
+        {{hash=c502250d900cc75c354d9516d08ef3e6}{Suhr}{S\bibinitperiod}{Stefan}{S\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{3}{}{%
+        {{hash=72462bf9b9b358f1fffd08ff5af1d91c}{Cortés}{C\bibinitperiod}{Vicente}{V\bibinitperiod}{}{}{}{}}%
+        {{hash=bcd2f8a7b659938c4c8c23584ff3a404}{Dyckmanns}{D\bibinitperiod}{Malte}{M\bibinitperiod}{}{}{}{}}%
+        {{hash=c502250d900cc75c354d9516d08ef3e6}{Suhr}{S\bibinitperiod}{Stefan}{S\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Springer, Cham}%
+      }
+      \strng{namehash}{40069d9fdbe39fc663ce3fdc9489bcc6}
+      \strng{fullhash}{40069d9fdbe39fc663ce3fdc9489bcc6}
+      \field{sortinit}{C}
+      \field{labeltitle}{Completeness of Projective Special {{Kähler}} and Quaternionic {{Kähler}} Manifolds}
+      \field{booktitle}{Special Metrics and Group Actions in Geometry}
+      \field{series}{Springer INdAM Ser.}
+      \field{title}{Completeness of Projective Special {{Kähler}} and Quaternionic {{Kähler}} Manifolds}
+      \field{urlday}{24}
+      \field{urlmonth}{04}
+      \field{urlyear}{2018}
+      \field{volume}{23}
+      \field{year}{2017}
+      \field{pages}{81\bibrangedash 106}
+      \verb{url}
+      \verb https://mathscinet.ams.org/mathscinet-getitem?mr=3751963
+      \endverb
+      \keyw{c-map,quaternionic Kähler geometry,special Kähler geometry,r-map}
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+

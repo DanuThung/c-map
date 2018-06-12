@@ -1,0 +1,407 @@
+\section{Manifolds Related to the PSK Manifolds \texorpdfstring{$\C H^n$}{Complex Hyperbolic Space}}\label{sec:FSfromHKQK}
+
+Over the course of several papers, Cort\'es and collaborators have studied a number of physics-derived geometric constructions relating several types of so-called \emph{special} geometries \cite{CDS2017,CHM2012,ACDM2015,ACM2013,CDMV2015}. As part of their work, they have worked out the relations between special K\"ahler, hyper-K\"ahler and quaternionic K\"ahler manifolds summarized in the following diagram:
+\begin{equation*}
+	\begin{tikzcd}[row sep=small,column sep=large]
+		\text{CASK} \ar[r,"\text{rigid }c"] \ar[dd,"\C^*"'] & \text{HK} 
+		\ar[dd,"\text{HK/QK}"'] \ar[dr,dashed, leftrightarrow,"\text{conify}"] & \\
+		& & \widehat{\text{HK}}\\
+		\text{PSK} \ar[r,"\text{SUGRA }c"'] & \text{QK} \ar[ur,leftrightarrow,dashed,"\text{Swann}"'] &
+	\end{tikzcd}
+\end{equation*}
+In these notes, we study the properties of the quaternionic K\"ahler manifold(s) arising from the supergravity (SUGRA) $c$-map, applied to the projective special K\"ahler (PSK) manifold $\C H^n$, i.e.~complex hyperbolic space, equipped with its symmetric metric. We start by describing the manifolds related to $\C H^n$ through the above diagram, and will end by deriving the quaternionic K\"ahler (QK) metric on its $c$-map image; this metric is known as the Ferrara-Sabharwal metric, after the physicists that first showed that it is a QK metric. We will also derive the so-called \emph{one-loop deformation} of this metric.
+
+\subsection{The Conical Affine Special K\"ahler Manifold}
+
+To obtain the CASK (conical affine special K\"ahler) manifold corresponding to $\C H^n$, we simply regard the latter as a subset of $\CP^n$, and simply take the preimage under the projection $\pi: \C^{n+1}\setminus \{0\}\to \CP^n$. This means that, as a smooth manifold, the CASK is given by
+\begin{equation*}
+	X=\bigg\{ (z_0,\dots,z_n)\in \C^{n+1}\,\bigg|\, [z_0:z_1:\dots : z_n]\in \C H^n\subset \CP^n\bigg\}
+\end{equation*}
+or equivalently 
+\begin{equation*}
+	X=\bigg\{ (z_0,\dots,z_n)\in \C^{n+1}\,\bigg|\, -\abs{z_0}^2+\sum_{i=1}^n \abs{z_i}^2<0\bigg\}
+\end{equation*}
+Since the metric
+\begin{equation*}
+	-\d z_0 \d \bar z_0 + \sum_{i=1}^n\d z_i\d \bar z_i
+\end{equation*}
+induces the standard symmetric metric on $\C H^n$, and the CASK metric should induces its negative (and should correspondingly be of mostly negative signature), we have
+\begin{equation*}
+	g_X=\d z_0 \d \bar z_0 - \sum_{i=1}^n\d z_i\d \bar z_i
+\end{equation*}
+since this metric is already flat, the special K\"ahler connection on $X$ is simply the trivial connection $\d$, which is simultaneously the Levi-Civit\`a connection. The Euler vector field on $X$ is simply the restriction of the radial vector field on $\C^2\setminus\{0\}$ to $X$.
+
+\subsection{The Hyper-K\"ahler Manifold}
+
+Now, we would like to apply the rigid $c$-map and find the corresponding hyper-K\"ahler manifold, to which we may apply the HK/QK correspondence. The rigid $c$-map is explained on page 18 of ACM (Conification paper). Starting from the (pseudo)-CASK manifold $X$, we consider its cotangent bundle $p:N=T^*X\to X$ and split its tangent bundle into horizontal and vertical subbundles using the special K\"ahler connection (in this case simply the Levi-Civit\`a connection $\d$). We then have $TN=T^hN\oplus T^vN\cong p^*TX\oplus p^*T^*X$ where the isomorphism comes from the projection on the first summand and is canonical on the second. In our case, $X$ is an open subset of $\C^{n+1}$ and therefore its (co)tangent bundle is trivial; $p$ is simply projection onto the first factor. 
+
+With respect to the above decomposition of $TN$, we can define the hyper-K\"ahler structure on $N$ as follows:
+\begin{equation*}
+	g_N=
+	\begin{pmatrix}
+		g_X & 0 \\ 0 & g_X^{-1}
+	\end{pmatrix}
+	\qquad \qquad 
+	J_1=
+	\begin{pmatrix}
+		J_X & 0 \\ 0 & J_X^*
+	\end{pmatrix}
+	\qquad \qquad 
+	J_2=
+	\begin{pmatrix}
+		0 & -\omega_X^{-1} \\ \omega_X & 0
+	\end{pmatrix}
+\end{equation*}
+Here, $g_X$ is the metric on $X$ and $g^{-1}_X$ is the induced metric on $T^*X$, $J_X$ is the complex structure of $X$ and $J^*_X$ the induced complex structure on the cotangent bundle. Finally, $\omega_X$ is the standard symplectic form on $X\subset \C^{n+1}\cong \R^{2n+2}$, regarded as an isomorphism $TX\to T^*M$ (and hence as an endomorphism of $TN$, by identifying one-forms of the coordinates on $X$ with vectors along the fibers via $\d x_j=\p_{a_j}$ and $\d y_j=-\p_{b_j}$(!)). Notice that pullbacks are suppressed throughout.
+
+In this case, we have $X=\C H^n\times \C^*$ and $N=\C H^n\times \C^*\times \C^{n+1}$; if $(\vec z,\vec w)=((\vec x,\vec y), (\vec a,\vec b))$ are (standard) global coordinates on $X$, we have
+\begin{equation*}
+	g_X =2\bigg( \d z_0 \d \bar z_0 - \sum_{i=1}^n \d z_i \d \bar z_i \bigg) \qquad \qquad 
+	J=i \qquad \qquad 
+	\omega_X=i\bigg(\d z_0 \wedge \d \bar z_0 - \sum_{i=1}^n \d z_i \wedge \d \bar z_i\bigg)
+\end{equation*}
+which yields explicit expressions for the hyper-K\"ahler data on $N$. For easier comparison with ACDM, page 24--25, we have multiplied our previous expression for $g_X$ by two. We set $G_{00}=1$, $G_{ii}=-1$ for $i>0$ and $G_{ij}=0$ for $i\neq j$. We then have
+\begin{gather*}\numberthis
+	g_N=2\Bigg[\sum_{i=0}^n G_{ii} \d z_i \d \bar z_i+\sum_{i=0}^n G_{ii} \d w_i \d \bar w_i\Bigg]\\
+	J_1\p_{x_j}=\p_{y_j} \qquad J_1\p_{y_j}=-\p_{x_j} \qquad \qquad J_1 \p_{a_j}=\p_{b_j} \qquad J_1 \p_{b_j}=-\p_{a_j}\\
+	\numberthis
+	\omega_1=i\Bigg[\sum_{i=0}^n G_{ii}\d z_i \wedge \d \bar z_i+\sum_{i=0}^n G_{ii}\d w_i \wedge \d \bar w_i\Bigg]\\
+	J_2\p_{x_j}=-G_{jj}\p_{b_j}\qquad J_2\p_{y_j}=-G_{jj}\p_{a_j} \qquad \qquad J_2 \p_{a_j}=G_{jj}\p_{y_j}\qquad J_2\p_{b_j}=G_{jj}\p_{x_j}\\
+	\numberthis
+	\omega_2=i\Bigg[\sum_{i=0}^n \d z_i \wedge \d w_i - \d \bar z_i \wedge \d \bar w_i\Bigg]
+	=-2\Im\bigg(\sum_{i=0}^n \d z_i \wedge \d w_i\bigg)\\
+	J_3\p_{x_j}=G_{jj}\p_{a_j} \qquad J_3\p_{y_j}=-G_{jj}\p_{b_j}\qquad \qquad J_3\p_{a_j}=-G_{jj}\p_{x_j}
+	\qquad J_3\p_{b_j}=G_{jj}\p_{y_j}\\
+	\numberthis
+	\omega_3=\sum_{i=0}^n \d z_i\wedge \d w_i+\d \bar z_i \wedge \d \bar w_i
+	=2\Re\bigg(\sum_{i=0}^n \d z_i \wedge \d w_i\bigg)
+\end{gather*}
+which summarizes the hyper-K\"ahler data on $N$. 
+
+\subsection{Tensors Involved in the HK/QK Correspondence}
+
+Now, we consider the field $Z$ generating the $S^1$-action on $N$: The action comes from the units inside $\C^*$, which acts diagonally on the base manifold $X$; the normalization of $Z$ is derived from the requirement $L_Z J_2=-2J_3$. The diagonal action of $S^1\subset \C^*$ on the base $X$ implies that $Z$ is proportional to the standard angular coordinate vector field in every copy of $\C$, i.e.
+\begin{equation*}
+	Z= iC\sum_{i=0}^n (z_i \p_{z_i}-\bar z_i \p_{\bar z_i}) \qquad \qquad C\in \R
+\end{equation*}
+To compute the Lie derivative of $J_2$, we use
+\begin{equation*}
+	(L_ZJ_2)(X)=[Z,J_2(X)]-J_2([Z,X])
+\end{equation*}
+We use that
+\begin{equation*}
+	[Z,\p_{x_j}]=-C\p_{y_j} \qquad \qquad [Z,\p_{y_j}]=C\p_{x_j} \qquad \qquad [Z,\p_{a_j}]=[Z,\p_{b_j}]=0
+\end{equation*}
+to find
+\begin{gather*}
+	(L_ZJ_2)(\p_{x_j})=-CG_{jj}\p_{a_j} \qquad 
+	(L_ZJ_2)(\p_{y_j})=CG_{jj}\p_{b_j} \\
+	(L_ZJ_2)(\p_{a_j})=CG_{jj}\p_{x_j} \qquad
+	(L_ZJ_2)(\p_{b_j})=-CG_{jj}\p_{y_j}
+\end{gather*}
+comparing with the expressions for $J_3$, we see that $C=2$ is the correct normalization. It is easily computed that
+\begin{equation*}
+	g(Z,Z)=8\sum_{i=0}^n G_{ii}\abs{z_i}^2
+\end{equation*}
+From the fact that $Z$ is an angular vector field and the form of the metric, it is clear that $Z$ is Killing. To see that it is symplectic with respect to $\omega_1$, one checks $L_ZJ_1=0$, which is another short computation. In fact, it is a Hamiltonian vector field:
+\begin{equation}
+	\omega_1(Z,-)=-2\sum_{i=0}^n G_{ii}z_i \d \bar z_i+\bar z_i \d \bar z_i
+	=-\d\Bigg(2\sum_{i=0}^n G_{ii} \abs{z_i}^2\Bigg)\eqqcolon -\d f
+\end{equation}
+where $f\eqqcolon r^2$ is the standard choice of Hamiltonian (shifts in $f$ will correspond to the one-loop deformation). Now we set
+\begin{equation*}
+	f_1\coloneqq f-\frac{1}{2}g(Z,Z)=-2\sum_{i=0}^n G_{ii} \abs{z_i}^2=-r^2
+\end{equation*}
+Now, we consider the (trivial) principal bundle $P=N\times S^1$, which we equip with a connection $\eta$ with curvature $\d\eta=\pi^*(\omega_1-\frac{1}{2}\d (g(Z,-)))$. Since
+\begin{equation*}
+	g(Z,-)= 2i\sum_{i=0}^n G_{ii} (z_i\d \bar z_i-\bar z_i \d z_i)
+\end{equation*}
+a natural choice for $\eta$ is
+\begin{align*}
+	\eta&=\d s+\frac{i}{2}\sum_{i=0}^nG_{ii}(z_i\d \bar z_i - \bar z_i \d z_i+w_i\d \bar w_i - \bar w_i \d w_i)-\frac{1}{2}g(Z,-)\\\numberthis
+	&=\d s -\frac{i}{2}\sum_{i=0}^n G_{ii} (z_i \d \bar z_i - \bar z_i \d z_i)
+	+\frac{i}{2}\sum_{i=0}^n G_{ii} (w_i \d \bar w_i-\bar w_i \d w_i)\\
+	& \eqqcolon \d s -\frac{r^2}{4}\tilde\eta+\eta_\text{can}
+	\eqqcolon \d s + \eta_N
+\end{align*}
+where $s$ is the standard (angular) coordinate on the circle $S^1=\{e^{is}\mid s\in \R\}$, and $\eta_\text{can}$ is universal, while $\tilde\eta\coloneqq\frac{1}{r^2}g(Z,-)$ is given by
+\begin{equation*}
+	\tilde\eta=2i\frac{\sum_{i=0}^n G_{ii} (z_i \d \bar z_i - \bar z_i \d z_i)}{r^2}
+	=\frac{i\sum_{i=0}^n G_{ii} (z_i \d \bar z_i - \bar z_i \d z_i)}{\sum_{j=0}^n G_{jj} \abs{z_j}^2}
+\end{equation*}
+The fundamental vector field of the principal action $S^1\action P$ is simply $\p_s$, and the $\eta$-horizontal lift $\tilde Z$ of $Z$ (which satisfies $\eta(\tilde Z)=0$) is of course simply $Z-\eta_N(Z)\p_s$. Now if we set $Z_1=\tilde Z+f_1 \p_s$, the fact that $\eta_N(Z)=-r^2$ implies that $Z_1=Z$. We define the one-forms $\theta^P_i$, $i=0,1,2,3$ on $P$ via
+\begin{gather*}
+	\theta^P_0=-\frac{1}{2}\d f=\frac{1}{2}\omega_1(Z,-)\qquad \qquad 
+	\theta^P_1=\eta+\frac{1}{2}g(Z,-)\\
+	\theta^P_2=\frac{1}{2}\omega_3(Z,-)\qquad \qquad 
+	\theta^P_3=-\frac{1}{2}\omega_2(Z,-)
+\end{gather*}
+which are given by
+\begin{align}
+	\theta^P_0&=-2\sum_{i=0}^n G_{ii}(z_i \d \bar z_i+\bar z_i \d z_i)\\
+	\theta^P_1&=\d s +\frac{i}{2}\sum_{i=0}^n G_{ii}
+	(z_i \d \bar z_i - \bar z_i \d z_i + w_i \d \bar w_i - \bar w_i \d w_i)\\
+	\theta^P_2&=i\sum_{i=0}^n z_i \d w_i - \bar z_i \d \bar w_i\\
+	\theta^P_3&=-\sum_{i=0}^n z_i \d w_i + \bar z_i \d \bar w_i
+\end{align}
+Together with 
+\begin{equation*}
+	g_P\coloneqq\frac{2}{f_1}\eta^2+p^*g_N
+\end{equation*}
+they yield the tensor field 
+\begin{equation*}
+	\tilde g_P\coloneqq g_P-\frac{2}{f}\sum_{a=0}^3 (\theta^P_a)^2
+\end{equation*}
+which will yield the quaternionic K\"ahler metric on a hypersurface $M'\subset P$ transversal to $Z$, via the expression
+\begin{equation}
+	g_{QK}=\frac{1}{2\abs{f}}\tilde g_P\big|_{M'}
+	=\frac{1}{\abs{f}f_1}\eta^2+\frac{p^*g_N}{2\abs{f}}-\frac{1}{f\abs{f}}\sum_{a=0}^3(\theta^P_a)^2
+\end{equation}
+which, in our case, simplifies to
+\begin{equation}\label{eq:gQKspecific}
+	g_{QK}=-\frac{1}{r^4}\Big(\eta^2+\sum_{a=0}^3(\theta^P_a)^2\Big)^2+\frac{p^*g_N}{2r^2}
+\end{equation}
+In fact, this will not quite reproduce the Ferrara-Sabharwal metric $g_{FS}$, which is related via $g_{FS}=-2g_{QK}$. In particular, $g_{QK}$ will be negative-definite.
+
+\subsection{Deriving the QK Metric Through the HK/QK Correspondence; Undeformed Case}\label{sec:undeformedFSderivation}
+
+Following ACDM, we pick $M'=\{\arg z_0=0\} \subset P$. We set $\varphi=\arg z_0$; the coordinate differential $\d\varphi$ can be written as
+\begin{equation*}
+	\d \varphi=\frac{1}{2i}\bigg(\frac{\d z_0}{z_0}-\frac{\d \bar z_0}{z_0}\bigg)=\frac{1}{2i\abs{z_0}^2}(\bar z_0\d z_0-z_0\d\bar z_0)=\frac{i}{2\abs{z_0}^2}(z_0\d \bar z_0-\bar z_0 \d z_0)
+\end{equation*}
+and therefore we have
+\begin{equation*}
+	g(Z,-)\big|_{M'}=2i\sum_{i=1}^n G_{ii}(z_i \d \bar z_i - \bar z_i \d z_i)
+\end{equation*}
+since the first summand vanishes. Similarly 
+\begin{equation*}
+	\eta_N\big|_{M'}=-\frac{i}{2}\sum_{i=1}^n G_{ii}(z_i \d \bar z_i - \bar z_i \d z_i)
+	+\frac{i}{2}\sum_{i=0}^n G_{ii} (w_i \d \bar w_i -\bar w_i \d w_i)
+\end{equation*}
+Following \cite{ACDM2015,CDS2017}, we define $\rho=r^2$, $w_j\eqqcolon \frac{1}{2}(\tilde \zeta_j+iG_{jj}\zeta^j)$ and $X_{i>0}=z_i/z_0$. Then $\{X_i,\rho,\tilde\zeta_i,\zeta^i,s\}\in \C^n \times \R_{>0}\times \R^{n+1}\times \R^{n+1}\times \R$ are local coordinates around any point in $M'$ (recall that $\vec X$ lies in the unit ball in $\C^n$). We now proceed to write the prospective metric on $M'$ in terms of these coordinates. the replacements $w_i\mapsto (\tilde\zeta_i,\zeta^i)$ are rather simple: 
+\begin{gather}
+	\eta_\text{can}=\frac{1}{4}\sum_{i=0}^n \tilde \zeta_i \d \zeta^i-\zeta^i \d \tilde \zeta_i\\
+	\sum_{i=0}^n G_{ii} \d w_i \d \bar w_i
+	=\frac{1}{2}\sum_{i=0}^n \big((\d \tilde\zeta_i)^2+(\d \zeta^i)^2\big)
+\end{gather}
+Now we want to replace the $z_i$-expressions by equations featuring $\rho,X_i$. On $M'$, the following identity holds:
+\begin{equation*}
+	\frac{1}{\abs{z_0}^2}\sum_{i=1}^n G_{ii} (z_i \d \bar z_i - \bar z_i \d z_i)
+	=\sum_{i=1}^n G_{ii}(X_i \d \bar X_i - \bar X_i \d X_i)
+\end{equation*}
+This implies
+\begin{equation}
+	\tilde\eta\big|_{M'}
+	=\frac{i\sum_{i=1}^n G_{ii} (z_i \d \bar z_i - \bar z_i \d z_i)}{\sum_{j=0}^n G_{jj} \abs{z_j}^2}\\
+	=\frac{i\sum_{i=1}^n (X_i \d \bar X_i - \bar X_i \d X_i)}{1-\sum_{i=1}^n\abs{X_i}^2}
+\end{equation}
+Furthermore, since $\rho=2\abs{z_0}^2(1-\sum_i \abs{X_i}^2)$ and $\varphi=0$ on $M'$, we set $\abs{X}^2=\sum_i \abs{X_i}^2$ and find
+\begin{equation*}
+	\sqrt{2}z_0|_{M'}=\sqrt{\frac{\rho}{1-\abs{X}^2}}
+\end{equation*}
+and consequently
+\begin{equation}
+	\frac{\d z_0}{z_0}\bigg|_{M'}=\frac{1}{2}\bigg(\frac{\d \rho}{\rho}
+	+\frac{\sum_i X_i\d \bar X_i + \bar X_i \d X_i}{1-\abs{X}^2}\bigg)
+\end{equation}
+Thus, we may write 
+\begin{align*}
+	\frac{1}{\abs{z_0}^2}\sum_{i=0}^n & G_{ii} \d z_i \d \bar z_i \Big|_{M'}
+	=\frac{\d z_0}{z_0}\frac{\d \bar z_0}{\bar z_0}-\sum_{i=1}^n \frac{\d z_i}{z_0} \frac{\d \bar z_i}{\bar z_0}\\
+	=&\frac{1}{4}\bigg(1-\abs{X}^2\bigg)\bigg(\frac{\d \rho}{\rho}+\frac{\sum X_i \d \bar X_i + \bar X_i \d X_i}{1-\abs{X}^2}\bigg)^2\\
+	&-\sum \d X_i \d \bar X_i 
+	-\frac{1}{2}\sum(X_k \d \bar X_k+ \bar X_k \d X_k)
+	\bigg(\frac{\d \rho}{\rho}+\frac{\sum X_i \d \bar X_i + \bar X_i \d X_i}{1-\abs{X}^2}\bigg)\\
+	=&\frac{1}{4}\bigg(1-\abs{X}^2\bigg) \bigg(\frac{\d \rho^2}{\rho^2}
+	+\bigg[\frac{\sum X_i \d \bar X_i + \bar X_i \d X_i}{1-\abs{X}^2}\bigg]^2\bigg)\\
+	&-\sum \d X_i \d \bar X_i
+	-\frac{1}{2}\frac{\big(\sum X_i \d \bar X_i + \bar X_i \d X_i\big)^2}{1-\abs{X}^2}\\
+	=&\frac{1}{4}\bigg(1-\abs{X}^2\bigg) \bigg(\frac{\d \rho^2}{\rho^2}
+	-\bigg[\frac{\sum X_i \d \bar X_i + \bar X_i \d X_i}{1-\abs{X}^2}\bigg]^2\bigg)
+	-\sum \d X_i \d \bar X_i
+\end{align*}
+where we used $\d z_i/z_0=\d X_i + z_i/z_0^2 \d z_0=\d X_i + X_i \d z_0/z_0$, and canceled some terms in each further step. We conclude (using $\rho=2\abs{z_0}^2(1-\abs{X}^2)$) that
+\begin{equation}
+	\frac{1}{2\rho}\sum_{i=0}^n G_{ii} \d z_i \d \bar z_i \Big|_{M'}
+	=\frac{1}{16}\bigg(\frac{\d \rho^2}{\rho^2}
+	-\bigg[\frac{\sum X_i \d \bar X_i + \bar X_i \d X_i}{1-\abs{X}^2}\bigg]^2\bigg)
+	-\frac{1}{4}\frac{\sum \d X_i \d \bar X_i}{1-\abs{X}^2}
+\end{equation}
+and correspondingly 
+\begin{equation}
+\begin{aligned}
+	\frac{1}{2\rho}p^*g_N\big|_{M'}
+	&=\frac{1}{8}\bigg(\frac{\d \rho^2}{\rho^2}
+	-\bigg[\frac{\sum X_i \d \bar X_i + \bar X_i \d X_i}{1- \abs{X}^2}\bigg]^2\bigg)\\
+	&\qquad -\frac{1}{2}\frac{\sum \d X_i \d \bar X_i}{1- \abs{X}^2}
+	+\frac{1}{2\rho}\sum_{i=0}^n \big( (\d \tilde\zeta_i)^2+(\d \zeta^i)^2\big)
+\end{aligned}
+\end{equation}
+This is the first piece of the quaternionic K\"ahler metric $g_{QK}$ (cf.~\cref{eq:gQKspecific}). The next piece is
+\begin{equation*}
+	-\frac{\eta^2}{\rho^2}
+	=-\frac{1}{\rho^2}\bigg(\d s - \frac{\rho\tilde\eta}{4}+\eta_\text{can}\bigg)^2
+	=-\frac{1}{\rho^2}(\d s +\eta_\text{can})^2-\frac{\tilde\eta^2}{16}
+	+\frac{1}{2\rho}\tilde\eta(\d s +\eta_\text{can})
+\end{equation*}
+where we separated out the universal part. We compute its terms one-by-one (implicitly restricting to $M'$ throughout, from here on):
+\begin{gather*}
+	-\frac{1}{\rho^2}(\d s + \eta_\text{can})^2
+	=-\frac{1}{16\rho^2}\bigg(4\d s+ \sum_{i=0}^n \tilde\zeta_i \d \zeta^i - \zeta^i \d \tilde\zeta_i\bigg)^2\\
+	-\frac{\tilde\eta^2}{16}
+	=-\frac{1}{16}\bigg[\frac{\sum_{i=1}^n (X_i \d \bar X_i - \bar X_i \d X_i)}{1-\abs{X}^2}	\bigg]^2
+\end{gather*}
+We need not bother with the final (cross-)term, because we will soon see it cancels out against second term in \cref{eq:gQKspecific}, i.e.~against $-\frac{1}{\rho^2}\sum_{i=0}^3 (\theta^P_i)^2$. These squares can be rather easily computed: Firstly, we have $\theta^P_0=-r\d r=-\frac{1}{2}\d \rho$, so $-(\theta_0^P)^2/\rho^2=-\d \rho^2/4\rho^2$. Secondly, we find
+\begin{align*}
+	\theta^P_1&=\d s + \eta_\text{can} +\frac{\rho\tilde\eta}{4} \\
+	-\frac{1}{\rho^2}(\theta_1^P)^2
+	&=-\frac{1}{\rho^2}(\d s +\eta_\text{can})^2-\frac{\tilde\eta^2}{16}
+	-\frac{1}{2\rho}\tilde\eta(\d s + \eta_\text{can})
+\end{align*}
+which yields the promised cancellation. Finally, we have
+\begin{equation*}
+	(\theta^P_2)^2+(\theta^P_3)^2=4\sum_{i,j=0}^n z_i \bar z_j \d w_i \d \bar w_j
+\end{equation*}
+hence
+\begin{align*}
+	&-\frac{1}{\rho^2}\big((\theta^P_2)^2+(\theta^P_3)^2\big)=-\frac{2}{\rho}\frac{\sum_{i,j=0}^nz_i\bar z_j \d w_i \d \bar w_j}{\abs{z_0}^2\big(1-\abs{X}^2\big)}\\
+	&\qquad\qquad=-\frac{2}{\rho}\frac{\d w_0 \d \bar w_0+\sum_{i=1}^n X_i \d w_i \d \bar w_0+\bar X_i \d w_0 \d \bar w_i
+	+\sum_{i,j=1}^n X_i\bar X_j \d w_i \d \bar w_j}{1-\abs{X}^2}\\
+	&\qquad\qquad=-\frac{2}{\rho}\frac{1}{1-\abs{X}^2}\Big|\d w_0 + \sum_{i=1}^n X_i \d w_i\Big|^2
+\end{align*}
+Now, all that is left to do is add up all the pieces to obtain the (undeformed) Ferrara-Sabharwal metric on the corresponding quaternionic K\"ahler manifold. We will use the notation of \cite{CDS2017}, where the metric is explicitly written out in Corollary 15. We have
+\begin{align*}
+	-\frac{\eta^2}{\rho^2}&-\frac{1}{\rho^2}\sum_{i=0}^3(\theta_i^P)^2
+	=-\frac{2}{\rho^2}(\d s+\eta_\text{can})^2-\frac{\tilde\eta^2}{8}-\frac{\d \rho^2}{4\rho^2}
+	-\frac{2}{\rho}\frac{\Big|\d w_0 + \sum_{i=1}^n X_i \d w_i\Big|^2}{1- \abs{X}^2}\\
+	&=-\frac{1}{8\rho^2}\bigg(\d \tilde\phi-4\Im \sum_{i=0}^n G_{ii} \bar w_i \d w_i\bigg)^2
+	-\frac{\d \rho^2}{4\rho^2}
+	- \frac{2}{\rho}\frac{\Big|\d w_0 + \sum_{i=1}^n X_i \d w_i\Big|^2}{1- \abs{X}^2}\\
+	&\qquad -\frac{1}{8}\bigg[\frac{\sum_{i=1}^n(X_i \d \bar X_i - \bar X_i \d X_i)}{1-\abs{X}^2}	\bigg]^2
+\end{align*}
+where we set $\tilde\phi=-4s$ and pulled out the sign of the first squared term. To this, we must add
+\begin{align*}
+	\frac{1}{2\rho}p^*g_N\big|_{M'}
+	&=\frac{1}{8}\bigg(\frac{\d \rho^2}{\rho^2}
+	-\bigg[\frac{\sum X_i \d \bar X_i + \bar X_i \d X_i}{1-\abs{X}^2}\bigg]^2\bigg)\\
+	&\qquad -\frac{1}{2}\frac{\sum \d X_i \d \bar X_i}{1-\abs{X}^2}
+	+\frac{1}{\rho}\sum_{i=0}^n G_{ii}\d w_i \d \bar w_i
+\end{align*}
+which yields
+\begin{align*}
+	g'&=-\frac{\d \rho^2}{\rho^2}+\frac{1}{\rho}\sum_{i=0}^n G_{ii} \d w_i \d \bar w_i 
+	-\frac{2}{\rho}\frac{\Big|\d w_0 + \sum_{i=1}^n X_i \d w_i\Big|^2}{1-\abs{X}^2}\\
+	&\quad\ -\frac{1}{8\rho^2}\Big(\d \tilde\phi-4\Im \sum_{i=0}^n G_{ii} \bar w_i \d w_i\Big)^2\\
+	&\quad\ -\frac{1}{2}\frac{1}{1-\abs{X}^2}\Big(\sum \d X_i \d \bar X_i
+	+\frac{\sum\abs{X_i \d \bar X_i}^2}{1-\abs{X}^2}\Big)
+\end{align*}
+This is precisely $-\frac{1}{2}g_{FS}$, where $g_{FS}$ is the undeformed Ferrara-Sabharwal metric (cf.~\cite{CDS2017}, Corollary 15).
+
+\subsection{The One-Loop Deformation}\label{sec:deformedFSderivation}
+
+From a physical point of view, $g_{FS}$ is a \emph{classical} object which will receive corrections from quantum effects. Because of certain supersymmetric non-renormalization theorems, the only perturbative corrections arise at one-loop order, i.e. the metric is perturbatively one-loop exact. The one-loop corrections lead to a one-parameter family of complete quaternionic-K\"ahler metrics, parametrized by a real, positive constant $c$. For $c=0$, we recover the standard Ferrara-Sabharwal metric, while any two metrics corresponding to $c,c'>0$ are isometric (cf.~\cite{CDS2017}, proposition 10).
+
+One of the reasons why the HK/QK correspondence is so useful is that this so-called \emph{one-loop deformation} of the quaternionic K\"ahler metric corresponds to a more-or-less trivial modification on the hyper-K\"ahler side. Indeed, recall that the function $f$ is only defined up to a constant $c\in \R$ (by $\omega(Z,-)=-\d f$), and hence we may take
+\begin{equation*}
+	f=r^2-c=2\sum_{i=0}^n G_{ii} \abs{z_i}^2-c\eqqcolon\rho
+\end{equation*}
+and correspondingly $f_1=-2\sum_{i=0}^n G_{ii} \abs{z_i}^2 -c$. This will change the expression we obtain for the QK metric $-2g'$; the corresponding metrics are called one-loop deformed. We will now compute them, assuming $c>0$ throughout. We have
+\begin{equation*}
+	\rho+c=2\abs{z_0}^2\Big(1-\abs{X}^2\Big) \implies
+	\sqrt 2 z_0\big|_{M'}=\sqrt{\frac{\rho+c}{1-\abs{X}^2}}
+\end{equation*}
+and correspondingly (always restricting to $M'$)
+\begin{equation*}
+	\frac{\d z_0}{z_0}
+	=\frac{1}{2}\bigg(\frac{\d\rho}{\rho+c}+\frac{\sum_i X_i \d \bar X_i + \bar X_i \d X_i}{1-\abs{X}^2}\bigg)
+\end{equation*}
+This means that
+\begin{align*}
+	\frac{1}{\abs{z_0}^2}\sum_i G_{ii} \d z_i \d \bar z_i=\frac{1}{4}\big(1-\abs{X}^2\big)
+	\bigg(\frac{\d \rho^2}{(\rho+c)^2}
+	-\bigg[\frac{\sum X_i \d \bar X_i + \bar X_i \d X_i}{1-\abs{X}^2}\bigg]^2\bigg)
+	-\sum \d X_i \d \bar X_i
+\end{align*}
+and correspondingly
+\begin{align*}
+	\frac{p^*g_N}{2\rho}&=\frac{p^*g_N}{2(2\abs{z_0}^2(1-\abs{X}^2)-c)}
+	=\frac{p^*g_N}{4\abs{z_0}^2(1-\abs{X}^2)}\frac{\rho+c}{\rho}\\
+	&=\frac{\rho+c}{\rho}\Bigg[\frac{1}{8}\bigg(\frac{\d \rho^2}{(\rho+c)^2}
+	-\bigg[\frac{\sum X_i \d \bar X_i + \bar X_i \d X_i}{1- \abs{X}^2}\bigg]^2\bigg)
+	-\frac{1}{2}\frac{\sum \d X_i \d \bar X_i}{1- \abs{X}^2}\Bigg]\\\numberthis\label{eq:baseandwterm}
+	&\qquad +\frac{1}{\rho}\sum_{i=0}^n G_{ii}\d w_i \d \bar w_i
+\end{align*}
+The expressions for $\tilde\eta$ and $\eta_\text{can}$ remain unchanged, but we now have
+\begin{equation*}
+	\eta=\d s+\eta_\text{can}-\frac{\rho+c}{4}\tilde\eta
+\end{equation*}
+and thus there are extra terms:
+\begin{equation*}
+	\frac{\eta^2}{f_1\abs{f}}=-\frac{\eta^2}{\rho(\rho+2c)}
+	=\frac{1}{\rho(\rho+2c)}\Big(\d s+\eta_\text{can}-\frac{c}{4}\tilde\eta\Big)^2
+	\!\!-\frac{\rho}{\rho+2c}\frac{\tilde\eta^2}{16} 
+	+ \frac{1}{2(\rho+2c)}\tilde\eta\Big(\d s+\eta_\text{can}-\frac{c}{4}\tilde\eta\Big)
+\end{equation*}
+The $\theta^P_a$-terms are also slightly modified:  
+\begin{align*}
+	-\frac{1}{\rho^2}(\theta_0^P)^2&=-\frac{\d \rho^2}{4\rho^2}\\
+	-\frac{1}{\rho^2}(\theta_1^P)^2&=-\frac{1}{\rho^2}\Big(\d s +\eta_\text{can}+\frac{\rho+c}{4}\tilde\eta\Big)^2\\
+	&=-\frac{1}{\rho^2}\Big(\d s +\eta_\text{can}+\frac{c\tilde\eta}{4}\Big)^2
+	-\frac{\tilde\eta^2}{16}-\frac{1}{2\rho}\tilde\eta\Big(\d s + \eta_\text{can}+\frac{c}{4}\tilde\eta\Big)\\\numberthis\label{eq:interactionterm}
+	-\frac{1}{\rho^2}\big((\theta^P_2)^2+(\theta^P_3)^2\big)
+	&=-\frac{\rho+c}{\rho^2}\frac{2}{1-\abs{X}^2}\Big|\d w_0 + \sum_{i=1}^n X_i \d w_i\Big|^2
+\end{align*}
+Hence, we have:
+\begin{align*}
+	&-\frac{\eta^2}{\rho^2}-\frac{1}{\rho^2}\sum_{a=0}^3(\theta^P_a)^2=\\
+	&-\frac{1}{\rho^2}\bigg[\frac{\rho}{\rho+2c}\Big(\d s+\eta_\text{can}-\frac{c\tilde\eta}{4}\Big)^2
+	+\Big(\d s+\eta_\text{can}+\frac{c\tilde\eta}{4}\Big)^2\bigg]
+	+\frac{\tilde\eta}{2}(\d s+\eta_\text{can})\Big(\frac{1}{\rho+2c}-\frac{1}{\rho}\Big)\\
+	&-\frac{\tilde\eta^2}{8}\Big(1+\frac{c}{\rho}\Big)
+	-\frac{\rho+c}{\rho^2}\frac{2}{1-\abs{X}^2}\Big|\d w_0 + \sum_{i=1}^n X_i \d w_i\Big|^2
+	-\frac{\d \rho^2}{4\rho^2}
+\end{align*}
+Summing it all up, we see that the $\d w \d \bar w$-part is already in a nice form, and so is the $\d X_i \d \bar X_i$-term, as well as the $\abs{\d w_0+X_i \d w_i}$-term. For the terms proportional to $\d \rho^2$, we have
+\begin{equation}\label{eq:rhoterm}
+	-\frac{\d \rho^2}{8\rho^2}\Big(2-\frac{\rho+c}{\rho}\frac{1}{\big(1+\frac{c}{\rho}\big)^2}\Big)
+	=-\frac{\d \rho^2}{8\rho^2}\frac{2(\rho+c)-\rho}{\rho+c}=-\frac{\rho+2c}{\rho+c}\frac{\d \rho^2}{8\rho^2}
+\end{equation}
+There are only a few terms left to rewrite, namely
+\begin{align*}
+	&-\frac{1}{\rho^2}\bigg[\frac{\rho}{\rho+2c}\Big(\d s+\eta_\text{can}-\frac{c\tilde\eta}{4}\Big)^2
+	+\Big(\d s+\eta_\text{can}+\frac{c\tilde\eta}{4}\Big)^2\bigg]
+	+\frac{\tilde\eta}{2}(\d s+\eta_\text{can})\Big(\frac{1}{\rho+2c}-\frac{1}{\rho}\Big)\\
+	&-\frac{\tilde\eta^2}{8}\Big(1+\frac{c}{\rho}\Big)
+	-\frac{1}{8}\frac{\rho+c}{\rho}\bigg[\frac{\sum X_i \d \bar X_i + \bar X_i \d X_i}{1- \abs{X}^2}\bigg]^2
+\end{align*}
+The second line amounts exactly to
+\begin{equation}\label{eq:secondbaseterm}
+	-\frac{1}{8}\frac{\rho+c}{\rho}\frac{1}{\big(1-\abs{X}^2\big)^2}\Big|\sum_i \bar X_i \d X_i\Big|
+\end{equation}
+The first can be simplified by noting that the term in square brackets is 
+\begin{align*}
+	&-\frac{1}{\rho^2}\Bigg[\Big((\d s +\eta_\text{can})^2+\Big[\frac{c\tilde\eta}{4}\Big]^2\Big) \Big(1+\frac{\rho}{\rho+2c}\Big)
+	+2\frac{c\tilde\eta}{4}(\d s+\eta_\text{can})\Big(1-\frac{\rho}{\rho+2c}\Big)\Bigg]\\
+	=&-\frac{2}{\rho^2}\bigg[\frac{\rho+c}{\rho+2c}\Big((\d s +\eta_\text{can})^2+\Big[\frac{c\tilde\eta}{4}\Big]^2\Big)
+	+2(\d s +\eta_\text{can})\frac{c\tilde\eta}{4}\frac{c}{\rho+2c}\bigg]
+\end{align*}
+while the term outside the brackets is
+\begin{equation*}
+	-\frac{1}{\rho^2}\bigg[2(\d s +\eta_\text{can})\frac{c\tilde\eta}{4}\Big(\frac{\rho^2}{\rho+2c}-\rho\Big)\bigg]
+	=-\frac{2}{\rho^2}\bigg[2(\d s +\eta_\text{can})\frac{\rho}{\rho+2c}\bigg]
+\end{equation*}
+so that adding them up leads to the neat expression
+\begin{align*}
+	&-\frac{2}{\rho^2}\frac{\rho+c}{\rho+2c}\bigg[\d s +\eta_\text{can}+\frac{c\tilde\eta}{4}\bigg]^2\\\numberthis
+	=&-\frac{1}{8\rho^2}\frac{\rho+c}{\rho+2c}\bigg[\d \tilde\phi-4\Im\Big(\sum_i G_{ii} \bar w_i \d w_i\Big)
+	+\frac{2c}{1-\abs{X}^2}\Im\Big(\sum_i \bar X_i \d X_i \Big)\bigg]^2
+\end{align*}
+We can now finally sum this equation with (the relevant terms of) \cref{eq:baseandwterm,eq:secondbaseterm,eq:rhoterm,eq:interactionterm} and obtain the expression in full after multiplying by $-2$. This is the one-loop deformed Ferarra-Sabharwal metric:
+\begin{align*}
+	g^c_\text{FS}&=\frac{\rho+c}{\rho}\frac{1}{1-\abs{X}^2}\Bigg[\sum_{i=1}^n \d X_i \d \bar X_i
+	+\frac{1}{1-\abs{X}^2}\Big|\sum_{i=1}^n \bar X_i \d X_i\Big|^2\Bigg]\\
+	&+\frac{1}{4\rho^2}\frac{\rho+2c}{\rho+c}\d \rho^2 - \frac{2}{\rho}\sum_{i=0}^n G_{ii}\d w_i \d \bar w_i\\
+	&+\frac{\rho+c}{\rho^2}\frac{4}{1-\abs{X}^2}\Big|\d w_0 + \sum_{i=1}^n X_i \d w_i\Big|^2\\
+	&+\frac{1}{4\rho^2}\frac{\rho+c}{\rho+2c}\bigg[\d \tilde\phi-4\Im\Big(\sum_i G_{ii} \bar w_i \d w_i\Big)
+	+\frac{2c}{1-\abs{X}^2}\Im\Big(\sum_i \bar X_i \d X_i \Big)\bigg]^2
+\end{align*}

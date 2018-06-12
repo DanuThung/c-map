@@ -1,0 +1,355 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.6 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist[entry]{nyt/global}
+    \entry{ACDM2015}{article}{}
+      \name{author}{4}{}{%
+        {{hash=88b74d3077f222cad444e87d8de3aea2}{%
+           family={Alekseevski$\backslash$u$\backslash$i},
+           family_i={A\bibinitperiod},
+           given={D.\bibnamedelimi V.},
+           given_i={D\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=981ad35f4474cb0802d8fbed1641e913}{%
+           family={Cortés},
+           family_i={C\bibinitperiod},
+           given={V.},
+           given_i={V\bibinitperiod}}}%
+        {{hash=c23ee43eb45cc134c12d6bc2bc475165}{%
+           family={Dyckmanns},
+           family_i={D\bibinitperiod},
+           given={M.},
+           given_i={M\bibinitperiod}}}%
+        {{hash=b8bb0ff232a9a6883be6b0a4c543e03a}{%
+           family={Mohaupt},
+           family_i={M\bibinitperiod},
+           given={T.},
+           given_i={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{4f135d090a5c08aeb072268992a51fdb}
+      \strng{fullhash}{eee7d9a29b0d18e7d42da81053ef3043}
+      \field{sortinit}{A}
+      \field{sortinithash}{b685c7856330eaee22789815b49de9bb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0393-0440}
+      \field{journaltitle}{Journal of Geometry and Physics}
+      \field{shortjournal}{J. Geom. Phys.}
+      \field{title}{Quaternionic {{Kähler}} Metrics Associated with Special {{Kähler}} Manifolds}
+      \field{volume}{92}
+      \field{year}{2015}
+      \field{pages}{271\bibrangedash 287}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1016/j.geomphys.2014.12.012
+      \endverb
+      \verb{url}
+      \verb http://www.ams.org/mathscinet-getitem?mr=3328073
+      \endverb
+      \keyw{physical mathematics,supersymmetry,quaternionic Kähler geometry,HK/QK correspondence}
+    \endentry
+    \entry{ACM2013}{article}{}
+      \name{author}{3}{}{%
+        {{hash=3ad169f0aa44cb0bcd63ab430fd0f390}{%
+           family={Alekseevsky},
+           family_i={A\bibinitperiod},
+           given={D.\bibnamedelimi V.},
+           given_i={D\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=981ad35f4474cb0802d8fbed1641e913}{%
+           family={Cortés},
+           family_i={C\bibinitperiod},
+           given={V.},
+           given_i={V\bibinitperiod}}}%
+        {{hash=b8bb0ff232a9a6883be6b0a4c543e03a}{%
+           family={Mohaupt},
+           family_i={M\bibinitperiod},
+           given={T.},
+           given_i={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{7380bd6da8b99545898c8a2ab4eb5bf6}
+      \strng{fullhash}{7380bd6da8b99545898c8a2ab4eb5bf6}
+      \field{sortinit}{A}
+      \field{sortinithash}{b685c7856330eaee22789815b49de9bb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0010-3616}
+      \field{journaltitle}{Communications in Mathematical Physics}
+      \field{number}{2}
+      \field{shortjournal}{Comm. Math. Phys.}
+      \field{title}{Conification of {{Kähler}} and Hyper-{{Kähler}} Manifolds}
+      \field{urlday}{16}
+      \field{urlmonth}{05}
+      \field{urlyear}{2018}
+      \field{volume}{324}
+      \field{year}{2013}
+      \field{pages}{637\bibrangedash 655}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1007/s00220-013-1812-0
+      \endverb
+      \verb{url}
+      \verb https://mathscinet.ams.org/mathscinet-getitem?mr=3117523
+      \endverb
+      \keyw{c-map,hyper-Kähler geometry,quaternionic Kähler geometry,HK/QK correspondence}
+    \endentry
+    \entry{CHM2012}{article}{}
+      \name{author}{3}{}{%
+        {{hash=981ad35f4474cb0802d8fbed1641e913}{%
+           family={Cortés},
+           family_i={C\bibinitperiod},
+           given={V.},
+           given_i={V\bibinitperiod}}}%
+        {{hash=f930f546947c134b097ed990f7cebb96}{%
+           family={Han},
+           family_i={H\bibinitperiod},
+           given={X.},
+           given_i={X\bibinitperiod}}}%
+        {{hash=b8bb0ff232a9a6883be6b0a4c543e03a}{%
+           family={Mohaupt},
+           family_i={M\bibinitperiod},
+           given={T.},
+           given_i={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{2bc764e51883154101578b6b48dd4e05}
+      \strng{fullhash}{2bc764e51883154101578b6b48dd4e05}
+      \field{sortinit}{C}
+      \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0010-3616}
+      \field{journaltitle}{Communications in Mathematical Physics}
+      \field{number}{1}
+      \field{shortjournal}{Comm. Math. Phys.}
+      \field{title}{Completeness in Supergravity Constructions}
+      \field{urlday}{16}
+      \field{urlmonth}{05}
+      \field{urlyear}{2018}
+      \field{volume}{311}
+      \field{year}{2012}
+      \field{pages}{191\bibrangedash 213}
+      \range{pages}{23}
+      \verb{doi}
+      \verb 10.1007/s00220-012-1443-x
+      \endverb
+      \verb{url}
+      \verb https://mathscinet.ams.org/mathscinet-getitem?mr=2892468
+      \endverb
+      \keyw{c-map,Riemannian geometry,quaternionic Kähler geometry,special Kähler geometry,r-map,special real geometry}
+    \endentry
+    \entry{CDS2017}{incollection}{}
+      \name{author}{3}{}{%
+        {{hash=3cf2c7a552e0fdb246ee6a4c1e897379}{%
+           family={Cortés},
+           family_i={C\bibinitperiod},
+           given={Vicente},
+           given_i={V\bibinitperiod}}}%
+        {{hash=bcd2f8a7b659938c4c8c23584ff3a404}{%
+           family={Dyckmanns},
+           family_i={D\bibinitperiod},
+           given={Malte},
+           given_i={M\bibinitperiod}}}%
+        {{hash=c502250d900cc75c354d9516d08ef3e6}{%
+           family={Suhr},
+           family_i={S\bibinitperiod},
+           given={Stefan},
+           given_i={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer, Cham}%
+      }
+      \strng{namehash}{cb306173d48dea3ad2242b5a2d56ea2e}
+      \strng{fullhash}{cb306173d48dea3ad2242b5a2d56ea2e}
+      \field{sortinit}{C}
+      \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Special Metrics and Group Actions in Geometry}
+      \field{series}{Springer INdAM Ser.}
+      \field{title}{Completeness of Projective Special {{Kähler}} and Quaternionic {{Kähler}} Manifolds}
+      \field{urlday}{24}
+      \field{urlmonth}{04}
+      \field{urlyear}{2018}
+      \field{volume}{23}
+      \field{year}{2017}
+      \field{pages}{81\bibrangedash 106}
+      \range{pages}{26}
+      \verb{url}
+      \verb https://mathscinet.ams.org/mathscinet-getitem?mr=3751963
+      \endverb
+      \keyw{c-map,quaternionic Kähler geometry,special Kähler geometry,r-map}
+    \endentry
+    \entry{CDMV2015}{article}{}
+      \name{author}{4}{}{%
+        {{hash=981ad35f4474cb0802d8fbed1641e913}{%
+           family={Cortés},
+           family_i={C\bibinitperiod},
+           given={V.},
+           given_i={V\bibinitperiod}}}%
+        {{hash=0054d558f33e96e28c4c1d81f4d45b39}{%
+           family={Dempster},
+           family_i={D\bibinitperiod},
+           given={P.},
+           given_i={P\bibinitperiod}}}%
+        {{hash=b8bb0ff232a9a6883be6b0a4c543e03a}{%
+           family={Mohaupt},
+           family_i={M\bibinitperiod},
+           given={T.},
+           given_i={T\bibinitperiod}}}%
+        {{hash=a219f63ff3fc3adc41cc541504cf44f4}{%
+           family={Vaughan},
+           family_i={V\bibinitperiod},
+           given={O.},
+           given_i={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{85a2427dc5448e3b72c5fe82afc85f34}
+      \strng{fullhash}{b80ccd705dc3a395b12060a667c4e251}
+      \field{sortinit}{C}
+      \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{1126-6708}
+      \field{journaltitle}{Journal of High Energy Physics}
+      \field{number}{10}
+      \field{shortjournal}{J. High Energy Phys.}
+      \field{shorttitle}{Special Geometry of {{Euclidean}} Supersymmetry {{IV}}}
+      \field{title}{Special Geometry of {{Euclidean}} Supersymmetry {{IV}}: The Local \$c\$-Map}
+      \field{urlday}{16}
+      \field{urlmonth}{05}
+      \field{urlyear}{2018}
+      \field{year}{2015}
+      \field{pages}{066\bibrangessep front matter+60}
+      \range{pages}{-1}
+      \verb{url}
+      \verb https://mathscinet.ams.org/mathscinet-getitem?mr=3435573
+      \endverb
+      \keyw{c-map,quaternionic Kähler geometry,special Kähler geometry}
+    \endentry
+    \entry{MS2014}{article}{}
+      \name{author}{2}{}{%
+        {{hash=a22c6c9a6cbc93dd6cc4539fac76dfd4}{%
+           family={Macia},
+           family_i={M\bibinitperiod},
+           given={Oscar},
+           given_i={O\bibinitperiod}}}%
+        {{hash=6a2b9fc5adddff5716aa76b96682f318}{%
+           family={Swann},
+           family_i={S\bibinitperiod},
+           given={Andrew},
+           given_i={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{a81960032e15d657007e94398fc9fec4}
+      \strng{fullhash}{a81960032e15d657007e94398fc9fec4}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{04}
+      \field{eprintclass}{hep-th}
+      \field{eprinttype}{arxiv}
+      \field{month}{04}
+      \field{title}{Elementary Deformations and the {{hyperK}}$\backslash$"ahler-Quaternionic {{K}}$\backslash$"ahler Correspondence}
+      \field{urlday}{25}
+      \field{urlmonth}{05}
+      \field{urlyear}{2018}
+      \field{year}{2014}
+      \verb{eprint}
+      \verb 1404.1169
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1404.1169
+      \endverb
+      \keyw{expository,c-map,hyper-Kähler geometry,quaternionic Kähler geometry,twist construction}
+    \endentry
+    \entry{MS2015}{article}{}
+      \name{author}{2}{}{%
+        {{hash=a22c6c9a6cbc93dd6cc4539fac76dfd4}{%
+           family={Macia},
+           family_i={M\bibinitperiod},
+           given={Oscar},
+           given_i={O\bibinitperiod}}}%
+        {{hash=6a2b9fc5adddff5716aa76b96682f318}{%
+           family={Swann},
+           family_i={S\bibinitperiod},
+           given={Andrew},
+           given_i={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{a81960032e15d657007e94398fc9fec4}
+      \strng{fullhash}{a81960032e15d657007e94398fc9fec4}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0010-3616}
+      \field{journaltitle}{Communications in Mathematical Physics}
+      \field{number}{3}
+      \field{shortjournal}{Comm. Math. Phys.}
+      \field{title}{Twist Geometry of the C-Map}
+      \field{urlday}{25}
+      \field{urlmonth}{04}
+      \field{urlyear}{2018}
+      \field{volume}{336}
+      \field{year}{2015}
+      \field{pages}{1329\bibrangedash 1357}
+      \range{pages}{29}
+      \verb{doi}
+      \verb 10.1007/s00220-015-2314-z
+      \endverb
+      \verb{url}
+      \verb https://mathscinet.ams.org/mathscinet-getitem?mr=3324146
+      \endverb
+      \keyw{c-map,hyper-Kähler geometry,quaternionic Kähler geometry,special Kähler geometry,HK/QK correspondence,twist construction}
+    \endentry
+    \entry{Swa2010}{article}{}
+      \name{author}{1}{}{%
+        {{hash=6a2b9fc5adddff5716aa76b96682f318}{%
+           family={Swann},
+           family_i={S\bibinitperiod},
+           given={Andrew},
+           given_i={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{6a2b9fc5adddff5716aa76b96682f318}
+      \strng{fullhash}{6a2b9fc5adddff5716aa76b96682f318}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0012-7094}
+      \field{journaltitle}{Duke Mathematical Journal}
+      \field{number}{2}
+      \field{shortjournal}{Duke Math. J.}
+      \field{title}{Twisting {{Hermitian}} and Hypercomplex Geometries}
+      \field{urlday}{18}
+      \field{urlmonth}{05}
+      \field{urlyear}{2018}
+      \field{volume}{155}
+      \field{year}{2010}
+      \field{pages}{403\bibrangedash 431}
+      \range{pages}{29}
+      \verb{doi}
+      \verb 10.1215/00127094-2010-059
+      \endverb
+      \verb{url}
+      \verb https://mathscinet.ams.org/mathscinet-getitem?mr=2736170
+      \endverb
+      \keyw{hyper-Kähler geometry,quaternionic Kähler geometry}
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+

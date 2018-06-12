@@ -1,0 +1,2766 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.12.22)  17 MAY 2018 14:24
+entering extended mode
+**./IsometriesDeformed.tex
+(IsometriesDeformed.tex
+LaTeX2e <2015/10/01> patch level 2
+Babel <3.9m> and hyphenation patterns for 69 languages loaded.
+! Undefined control sequence.
+l.1 \section
+            {Isometries of the One-Loop Deformed Metric}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \section{I
+              sometries of the One-Loop Deformed Metric}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no I in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no O in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no L in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no D in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no M in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 1--2
+[]
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3 F
+     rom a physical point of view, $g_{FS}$ is a \emph{classical} object whi...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no F in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no , in font nullfont!
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 3.
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no j in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no q in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no T in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no q in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no K in font nullfont!
+LaTeX Font Info:    Try loading font information for +cmr on input line 3.
+LaTeX Font Info:    No file cmr.fd. on input line 3.
+
+LaTeX Font Warning: Font shape `/cmr/m/n' undefined
+(Font)              using `/cmr/m/n' instead on input line 3.
+
+! Corrupted NFSS tables.
+wrong@fontshape ...message {Corrupted NFSS tables}
+                                                  error@fontshape else let f...
+l.3 ...ameter family of complete quaternionic-K\"a
+                                                  hler metrics, parametrized...
+This error message was generated by an \errmessage
+command, so I can't give any explicit help.
+Pretend that you're Hercule Poirot: Examine all clues,
+and deduce the truth by order and method.
+
+
+LaTeX Font Warning: Font shape `/cmr/m/n' undefined
+(Font)              using `OT1/cmr/m/n' instead on input line 3.
+
+Missing character: There is no h in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no F in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no F in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no S in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no C in font nullfont!
+Missing character: There is no D in font nullfont!
+Missing character: There is no S in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no I in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+
+! LaTeX Error: Environment align* undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4 \begin{align*}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Missing character: There is no g in font nullfont!
+! Missing $ inserted.
+<inserted text> 
+                $
+l.5 	g_
+       {FS}^c=&\,\frac{\phi+c}{\phi}\frac{1}{1-\abs{X}^2}\Bigg(\sum \d X^\mu...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Misplaced alignment tab character &.
+l.5 	g_{FS}^c=&
+               \,\frac{\phi+c}{\phi}\frac{1}{1-\abs{X}^2}\Bigg(\sum \d X^\mu...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Undefined control sequence.
+<argument> 1-\abs 
+                  {X}^2
+l.5 ...&\,\frac{\phi+c}{\phi}\frac{1}{1-\abs{X}^2}
+                                                  \Bigg(\sum \d X^\mu \d \ba...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 5.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 5.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 5.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 5.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.5 ...{1}{1-\abs{X}^2}\Bigg(\sum \d X^\mu \d \bar
+                                                   X^\mu
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing { inserted.
+<to be read again> 
+                   \endtemplate 
+l.5 ...{1}{1-\abs{X}^2}\Bigg(\sum \d X^\mu \d \bar
+                                                   X^\mu
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.5 ...{1}{1-\abs{X}^2}\Bigg(\sum \d X^\mu \d \bar
+                                                   X^\mu
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.5 ...{1}{1-\abs{X}^2}\Bigg(\sum \d X^\mu \d \bar
+                                                   X^\mu
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Undefined control sequence.
+<argument> 1-\abs 
+                  {X}^2
+l.6 	+ \frac{1}{1-\abs{X}^2}
+                            \bigg|\sum \bar X^\mu \d X^\mu \bigg|^2\Bigg)\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 6.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 6.
+
+! Misplaced alignment tab character &.
+<recently read> &
+                 
+l.7 	&
+      +\frac{\phi+2c}{\phi+c}\frac{1}{4\phi^2}\d \phi^2
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 7.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 7.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.7 ...ac{\phi+2c}{\phi+c}\frac{1}{4\phi^2}\d \phi
+                                                  ^2
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.7 ...ac{\phi+2c}{\phi+c}\frac{1}{4\phi^2}\d \phi
+                                                  ^2
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 8.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 8.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 8.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 8.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.8 	-\frac{2}{\phi} \bigg( \d w_0 \d \bar
+                                           w_0 - \sum \d w_\mu \d \bar w_\mu...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing { inserted.
+<to be read again> 
+                   \endtemplate 
+l.8 	-\frac{2}{\phi} \bigg( \d w_0 \d \bar
+                                           w_0 - \sum \d w_\mu \d \bar w_\mu...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.8 	-\frac{2}{\phi} \bigg( \d w_0 \d \bar
+                                           w_0 - \sum \d w_\mu \d \bar w_\mu...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.8 	-\frac{2}{\phi} \bigg( \d w_0 \d \bar
+                                           w_0 - \sum \d w_\mu \d \bar w_\mu...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 8.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 8.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 8.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 8.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.8 ... \d w_0 \d \bar w_0 - \sum \d w_\mu \d \bar
+                                                   w_\mu \bigg)\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing { inserted.
+<to be read again> 
+                   \endtemplate 
+l.8 ... \d w_0 \d \bar w_0 - \sum \d w_\mu \d \bar
+                                                   w_\mu \bigg)\\
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.8 ... \d w_0 \d \bar w_0 - \sum \d w_\mu \d \bar
+                                                   w_\mu \bigg)\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.8 ... \d w_0 \d \bar w_0 - \sum \d w_\mu \d \bar
+                                                   w_\mu \bigg)\\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Misplaced alignment tab character &.
+<recently read> &
+                 
+l.9 	&
+      +\frac{\phi+c}{\phi^2}\frac{4}{1-\abs{X}^2}\bigg|\d w_0 + \sum X^\mu \...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Undefined control sequence.
+<argument> 1-\abs 
+                  {X}^2
+l.9 	&+\frac{\phi+c}{\phi^2}\frac{4}{1-\abs{X}^2}
+                                                 \bigg|\d w_0 + \sum X^\mu \...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 9.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 9.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 9.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 9.
+
+! Misplaced alignment tab character &.
+<recently read> &
+                 
+l.10 	&
+       +\frac{\phi+c}{\phi+2c}\frac{1}{4\phi^2}\bigg(\d\tilde\phi
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 10.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 10.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.10 ...c}{\phi+2c}\frac{1}{4\phi^2}\bigg(\d\tilde
+                                                  \phi
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing { inserted.
+<to be read again> 
+                   \endtemplate 
+l.10 ...c}{\phi+2c}\frac{1}{4\phi^2}\bigg(\d\tilde
+                                                  \phi
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.10 ...c}{\phi+2c}\frac{1}{4\phi^2}\bigg(\d\tilde
+                                                  \phi
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.10 ...c}{\phi+2c}\frac{1}{4\phi^2}\bigg(\d\tilde
+                                                  \phi
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 11.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 11.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 11.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 11.
+
+! Undefined control sequence.
+<argument> 1-\abs 
+                  {X}^2
+l.12 	+\frac{2c}{1-\abs{X}^2}
+                             \Im\bigg[\sum \bar X^\mu \d X^\mu\bigg]\bigg)^2
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 12.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 12.
+
+
+! LaTeX Error: \begin{document} ended by \end{align*}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.13 \end{align*}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.13 \end{align*}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+Missing character: There is no I in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no e in font nullfont!
+
+! LaTeX Error: Environment align* undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.15 \begin{align*}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Missing character: There is no g in font nullfont!
+! Missing $ inserted.
+<inserted text> 
+                $
+l.16 	g_
+        {FS}^c=&\,\frac{\phi+c}{\phi}\frac{\d X \d \bar X}{(1-\abs{X}^2)^2}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Misplaced alignment tab character &.
+l.16 	g_{FS}^c=&
+                \,\frac{\phi+c}{\phi}\frac{\d X \d \bar X}{(1-\abs{X}^2)^2}
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 16.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 16.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 16.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 16.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.16 ...phi}\frac{\d X \d \bar X}{(1-\abs{X}^2)^2}
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing { inserted.
+<to be read again> 
+                   \endtemplate 
+l.16 ...phi}\frac{\d X \d \bar X}{(1-\abs{X}^2)^2}
+                                                  
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.16 ...phi}\frac{\d X \d \bar X}{(1-\abs{X}^2)^2}
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.16 ...phi}\frac{\d X \d \bar X}{(1-\abs{X}^2)^2}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Undefined control sequence.
+<argument> (1-\abs 
+                   {X}^2)^2
+l.16 ...phi}\frac{\d X \d \bar X}{(1-\abs{X}^2)^2}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 17.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 17.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.17 ...c{\phi+2c}{\phi+c}\frac{1}{4\phi^2}\d \phi
+                                                  ^2
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.17 ...c{\phi+2c}{\phi+c}\frac{1}{4\phi^2}\d \phi
+                                                  ^2
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 18.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 18.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 18.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 18.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.18 	-\frac{2}{\phi} \big( \d w_0 \d \bar
+                                           w_0 - \d w_1 \d \bar w_1 \big)\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing { inserted.
+<to be read again> 
+                   \endtemplate 
+l.18 	-\frac{2}{\phi} \big( \d w_0 \d \bar
+                                           w_0 - \d w_1 \d \bar w_1 \big)\\
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.18 	-\frac{2}{\phi} \big( \d w_0 \d \bar
+                                           w_0 - \d w_1 \d \bar w_1 \big)\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.18 	-\frac{2}{\phi} \big( \d w_0 \d \bar
+                                           w_0 - \d w_1 \d \bar w_1 \big)\\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 18.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 18.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 18.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 18.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.18 ... \big( \d w_0 \d \bar w_0 - \d w_1 \d \bar
+                                                   w_1 \big)\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing { inserted.
+<to be read again> 
+                   \endtemplate 
+l.18 ... \big( \d w_0 \d \bar w_0 - \d w_1 \d \bar
+                                                   w_1 \big)\\
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.18 ... \big( \d w_0 \d \bar w_0 - \d w_1 \d \bar
+                                                   w_1 \big)\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.18 ... \big( \d w_0 \d \bar w_0 - \d w_1 \d \bar
+                                                   w_1 \big)\\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Misplaced alignment tab character &.
+<recently read> &
+                 
+l.19 	&
+       +\frac{\phi+c}{\phi^2}\frac{4}{1-\abs{X}^2}\big|\d w_0 + X \d w_1 \bi...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Undefined control sequence.
+<argument> 1-\abs 
+                  {X}^2
+l.19 	&+\frac{\phi+c}{\phi^2}\frac{4}{1-\abs{X}^2}
+                                                  \big|\d w_0 + X \d w_1 \bi...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 19.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 19.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 19.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 19.
+
+! Misplaced alignment tab character &.
+<recently read> &
+                 
+l.20 	&
+       +\frac{\phi+c}{\phi+2c}\frac{1}{4\phi^2}\bigg(\d\tilde\phi
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 20.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 20.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.20 ...c}{\phi+2c}\frac{1}{4\phi^2}\bigg(\d\tilde
+                                                  \phi
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing { inserted.
+<to be read again> 
+                   \endtemplate 
+l.20 ...c}{\phi+2c}\frac{1}{4\phi^2}\bigg(\d\tilde
+                                                  \phi
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.20 ...c}{\phi+2c}\frac{1}{4\phi^2}\bigg(\d\tilde
+                                                  \phi
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.20 ...c}{\phi+2c}\frac{1}{4\phi^2}\bigg(\d\tilde
+                                                  \phi
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 21.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 21.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 21.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 21.
+
+! Undefined control sequence.
+<argument> 1-\abs 
+                  {X}^2
+l.22 	+\frac{2c}{1-\abs{X}^2}
+                             \Im\big[ \bar X \d X\big]\bigg)^2
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 22.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 22.
+
+
+! LaTeX Error: \begin{document} ended by \end{align*}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.23 \end{align*}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.23 \end{align*}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 3--24
+[]
+ []
+
+
+Overfull \hbox (16.71071pt too wide) in paragraph at lines 3--24
+$\OML/cmm/m/it/10 g[]$
+ []
+
+
+Overfull \hbox (19.9332pt too wide) in paragraph at lines 3--24
+\OT1/cmr/m/it/10 clas-
+ []
+
+
+Overfull \hbox (10.73326pt too wide) in paragraph at lines 3--24
+\OT1/cmr/m/it/10 si-
+ []
+
+
+Overfull \hbox (11.75546pt too wide) in paragraph at lines 3--24
+\OT1/cmr/m/it/10 cal
+ []
+
+
+Overfull \hbox (10.00003pt too wide) in paragraph at lines 3--24
+\/cmr/m/n/10 a
+ []
+
+
+Overfull \hbox (4.32756pt too wide) in paragraph at lines 3--24
+$\OML/cmm/m/it/10 c$
+ []
+
+
+Overfull \hbox (14.88307pt too wide) in paragraph at lines 3--24
+$\OML/cmm/m/it/10 c \/cmr/m/n/10 =$
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 3--24
+$\/cmr/m/n/10 0$
+ []
+
+
+Overfull \hbox (26.4606pt too wide) in paragraph at lines 3--24
+$\OML/cmm/m/it/10 c; c[] >$
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 3--24
+$\/cmr/m/n/10 0$
+ []
+
+
+Overfull \hbox (22.49654pt too wide) in paragraph at lines 3--24
+$[] \/cmr/m/n/10 =$
+ []
+
+
+Overfull \hbox (97.43948pt too wide) in paragraph at lines 3--24
+$[][][] [] [][][]\OML/cmm/m/it/10 X[] \/cmr/m/n/10 +$
+ []
+
+
+Overfull \hbox (83.89348pt too wide) in paragraph at lines 3--24
+$[][] [] [][][][][][][] $
+ []
+
+
+Overfull \hbox (7.7778pt too wide) in paragraph at lines 3--24
+$\/cmr/m/n/10 +$
+ []
+
+
+Overfull \hbox (54.22668pt too wide) in paragraph at lines 3--24
+$[][][][] \OMS/cmsy/m/n/10  $
+ []
+
+
+Overfull \hbox (45.70093pt too wide) in paragraph at lines 3--24
+$[][][][][]\OML/cmm/m/it/10 w[] \OMS/cmsy/m/n/10  $
+ []
+
+
+Overfull \hbox (44.68939pt too wide) in paragraph at lines 3--24
+$[] [][][]\OML/cmm/m/it/10 w[][][] $
+ []
+
+
+Overfull \hbox (7.7778pt too wide) in paragraph at lines 3--24
+$\/cmr/m/n/10 +$
+ []
+
+
+Overfull \hbox (63.38156pt too wide) in paragraph at lines 3--24
+$[][][][][] \/cmr/m/n/10 +$
+ []
+
+
+Overfull \hbox (47.05797pt too wide) in paragraph at lines 3--24
+$[] \OML/cmm/m/it/10 X[][][][][][] $
+ []
+
+
+Overfull \hbox (7.7778pt too wide) in paragraph at lines 3--24
+$\/cmr/m/n/10 +$
+ []
+
+
+Overfull \hbox (57.1017pt too wide) in paragraph at lines 3--24
+$[][][][]\OML/cmm/m/it/10  \OMS/cmsy/m/n/10  $
+ []
+
+
+Overfull \hbox (48.6315pt too wide) in paragraph at lines 3--24
+$\/cmr/m/n/10 4\OMS/cmsy/m/n/10 =[][][][]  $
+ []
+
+
+Overfull \hbox (50.38385pt too wide) in paragraph at lines 3--24
+$[] [][][][] \/cmr/m/n/10 +$
+ []
+
+
+Overfull \hbox (94.44911pt too wide) in paragraph at lines 3--24
+$[]\OMS/cmsy/m/n/10 =[] [] [][][][][][]$
+ []
+
+
+Overfull \hbox (16.55786pt too wide) in paragraph at lines 3--24
+$\OML/cmm/m/it/10 n \/cmr/m/n/10 =$
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 3--24
+$\/cmr/m/n/10 1$
+ []
+
+
+Overfull \hbox (22.49654pt too wide) in paragraph at lines 3--24
+$[] \/cmr/m/n/10 =$
+ []
+
+
+Overfull \hbox (58.49274pt too wide) in paragraph at lines 3--24
+$[][] \/cmr/m/n/10 +$
+ []
+
+
+Overfull \hbox (54.22668pt too wide) in paragraph at lines 3--24
+$[][][][] \OMS/cmsy/m/n/10  $
+ []
+
+
+Overfull \hbox (42.92314pt too wide) in paragraph at lines 3--24
+$[][][][][]\OML/cmm/m/it/10 w[] \OMS/cmsy/m/n/10  $
+ []
+
+
+Overfull \hbox (27.93701pt too wide) in paragraph at lines 3--24
+$[][][]\OML/cmm/m/it/10 w[][][] $
+ []
+
+
+Overfull \hbox (7.7778pt too wide) in paragraph at lines 3--24
+$\/cmr/m/n/10 +$
+ []
+
+
+Overfull \hbox (63.38156pt too wide) in paragraph at lines 3--24
+$[][][][][] \/cmr/m/n/10 +$
+ []
+
+
+Overfull \hbox (28.59724pt too wide) in paragraph at lines 3--24
+$\OML/cmm/m/it/10 X[][][][][] $
+ []
+
+
+Overfull \hbox (7.7778pt too wide) in paragraph at lines 3--24
+$\/cmr/m/n/10 +$
+ []
+
+
+Overfull \hbox (57.1017pt too wide) in paragraph at lines 3--24
+$[][][][]\OML/cmm/m/it/10  \OMS/cmsy/m/n/10  $
+ []
+
+
+Overfull \hbox (47.52039pt too wide) in paragraph at lines 3--24
+$\/cmr/m/n/10 4\OMS/cmsy/m/n/10 =[][][][]  $
+ []
+
+
+Overfull \hbox (35.29814pt too wide) in paragraph at lines 3--24
+$[][][][] \/cmr/m/n/10 +$
+ []
+
+
+Overfull \hbox (67.6134pt too wide) in paragraph at lines 3--24
+$[]\OMS/cmsy/m/n/10 =[][][][][][]$ 
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.25 D
+      ecomposing the $w$'s into $\zeta$-coordinates and setting $X=x+iy$, th...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no D in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no ' in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no : in font nullfont!
+
+! LaTeX Error: Environment align* undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.26 \begin{align*}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Missing character: There is no g in font nullfont!
+! Missing $ inserted.
+<inserted text> 
+                $
+l.27 	g_
+        {FS}^c=&\frac{\phi+c}{\phi}\frac{\d x^2+\d y^2}{(1-x^2-y^2)^2}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Misplaced alignment tab character &.
+l.27 	g_{FS}^c=&
+                \frac{\phi+c}{\phi}\frac{\d x^2+\d y^2}{(1-x^2-y^2)^2}
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 27.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 27.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 27.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 27.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 28.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 28.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.28 ...c{\phi+2c}{\phi+c}\frac{1}{4\phi^2}\d \phi
+                                                  ^2
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.28 ...c{\phi+2c}{\phi+c}\frac{1}{4\phi^2}\d \phi
+                                                  ^2
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 29.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 29.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.29 	-\frac{1}{2\phi} \big(\d \tilde
+                                     \zeta_0^2+ (\d \zeta^0)^2 - \d \tilde \...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing { inserted.
+<to be read again> 
+                   \endtemplate 
+l.29 	-\frac{1}{2\phi} \big(\d \tilde
+                                     \zeta_0^2+ (\d \zeta^0)^2 - \d \tilde \...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.29 	-\frac{1}{2\phi} \big(\d \tilde
+                                     \zeta_0^2+ (\d \zeta^0)^2 - \d \tilde \...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.29 	-\frac{1}{2\phi} \big(\d \tilde
+                                     \zeta_0^2+ (\d \zeta^0)^2 - \d \tilde \...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 29.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 29.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.29 ...{2\phi} \big(\d \tilde\zeta_0^2+ (\d \zeta
+                                                  ^0)^2 - \d \tilde \zeta_1^...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.29 ...{2\phi} \big(\d \tilde\zeta_0^2+ (\d \zeta
+                                                  ^0)^2 - \d \tilde \zeta_1^...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 29.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 29.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.29 ...tilde\zeta_0^2+ (\d \zeta^0)^2 - \d \tilde
+                                                   \zeta_1^2 - (\d \zeta^1)^...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing { inserted.
+<to be read again> 
+                   \endtemplate 
+l.29 ...tilde\zeta_0^2+ (\d \zeta^0)^2 - \d \tilde
+                                                   \zeta_1^2 - (\d \zeta^1)^...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.29 ...tilde\zeta_0^2+ (\d \zeta^0)^2 - \d \tilde
+                                                   \zeta_1^2 - (\d \zeta^1)^...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.29 ...tilde\zeta_0^2+ (\d \zeta^0)^2 - \d \tilde
+                                                   \zeta_1^2 - (\d \zeta^1)^...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 29.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 29.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.29 ...eta^0)^2 - \d \tilde \zeta_1^2 - (\d \zeta
+                                                  ^1)^2\big)\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.29 ...eta^0)^2 - \d \tilde \zeta_1^2 - (\d \zeta
+                                                  ^1)^2\big)\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Misplaced alignment tab character &.
+<recently read> &
+                 
+l.30 	&
+       +\frac{\phi+c}{\phi^2}\frac{1}{1-x^2-y^2}\Big(\d \tilde\zeta_0^2+(\d ...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 30.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 30.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.30 ...}{\phi^2}\frac{1}{1-x^2-y^2}\Big(\d \tilde
+                                                  \zeta_0^2+(\d \zeta^0)^2
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing { inserted.
+<to be read again> 
+                   \endtemplate 
+l.30 ...}{\phi^2}\frac{1}{1-x^2-y^2}\Big(\d \tilde
+                                                  \zeta_0^2+(\d \zeta^0)^2
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.30 ...}{\phi^2}\frac{1}{1-x^2-y^2}\Big(\d \tilde
+                                                  \zeta_0^2+(\d \zeta^0)^2
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.30 ...}{\phi^2}\frac{1}{1-x^2-y^2}\Big(\d \tilde
+                                                  \zeta_0^2+(\d \zeta^0)^2
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 30.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 30.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.30 ...-x^2-y^2}\Big(\d \tilde\zeta_0^2+(\d \zeta
+                                                  ^0)^2
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.30 ...-x^2-y^2}\Big(\d \tilde\zeta_0^2+(\d \zeta
+                                                  ^0)^2
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 31.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 31.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.31 	+(x^2+y^2)\big(\d \tilde
+                              \zeta_1^2+(\d \zeta^1)^2\big)\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing { inserted.
+<to be read again> 
+                   \endtemplate 
+l.31 	+(x^2+y^2)\big(\d \tilde
+                              \zeta_1^2+(\d \zeta^1)^2\big)\\
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.31 	+(x^2+y^2)\big(\d \tilde
+                              \zeta_1^2+(\d \zeta^1)^2\big)\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.31 	+(x^2+y^2)\big(\d \tilde
+                              \zeta_1^2+(\d \zeta^1)^2\big)\\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 31.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 31.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.31 	+(x^2+y^2)\big(\d \tilde\zeta_1^2+(\d \zeta
+                                                 ^1)^2\big)\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.31 	+(x^2+y^2)\big(\d \tilde\zeta_1^2+(\d \zeta
+                                                 ^1)^2\big)\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Misplaced alignment tab character &.
+<recently read> &
+                 
+l.32 	&
+       \hspace{3.6cm}+2x \big(\d \tilde\zeta_0\d \tilde\zeta_1 - \d \zeta^0 ...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 32.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 32.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.32 	&\hspace{3.6cm}+2x \big(\d \tilde
+                                       \zeta_0\d \tilde\zeta_1 - \d \zeta^0 ...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing { inserted.
+<to be read again> 
+                   \endtemplate 
+l.32 	&\hspace{3.6cm}+2x \big(\d \tilde
+                                       \zeta_0\d \tilde\zeta_1 - \d \zeta^0 ...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.32 	&\hspace{3.6cm}+2x \big(\d \tilde
+                                       \zeta_0\d \tilde\zeta_1 - \d \zeta^0 ...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.32 	&\hspace{3.6cm}+2x \big(\d \tilde
+                                       \zeta_0\d \tilde\zeta_1 - \d \zeta^0 ...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 32.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 32.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.32 ...e{3.6cm}+2x \big(\d \tilde\zeta_0\d \tilde
+                                                  \zeta_1 - \d \zeta^0 \d \z...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing { inserted.
+<to be read again> 
+                   \endtemplate 
+l.32 ...e{3.6cm}+2x \big(\d \tilde\zeta_0\d \tilde
+                                                  \zeta_1 - \d \zeta^0 \d \z...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.32 ...e{3.6cm}+2x \big(\d \tilde\zeta_0\d \tilde
+                                                  \zeta_1 - \d \zeta^0 \d \z...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.32 ...e{3.6cm}+2x \big(\d \tilde\zeta_0\d \tilde
+                                                  \zeta_1 - \d \zeta^0 \d \z...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 32.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 32.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.32 ...d \tilde\zeta_0\d \tilde\zeta_1 - \d \zeta
+                                                  ^0 \d \zeta^1 \big)
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.32 ...d \tilde\zeta_0\d \tilde\zeta_1 - \d \zeta
+                                                  ^0 \d \zeta^1 \big)
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 32.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 32.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.32 ...ta_0\d \tilde\zeta_1 - \d \zeta^0 \d \zeta
+                                                  ^1 \big)
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.32 ...ta_0\d \tilde\zeta_1 - \d \zeta^0 \d \zeta
+                                                  ^1 \big)
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 33.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 33.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.33 	+2y \big(\d \tilde
+                        \zeta_0 \d \zeta^1 + \d \zeta^0\d \tilde\zeta_1 \big...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing { inserted.
+<to be read again> 
+                   \endtemplate 
+l.33 	+2y \big(\d \tilde
+                        \zeta_0 \d \zeta^1 + \d \zeta^0\d \tilde\zeta_1 \big...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.33 	+2y \big(\d \tilde
+                        \zeta_0 \d \zeta^1 + \d \zeta^0\d \tilde\zeta_1 \big...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.33 	+2y \big(\d \tilde
+                        \zeta_0 \d \zeta^1 + \d \zeta^0\d \tilde\zeta_1 \big...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 33.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 33.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.33 	+2y \big(\d \tilde\zeta_0 \d \zeta
+                                        ^1 + \d \zeta^0\d \tilde\zeta_1 \big...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.33 	+2y \big(\d \tilde\zeta_0 \d \zeta
+                                        ^1 + \d \zeta^0\d \tilde\zeta_1 \big...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 33.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 33.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.33 ...big(\d \tilde\zeta_0 \d \zeta^1 + \d \zeta
+                                                  ^0\d \tilde\zeta_1 \big) \...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.33 ...big(\d \tilde\zeta_0 \d \zeta^1 + \d \zeta
+                                                  ^0\d \tilde\zeta_1 \big) \...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 33.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 33.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.33 ...de\zeta_0 \d \zeta^1 + \d \zeta^0\d \tilde
+                                                  \zeta_1 \big) \Big)\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing { inserted.
+<to be read again> 
+                   \endtemplate 
+l.33 ...de\zeta_0 \d \zeta^1 + \d \zeta^0\d \tilde
+                                                  \zeta_1 \big) \Big)\\
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.33 ...de\zeta_0 \d \zeta^1 + \d \zeta^0\d \tilde
+                                                  \zeta_1 \big) \Big)\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.33 ...de\zeta_0 \d \zeta^1 + \d \zeta^0\d \tilde
+                                                  \zeta_1 \big) \Big)\\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Misplaced alignment tab character &.
+<recently read> &
+                 
+l.34 	&
+       +\frac{\phi+c}{\phi+2c}\frac{1}{4\phi^2}\bigg(\d \tilde{\phi}+\zeta^0...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 34.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 34.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.34 ...}{\phi+2c}\frac{1}{4\phi^2}\bigg(\d \tilde
+                                                  {\phi}+\zeta^0 \d \tilde{\...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing { inserted.
+<to be read again> 
+                   \endtemplate 
+l.34 ...}{\phi+2c}\frac{1}{4\phi^2}\bigg(\d \tilde
+                                                  {\phi}+\zeta^0 \d \tilde{\...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.34 ...}{\phi+2c}\frac{1}{4\phi^2}\bigg(\d \tilde
+                                                  {\phi}+\zeta^0 \d \tilde{\...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.34 ...}{\phi+2c}\frac{1}{4\phi^2}\bigg(\d \tilde
+                                                  {\phi}+\zeta^0 \d \tilde{\...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 34.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 34.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.34 ...^2}\bigg(\d \tilde{\phi}+\zeta^0 \d \tilde
+                                                  {\zeta}_0 -\tilde{\zeta}_0...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing { inserted.
+<to be read again> 
+                   \endtemplate 
+l.34 ...^2}\bigg(\d \tilde{\phi}+\zeta^0 \d \tilde
+                                                  {\zeta}_0 -\tilde{\zeta}_0...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.34 ...^2}\bigg(\d \tilde{\phi}+\zeta^0 \d \tilde
+                                                  {\zeta}_0 -\tilde{\zeta}_0...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.34 ...^2}\bigg(\d \tilde{\phi}+\zeta^0 \d \tilde
+                                                  {\zeta}_0 -\tilde{\zeta}_0...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 34.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 34.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.34 ... \tilde{\zeta}_0 -\tilde{\zeta}_0 \d \zeta
+                                                  ^0
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.34 ... \tilde{\zeta}_0 -\tilde{\zeta}_0 \d \zeta
+                                                  ^0
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 35.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 35.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.35 	+\zeta^1 \d \tilde
+                        {\zeta}_1 -\tilde{\zeta}_1 \d \zeta^1+\frac{2c}{1-x^...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing { inserted.
+<to be read again> 
+                   \endtemplate 
+l.35 	+\zeta^1 \d \tilde
+                        {\zeta}_1 -\tilde{\zeta}_1 \d \zeta^1+\frac{2c}{1-x^...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.35 	+\zeta^1 \d \tilde
+                        {\zeta}_1 -\tilde{\zeta}_1 \d \zeta^1+\frac{2c}{1-x^...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.35 	+\zeta^1 \d \tilde
+                        {\zeta}_1 -\tilde{\zeta}_1 \d \zeta^1+\frac{2c}{1-x^...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 35.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 35.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.35 ... \tilde{\zeta}_1 -\tilde{\zeta}_1 \d \zeta
+                                                  ^1+\frac{2c}{1-x^2-y^2}(x\...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.35 ... \tilde{\zeta}_1 -\tilde{\zeta}_1 \d \zeta
+                                                  ^1+\frac{2c}{1-x^2-y^2}(x\...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 35.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 35.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 35.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 35.
+
+! Misplaced alignment tab character &.
+l.36 	=&
+        \frac{\phi+c}{\phi}\frac{\d x^2+\d y^2}{(1-x^2-y^2)^2}
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 36.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 36.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 36.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 36.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 37.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 37.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.37 ...c{\phi+2c}{\phi+c}\frac{1}{4\phi^2}\d \phi
+                                                  ^2\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.37 ...c{\phi+2c}{\phi+c}\frac{1}{4\phi^2}\d \phi
+                                                  ^2\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Misplaced alignment tab character &.
+<recently read> &
+                 
+l.38 	&
+       +\bigg(\frac{\phi+c}{\phi^2}\frac{1}{1-x^2-y^2}-\frac{1}{2\phi}\bigg)...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 38.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 38.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.38 ...-x^2-y^2}-\frac{1}{2\phi}\bigg) (\d \tilde
+                                                  \zeta_0^2+(\d \zeta^0)^2)\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing { inserted.
+<to be read again> 
+                   \endtemplate 
+l.38 ...-x^2-y^2}-\frac{1}{2\phi}\bigg) (\d \tilde
+                                                  \zeta_0^2+(\d \zeta^0)^2)\\
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.38 ...-x^2-y^2}-\frac{1}{2\phi}\bigg) (\d \tilde
+                                                  \zeta_0^2+(\d \zeta^0)^2)\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.38 ...-x^2-y^2}-\frac{1}{2\phi}\bigg) (\d \tilde
+                                                  \zeta_0^2+(\d \zeta^0)^2)\\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 38.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 38.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.38 ...2\phi}\bigg) (\d \tilde\zeta_0^2+(\d \zeta
+                                                  ^0)^2)\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.38 ...2\phi}\bigg) (\d \tilde\zeta_0^2+(\d \zeta
+                                                  ^0)^2)\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Misplaced alignment tab character &.
+<recently read> &
+                 
+l.39 	&
+       +\bigg(\frac{\phi+c}{\phi^2}\frac{x^2+y^2}{1-x^2-y^2}+\frac{1}{2\phi}...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 39.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 39.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.39 ...-x^2-y^2}+\frac{1}{2\phi}\bigg) (\d \tilde
+                                                  \zeta_1^2+(\d \zeta^1)^2)\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing { inserted.
+<to be read again> 
+                   \endtemplate 
+l.39 ...-x^2-y^2}+\frac{1}{2\phi}\bigg) (\d \tilde
+                                                  \zeta_1^2+(\d \zeta^1)^2)\\
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.39 ...-x^2-y^2}+\frac{1}{2\phi}\bigg) (\d \tilde
+                                                  \zeta_1^2+(\d \zeta^1)^2)\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.39 ...-x^2-y^2}+\frac{1}{2\phi}\bigg) (\d \tilde
+                                                  \zeta_1^2+(\d \zeta^1)^2)\\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 39.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 39.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.39 ...2\phi}\bigg) (\d \tilde\zeta_1^2+(\d \zeta
+                                                  ^1)^2)\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.39 ...2\phi}\bigg) (\d \tilde\zeta_1^2+(\d \zeta
+                                                  ^1)^2)\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Misplaced alignment tab character &.
+<recently read> &
+                 
+l.40 	&
+       +\frac{\phi+c}{\phi^2}\frac{1}{1-x^2-y^2}
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 41.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 41.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.41 	\Big(2x \big(\d \tilde
+                            \zeta_0\d \tilde\zeta_1 - \d \zeta^0 \d \zeta^1 ...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing { inserted.
+<to be read again> 
+                   \endtemplate 
+l.41 	\Big(2x \big(\d \tilde
+                            \zeta_0\d \tilde\zeta_1 - \d \zeta^0 \d \zeta^1 ...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.41 	\Big(2x \big(\d \tilde
+                            \zeta_0\d \tilde\zeta_1 - \d \zeta^0 \d \zeta^1 ...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.41 	\Big(2x \big(\d \tilde
+                            \zeta_0\d \tilde\zeta_1 - \d \zeta^0 \d \zeta^1 ...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 41.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 41.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.41 	\Big(2x \big(\d \tilde\zeta_0\d \tilde
+                                            \zeta_1 - \d \zeta^0 \d \zeta^1 ...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing { inserted.
+<to be read again> 
+                   \endtemplate 
+l.41 	\Big(2x \big(\d \tilde\zeta_0\d \tilde
+                                            \zeta_1 - \d \zeta^0 \d \zeta^1 ...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.41 	\Big(2x \big(\d \tilde\zeta_0\d \tilde
+                                            \zeta_1 - \d \zeta^0 \d \zeta^1 ...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.41 	\Big(2x \big(\d \tilde\zeta_0\d \tilde
+                                            \zeta_1 - \d \zeta^0 \d \zeta^1 ...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 41.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 41.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.41 ...d \tilde\zeta_0\d \tilde\zeta_1 - \d \zeta
+                                                  ^0 \d \zeta^1 \big)
+(That makes 100 errors; please try again.) 
+Here is how much of TeX's memory you used:
+ 23 strings out of 493634
+ 273 string characters out of 3143746
+ 67604 words of memory out of 3000000
+ 3506 multiletter control sequences out of 15000+200000
+ 3986 words of font info for 15 fonts, out of 3000000 for 9000
+ 1025 hyphenation exceptions out of 8191
+ 18i,10n,16p,697b,88s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+!  ==> Fatal error occurred, no output PDF file produced!

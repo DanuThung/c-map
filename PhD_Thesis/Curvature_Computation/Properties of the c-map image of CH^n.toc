@@ -1,0 +1,22 @@
+\contentsline {section}{\numberline {1}General Setup}{1}{section.1}
+\contentsline {subsection}{\numberline {1.1}Basic Expressions for the Fiber $G$}{2}{subsection.1.1}
+\contentsline {section}{\numberline {2}The Undeformed FS Metric for $M=\mathbb {C}H^n$}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}The Unit Ball as a Homogeneous Space and as a Lie Group}{3}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}The Unit Ball as a Homogeneous Space}{3}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}The Unit Ball as a Lie Group}{4}{subsubsection.2.1.2}
+\contentsline {subsection}{\numberline {2.2}The Riemannian Structure of the $c$-map Image of $\mathbb {C}H^n$}{5}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}The Group Structure of the $c$-map Image}{6}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Checking Invariance of the Metric ($n=1$)}{7}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}Choosing the Correct Base Transformation}{8}{subsubsection.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.2}The Extension to All of $SU(1,1)$}{9}{subsubsection.2.4.2}
+\contentsline {section}{\numberline {3}The One-Loop Deformed Metric}{10}{section.3}
+\contentsline {subsection}{\numberline {3.1}The Unbroken Subgroup of Isometries ($n=1$)}{11}{subsection.3.1}
+\contentsline {section}{\numberline {4}Next steps to find out more about the deformed isometry group}{13}{section.4}
+\contentsline {subsection}{\numberline {4.1}Pointwise methods}{13}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Using the HK/QK Correspondence}{13}{subsection.4.2}
+\contentsline {section}{\numberline {5}Manifolds Related to the PSK Manifolds $\mathbb {C}H^n$}{14}{section.5}
+\contentsline {subsection}{\numberline {5.1}The Conical Affine Special K\"ahler Manifold}{14}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}The Hyper-K\"ahler Manifold}{14}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Explicit Computation of the HK/QK Correspondence}{15}{subsection.5.3}
+\contentsline {subsubsection}{\numberline {5.3.1}The Set-Up}{15}{subsubsection.5.3.1}
+\contentsline {subsubsection}{\numberline {5.3.2}The QK Metric; Undeformed Case}{17}{subsubsection.5.3.2}
